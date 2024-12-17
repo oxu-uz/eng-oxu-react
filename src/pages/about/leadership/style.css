@@ -1,0 +1,191 @@
+.line {
+    background: #012c6e;
+    height: 3px;
+    transition: all .3s;
+    width: 15%;
+}
+
+h4[data-v-0138892a], .structure-styles .white h5[data-v-0138892a], .structure-styles .white span[data-v-0138892a] {
+    color: #44494f !important;
+}
+
+.structure-styles .cards h4[data-v-0138892a] {
+    color: #fff;
+    font-size: .875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    margin-top: 8px;
+}
+
+h6 {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100%;
+    padding-bottom: 5px;
+}
+
+.page-heading-content .heading-content {
+    z-index: 10;
+    position: relative;
+}
+.page-heading-content .heading-content {
+    display: flex
+;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+}
+
+.page-heading-content {
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 630px;
+}
+
+.page-heading-content img.bg-image {
+    position: absolute;
+}
+.ada-is-section .image-bg img, .page-heading-content img.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page-heading-content .heading-content .container.title {
+    position: relative;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100%;
+}
+
+.page-heading-content .breadcrumb::before, .page-heading-content .heading-content .container.title::before {
+    content: "";
+    background: #012c6e;
+    opacity: .9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+    .page-heading-content .heading-content h1 {
+        font-size: 40px;
+        line-height: normal;
+    }
+}
+.page-heading-content .heading-content h1 {
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.page-heading-content .breadcrumb {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+.breadcrumb {
+    --bs-breadcrumb-padding-x: 0;
+    --bs-breadcrumb-padding-y: 0;
+    --bs-breadcrumb-margin-bottom: 1rem;
+    --bs-breadcrumb-bg: ;
+    --bs-breadcrumb-border-radius: ;
+    --bs-breadcrumb-divider-color: var(--bs-secondary-color);
+    --bs-breadcrumb-item-padding-x: 0.5rem;
+    --bs-breadcrumb-item-active-color: var(--bs-secondary-color);
+    display: flex
+;
+    flex-wrap: wrap;
+    padding: var(--bs-breadcrumb-padding-y) var(--bs-breadcrumb-padding-x);
+    margin-bottom: var(--bs-breadcrumb-margin-bottom);
+    font-size: var(--bs-breadcrumb-font-size);
+    list-style: none;
+    background-color: var(--bs-breadcrumb-bg);
+    border-radius: var(--bs-breadcrumb-border-radius);
+}
+
+.page-heading-content .breadcrumb::before, .page-heading-content .heading-content .container.title::before {
+    content: "";
+    background: #012c6e;
+    opacity: .9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page-heading-content .breadcrumb ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.page-heading-content .breadcrumb ul li:first-child {
+    margin-left: 0;
+}
+.page-heading-content .breadcrumb ul li {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.page-heading-content .breadcrumb ul li a, .page-heading-content .breadcrumb ul li span {
+    position: relative;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5;
+    text-decoration: none;
+    vertical-align: middle;
+    display: flex
+;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+}
+
+.page-heading-content .breadcrumb ul li a.active::after, .page-heading-content .breadcrumb ul li a.active::before, .page-heading-content .breadcrumb ul li a:hover::after, .page-heading-content .breadcrumb ul li a:hover::before, .page-heading-content .breadcrumb ul li span.active::after, .page-heading-content .breadcrumb ul li span.active::before, .page-heading-content .breadcrumb ul li span:hover::after, .page-heading-content .breadcrumb ul li span:hover::before {
+    opacity: .2;
+}
+.page-heading-content .breadcrumb ul li a::before, .page-heading-content .breadcrumb ul li span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+.page-heading-content .breadcrumb ul li a::after, .page-heading-content .breadcrumb ul li span::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}

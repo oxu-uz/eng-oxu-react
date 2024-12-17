@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    font-style: normal;
+    src: url('./assets/font/TT Norms Pro Regular.otf');
+}
+
+
+.nav-link {
+    font-family: 'TT Norms Pro', sans-serif;
+    font-size: .9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #012c6e;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #001f55;
+}
+
+:root {
+    --color-primary: #012C6E;
+    --color-primary-light: #01408e;
+    --color-primary-dark: #011b4b;
+
+    --color-secondary: #012152;
+    --color-secondary-light: #013066;
+    --color-secondary-dark: #01143a;
+
+    --color-text-primary: #292929;
+    --color-text-secondary: #ffffff;
+
+    --color-background: #f8f9fa;
+    --color-surface: #ffffff;
+
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-error: #dc3545;
+
+    --color-border-light: #e0e0e0;
+    --color-border-dark: #343a40;
+}
+
+.tg-bg {
+    background-image: url('./assets/hrbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+    margin-top: 28px;
+    padding: 20px 24px;
+}
+
+.tg-bg h5 {
+    font-family: 'TT Norms Pro', sans-serif;
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.tg-bg button {
+    font-family: 'TT Norms Pro', sans-serif;
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    color: #012C6E;
+    font-size: .8125rem;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: 11px;
+    padding: 4px 10px;
+    transition: all .3s;
+}
+
+.cs-slide-paralax-bg {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    min-height: 700px;
+    overflow: hidden;
+    text-align: center;
+    background: 0 0;
+}
+
+/*.centerCards:hover {*/
+/*    background: #fff;*/
+/*    box-shadow: 0 4px 20px rgba(159, 171, 185, .16);*/
+/*    transform: translateY(3px);*/
+/*}*/
+
+.sideNav-links {
+    border-bottom: 1px solid #eceef1;
+    color: #7c8084;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    padding: 14px 16px 15px;
+    transition: all .3s;
+}
+
+.univ {
+    background: #00316b;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #e9edf2;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+.sideNav-active, .sideNav-links:hover {
+    background: #00316b;
+    color: #fff;
+}
+
+.sideNav {
+    background: #fbfbfb;
+    border: 1px solid #eceef1;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+ .centerCards {
+     background: #f9fafc;
+     border: 1px solid rgba(159, 171, 185, .1);
+     border-radius: 4px;
+     box-sizing: border-box;
+     color: #44494f;
+     font-size: 16px;
+     font-weight: 500;
+     line-height: 128%;
+     min-height: 96px;
+     padding: 26px 24px 0 26px;
+     transition: all .3s;
+ }
+
+
+.link {
+    border-radius: 0px;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 49, 107, .1);
+    color: #86909c;
+    display: flex
+;
+    font-size: .9375rem;
+    padding: 12px 0 12px 20px;
+    text-transform: none;
+    transition: all .3s;
+}
+
+.header-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background: linear-gradient(90deg, #fff, #fff);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid #fff; /* White border around each letter */
+    padding: 0 1rem;
+    display: inline-block;
+    transition: opacity 0.5s ease-in-out;
+    white-space: nowrap;
+}
+
+.cs-slide-paralax-bg .bg-image, .cs-slide-paralax-bg .bg-video, .video-bg video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    -webkit-transition-position: fixed;
+    position: fixed;
+}
+
+.icon-bar {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 20px;
+}
+.icon-bar a:hover {
+    background: #222;
+}
+.icon-bar .facebook {
+    background: #3b5998;
+}
+.icon-bar .twitter {
+    background: #55acee;
+}
+.icon-bar .google {
+    background: #bb0000;
+}
+.icon-bar .linkedin {
+    background: #007bb5;
+}
+.icon-bar .youtube {
+    background: #bb0000;
+}
+
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    align-items: flex-end;
+    display: flex
+;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: visible !important;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+.nav-bot {
+    background-color: var(--color-secondary);
+}
+
+.top-nav {
+    background-color: var(--color-primary);
+    color: var(--color-text-secondary);
+}
+
+.top-nav-sup {
+    background-color: var(--color-secondary);
+}
+
+.top-nav-sup-link {
+    position: relative;
+}
+
+.top-nav-sup-link:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.top-nav-sup-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px; /* Толщина линии */
+    background-color: #fff; /* Цвет линии */
+    transition: width 0.3s ease; /* Анимация ширины */
+}
+
+.top-nav-sup-link:hover::after {
+    width: 100%; /* Линия растягивается до полного размера */
+}
