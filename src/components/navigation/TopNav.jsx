@@ -21,18 +21,11 @@ const TopNav = () => {
                 }}
             >
                 <motion.img
-                    src='/Group.svg'
-                    className="my-auto z-0"
+                    src='/svg.svg'
+                    className="my-auto h-[300px] z-0"
                     initial={{ opacity: 0 }} // Start with no visibility
                     animate={{ opacity: 1 }} // Fade in
                     transition={{ duration: 1 }}
-                />
-                <motion.img
-                    src='/Group.svg'
-                    className="my-auto z-0"
-                    initial={{ opacity: 0 }} // Start with no visibility
-                    animate={{ opacity: 1 }} // Fade in
-                    transition={{ duration: 1, delay: 0.5 }} // Delay for the second image
                 />
             </motion.div>
 

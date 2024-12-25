@@ -8,14 +8,13 @@ const Vision = () => {
     const navigate = useNavigate();
 
     const navItems = [
-        { label: "Vision", path: "/about/aiu/vision" },
-        { label: "Mission", path: "/about/aiu/mission" },
-        { label: "History", path: "/about/aiu/history" },
-        { label: "Registrar", path: "/about/aiu/registrar" },
-        { label: "Administration", path: "/about/aiu/administration" },
-        { label: "International Relations Office", path: "/about/aiu/international-relations" },
+        {label: "Vision", path: "/about/aiu/vision"},
+        {label: "Mission", path: "/about/aiu/mission"},
+        {label: "History", path: "/about/aiu/history"},
+        {label: "Registrar", path: "/about/aiu/registrar"},
+        {label: "Administration", path: "/about/aiu/administration"},
+        {label: "International Relations Office", path: "/about/aiu/international-relations"},
     ];
-
 
     return (
         <div>
@@ -23,7 +22,7 @@ const Vision = () => {
                 <img className="bg-image" src="/headerbg3.svg" alt=""/>
                 <div className="heading-content">
                     <div className="container mx-auto px-5 title">
-                        <h1>AIU Vision</h1>
+                        <h1>Ensuring Excellence in Medical Education</h1>
                     </div>
                     <div className="breadcrumb">
                         <div className="container mx-auto">
@@ -54,12 +53,17 @@ const Vision = () => {
                 </div>
             </section>
             <div className="container flex gap-5 mb-10 mx-auto">
-                <p className="text-gray-800 h-40 centerCards overflow-hidden relative font-medium">Our university
-                    aspires to lead in education within
-                    Uzbekistan and beyond, offering quality, transparent, and corruption-free education. We aim for
-                    internationalization and scientific advancement, creating opportunities for global collaboration and
-                    initiating our own research projects.
-                    <FaRegEye size="200" className="opacity-10 absolute right-10 top-5"/>
+                <p className="text-gray-800 min-h-40 centerCards max-w-4xl overflow-hidden relative font-medium">Our vision, "Ensuring
+                    Excellence in Medical Education," is to be a premier institution recognized for our unwavering
+                    commitment to nurturing the next generation of healthcare professionals. We aspire to provide a
+                    transformative learning environment that fosters academic rigor, critical thinking, and ethical
+                    practice, empowering students to excel in their medical careers. By integrating innovative teaching
+                    methods, cutting-edge research, and hands-on clinical experience, we envision equipping our
+                    graduates with the knowledge, skills, and compassion necessary to make a positive impact in the
+                    healthcare field and improve the well-being of communities worldwide. Our goal is to set new
+                    standards of excellence in medical education and contribute significantly to the advancement of
+                    healthcare globally.
+                    <FaRegEye size="200" className="opacity-10 absolute right-10 bottom-0"/>
                 </p>
                 <aside className="w-1/2 overflow-hidden">
                     <ul className="sideNav">

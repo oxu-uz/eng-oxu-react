@@ -63,6 +63,12 @@
     --color-border-dark: #343a40;
 }
 
+.title-text {
+    color: var(--color-primary);
+}
+
+
+
 .tg-bg {
     background-image: url('./assets/hrbg.svg');
     background-repeat: no-repeat;
@@ -151,7 +157,7 @@
      border-radius: 4px;
      box-sizing: border-box;
      color: #44494f;
-     font-size: 16px;
+     font-size: 17px;
      font-weight: 500;
      line-height: 128%;
      min-height: 96px;

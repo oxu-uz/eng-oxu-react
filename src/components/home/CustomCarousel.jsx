@@ -65,21 +65,21 @@ const CustomCarousel = () => {
                                     left: 0,
                                     right: 0,
                                     height: '220px', // Высота градиента меньше половины
-                                    background: 'linear-gradient(to top, #012C6E, rgba(4, 36, 123, 0.2), rgba(4, 36, 123, 0))',
+                                    background: 'linear-gradient(to top, #012C6E, rgba(4, 36, 123, 0.4), rgba(4, 36, 123, 0))',
                                     zIndex: 1,
                                     transition: 'all 0.3s ease', // Плавный переход для анимаций
                                 }}
                             ></div>
                             {/* Текст */}
                             <h3
+                                className="text-base pb-5 font-semibold text-left px-5"
                                 style={{
                                     color: '#fff',
-                                    textShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)',
                                     position: 'relative',
                                     zIndex: 2, // Текст поверх градиента
                                 }}
                             >
-                                Card {index + 1}
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales in turpis eget volutpat
                             </h3>
                         </motion.div>
                     </SwiperSlide>

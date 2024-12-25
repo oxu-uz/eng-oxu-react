@@ -30,10 +30,10 @@ const InternationalRelations = () => {
                                     <a className="nav-link" href="/en">Home<ChevronRight size="16"/></a>
                                 </li>
                                 <li>
-                                                                    <span className="nav-link">
+                                <span className="nav-link">
                                 About
-                                                                                   <ChevronRight size="16"/>
-                                                                    </span>
+                                <ChevronRight size="16"/>
+                                </span>
                                 </li>
                                 <li>
                                     <a className="nav-link" href="/about/aiu/administration">
@@ -84,8 +84,9 @@ const InternationalRelations = () => {
                         </div>
                     </div>
 
-                    <h1 className="uppercase text-2xl mb-3 font-black text-white px-3 py-4 bg-[#012C6E] relative overflow-hidden">Meet out team
-                    <img src="/logo1.svg" className="opacity-20 h-52 absolute right-0 top-[-125%] rotate-[45deg]" />
+                    <h1 className="uppercase text-2xl mb-3 font-black text-white px-3 py-4 bg-[#012C6E] relative overflow-hidden">Meet
+                        out team
+                        <img src="/logo1.svg" className="opacity-20 h-52 absolute right-0 top-[-125%] rotate-[45deg]"/>
                     </h1>
 
                     <div className="flex mb-5 w-full gap-10">
@@ -135,7 +136,8 @@ const InternationalRelations = () => {
                                     <a className="text-blue-600 pl-3 font-medium">+1 755-287-4832</a>
                                 </div>
                                 <div className="flex flex-col mt-4 gap-y-3">
-                                    <p className="text-gray-500  max-w-3xl">Dr. Mutti-Ur Rehman was a visiting associate
+                                    <p className="text-gray-500  max-w-3xl">
+                                        Dr. Mutti-Ur Rehman was a visiting associate
                                         professor of mathematics at the Department of Mathematics and Statistics,
                                         University of Nevada, Reno-USA during the period 2023-2024. Dr. Mutti-Ur Rehman
                                         has broad research interests in the area of Numerical Analysis. Some areas of
@@ -145,7 +147,8 @@ const InternationalRelations = () => {
                                         to his Ph.D. thesis is the "Development of a novel iterative method to
                                         approximate the Structured Singular Values". He is a member of SIAM, Society for
                                         Industrial and Applied Mathematics; AMS, American Mathematical Society, and IMA,
-                                        Institute of Mathematics and Applications.</p>
+                                        Institute of Mathematics and Applications.
+                                    </p>
                                 </div>
                             </div>
                         </div>

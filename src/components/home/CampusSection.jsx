@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import CampusCard from './CampusCard';
+import {useInView, motion} from "framer-motion";
 
 const campusData = [
     {
@@ -27,28 +28,73 @@ const campusData = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales in turpis eget volutpat.',
     },    {
         id: 5,
-        name: 'AIU 4th Campus',
-        image: 'https://cdn.builder.io/api/v1/image/assets/0e60d26ffe404316aa35b6241738714a/196d4d1016c534194eaa3cf33fa7c73a228c5a10afc726813ba0765ef939b825?apiKey=0e60d26ffe404316aa35b6241738714a&',
+        name: 'AIU 5th Campus',
+        image: '/DSC_0307.JPG',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales in turpis eget volutpat.',
     },
 ];
 
 function CampusSection() {
+    const ref3 = useRef(null);
+
+    const isInView3 = useInView(ref3, { once: false });
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.2, // Задержка появления для каждой карточки
+                duration: 0.5,
+                ease: "easeOut",
+            },
+        }),
+    };
+
+    const textVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: "easeOut" },
+        },
+    };
+
     return (
         <section className="px-16 py-16 bg-white max-md:px-5">
             <div className="flex gap-5 max-md:flex-col">
                 <div className="flex flex-col w-[100%] max-md:ml-0 max-md:w-full">
                     <div className="flex flex-col items-start w-full max-md:mt-10 max-md:max-w-full">
-                        <h2 className="text-5xl font-extrabold leading-tight text-[#04247B] max-md:max-w-full max-md:text-4xl">
+                        <motion.h2
+                            variants={textVariants}
+                            initial="hidden"
+                            animate={isInView3 ? "visible" : "hidden"}
+                            className="text-5xl font-extrabold leading-tight text-[#04247B] max-md:max-w-full max-md:text-4xl"
+                        >
                             Different Campuses-One University
-                        </h2>
-                        <p className="mt-8 text-lg leading-loose text-zinc-800 max-md:max-w-full">
-                            Explore our locations in Bukhara. Our campuses are united with features that encourage AIU lifestyle.
-                        </p>
-                        <div className="self-stretch mt-16 max-md:mt-10 w-full">
-                            <div className="flex  gap-5">
-                                {campusData.slice(0, 5).map((campus) => (
-                                    <CampusCard key={campus.id} {...campus} />
+                        </motion.h2>
+                        <motion.p
+                            variants={textVariants}
+                            initial="hidden"
+                            animate={isInView3 ? "visible" : "hidden"}
+                            className="mt-8 text-lg leading-loose text-zinc-800 max-md:max-w-full"
+                        >
+                            Explore our locations in Bukhara. Our campuses are united with features that encourage AIU
+                            lifestyle.
+                        </motion.p>
+                        <div ref={ref3} className="self-stretch mt-16 max-md:mt-10 w-full">
+                            <div className="grid grid-cols-5  gap-5">
+                                {campusData.slice(0, 5).map((campus, index) => (
+                                    <motion.div
+                                        key={campus.id}
+                                        custom={index}
+                                        variants={cardVariants}
+                                        initial="hidden"
+                                        animate={isInView3 ? "visible" : "hidden"}
+                                    >
+                                        <CampusCard {...campus} />
+                                    </motion.div>
                                 ))}
                             </div>
                         </div>

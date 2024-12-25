@@ -9,12 +9,12 @@ const Mission = () => {
     const navigate = useNavigate();
 
     const navItems = [
-        { label: "Vision", path: "/about/aiu/vision" },
-        { label: "Mission", path: "/about/aiu/mission" },
-        { label: "History", path: "/about/aiu/history" },
-        { label: "Registrar", path: "/about/aiu/registrar" },
-        { label: "Administration", path: "/about/aiu/administration" },
-        { label: "International Relations Office", path: "/about/aiu/international-relations" },
+        {label: "Vision", path: "/about/aiu/vision"},
+        {label: "Mission", path: "/about/aiu/mission"},
+        {label: "History", path: "/about/aiu/history"},
+        {label: "Registrar", path: "/about/aiu/registrar"},
+        {label: "Administration", path: "/about/aiu/administration"},
+        {label: "International Relations Office", path: "/about/aiu/international-relations"},
     ];
 
 
@@ -55,9 +55,12 @@ const Mission = () => {
                 </div>
             </section>
             <div className="container flex gap-5 mb-10 mx-auto">
-                <p className="text-gray-800 max-w-[1000px] h-40 centerCards overflow-hidden relative font-medium">
-                    Our goal is to provide contemporary education facilities which responds the highest standards. The university's academic curriculum aligns with both national and international benchmarks, offering opportunities to realize your talents and passions. Our faculty is committed to sharing their expertise and knowledge with you. Asia International University, in addition to offering excellent education, ensures your development into a seasoned professional in your field. Our primary aim is to cultivate highly skilled professionals.
-                    <FiTarget  size="200" className="opacity-10 absolute right-10 top-5"/>
+                <p className="text-gray-800 max-w-4xl min-h-40 centerCards overflow-hidden relative font-medium">
+                    Our mission is to provide exceptional medical education that equips students with the knowledge,
+                    skills, and compassion needed to excel in healthcare. We are committed to fostering an inclusive
+                    learning environment that emphasizes academic excellence, hands-on training, and community
+                    engagement, preparing our graduates to make a positive impact on global health and wellbeing.
+                    <FiTarget size="200" className="opacity-10 absolute right-10 bottom-0"/>
                 </p>
                 <aside className="w-1/2 overflow-hidden">
                     <ul className="sideNav">

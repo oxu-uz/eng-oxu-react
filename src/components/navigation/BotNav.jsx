@@ -5,82 +5,98 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 const BotNav = () => {
     const navItems = [
         { label: "Home", link: "/" },
+        // {
+        //     label: "About",
+        //     link: "/about",
+        //     dropdown: [
+        //         { label: "Vision", link: "/about/aiu/vision" },
+        //         { label: "Mission", link: "/about/aiu/mission" },
+        //         { label: "Message from the Rector ", link: "/about/leadership" },
+        //         { label: "History", link: "/about/aiu/history" },
+        //         { label: "Registrar", link: "/about/aiu/registrar" },
+        //         { label: "Administration", link: "/about/aiu/administration" },
+        //         { label: "International Relations Office", link: "/about/aiu/international-relations" },
+        //
+        //     ],
+        // },
+
         {
             label: "About",
             link: "/about",
             dropdown: [
-                { label: "Leadership", link: "/about/leadership" },
-                {
-                    label: "AIU",
-                    link: "/about/aiu",
-                    submenu: [
-                        { label: "Vision", link: "/about/aiu/vision" },
-                        { label: "Mission", link: "/about/aiu/mission" },
-                        { label: "History", link: "/about/aiu/history" },
-                        { label: "Registrar", link: "/about/aiu/registrar" },
-                        { label: "Administration", link: "/about/aiu/administration" },
-                        { label: "International Relations Office", link: "/about/aiu/international-relations" },
-                    ],
-                },
+                { label: "Vision", link: "/about/aiu/vision" },
+                { label: "Mission", link: "/about/aiu/mission" },
+                { label: "Message from the Rector", link: "/about/leadership" },
+                { label: "Structure of the university", link: "/about/aiu/university-structure" },
+                { label: "Structure of the faculty", link: "/about/aiu/faculty-structure" },
+                { label: "Regulatory Documents", link: "/about/aiu/regulatory-documents" },
+                { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
             ],
         },
         {
-            label: "Admissions",
+            label: "Academics ",
             link: "/admissions",
             dropdown: [
+                { label: "Academic Calendar", link: "/about/aiu/academic-calendar" },
+                { label: "Study Plan/ Curriculum", link: "/about/aiu/study-plan" },
                 {
-                    label: "Find Program",
+                    label: "Departments",
                     submenu: [
-                        { label: "MD", link: "/admissions/md" },
-                        { label: "MBBS", link: "/admissions/mbbs" },
+                        { label: "Department of General Science", link: "/about/departments/general-science" },
+                        { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
+                        { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
+                        { label: "Hospitals Affiliated", link: "/about/departments/hospitals-affiliated" },
                     ],
-                },
-                { label: "Scholarship", link: "/admissions/scholarship" },
-                { label: "Tuition and costs", link: "/admissions/tuition-and-costs" },
+                }
             ],
         },
+        { label: "International relations", link: "/international-relations" },
         {
-            label: "Academics",
-            link: "/academics",
-            dropdown: [
-                { label: "Programs", link: "/academics/programs" },
-                { label: "Departments", link: "/academics/departments" },
-                { label: "Faculty", link: "/academics/faculty" },
-            ],
-        },
-        {
-            label: "Schools",
+            label: "Student Life in AIU",
             link: "/schools",
             dropdown: [
-                { label: "School of Business", link: "/schools/business" },
-                { label: "School of Engineering", link: "/schools/engineering" },
-                { label: "School of Arts", link: "/schools/arts" },
+                {
+                    label: "Councils",
+                    submenu: [
+                        { label: "Council of the Academic Activities", link: "/about/councils/academic-activities" },
+                        { label: "Council for the Scientific Activities", link: "/about/councils/scientific-activities" },
+                        { label: "Council for Sport", link: "/about/councils/sport" },
+                        { label: "Council for Cultural Activities", link: "/about/councils/cultural-activities" },
+                        { label: "Council for IT/ Media", link: "/about/councils/it-media" },
+                    ],
+                },
             ],
         },
         {
-            label: "OXU Experience",
+            label: "About Uzbekistan",
             link: "/experience",
             dropdown: [
-                { label: "Campus Life", link: "/experience/campus" },
-                { label: "Clubs", link: "/experience/clubs" },
-                { label: "Events", link: "/experience/events" },
+                { label: "Life in Bukhara ", link: "/experience/campus" }
             ],
         },
-        { label: "OXU Society", link: "/society" },
-        {
-            label: "Research",
-            link: "/research",
+        { label: "Admission", link: "/society",
             dropdown: [
-                { label: "Publications", link: "/research/publications" },
-                { label: "Projects", link: "/research/projects" },
-                { label: "Labs", link: "/research/labs" },
-            ],
-        },
+                {
+                    label: "Find program ",
+                    submenu: [
+                        { label: "MD", link: "/md" },
+                        { label: "MBBS", link: "/mbbs" }
+                    ],
+                },
+                { label: "Scholarship ", link: "/research/publications" },
+                { label: "Tuition and Cost ", link: "/research/projects" },
+                { label: "For partners / For applicants", link: "/research/labs", submenu: [
+                        { label: "Login", link: "/md" },
+                    ]  },
+            ] },
+        { label: "Gallery ", link: "/international-relations" },
+        { label: "Alumni ", link: "/international-relations" },
+        { label: "Contact ", link: "/international-relations" },
     ];
 
     return (
         <nav className="nav-bot sticky z-30 top-0 h-[65px]">
-            <div className="max-w-7xl mx-auto flex h-full justify-center ">
+            <div className=" mx-auto flex h-full justify-center ">
                 <div className="flex ">
                     {navItems.map((item, index) => (
                         <div key={index} className="group flex relative">
