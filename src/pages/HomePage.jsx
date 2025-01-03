@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useTransition, useRef} from 'react';
+import React, {useState, useEffect, useTransition, useRef, lazy, Suspense} from 'react';
 import CampusSection from "../components/home/CampusSection.jsx";
 import CountUp from 'react-countup';
 import NewsAndEvents from "../components/home/NewsAndEvents.jsx";
-import CustomCarousel from "../components/home/CustomCarousel.jsx";
+const CustomCarousel = lazy(() => import("../components/home/CustomCarousel.jsx"));
 import {motion, useAnimation, useInView} from "framer-motion";
 
 
@@ -145,7 +145,9 @@ const HomePage = () => {
                             damping: 20,
                         }}
                     >
-                        {isPending ? <p>Loading carousel...</p> : <CustomCarousel/>}
+                        <Suspense fallback={<div>Loading...</div>}>
+                            {isPending ? <p>Loading carousel...</p> : <CustomCarousel />}
+                        </Suspense>
                     </motion.div>
                 </div>
             </section>

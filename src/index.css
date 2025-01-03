@@ -127,6 +127,157 @@
     transition: all .3s;
 }
 
+.statistics {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 30px;
+}
+
+.statistics .numbers {
+    align-items: center;
+    background: hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+    max-height: 200px;
+    font-size: 18px;
+    padding: 35px;
+    text-align: center;
+}
+
+.statistics .inner p {
+    color: #fff;
+    font-size: 1.475rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 31px;
+    padding-top: 24px;
+}
+
+.numbers__title {
+    color: hsla(0, 0%, 100%, .5);
+    font-size: 1.275rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.toolbar-wrapper {
+    padding: 0px 24px;
+    color: #fff;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+}
+
+.toolbar-wrapper .anticon {
+    padding: 12px;
+    cursor: pointer;
+}
+
+.toolbar-wrapper .anticon[disabled] {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+.toolbar-wrapper .anticon:hover {
+    opacity: 0.3;
+}
+
+
+
+.content__inner > *, .builder_content > *, .posts--builder .post-title, .grid .header-caption, .grid .teasers, .grid .head-news, .builder-section--fullwidth .builder-section__title, .header-board--promo {
+    padding-left: 22%;
+    padding-right: 22%;
+}
+
+.builder-section h2:first-child, .promo-section h2:first-child {
+    margin-top: 2em;
+}
+.builder-section__title:first-child, .builder-section h2:first-child, .promo-section__title:first-child, .promo-section h2:first-child {
+    margin: 0 0 .5em;
+}
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+    padding-top: 0;
+    margin-top: 0;
+}
+@media screen and (min-width: 768px) {
+    .builder-section__title {
+        font-size: 250%;
+    }
+}
+.mceDataFile {
+    position: relative; /* Убедитесь, что родитель имеет относительное позиционирование */
+    display: inline-block;
+    font-size: 18px;
+    color: #ffffff; /* Цвет текста */
+    padding-left: 30px; /* Пространство для иконки */
+}
+
+.mceDataFile:before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Выравнивание по вертикали */
+    left: 0; /* Слева от текста */
+    transform: translateY(-50%); /* Центровка по вертикали */
+    background-image: url('assets/sprite.png');
+    background-position: -9px -236px;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 18px;
+}
+
+.mceDataFile2 {
+    position: relative; /* Убедитесь, что родитель имеет относительное позиционирование */
+    display: inline-block;
+    font-size: 18px;
+    color: var(--color-primary-dark); /* Цвет текста */
+    padding-left: 30px; /* Пространство для иконки */
+}
+
+.card-plan:before {
+    content: "";
+    background-image: url(assets/bggg.svg) !important;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 170px;
+    height: 50%;
+}
+
+.mceDataFile2:before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Выравнивание по вертикали */
+    left: 0; /* Слева от текста */
+    transform: translateY(-50%); /* Центровка по вертикали */
+    background-image: url('assets/sprite.png');
+    background-position: -9px -166px;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 18px;
+}
+
+
+h2.builder-section__title::after {
+    left: 0;
+    top: -0.6em;
+}
+h2.builder-section__title::after, .decorate::after {
+    content: "";
+    width: 5vw;
+    min-width: 2em;
+    height: 5px;
+    background: #fff;
+    position: absolute;
+}
+
 .univ {
     background: #00316b;
     border-top-left-radius: 4px;
@@ -177,6 +328,15 @@
     padding: 12px 0 12px 20px;
     text-transform: none;
     transition: all .3s;
+}
+
+.title {
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 0;
 }
 
 .header-text {
@@ -297,11 +457,11 @@ body {
     bottom: 0;
     left: 0;
     width: 0;
-    height: 1.5px; /* Толщина линии */
-    background-color: #fff; /* Цвет линии */
-    transition: width 0.3s ease; /* Анимация ширины */
+    height: 1.5px;
+    background-color: #fff;
+    transition: width 0.3s ease;
 }
 
 .top-nav-sup-link:hover::after {
-    width: 100%; /* Линия растягивается до полного размера */
+    width: 100%;
 }

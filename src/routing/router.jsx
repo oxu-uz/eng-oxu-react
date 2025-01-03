@@ -11,6 +11,8 @@ import Administration from "../pages/about/aiu/Administration.jsx";
 import InternationalRelations from "../pages/about/aiu/InternationalRelations.jsx";
 import Md from "../pages/admissions/programs/Md.jsx";
 import Mbbs from "../pages/admissions/programs/Mbbs.jsx";
+    import AcademicCalendar from "../pages/academics/AcademicCalendar.jsx";
+    import StudyPlan from "../pages/academics/StudyPlan.jsx";
 
 
 const router = createBrowserRouter([
@@ -47,9 +49,19 @@ const router = createBrowserRouter([
             },{
                 path: '/admissions/md',
                 element: <Md />
-            },{
+            }
+            ,{
                 path: '/admissions/mbbs',
                 element: <Mbbs />
+            },
+            {
+                path: '/academics/academic-calendar',
+                element: <AcademicCalendar />
+            },
+
+            {
+                path: '/academics/study-plan',
+                element: <StudyPlan />
             },
         ]
     },

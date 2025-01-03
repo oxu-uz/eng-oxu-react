@@ -37,8 +37,8 @@ const BotNav = () => {
             label: "Academics ",
             link: "/admissions",
             dropdown: [
-                { label: "Academic Calendar", link: "/about/aiu/academic-calendar" },
-                { label: "Study Plan/ Curriculum", link: "/about/aiu/study-plan" },
+                { label: "Academic Calendar", link: "/academics/academic-calendar" },
+                { label: "Study Plan/ Curriculum", link: "/academics/study-plan" },
                 {
                     label: "Departments",
                     submenu: [
@@ -108,7 +108,7 @@ const BotNav = () => {
                                             {item.label} <ChevronDown size="20"/>
                                         </div>
                                     </MenuHandler>
-                                    <MenuList className="absolute left-0 mt-2 overflow-hidden min-w-64 rounded-md">
+                                    <MenuList className="absolute left-0 mt-2 overflow-hidden min-w-80 rounded-md">
                                         {item.dropdown.map((dropdownItem, i) => (
                                             <div key={i} className="relative group outline-none right-0  hover:outline-none">
                                                 {dropdownItem.submenu ? (
@@ -121,19 +121,25 @@ const BotNav = () => {
                                                             </MenuItem>
                                                         </MenuHandler>
                                                         <MenuList
-                                                            className="absolute left-full top-0 mt-[-8px] overflow-hidden w-64 rounded-md">
+                                                            className="absolute left-full top-0 mt-[-8px] overflow-hidden min-w-80 rounded-md">
                                                             {dropdownItem.submenu.map((submenuItem, j) => (
-                                                                <MenuItem key={j} className="hover:bg-gray-50 link">
-                                                                    <a href={submenuItem.link}>{submenuItem.label}</a>
+                                                                <a href={submenuItem.link}>
+                                                                    <MenuItem key={j} className="hover:bg-gray-50 link">
+                                                                        {submenuItem.label}
                                                                 </MenuItem>
+                                                                </a>
                                                             ))}
                                                         </MenuList>
                                                     </Menu>
                                                 ) : (
-                                                    <MenuItem className="hover:bg-gray-50 link outline-none ring-0 hover:outline-2 hover:ring-0">
-                                                        <a className="outline-none ring-0 hover:outline-2 hover:ring-0" href={dropdownItem.link}>{dropdownItem.label}</a>
+                                                    <a className="outline-none ring-0 hover:outline-2 hover:ring-0"
+                                                       href={dropdownItem.link}>
+                                                        <MenuItem
+                                                            className="hover:bg-gray-50 link outline-none ring-0 hover:outline-2 hover:ring-0">
+                                                            {dropdownItem.label}
                                                     </MenuItem>
-                                                )}
+                                                    </a>
+                                                    )}
                                             </div>
                                         ))}
                                     </MenuList>

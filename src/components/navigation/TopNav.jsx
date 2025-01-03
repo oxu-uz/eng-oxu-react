@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const TopNav = () => {
     return (
-        <div className="top-nav px-14 h-[120px] relative flex justify-between">
+        <div className="top-nav px-14 overflow-hidden h-[120px] relative flex justify-between">
             <img src={logo} className="h-20 my-auto z-10" />
 
             {/* Animating images from bottom */}
