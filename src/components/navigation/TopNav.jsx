@@ -9,25 +9,25 @@ const TopNav = () => {
             <img src={logo} className="h-20 my-auto z-10" />
 
             {/* Animating images from bottom */}
-            <motion.div
-                className="absolute right-10 bottom-[-80px] top-0 flex"
-                initial={{ y: 100, opacity: 0 }} // Start from below with zero opacity
-                animate={{ y: 0, opacity: 1 }} // Move to original position with full opacity
-                transition={{
-                    type: "spring",
-                    stiffness: 50,
-                    damping: 25,
-                    delay: 0.3, // Delay for smooth entry
-                }}
-            >
-                <motion.img
-                    src='/svg.svg'
-                    className="my-auto h-[300px] z-0"
-                    initial={{ opacity: 0 }} // Start with no visibility
-                    animate={{ opacity: 1 }} // Fade in
-                    transition={{ duration: 1 }}
-                />
-            </motion.div>
+            {/*<motion.div*/}
+            {/*    className="absolute right-10 bottom-[-80px] top-0 flex"*/}
+            {/*    initial={{ y: 100, opacity: 0 }} // Start from below with zero opacity*/}
+            {/*    animate={{ y: 0, opacity: 1 }} // Move to original position with full opacity*/}
+            {/*    transition={{*/}
+            {/*        type: "spring",*/}
+            {/*        stiffness: 50,*/}
+            {/*        damping: 25,*/}
+            {/*        delay: 0.3, // Delay for smooth entry*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    <motion.img*/}
+            {/*        src='/svg.svg'*/}
+            {/*        className="my-auto h-[300px] z-0"*/}
+            {/*        initial={{ opacity: 0 }} // Start with no visibility*/}
+            {/*        animate={{ opacity: 1 }} // Fade in*/}
+            {/*        transition={{ duration: 1 }}*/}
+            {/*    />*/}
+            {/*</motion.div>*/}
 
             {/* Top Navigation Links */}
             <div className="top-nav-sup flex h-max z-10">

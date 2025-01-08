@@ -58,11 +58,11 @@ const BotNav = () => {
                 {
                     label: "Councils",
                     submenu: [
-                        { label: "Council of the Academic Activities", link: "/about/councils/academic-activities" },
-                        { label: "Council for the Scientific Activities", link: "/about/councils/scientific-activities" },
-                        { label: "Council for Sport", link: "/about/councils/sport" },
-                        { label: "Council for Cultural Activities", link: "/about/councils/cultural-activities" },
-                        { label: "Council for IT/ Media", link: "/about/councils/it-media" },
+                        { label: "Council of the Academic Activities", link: "/academic-council" },
+                        { label: "Council for the Scientific Activities", link: "/scientific-council" },
+                        { label: "Council for Sport", link: "/sports-council" },
+                        { label: "Council for Cultural Activities", link: "/cultural-council" },
+                        { label: "Council for IT/ Media", link: "/it-media-council" },
                     ],
                 },
             ],
@@ -71,7 +71,8 @@ const BotNav = () => {
             label: "About Uzbekistan",
             link: "/experience",
             dropdown: [
-                { label: "Life in Bukhara ", link: "/experience/campus" }
+                { label: "About Uzbekistan", link: "/about-uzbekistan" },
+                { label: "Life in Bukhara ", link: "/life-in-bukhara" }
             ],
         },
         { label: "Admission", link: "/society",
@@ -83,7 +84,7 @@ const BotNav = () => {
                         { label: "MBBS", link: "/mbbs" }
                     ],
                 },
-                { label: "Scholarship ", link: "/research/publications" },
+                { label: "Scholarship ", link: "/scholarships" },
                 { label: "Tuition and Cost ", link: "/research/projects" },
                 { label: "For partners / For applicants", link: "/research/labs", submenu: [
                         { label: "Login", link: "/md" },
@@ -116,15 +117,15 @@ const BotNav = () => {
                                                           placement="right-start">
                                                         <MenuHandler>
                                                             <MenuItem
-                                                                className="hover:bg-gray-50 link group flex justify-between items-center">
+                                                                className="hover:bg-blue-50 hover:text-blue-700 link group flex justify-between items-center">
                                                                 {dropdownItem.label} <ChevronRight className="transition-transform group-hover:-translate-x-1/2" size="16"/>
                                                             </MenuItem>
                                                         </MenuHandler>
                                                         <MenuList
                                                             className="absolute left-full top-0 mt-[-8px] overflow-hidden min-w-80 rounded-md">
                                                             {dropdownItem.submenu.map((submenuItem, j) => (
-                                                                <a href={submenuItem.link}>
-                                                                    <MenuItem key={j} className="hover:bg-gray-50 link">
+                                                                <a href={submenuItem.link} className="outline-none ring-0">
+                                                                    <MenuItem key={j} className="hover:bg-blue-50 hover:text-blue-700 link">
                                                                         {submenuItem.label}
                                                                 </MenuItem>
                                                                 </a>
@@ -135,7 +136,7 @@ const BotNav = () => {
                                                     <a className="outline-none ring-0 hover:outline-2 hover:ring-0"
                                                        href={dropdownItem.link}>
                                                         <MenuItem
-                                                            className="hover:bg-gray-50 link outline-none ring-0 hover:outline-2 hover:ring-0">
+                                                            className="hover:bg-blue-50 hover:text-blue-700 link outline-none ring-0 hover:outline-2 hover:ring-0">
                                                             {dropdownItem.label}
                                                     </MenuItem>
                                                     </a>

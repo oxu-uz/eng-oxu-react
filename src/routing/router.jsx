@@ -13,6 +13,15 @@ import Md from "../pages/admissions/programs/Md.jsx";
 import Mbbs from "../pages/admissions/programs/Mbbs.jsx";
     import AcademicCalendar from "../pages/academics/AcademicCalendar.jsx";
     import StudyPlan from "../pages/academics/StudyPlan.jsx";
+    import AboutUz from "../pages/about-uz/AboutUz.jsx";
+    import LifeInBukhara from "../pages/about-uz/LifeInBukhara.jsx";
+    import ScholarshipPage from "../pages/ScholarshipPage.jsx";
+    import StudentCouncilPage from "../pages/StudentCouncilPage.jsx";
+    import AcademicCouncilPage from "../pages/AcademicCouncilPage.jsx";
+    import ScientificCouncilPage from "../pages/ScientificCouncilPage.jsx";
+    import SportsCouncilPage from "../pages/SportsCouncilPage.jsx";
+    import CulturalCouncilPage from "../pages/CulturalCouncilPage.jsx";
+    import ITMediaCouncilPage from "../pages/ITMediaCouncilPage.jsx";
 
 
 const router = createBrowserRouter([
@@ -62,6 +71,33 @@ const router = createBrowserRouter([
             {
                 path: '/academics/study-plan',
                 element: <StudyPlan />
+            }, {
+                path: '/about-uzbekistan',
+                element: <AboutUz />
+            },{
+                path: '/life-in-bukhara',
+                element: <LifeInBukhara />
+            },{
+                path: '/scholarships',
+                element: <ScholarshipPage />
+            },{
+                path: '/students-council',
+                element: <StudentCouncilPage />
+            },{
+                path: '/academic-council',
+                element: <AcademicCouncilPage />
+            },{
+                path: '/scientific-council',
+                element: <ScientificCouncilPage />
+            },{
+                path: '/sports-council',
+                element: <SportsCouncilPage />
+            },{
+                path: '/cultural-council',
+                element: <CulturalCouncilPage />
+            },{
+                path: '/it-media-council',
+                element: <ITMediaCouncilPage />
             },
         ]
     },
