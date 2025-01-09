@@ -45,7 +45,7 @@ const HomePage = () => {
     }, [controls, inView]);
 
     const featureVariants = {
-        hidden: {opacity: 0, y: 50, scale: 0.9, rotateX: 15},
+        hidden: { opacity: 0, y: 50, scale: 0.9, rotateX: 15 },
         visible: {
             opacity: 1,
             y: 0,
@@ -54,7 +54,6 @@ const HomePage = () => {
             transition: {
                 duration: 0.8,
                 ease: 'easeInOut',
-                staggerChildren: 0.15,
             },
         },
     };
@@ -83,7 +82,6 @@ const HomePage = () => {
     return (
         <div className="bg-white">
             <section className="relative cs-slide-paralax-bg">
-                {/* Background video */}
                 <video
                     className="absolute inset-0 object-cover w-full h-full z-0"
                     preload="auto"
@@ -97,25 +95,23 @@ const HomePage = () => {
                     Ваш браузер не поддерживает видео.
                 </video>
 
-                <div className="relative flex h-[80vh] flex-col items-center justify-center  w-full z-20">
-                    {/* Animated logo */}
+                <div className="relative flex h-[80vh] flex-col items-center justify-center w-full z-20">
                     <motion.img
                         src="/logoo.svg"
                         alt="Logo"
-                        className="mx-auto h-[320px] mb-10"
+                        className="mx-auto h-[220px] mb-10"
                         initial={{x: 0, opacity: 1}}
-                        animate={isCarouselVisible ? {x: "-125%", y: "70%", opacity: 1} : {x: 0, y: 0, opacity: 1}}
+                        animate={{x: 0, y: 0, opacity: 1}} // Adjusted to make the logo stay centered
                         transition={{
                             duration: 0.8,
                             ease: "easeOut",
                         }}
                     />
 
-                    {/* Title and description with animation */}
                     <motion.div
-                        className=" text-center text-white max-w-7xl px-6 md:px-12 z-20"
+                        className="text-center text-white max-w-7xl px-6 md:px-12 z-20"
                         initial={{y: 150, opacity: 0}}
-                        animate={isCarouselVisible ? {y: -150, opacity: 0} : {
+                        animate={{
                             y: 0,
                             opacity: 1
                         }}
@@ -134,21 +130,6 @@ const HomePage = () => {
                             premier medical education designed to prepare students for the healthcare field.
                         </p>
                     </motion.div>
-
-                    <motion.div
-                        className="absolute z-30 right-10 bottom-10 max-w-7xl top-[40%] transition-opacity duration-700"
-                        initial={{y: 150, opacity: 0}}
-                        animate={isCarouselVisible ? {y: 0, opacity: 1} : {y: 150, opacity: 0}}
-                        transition={{
-                            type: "spring",
-                            stiffness: 100,
-                            damping: 20,
-                        }}
-                    >
-                        <Suspense fallback={<div>Loading...</div>}>
-                            {isPending ? <p>Loading carousel...</p> : <CustomCarousel />}
-                        </Suspense>
-                    </motion.div>
                 </div>
             </section>
 
@@ -166,7 +147,7 @@ const HomePage = () => {
                         >
                             Why Choose Us
                         </motion.h2>
-                        <img src="/123.svg" className="opacity-30 h-screen right-0 absolute z-0"/>
+                        <img src="/GGG.svg" className="opacity-50 h-screen top-0 right-0 absolute z-0"/>
                         <motion.ul
                             initial="hidden"
                             animate={inView ? "visible" : "hidden"}
@@ -178,7 +159,7 @@ const HomePage = () => {
                                     key={index}
                                     whileHover={hoverEffect}
                                     variants={featureVariants}
-                                    className="bg-blue-900/40 backdrop-blur-sm group overflow-hidden p-6 cursor-pointer relative rounded-lg border-2 border-[#01408e]/60"
+                                    className="bg-blue-900/40 group backdrop-blur-sm group overflow-hidden p-6 cursor-pointer relative rounded-lg border-2 border-[#01408e]/60"
                                 >
                                     {/* Border animation container */}
                                     <div
@@ -189,7 +170,7 @@ const HomePage = () => {
 
                                     {/* Content */}
                                     <div className="relative z-10 text-center">
-                                        <h3 className="text-lg uppercase font-black will-change-transform text-[#FCB735] mb-2 tracking-wide">
+                                        <h3 className="text-lg uppercase group-hover:glow-effect-group font-black will-change-transform text-[#fff] mb-2 tracking-wide glow-effect">
                                             {feature.split(':')[0]}
                                         </h3>
                                         <p className="text-white text-[15px] leading-relaxed will-change-transform">{feature.split(':')[1]}</p>
