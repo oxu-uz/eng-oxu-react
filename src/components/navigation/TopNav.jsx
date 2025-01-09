@@ -32,7 +32,7 @@ const TopNav = () => {
             <div className="main-panel__right mt-10">
                 <form
                     className="main-input is-desktop"
-                    action="https://www.hse.ru/search/index.html"
+                    // action="https://www.hse.ru/search/index.html"
                 >
                     <button className="main-input__button" title="Поиск">
                         <svg

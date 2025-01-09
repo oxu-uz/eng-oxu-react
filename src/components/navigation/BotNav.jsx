@@ -55,16 +55,11 @@ const BotNav = () => {
             label: "Student Life in AIU",
             link: "/schools",
             dropdown: [
-                {
-                    label: "Councils",
-                    submenu: [
-                        { label: "Council of the Academic Activities", link: "/academic-council" },
-                        { label: "Council for the Scientific Activities", link: "/scientific-council" },
-                        { label: "Council for Sport", link: "/sports-council" },
-                        { label: "Council for Cultural Activities", link: "/cultural-council" },
-                        { label: "Council for IT/ Media", link: "/it-media-council" },
-                    ],
-                },
+                { label: "Council of the Academic Activities", link: "/academic-council" },
+                { label: "Council for the Scientific Activities", link: "/scientific-council" },
+                { label: "Council for Sport", link: "/sports-council" },
+                { label: "Council for Cultural Activities", link: "/cultural-council" },
+                { label: "Council for IT/ Media", link: "/it-media-council" },
             ],
         },
         {

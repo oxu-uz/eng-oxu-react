@@ -4,6 +4,7 @@ import TopNav from "../components/navigation/TopNav.jsx";
 import BotNav from "../components/navigation/BotNav.jsx";
 import {Facebook, Instagram} from "lucide-react";
 import FooterStatic from "../components/footerStatic.jsx";
+import {PhoneIcon} from "@heroicons/react/24/solid/index.js";
 
 const Layout = () => {
     return (
@@ -27,7 +28,10 @@ const Layout = () => {
   <span>Bukhara</span>
 </span>
                 <div className="flex items-center  divide-x divide-[hsla(0,0%,100%,.15)] gap-5">
-                    <a href="mailto:info@oxu.uz" className="flex gap-2 text-white text-sm items-center">
+                    <a href="tel:55 305 00 09" className="flex text-white text-sm gap-2 items-center">
+                       <PhoneIcon className="w-5 h-5" />
+                        +998 55 305 00 09</a>
+                    <a href="mailto:info@oxu.uz" className="flex gap-2 pl-3 text-white text-sm items-center">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
                              height="20"
                              width="20" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +43,7 @@ const Layout = () => {
                         info@oxu.uz</a>
                     <div className="flex items-center  divide-x divide-[hsla(0,0%,100%,.15)] "><a data-v-4b8a97f0=""
                                                                                                   target="_blank"
-                                                                                                  href="https://www.facebook.com/tsueuzofficial"><i
+                                                                                                  href="https://www.facebook.com/people/Osiyo-Xalqaro-Universiteti/100088012691808/?sk=about"><i
                         data-v-4b8a97f0="">
                         <svg className="mx-1" data-v-4b8a97f0="" width="26" height="26" viewBox="0 0 32 32" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +51,7 @@ const Layout = () => {
                                   d="M19.554 8.8756H21.5015V5.4836C21.1655 5.43737 20.01 5.33337 18.6642 5.33337C15.8562 5.33337 13.9327 7.0996 13.9327 10.3458V13.3334H10.834V17.1254H13.9327V26.6667H17.7318V17.1263H20.7051L21.1771 13.3343H17.7309V10.7218C17.7318 9.62582 18.0269 8.8756 19.554 8.8756Z"
                                   fill="white"></path>
                         </svg>
-                    </i></a> <a data-v-4b8a97f0="" target="_blank" href="https://www.instagram.com/tsueuzofficial/"><i
+                    </i></a> <a data-v-4b8a97f0="" target="_blank" href="https://www.instagram.com/aiu_uzbekistan/"><i
                         data-v-4b8a97f0="">
                         <svg className="mx-1" data-v-4b8a97f0="" width="26" height="26" viewBox="0 0 32 32" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +65,7 @@ const Layout = () => {
                                   d="M21.6951 11.5859C22.4016 11.5859 22.9742 11.0133 22.9742 10.3068C22.9742 9.60039 22.4016 9.02771 21.6951 9.02771C20.9887 9.02771 20.416 9.60039 20.416 10.3068C20.416 11.0133 20.9887 11.5859 21.6951 11.5859Z"
                                   fill="white"></path>
                         </svg>
-                    </i></a> <a data-v-4b8a97f0="" target="_blank" href="https://t.me/tsueuzofficial"><i
+                    </i></a> <a data-v-4b8a97f0="" target="_blank" href="https://t.me/Asiainternationaluniversity_uz"><i
                         data-v-4b8a97f0="">
                         <svg className="mx-1" data-v-4b8a97f0="" width="26" height="26" viewBox="0 0 32 32" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +74,7 @@ const Layout = () => {
                                   fill="white"></path>
                         </svg>
                     </i></a> <a data-v-4b8a97f0="" target="_blank"
-                                href="https://www.youtube.com/channel/UC2bSIjsuYQbCWPGnUeiKOcQ" className="pl-1">
+                                href="https://www.youtube.com/@Osiyo.Xalqaro.Universiteti" className="pl-1">
                         <svg className="mx-1" data-v-4b8a97f0="" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path data-v-4b8a97f0=""
@@ -82,7 +86,9 @@ const Layout = () => {
             </nav>
             <TopNav/>
             <BotNav/>
-            <Outlet/>
+            <div className="relative">
+                <Outlet/>
+            </div>
             <FooterStatic/>
         </div>
     );
