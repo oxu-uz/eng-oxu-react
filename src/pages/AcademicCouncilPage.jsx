@@ -59,7 +59,7 @@ const AcademicCouncilPage = () => {
                             transition={{duration: 0.6}}
                         >
                             <div className=" mb-8">
-                                <h2 className="text-3xl font-black text-[#00316b]">Purpose of the Council</h2>
+                                <h2 className="text-3xl font-bold text-[#00316b]">Purpose of the Council</h2>
                                 <p className="text-lg text-gray-600 mt-4">
                                     The purpose of an Academic Co-Curricular Committee in conducting activities like
                                     quizzes,
@@ -91,7 +91,7 @@ const AcademicCouncilPage = () => {
                             transition={{duration: 0.6}}
                         >
                             <div className=" mb-8">
-                                <h2 className="text-3xl font-black text-[#00316b]">Role and Responsibilities</h2>
+                                <h2 className="text-3xl font-bold text-[#00316b]">Role and Responsibilities</h2>
                                 <p className="text-lg text-gray-600 mt-4">
                                     The Academic Co-Curricular Committee plays a crucial role in organizing, promoting,
                                     and
@@ -131,7 +131,7 @@ const AcademicCouncilPage = () => {
                 <aside className="w-1/2 max-h-max sticky top-32 overflow-hidden">
                     <ul className="sideNav">
                         <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
-    <span className="uppercase p-1 px-2 text-lg font-black flex items-center gap-3 z-10">
+    <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">
         STUDENT LIFE IN AIU
         <img
             className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
@@ -139,7 +139,7 @@ const AcademicCouncilPage = () => {
             alt="Arrow"
         />
     </span>
-                            <span className="text-7xl absolute font-black opacity-10">AIU</span>
+                            <span className="text-7xl absolute font-bold opacity-10">AIU</span>
                             <img
                                 src="/Vector.svg"
                                 className="absolute opacity-10 h-20 right-0 bottom-0"

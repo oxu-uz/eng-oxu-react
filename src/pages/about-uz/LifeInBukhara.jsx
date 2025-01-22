@@ -60,7 +60,7 @@ const LifeInBukhara = () => {
                      transition={{duration: 0.6}}
                  >
                      <div className="text-center mb-8">
-                         <h2 className="text-3xl font-black text-[#00316b]">Discover the Vibrant Life in Bukhara</h2>
+                         <h2 className="text-3xl font-bold text-[#00316b]">Discover the Vibrant Life in Bukhara</h2>
                      </div>
 
                      <div className="grid md:grid-cols-2 gap-8">
@@ -258,7 +258,7 @@ const LifeInBukhara = () => {
              <aside className="w-1/2 max-h-max sticky top-32 overflow-hidden">
                  <ul className="sideNav">
                      <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
-    <span className="uppercase p-1 px-2 text-lg font-black flex items-center gap-3 z-10">
+    <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">
         life in uzbekistan
         <img
             className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
@@ -266,7 +266,7 @@ const LifeInBukhara = () => {
             alt="Arrow"
         />
     </span>
-                         <span className="text-7xl absolute font-black opacity-10">AIU</span>
+                         <span className="text-7xl absolute font-bold opacity-10">AIU</span>
                          <img
                              src="/Vector.svg"
                              className="absolute opacity-10 h-20 right-0 bottom-0"

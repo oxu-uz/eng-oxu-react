@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,8 +11,12 @@
 }
 
 
+* {
+    font-family: 'Inter', sans-serif;
+}
+
 .nav-link {
-    font-family: 'TT Norms Pro', sans-serif;
+    font-family: "Outfit", serif;
     font-size: .9rem;
     font-style: normal;
     font-weight: 500;
@@ -67,6 +72,123 @@
     color: var(--color-primary);
 }
 
+.main-metro {
+    grid-gap: 32px;
+    grid-auto-rows: minmax(184px, auto);
+    padding: 0;
+    list-style: NONE;
+}
+.main-metro, .main-metro-card {
+    margin: 0;
+    display: grid
+;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.main-metro-card {
+    color: #fff;
+    background: 50% 100% / cover no-repeat #012c6e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.main-metro-card_2h {
+    grid-row: 1 / 3;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 32px 0;
+}
+
+.main-metro-card_2h .main-metro-card__content {
+    grid-column: 1;
+    grid-row: 3;
+}
+.main-metro-card__content {
+    position: relative;
+    background: #00316b;
+    color: #fff;
+    border-radius: 8px;
+    padding: 24px !important;
+}
+
+.main-metro-card__content:last-child:before {
+    border-left: none;
+    border-right: 12px solid #00316b;
+    left: auto;
+    right: 100%;
+}
+.main-metro-card__content:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 100%;
+    top: 24px;
+    border-left: 12px solid #00316b;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+.main-metro-card__title {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 0 0 14px;
+    padding: 0;
+}
+
+
+.main-metro-card__svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.align-middle, .main-metro-card__svg {
+    vertical-align: middle;
+}
+
+    @media screen and (max-width: 767px) {
+    .main-metro {
+        grid-template-columns:1fr
+    }
+
+    .footer {
+        position: initial !important;
+        width: 100%
+    }
+
+    .list-menu__footer > li {
+        display: none;
+        color: #000;
+        max-width: 100%;
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        width: 100%;
+        padding: 0;
+        margin-right: 0
+    }
+
+    .inside-bottom__footer {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: none
+    }
+
+    .list-bottom__footer {
+        color: #000;
+        margin: 0 -9px
+    }
+
+    .list-bottom__footer li {
+        padding: 0 9px;
+        font-size: 12px
+    }
+
+    .copyright {
+        font-size: 12px
+    }
+}
+
 
 
 .tg-bg {
@@ -99,6 +221,8 @@
     padding: 4px 10px;
     transition: all .3s;
 }
+
+
 
 .cs-slide-paralax-bg {
     position: relative;
@@ -291,7 +415,7 @@ h2.builder-section__title::after, .decorate::after {
 }
 
 .sideNav-active, .sideNav-links:hover {
-    background: #00316b;
+    background: #002965;
     color: #fff;
 }
 
@@ -393,6 +517,43 @@ h2.builder-section__title::after, .decorate::after {
      transition: all .3s;
  }
 
+
+.header-section3::before {
+    z-index: -10;
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)) 0 0/cover, url('/DSC_0307 12.png') 0 0/cover;
+    background-position: center;
+}
+
+.header-section2::before {
+    z-index: -10;
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0)) 0 0/cover, url('/DSC_0307 1.png') 0 0/cover;
+    background-position: center;
+}
+.logos-slide {
+    width: 380px;
+    align-items: center;
+    display: flex
+}
+
+.partners-slider {
+    gap: 70px !important
+}
 
 .link {
     border-radius: 0px;
@@ -683,11 +844,16 @@ motion.div {
 
 
 .glow-effect {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
-    0 0 10px rgba(255, 255, 255, 0.6),
-    0 0 15px rgba(255, 255, 255, 0.4);
     transition: text-shadow 0.3s ease-in-out;
 }
+
+.group:hover .glow-effect {
+    text-shadow:
+            0 0 5px rgba(255, 255, 255, 0.2),
+            0 0 10px rgba(255, 255, 255, 0.4),
+            0 0 15px rgba(255, 255, 255, 0.3);
+}
+
 .glow-effect-group {
     text-shadow: 0 0 10px rgba(255, 255, 255, 1),
     0 0 20px rgba(255, 255, 255, 0.8),
@@ -700,7 +866,7 @@ motion.div {
 }
 
 .top-nav-sup-link:hover {
-    background-color: var(--color-secondary-dark);
+    background-color: #012152;
 }
 
 .top-nav-sup-link::after {

@@ -75,7 +75,7 @@ const History = () => {
                 <aside className="w-1/2 overflow-hidden">
                     <ul className="sideNav">
                         <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
-    <span className="uppercase p-1 px-2 text-lg font-black flex items-center gap-3 z-10">
+    <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">
         University
         <img
             className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
@@ -83,7 +83,7 @@ const History = () => {
             alt="Arrow"
         />
     </span>
-                            <span className="text-7xl absolute font-black opacity-10">AIU</span>
+                            <span className="text-7xl absolute font-bold opacity-10">AIU</span>
                             <img
                                 src="/Vector.svg"
                                 className="absolute opacity-10 h-20 right-0 bottom-0"

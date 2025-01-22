@@ -35,7 +35,7 @@ const Leadership = () => {
             </section>
             <div className="container mx-auto">
                 <div className="flex items-center gap-10">
-                    <img src="/rector.jpg" className="h-[300px]"/>
+                    <img src="/DSC_5234.JPG" className="h-[300px]"/>
                     <div>
                         <h6 className="text-[#012152]">Dexkanov Suxrob Sobirovich</h6>
                         <div className="line"></div>

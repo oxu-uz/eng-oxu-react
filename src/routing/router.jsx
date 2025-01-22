@@ -22,6 +22,14 @@ import Mbbs from "../pages/admissions/programs/Mbbs.jsx";
     import SportsCouncilPage from "../pages/SportsCouncilPage.jsx";
     import CulturalCouncilPage from "../pages/CulturalCouncilPage.jsx";
     import ITMediaCouncilPage from "../pages/ITMediaCouncilPage.jsx";
+    import DepartmentOfFundamentalMedicinePage from "../pages/departments/DepartmentOfFundamentalMedicinePage.jsx";
+    import ClinicalSciencesPage from "../pages/departments/ClinicalSciences.jsx";
+    import GeneralSciencesPage from "../pages/departments/GeneralSciencesPage.jsx";
+    import TuitionFeesPage from "../pages/admissions/TuitionsFeePage.jsx";
+    import FindProgramms from "../pages/FindProgramms.jsx";
+    import RegulatoryDocuments from "../pages/RegulatoryDocuments.jsx";
+    import Gallery from "../pages/Gallery.jsx";
+    import IntHome from "../pages/IntHome.jsx";
 
 
 const router = createBrowserRouter([
@@ -54,14 +62,21 @@ const router = createBrowserRouter([
                 element: <Administration />
             },{
                 path: '/about/aiu/international-relations',
-                element: <InternationalRelations />
+                element: <IntHome />
             },{
+                path: '/about/aiu/structure-of-university',
+                element: <InternationalRelations />
+            }
+            ,{
                 path: '/admissions/md',
                 element: <Md />
             }
             ,{
                 path: '/admissions/mbbs',
                 element: <Mbbs />
+            },,{
+                path: '/find-programs',
+                element: <FindProgramms />
             },
             {
                 path: '/academics/academic-calendar',
@@ -98,6 +113,24 @@ const router = createBrowserRouter([
             },{
                 path: '/it-media-council',
                 element: <ITMediaCouncilPage />
+            },{
+                path: '/about/departments/fundamental-medicine',
+                element: <DepartmentOfFundamentalMedicinePage />
+            },{
+                path: '/about/departments/clinical-science',
+                element: <ClinicalSciencesPage />
+            },{
+                path: '/about/departments/general-science',
+                element: <GeneralSciencesPage />
+            },{
+                path: '/tuition-fees',
+                element: <TuitionFeesPage />
+            },{
+                path: '/about/aiu/regulatory-documents',
+                element: <RegulatoryDocuments />
+            },{
+                path: '/gallery',
+                element: <Gallery />
             },
         ]
     },

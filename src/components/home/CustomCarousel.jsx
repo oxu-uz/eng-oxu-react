@@ -86,7 +86,7 @@ const CustomCarousel = () => {
                 ))}
             </Swiper>
             <div
-                className="flex gap-2 mt-5 text-lg font-black leading-none text-white whitespace-nowrap max-w-[97px] rounded-[90px]">
+                className="flex gap-2 mt-5 text-lg font-bold leading-none text-white whitespace-nowrap max-w-[97px] rounded-[90px]">
                 <div
                     className="flex items-center justify-center border-2 h-10 w-10 border-white border-solid rounded-full">
                    <ChevronLeft size="20" />

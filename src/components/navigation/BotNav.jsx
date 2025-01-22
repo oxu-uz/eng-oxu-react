@@ -3,6 +3,7 @@ import {Menu, MenuHandler, MenuList, MenuItem, Button} from "@material-tailwind/
 import { ChevronDown, ChevronRight } from "lucide-react";
 
 const BotNav = () => {
+    
     const navItems = [
         { label: "Home", link: "/" },
         // {
@@ -19,7 +20,6 @@ const BotNav = () => {
         //
         //     ],
         // },
-
         {
             label: "About",
             link: "/about",
@@ -27,10 +27,8 @@ const BotNav = () => {
                 { label: "Vision", link: "/about/aiu/vision" },
                 { label: "Mission", link: "/about/aiu/mission" },
                 { label: "Message from the Rector", link: "/about/leadership" },
-                { label: "Structure of the university", link: "/about/aiu/university-structure" },
-                { label: "Structure of the faculty", link: "/about/aiu/faculty-structure" },
+                { label: "Structure of the university", link: "/about/aiu/structure-of-university" },
                 { label: "Regulatory Documents", link: "/about/aiu/regulatory-documents" },
-                { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
             ],
         },
         {
@@ -39,18 +37,14 @@ const BotNav = () => {
             dropdown: [
                 { label: "Academic Calendar", link: "/academics/academic-calendar" },
                 { label: "Study Plan/ Curriculum", link: "/academics/study-plan" },
-                {
-                    label: "Departments",
-                    submenu: [
-                        { label: "Department of General Science", link: "/about/departments/general-science" },
-                        { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
-                        { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
-                        { label: "Hospitals Affiliated", link: "/about/departments/hospitals-affiliated" },
-                    ],
-                }
+                { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
+                { label: "Structure of the faculty", link: "/about/aiu/faculty-structure" },
+                { label: "Department of General Science", link: "/about/departments/general-science" },
+                { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
+                { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
             ],
         },
-        { label: "International relations", link: "/international-relations" },
+        { label: "International relations", link: "/about/aiu/international-relations" },
         {
             label: "Student Life in AIU",
             link: "/schools",
@@ -74,18 +68,15 @@ const BotNav = () => {
             dropdown: [
                 {
                     label: "Find program ",
-                    submenu: [
-                        { label: "MD", link: "/md" },
-                        { label: "MBBS", link: "/mbbs" }
-                    ],
+                    link: "/find-programs"
                 },
                 { label: "Scholarship ", link: "/scholarships" },
-                { label: "Tuition and Cost ", link: "/research/projects" },
+                { label: "Tuition and Cost ", link: "/tuition-fees" },
                 { label: "For partners / For applicants", link: "/research/labs", submenu: [
                         { label: "Login", link: "/md" },
                     ]  },
             ] },
-        { label: "Gallery ", link: "/international-relations" },
+        { label: "Gallery ", link: "/gallery" },
         { label: "Alumni ", link: "/international-relations" },
         { label: "Contact ", link: "/international-relations" },
     ];
@@ -95,7 +86,7 @@ const BotNav = () => {
             <div className=" mx-auto flex h-full justify-center ">
                 <div className="flex ">
                     {navItems.map((item, index) => (
-                        <div key={index} className="group flex relative">
+                        <div key={index} className="group flex  relative">
                             {item.dropdown ? (
                                 <Menu allowHover animate={{mount: {y: 0}, unmount: {y: 25}}}>
                                     <MenuHandler>

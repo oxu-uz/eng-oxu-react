@@ -4,6 +4,7 @@ import CountUp from 'react-countup';
 import NewsAndEvents from "../components/home/NewsAndEvents.jsx";
 const CustomCarousel = lazy(() => import("../components/home/CustomCarousel.jsx"));
 import {motion, useAnimation, useInView} from "framer-motion";
+import FadeIn, {FadeInStagger} from "../components/FadeIn.jsx";
 
 
 const HomePage = () => {
@@ -121,8 +122,8 @@ const HomePage = () => {
                             damping: 25,
                         }}
                     >
-                        <h1 className="text-4xl md:text-5xl font-black uppercase mb-4">
-                            Asia International University: One of the leading universities offering premier medical
+                        <h1 className="text-4xl md:text-5xl font-bold uppercase mb-4">
+                            Asia International University: One of the leading universities offering premier quality
                             education in Central Asia.
                         </h1>
                         <p className="text-xs md:text-2xl">
@@ -143,11 +144,11 @@ const HomePage = () => {
                             initial={{opacity: 0, y: -20}}
                             animate={inView ? {opacity: 1, y: 0} : {}}
                             transition={{duration: 0.8, ease: 'easeOut'}}
-                            className="text-4xl font-semibold text-white text-center mb-8"
+                            className="text-4xl font-semibold uppercase text-white text-center mb-8"
                         >
                             Why Choose Us
                         </motion.h2>
-                        <img src="/GGG.svg" className="opacity-50 h-screen top-0 right-0 absolute z-0"/>
+                        {/*<img src="/GGG.svg" className="opacity-50 h-screen top-0 right-0 absolute z-0"/>*/}
                         <motion.ul
                             initial="hidden"
                             animate={inView ? "visible" : "hidden"}
@@ -170,7 +171,7 @@ const HomePage = () => {
 
                                     {/* Content */}
                                     <div className="relative z-10 text-center">
-                                        <h3 className="text-lg uppercase group-hover:glow-effect-group font-black will-change-transform text-[#fff] mb-2 tracking-wide glow-effect">
+                                        <h3 className="text-lg uppercase glow-effect font-bold will-change-transform text-[#fff] mb-2 tracking-wide ">
                                             {feature.split(':')[0]}
                                         </h3>
                                         <p className="text-white text-[15px] leading-relaxed will-change-transform">{feature.split(':')[1]}</p>
@@ -186,87 +187,102 @@ const HomePage = () => {
             </div>
 
 
-            <motion.div
-                ref={ref1}
-                className="mx-auto  py-5 bg-white sm:py-10 lg:py-5 flex flex-col lg:flex-row items-center justify-between gap-x-12 relative"
-                initial={{opacity: 0, scale: 0.8}}
-                animate={isInView1 ? {opacity: 1, scale: 1} : {}}
-                transition={{duration: 1, ease: "easeOut"}}
-            >
-                {/* Image Section */}
-                <div className="lg:w-1/2 px-4">
-                    <div className="video-section relative">
-                        <img
-                            className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                            src="/P1087891.JPG"
-                            alt=""
-                        />
-                    </div>
-                </div>
+            <FadeInStagger>
+                <FadeIn>
+                    <div
+                        className="mx-auto  py-5 bg-white sm:py-10 lg:py-5 flex flex-col lg:flex-row items-center justify-between gap-x-12 relative"
+                    >
+                        {/* Image Section */}
+                        <div className="lg:w-1/2 px-4">
+                            <div className="video-section relative">
+                                <img
+                                    className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
+                                    src="/2-BINO%20TALABALAR%20(3).JPG"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
 
-                {/* Text Section */}
-                <div className="lg:w-1/2 px-4">
-                    <h1 className="text-4xl leading-tight tracking-tight title-text font-extrabold">
-                        Embark on Your Journey to Medical Education at Asia International University’s Medical Faculty!
-                    </h1>
-                    <p className="mt-4 text-lg leading-8 text-gray-600">
-                        Step into a world where knowledge meets compassion, and discover your potential as a future
-                        healthcare
-                        hero. Our cutting-edge programs empower you with the skills and expertise needed to make a
-                        meaningful impact
-                        in medicine. Join a vibrant community of aspiring professionals, engage in hands-on clinical
-                        experiences,
-                        and learn from distinguished faculty dedicated to nurturing your growth. At Asia International
-                        University,
-                        your journey in the realm of medical education begins. Are you ready to make a difference in the
-                        world of
-                        healthcare? Enroll today and be part of something extraordinary!
-                    </p>
-                </div>
-            </motion.div>
+                        {/* Text Section */}
+                        <div className="lg:w-1/2 px-4">
+                            <h1 className="text-4xl leading-tight tracking-tight title-text font-extrabold">
+                                Embark on Your Journey to Medical Education at Asia International University’s Medical
+                                Faculty!
+                            </h1>
+                            <p className="mt-4 text-lg leading-8 text-gray-600">
+                                Step into a world where knowledge meets compassion, and discover your potential as a
+                                future
+                                healthcare
+                                hero. Our cutting-edge programs empower you with the skills and expertise needed to make
+                                a
+                                meaningful impact
+                                in medicine. Join a vibrant community of aspiring professionals, engage in hands-on
+                                clinical
+                                experiences,
+                                and learn from distinguished faculty dedicated to nurturing your growth. At Asia
+                                International
+                                University,
+                                your journey in the realm of medical education begins. Are you ready to make a
+                                difference in the
+                                world of
+                                healthcare? Enroll today and be part of something extraordinary!
+                            </p>
+                        </div>
+                    </div>
+                </FadeIn>
+            </FadeInStagger>
+
+            <FadeInStagger>
+                <FadeIn>
+                    <div
+                        className="mx-auto  py-5 bg-white sm:py-10 lg:py-5 flex flex-col lg:flex-row items-center justify-between gap-x-12 relative"
+                    >
+                        {/* Text Section */}
+                        <div className="lg:w-1/2 px-4">
+                            <h1 className="text-4xl leading-tight tracking-tight title-text font-extrabold">
+                                Educating Compassionate Healthcare Professionals: Asia International University in the
+                                WHO
+                                Directory
+                            </h1>
+                            <p className="mt-4 text-lg leading-8 text-gray-600">
+                                Asia International University, a distinguished institution known for its academic
+                                excellence,
+                                stands
+                                prominently among esteemed educational establishments worldwide. Recognized for its
+                                commitment
+                                to nurturing
+                                future leaders and innovators, AIU holds a distinguished place in the reputable
+                                directory of
+                                medical schools
+                                curated by the World Health Organization. Through unwavering dedication to academic
+                                excellence,
+                                research
+                                innovation, and international collaboration, AIU remains at the forefront of shaping
+                                higher
+                                education,
+                                empowering students to thrive in an ever-evolving global landscape. Embark on a journey
+                                of
+                                exploration with
+                                us, where limitless possibilities abound.
+                            </p>
+                        </div>
+
+                        {/* Image Section */}
+                        <div className="lg:w-1/2 px-4">
+                            <div className="video-section relative">
+                                <img
+                                    className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
+                                    src="/2-BINO%20TALABALAR%20(6).JPG"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </FadeIn>
+            </FadeInStagger>
+
 
             {/* Second Section */}
-            <motion.div
-                ref={ref2}
-                className="mx-auto  py-5 bg-white sm:py-10 lg:py-5 flex flex-col lg:flex-row items-center justify-between gap-x-12 relative"
-                initial={{opacity: 0, scale: 0.8}}
-                animate={isInView2 ? {opacity: 1, scale: 1} : {}}
-                transition={{duration: 1, ease: "easeOut"}}
-            >
-                {/* Text Section */}
-                <div className="lg:w-1/2 px-4">
-                    <h1 className="text-4xl leading-tight tracking-tight title-text font-extrabold">
-                        Educating Compassionate Healthcare Professionals: Asia International University in the WHO
-                        Directory
-                    </h1>
-                    <p className="mt-4 text-lg leading-8 text-gray-600">
-                        Asia International University, a distinguished institution known for its academic excellence,
-                        stands
-                        prominently among esteemed educational establishments worldwide. Recognized for its commitment
-                        to nurturing
-                        future leaders and innovators, AIU holds a distinguished place in the reputable directory of
-                        medical schools
-                        curated by the World Health Organization. Through unwavering dedication to academic excellence,
-                        research
-                        innovation, and international collaboration, AIU remains at the forefront of shaping higher
-                        education,
-                        empowering students to thrive in an ever-evolving global landscape. Embark on a journey of
-                        exploration with
-                        us, where limitless possibilities abound.
-                    </p>
-                </div>
-
-                {/* Image Section */}
-                <div className="lg:w-1/2 px-4">
-                    <div className="video-section relative">
-                        <img
-                            className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                            src="https://oxu.uz/talabalar_hayoti-17.jpg"
-                            alt=""
-                        />
-                    </div>
-                </div>
-            </motion.div>
 
 
             <CampusSection/>

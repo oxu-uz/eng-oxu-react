@@ -48,13 +48,13 @@ const InternationalRelations = () => {
             <div className="container relative gap-5 justify-between flex mx-auto">
                 <div>
                     <div className="flex w-full gap-10">
-                        <img src="/international.jpg" className="h-[300px] object-cover  w-[224px]"/>
+                        <img src="/DSC_6775.jpg" className="h-[300px] object-cover  w-[224px]"/>
                         <div>
                             <h6 className="text-[#012152]">Babayev Suxrob Tuyg’unovich</h6>
                             <div className="line"></div>
                             <p className="text-gray-800 font-medium">The head of International relations department</p>
                             <div className="flex items-center divide-x gap-3">
-                                <a href="mailto:•	international@oxu.uz"
+                                <a href="mailto:international@oxu.uz"
                                    className="text-blue-600 font-medium">international@oxu.uz</a>
                             </div>
 
@@ -84,13 +84,13 @@ const InternationalRelations = () => {
                         </div>
                     </div>
 
-                    <h1 className="uppercase text-2xl mb-3 font-black text-white px-3 py-4 bg-[#012C6E] relative overflow-hidden">Meet
+                    <h1 className="uppercase text-2xl mb-3 font-bold text-white px-3 py-4 bg-[#012C6E] relative overflow-hidden">Meet
                         out team
                         <img src="/logo1.svg" className="opacity-20 h-52 absolute right-0 top-[-125%] rotate-[45deg]"/>
                     </h1>
 
                     <div className="flex mb-5 w-full gap-10">
-                        <img src="/ashurbek.jpg" className="h-[300px] object-cover  w-[224px]"/>
+                        <img src="/DSC_6804.jpg" className="h-[300px] object-cover  w-[224px]"/>
                         <div>
                             <h6 className="text-[#012152]">Bahronov Ashurbek Bahodirovich</h6>
                             <div className="line"></div>
@@ -125,7 +125,7 @@ const InternationalRelations = () => {
 
                     <div>
                         <div className="flex gap-10">
-                            <img src="/mutti.jpg" className="h-[300px] object-cover  w-[224px]"/>
+                            <img src="/DSC_6820.jpg" className="h-[300px] object-cover  w-[224px]"/>
                             <div>
                                 <h6 className="text-[#012152]">Mutti-Ur Rehman</h6>
                                 <div className="line"></div>
@@ -168,7 +168,7 @@ const InternationalRelations = () => {
                 <aside className="w-1/4 sticky top-0 overflow-hidden">
                     <ul className="sideNav">
                         <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
-    <span className="uppercase p-1 px-2 text-lg font-black flex items-center gap-3 z-10">
+    <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">
         University
         <img
             className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
@@ -176,7 +176,7 @@ const InternationalRelations = () => {
             alt="Arrow"
         />
     </span>
-                            <span className="text-7xl absolute font-black opacity-10">AIU</span>
+                            <span className="text-7xl absolute font-bold opacity-10">AIU</span>
                             <img
                                 src="/Vector.svg"
                                 className="absolute opacity-10 h-20 right-0 bottom-0"
