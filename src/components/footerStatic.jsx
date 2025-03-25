@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const FooterStatic = () => {
     return (
         <div>
-            <footer className="main-footer">
+            <footer className="main-footer bg-gradient-to-r from-[#092076] to-[#0a37b3]">
                 <div className="main-footer__group">
                     <ul className="main-footer__nav">
                         <li className="main-footer__item-heading uppercase">

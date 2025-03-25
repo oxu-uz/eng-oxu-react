@@ -3,14 +3,16 @@ import CampusSection from "../components/home/CampusSection.jsx";
 import CountUp from 'react-countup';
 import NewsAndEvents from "../components/home/NewsAndEvents.jsx";
 const CustomCarousel = lazy(() => import("../components/home/CustomCarousel.jsx"));
-import {motion, useAnimation, useInView} from "framer-motion";
+import {AnimatePresence, motion, useAnimation, useInView, useReducedMotion, useSpring, useTransform} from "framer-motion";
 import FadeIn, {FadeInStagger} from "../components/FadeIn.jsx";
+import Slider from "react-infinite-logo-slider";
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 
 
 const HomePage = () => {
     const [isCarouselVisible, setCarouselVisible] = useState(false);
     const ref = useRef(null)
-    const inView = useInView(ref, {once: false})
+    const inView = useInView(ref, {once: true})
     const controls = useAnimation();
     const [isPending, startTransition] = useTransition();
 
@@ -23,6 +25,43 @@ const HomePage = () => {
     const ref4 = useRef(null);
     const isInView4 = useInView(ref4, {once: false});
 
+    const shouldReduceMotion = useReducedMotion();
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [progress, setProgress] = useState(0); // 0..100
+    const intervalRef = useRef(null);
+  
+    // 1) Создаём spring-значение
+    const springValue = useSpring(0, { stiffness: 100, damping: 20 });
+    
+    // 2) Преобразуем число в строку вида "xx%" через useTransform
+    const widthValue = useTransform(springValue, (val) => `${val}%`);
+  
+    // Обновляем springValue при каждом изменении progress
+    useEffect(() => {
+      springValue.set(progress);
+    }, [progress, springValue]);
+  
+    // Перезапуск таймера при смене currentIndex
+    useEffect(() => {
+      clearInterval(intervalRef.current);
+      setProgress(0);
+  
+      intervalRef.current = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            setCurrentIndex((p) => (p + 1) % slides.length);
+            return 0;
+          }
+          return prev + 1;
+        });
+      }, 100); // 100мс * 100 шагов = 10 секунд
+  
+      return () => clearInterval(intervalRef.current);
+    }, [currentIndex]);
+  
+
+  
     useEffect(() => {
         const handleScroll = () => {
             const scrollThreshold = window.innerHeight * 0.2;
@@ -45,23 +84,42 @@ const HomePage = () => {
         }
     }, [controls, inView]);
 
-    const featureVariants = {
-        hidden: { opacity: 0, y: 50, scale: 0.9, rotateX: 15 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            rotateX: 0,
-            transition: {
-                duration: 0.8,
-                ease: 'easeInOut',
-            },
-        },
-    };
 
-    const hoverEffect = {
-        transition: {duration: 0.4, yoyo: Infinity},
-        // boxShadow: '0px 8px 24px rgba(255, 255, 255, 0.5)',
+    const containerVariants = {
+      hidden: {
+        opacity: 0,
+      },
+      visible: {
+        opacity: 1,
+        transition: {
+          // Указываем, что перед анимацией дочерних элементов
+          // контейнер должен стать видимым
+          when: "beforeChildren",
+          // Задержка между появлением каждого элемента
+          staggerChildren: 0.2,
+        },
+      },
+    };
+    
+    // Варианты анимации для каждого элемента
+    const itemVariants = {
+      hidden: {
+        opacity: 0,
+        scale: 0.8,
+        rotate: -5,
+      },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        rotate: 0,
+        transition: {
+          // Spring-анимация для более «живого» движения
+          type: "spring",
+          stiffness: 100,
+          damping: 12,
+          duration: 0.6,
+        },
+      },
     };
 
 
@@ -80,112 +138,180 @@ const HomePage = () => {
         "Vibrant campus life: The campus is designed to provide a supportive and inclusive environment, encouraging students to form lasting friendships and share experiences that enhance their educational journey.",
     ];
 
+    const icons = [
+        "/icons/Vector-5.svg",
+        "/icons/Vector-4.svg",
+        "/icons/Group-1.svg",
+        "/icons/Vector-3.svg",
+        "/icons/Group.svg",
+        "/icons/Group 1410110397.svg",
+        "/icons/Vector-3.svg",
+        "/icons/Vector-2.svg",
+        "/icons/Vector-1.svg",
+        "/icons/noun-innovative-7582211.svg",
+        "/icons/Vector.svg",
+        "/icons/Group 1410110396.svg"
+      ];
+
+      const slides = [
+        {
+          type: "image",
+          src: "/IMG_2327.JPG",
+          poster: "/IMG_2327.JPG",
+        },
+        {
+          type: "image",
+          src: "/IMG_2298.JPG",
+          alt: "Image 1",
+        },
+        {
+          type: "image",
+          src: "/IMG_2372.JPG",
+          alt: "Image 2",
+        },
+        // Можно добавить ещё слайды
+      ];
+
+      const carouselVariants = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+      };
+
+      const nextSlide = () => {
+        setCurrentIndex((prev) => (prev + 1) % slides.length);
+      };
+    
+      // Функция переключения на предыдущий слайд
+      const prevSlide = () => {
+        setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+      };
+
     return (
         <div className="bg-white">
-            <section className="relative cs-slide-paralax-bg">
-                <video
-                    className="absolute inset-0 object-cover w-full h-full z-0"
-                    preload="auto"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    poster="/headerbg2.svg"
-                >
-                    <source src="/11064.mp4" type="video/mp4"/>
-                    Ваш браузер не поддерживает видео.
-                </video>
+      <section className="relative w-full min-h-[80vh] overflow-hidden">
+  <AnimatePresence>
+    <motion.div
+      key={currentIndex}
+      variants={carouselVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="absolute inset-0"
+    >
+      {/* Картинка текущего слайда */}
+      <img
+        src={slides[currentIndex].src}
+        alt={slides[currentIndex].alt}
+        className="absolute inset-0 object-cover w-full h-full"
+      />
 
-                <div className="relative flex h-[80vh] flex-col items-center justify-center w-full z-20">
-                    <motion.img
-                        src="/logoo.svg"
-                        alt="Logo"
-                        className="mx-auto h-[220px] mb-10"
-                        initial={{x: 0, opacity: 1}}
-                        animate={{x: 0, y: 0, opacity: 1}} // Adjusted to make the logo stay centered
-                        transition={{
-                            duration: 0.8,
-                            ease: "easeOut",
-                        }}
-                    />
+      {/* Тёмный оверлей */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
 
-                    <motion.div
-                        className="text-center text-white max-w-7xl px-6 md:px-12 z-20"
-                        initial={{y: 150, opacity: 0}}
-                        animate={{
-                            y: 0,
-                            opacity: 1
-                        }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 100,
-                            damping: 25,
-                        }}
-                    >
-                        <h1 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-                            Asia International University: One of the leading universities offering premier quality
-                            education in Central Asia.
-                        </h1>
-                        <p className="text-xs md:text-2xl">
-                            Asia International University is one of the leading universities in Central Asia, offering
-                            premier medical education designed to prepare students for the healthcare field.
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
+      {/* Содержимое поверх слайда */}
+      <div className="relative flex h-full flex-col items-center justify-center w-full z-20 text-white px-6 md:px-12 py-6 md:py-0">
+        <motion.img
+          src="/Frame 281.png"
+          alt="Logo"
+          className="mx-auto h-[150px] md:h-[210px] mb-6 md:mb-10"
+          initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
+          animate={{ scale: 1, opacity: 1, rotate: 0 }}
+          transition={{ type: "spring", stiffness: 120, damping: 14, delay: 0.2 }}
+        />
+        <motion.div
+          className="max-w-7xl text-center"
+          initial={{ y: 100, opacity: 0, scale: 0.95 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.5 }}
+        >
+          <h1 className="text-2xl md:text-5xl font-extrabold uppercase mb-3 md:mb-5">
+            One of the leading universities offering premier quality education in Central Asia.
+          </h1>
+          <p className="text-xs md:text-2xl">
+            Asia International University is one of the leading universities in Central Asia, offering premier medical education designed to prepare students for the healthcare field.
+          </p>
+        </motion.div>
+      </div>
+    </motion.div>
+  </AnimatePresence>
 
+  {/* Блок управления (controls) */}
+  <div className="absolute bottom-4 md:bottom-14 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 md:space-x-6 z-30">
+    {/* "01 --- 06" с прогресс-баром */}
+    <div className="flex items-center space-x-2 md:space-x-3 text-white">
+      {/* Текущее значение (двухзначное) */}
+      <span className="text-base md:text-xl font-semibold tabular-nums">
+        {String(currentIndex + 1).padStart(2, "0")}
+      </span>
+      {/* Мини-прогресс-бар */}
+      <div className="relative w-16 md:w-24 h-[2px] bg-gray-400/60">
+        <motion.div
+          className="h-full bg-white"
+          style={{ width: widthValue }}
+        />
+      </div>
+      {/* Общее число слайдов (двухзначное) */}
+      <span className="text-base md:text-xl font-semibold text-white/60 tabular-nums">
+        {String(slides.length).padStart(2, "0")}
+      </span>
+    </div>
 
-            <div
-                className="bg-[linear-gradient(135deg,var(--color-primary-light),var(--color-primary),var(--color-secondary-light))] overflow-hidden relative">
-                <main className="max-w-[90%]  mx-auto py-8 px-4">
+    {/* Кнопки переключения слайдов */}
+    <div className="flex items-center space-x-2 md:space-x-3">
+      <button
+        onClick={prevSlide}
+        className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-[#0a37b3] hover:bg-[#092076] transition-colors flex items-center justify-center"
+      >
+        <ChevronLeftIcon className="w-3 md:w-4 h-3 md:h-4 text-white" strokeWidth={2} />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-[#0a37b3] hover:bg-[#092076] transition-colors flex items-center justify-center"
+      >
+        <ChevronRightIcon className="w-3 md:w-4 h-3 md:h-4 text-white" strokeWidth={2} />
+      </button>
+    </div>
+  </div>
+</section>
 
-                    <section ref={ref}>
-                        <motion.h2
-                            initial={{opacity: 0, y: -20}}
-                            animate={inView ? {opacity: 1, y: 0} : {}}
-                            transition={{duration: 0.8, ease: 'easeOut'}}
-                            className="text-4xl font-semibold uppercase text-white text-center mb-8"
-                        >
-                            Why Choose Us
-                        </motion.h2>
-                        {/*<img src="/GGG.svg" className="opacity-50 h-screen top-0 right-0 absolute z-0"/>*/}
-                        <motion.ul
-                            initial="hidden"
-                            animate={inView ? "visible" : "hidden"}
-                            variants={featureVariants}
-                            className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-                        >
-                            {features.map((feature, index) => (
-                                <motion.li
-                                    key={index}
-                                    whileHover={hoverEffect}
-                                    variants={featureVariants}
-                                    className="bg-blue-900/40 group backdrop-blur-sm group overflow-hidden p-6 cursor-pointer relative rounded-lg border-2 border-[#01408e]/60"
-                                >
-                                    {/* Border animation container */}
-                                    <div
-                                        className="absolute top-[0px] inset-0 flex  justify-center pointer-events-none">
-                                        <div
-                                            className="w-full h-[1px] animate-border-width rounded-full bg-gradient-to-r from-transparent via-white to-transparent"/>
-                                    </div>
+<div ref={ref} className="px-4 md:px-32 mt-10 mx-auto">
+  <motion.h2
+    initial={{ opacity: 0, y: -20 }}
+    animate={inView ? { opacity: 1, y: 0 } : {}}
+    transition={{ duration: 0.8, ease: 'easeOut' }}
+    className="text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
+  >
+    Why Choose Us
+  </motion.h2>
 
-                                    {/* Content */}
-                                    <div className="relative z-10 text-center">
-                                        <h3 className="text-lg uppercase glow-effect font-bold will-change-transform text-[#fff] mb-2 tracking-wide ">
-                                            {feature.split(':')[0]}
-                                        </h3>
-                                        <p className="text-white text-[15px] leading-relaxed will-change-transform">{feature.split(':')[1]}</p>
-                                    </div>
-                                    <img src="/logo1.svg"
-                                         className="opacity-20 h-48 absolute right-0 will-change-transform group-hover:translate-y-[10%] transition-transform duration-[1.2s] top-[-80%]"/>
-                                </motion.li>
-
-                            ))}
-                        </motion.ul>
-                    </section>
-                </main>
-            </div>
-
+  <motion.div
+    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 my-5"
+    variants={containerVariants}
+    initial="hidden"
+    animate={inView ? "visible" : "hidden"}
+  >
+    {features.map((feature, index) => (
+      <motion.div key={index} className="text_rev_card relative" variants={itemVariants}>
+        <div className="h-16 w-16 bg-white flex flex-col items-center text-center border border-[rgba(159,171,185,.2)] rounded-lg p-2 mx-auto">
+          <img src={icons[index]} alt={`Icon for ${feature.split(':')[0]}`} />
+        </div>
+        <div className="absolute top-0 inset-0 flex justify-center pointer-events-none">
+          <div className="w-full h-[1px] animate-border-width rounded-full bg-gradient-to-r from-transparent via-white to-transparent" />
+        </div>
+        <div className="relative z-10 text-center">
+          <h3 className="text-lg glow-effect font-bold will-change-transform mb-2 tracking-wide">
+            {feature.split(':')[0]}
+          </h3>
+          <p className="text-sm leading-relaxed will-change-transform">
+            {feature.split(':')[1]}
+          </p>
+        </div>
+      </motion.div>
+    ))}
+  </motion.div>
+</div>
 
             <FadeInStagger>
                 <FadeIn>
@@ -197,7 +323,7 @@ const HomePage = () => {
                             <div className="video-section relative">
                                 <img
                                     className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                                    src="/2-BINO%20TALABALAR%20(3).JPG"
+                                    src="/IMG_2363.JPG"
                                     alt=""
                                 />
                             </div>
@@ -205,7 +331,7 @@ const HomePage = () => {
 
                         {/* Text Section */}
                         <div className="lg:w-1/2 px-4">
-                            <h1 className="text-4xl leading-tight tracking-tight title-text font-extrabold">
+                            <h1 className="lg:text-4xl text-3xl leading-tight tracking-tight title-text font-extrabold">
                                 Embark on Your Journey to Medical Education at Asia International University’s Medical
                                 Faculty!
                             </h1>
@@ -239,7 +365,7 @@ const HomePage = () => {
                     >
                         {/* Text Section */}
                         <div className="lg:w-1/2 px-4">
-                            <h1 className="text-4xl leading-tight tracking-tight title-text font-extrabold">
+                            <h1 className="lg:text-4xl text-3xl leading-tight tracking-tight title-text font-extrabold">
                                 Educating Compassionate Healthcare Professionals: Asia International University in the
                                 WHO
                                 Directory
@@ -272,7 +398,7 @@ const HomePage = () => {
                             <div className="video-section relative">
                                 <img
                                     className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                                    src="/2-BINO%20TALABALAR%20(6).JPG"
+                                    src="/IMG_2372.JPG"
                                     alt=""
                                 />
                             </div>
@@ -288,88 +414,168 @@ const HomePage = () => {
             <CampusSection/>
 
 
-            <section className="h-[360px] bg-cover w-full flex items-center bg-fixed"
-                     style={{backgroundImage: "url('http://localhost:5173/4-bino-2-scaled.jpg')"}}>
-                <div className="w-full h-full flex items-center" style={{
-                    background: 'linear-gradient(to top, rgba(1, 64, 142, 0.8), rgba(1, 64, 142, 0.6))'
-                }}>
-                    <div className="container mx-auto px-8">
-                        {/* Statistics Section */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16">
-                            {/* Statistic Item */}
-                            <motion.div
-                                ref={ref4}
-                                className="stat flex flex-col items-center justify-center text-center space-y-6"
-                                initial={{opacity: 0, y: 50}}
-                                animate={{opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50}}
-                                transition={{duration: 0.8, ease: "easeOut"}}
-                            >
-                                <div className="flex items-center justify-center gap-6 border-b border-white pb-6">
-                                    {/*<img src="/Background.svg" alt="Students Icon" className="w-16 h-16"/>*/}
-                                    <span className="text-white text-7xl font-extrabold">
-                                    <CountUp start={0} end={25000} duration={2.5} separator=","/>
-                                </span>
-                                </div>
-                                <span
-                                    className="text-white uppercase font-semibold text-xl tracking-wider">Students</span>
-                            </motion.div>
+            <section className="h-auto sm:h-[360px] bg-cover w-full flex items-center bg-fixed"
+  style={{ backgroundImage: "url('/IMG_2348.JPG')" }}
+>
+  <div className="w-full h-full flex items-center bg-gradient-to-r from-[#092076]/70 to-[#0a37b3]/70">
+    <div className="container mx-auto px-4 sm:px-8">
+      {/* Statistics Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-16">
+        {/* Statistic Item */}
+        <motion.div
+          ref={ref4}
+          className="stat flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="flex items-center justify-center gap-4 sm:gap-6 border-b border-white pb-4 sm:pb-6">
+            <span className="text-white text-5xl sm:text-7xl font-extrabold">
+              <CountUp
+                start={0}
+                end={25000}
+                duration={2.5}
+                separator=","
+                scrollSpy={true}
+                scrollSpyOnce={true}
+              />
+            </span>
+          </div>
+          <span className="text-white uppercase font-semibold text-lg sm:text-xl tracking-wider">
+            Students
+          </span>
+        </motion.div>
 
-                            {/* Faculty Statistic */}
-                            <motion.div
-                                ref={ref4}
-                                className="stat flex flex-col items-center justify-center text-center space-y-6"
-                                initial={{opacity: 0, y: 50}}
-                                animate={{opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50}}
-                                transition={{duration: 0.8, ease: "easeOut"}}
-                            >
-                                <div className="flex items-center justify-center gap-6 border-b border-white pb-6">
-                                    {/*<img src="/Background-1.svg" alt="Faculty Icon" className="w-16 h-16"/>*/}
-                                    <span className="text-white text-7xl font-extrabold">
-                                    <CountUp start={0} end={62} duration={2.5}/>
-                                </span>
-                                </div>
-                                <span
-                                    className="text-white uppercase font-semibold text-xl tracking-wider">Faculty</span>
-                            </motion.div>
+        {/* Faculty Statistic */}
+        <motion.div
+          ref={ref4}
+          className="stat flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="flex items-center justify-center gap-4 sm:gap-6 border-b border-white pb-4 sm:pb-6">
+            <span className="text-white text-5xl sm:text-7xl font-extrabold">
+              <CountUp
+                start={0}
+                end={62}
+                duration={2.5}
+                scrollSpy={true}
+                scrollSpyOnce={true}
+              />
+            </span>
+          </div>
+          <span className="text-white uppercase font-semibold text-lg sm:text-xl tracking-wider">
+            Faculty
+          </span>
+        </motion.div>
 
-                            {/* Partner Universities Statistic */}
-                            <motion.div
-                                ref={ref4}
-                                className="stat flex flex-col items-center justify-center text-center space-y-6"
-                                initial={{opacity: 0, y: 50}}
-                                animate={{opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50}}
-                                transition={{duration: 0.8, ease: "easeOut"}}
-                            >
-                                <div className="flex items-center justify-center gap-6 border-b border-white pb-6">
-                                    {/*<img src="/Background-2.svg" alt="Partner Universities Icon" className="w-16 h-16"/>*/}
-                                    <span className="text-white text-7xl font-extrabold">
-                                    <CountUp start={0} end={30} duration={2.5}/>
-                                </span>
-                                </div>
-                                <span className="text-white uppercase font-semibold text-xl tracking-wider">Partner Universities</span>
-                            </motion.div>
+        {/* Partner Universities Statistic */}
+        <motion.div
+          ref={ref4}
+          className="stat flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="flex items-center justify-center gap-4 sm:gap-6 border-b border-white pb-4 sm:pb-6">
+            <span className="text-white text-5xl sm:text-7xl font-extrabold">
+              <CountUp
+                start={0}
+                end={30}
+                duration={2.5}
+                scrollSpy={true}
+                scrollSpyOnce={true}
+              />
+            </span>
+          </div>
+          <span className="text-white uppercase font-semibold text-lg sm:text-xl tracking-wider">
+            Partner Universities
+          </span>
+        </motion.div>
 
-                            {/* Alumni Employment Statistic */}
-                            <motion.div
-                                ref={ref4}
-                                className="stat flex flex-col items-center justify-center text-center space-y-6"
-                                initial={{opacity: 0, y: 50}}
-                                animate={{opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50}}
-                                transition={{duration: 0.8, ease: "easeOut"}}
-                            >
-                                <div className="flex items-center justify-center gap-6 border-b border-white pb-6">
-                                    {/*<img src="/Background-3.svg" alt="Alumni Employment Icon" className="w-16 h-16"/>*/}
-                                    <span className="text-white text-7xl font-extrabold">
-                                    <CountUp start={0} end={82} duration={2.5} suffix="%"/>
-                                </span>
-                                </div>
-                                <span className="text-white uppercase font-semibold text-xl tracking-wider">Alumni Employment</span>
-                            </motion.div>
-                        </div>
-                    </div>
-                </div>
+        {/* Alumni Employment Statistic */}
+        <motion.div
+          ref={ref4}
+          className="stat flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="flex items-center justify-center gap-4 sm:gap-6 border-b border-white pb-4 sm:pb-6">
+            <span className="text-white text-5xl sm:text-7xl font-extrabold">
+              <CountUp
+                start={0}
+                end={82}
+                duration={2.5}
+                suffix="%"
+                scrollSpy={true}
+                scrollSpyOnce={true}
+              />
+            </span>
+          </div>
+          <span className="text-white uppercase font-semibold text-lg sm:text-xl tracking-wider">
+            Alumni Employment
+          </span>
+        </motion.div>
+      </div>
+    </div>
+  </div>
             </section>
 
+
+            <Slider
+                className="partners-slider w-full"
+                width="340px"
+                duration={60}
+                pauseOnHover={true}
+                blurBorders={false}
+                blurBoderColor={'#fff'}
+            >
+                <div className='logos-slide'>
+                    <img src="/Рисунок5.png" alt="any" className='w-[230px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/Group 1410110485.png" alt="any" className='w-[120px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/part.png" alt="any" className='w-[250px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/kfu_logo_0.jpg" alt="any" className='w-[250px] mx-12'/>
+                </div>
+                <div className='flex items-center w-[200px]'>
+                    <img src="/okanlogo.webp" alt="any" className='w-[100px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/nara.webp" alt="any" className='w-[250px] mx-12'/>
+                </div>
+                {/*<div className='logos-slide'>*/}
+                {/*    <img src="/esara.jpeg" alt="any" className='w-[120px] mx-auto' />*/}
+                {/*</div>*/}
+                <div className="logos-slide ">
+                    <img src="/originl.webp" alt="any" className='w-[250px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/logonet.png" alt="any" className=' w-[250px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/diulogoside.png" alt="any" className='w-[250px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/web-undip-logo.png" alt="any" className='w-[250px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/imisp-logo-blue-cyr2.png" alt="any"
+                         className='w-[250px] mx-12'/>
+                </div>
+                <div className='flex items-center w-[220px]'>
+                    <img src="/uomusLogo.png" alt="any2" className=' w-[150px] mx-12'/>
+                </div>
+                <div className='logos-slide'>
+                    <img src="/logo-ufla.jpg" alt="any3" className='w-[250px] mx-12'/>
+                </div>
+            </Slider>
 
             <NewsAndEvents/>
         </div>

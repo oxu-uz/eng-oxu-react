@@ -17,37 +17,38 @@ const Administration = () => {
     ];
     return (
         <div>
-            <section className="page-heading-content mb-5 " data-cid="714">
-                <img className="bg-image" src="/headerbg2.svg" alt=""/>
-                <div className="heading-content">
-                    <div className="container mx-auto px-5 title">
-                        <h1>Administration</h1>
-                    </div>
-                    <div className="breadcrumb">
-                        <div className="container mx-auto">
-                            <ul>
-                                <li>
-                                    <a className="nav-link" href="/en">Home<ChevronRight size="16"/></a>
-                                </li>
-                                <li>
-                                                                    <span className="nav-link">
-                                About
-                                                                                   <ChevronRight size="16"/>
-                                                                    </span>
-                                </li>
-                                <li>
-                                    <a className="nav-link" href="/about/aiu/administration">
-                                        Administration
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div className="container gap-5 justify-between flex mx-auto">
+                 <section className="page-heading-content mb-5" data-cid="714">
+                           <img className="bg-image" src="/headerbg3.svg" alt="Header background" />
+                           <div className="heading-content">
+                               <div className="container mx-auto px-5 title">
+                                   <h1 className="text-2xl md:text-4xl font-bold">Administration</h1>
+                               </div>
+                               <div className="breadcrumb">
+                                   <div className="container mx-auto">
+                                       <ul className="flex flex-wrap items-center text-sm">
+                                           <li>
+                                               <a href="/en" className="nav-link">
+                                                   Home <ChevronRight size="16" />
+                                               </a>
+                                           </li>
+                                           <li>
+                                               <span className="nav-link">
+                                                   About <ChevronRight size="16" />
+                                               </span>
+                                           </li>
+                                           <li>
+                                               <a className="nav-link" href="/about/aiu/administration">
+                                               Administration
+                                               </a>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </div>
+                           </div>
+                       </section>
+            <div className="container mx-auto flex flex-col md:flex-row gap-5 px-5 mb-10">
                 <div>
-                    <div className="flex w-full gap-10">
+                    <div className="flex flex-col md:flex-row items-center gap-5">
                         <img src="/DSC_6926.jpg" className="h-[300px] object-cover  w-[224px]"/>
                         <div>
                             <h6 className="text-[#012152]">Klicheva Gulnoza Odiljonovna</h6>
@@ -93,7 +94,7 @@ const Administration = () => {
                     </div>
 
                 </div>
-                <aside className="w-1/4 overflow-hidden">
+                <aside className="w-full md:w-1/3 overflow-hidden">
                     <ul className="sideNav">
                         <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
     <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">

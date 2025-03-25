@@ -30,6 +30,20 @@ import Mbbs from "../pages/admissions/programs/Mbbs.jsx";
     import RegulatoryDocuments from "../pages/RegulatoryDocuments.jsx";
     import Gallery from "../pages/Gallery.jsx";
     import IntHome from "../pages/IntHome.jsx";
+import LoginPage from "../auth/Login.jsx";
+import ProtectedRoute from "../auth/ProtectedRoute.jsx";
+import StudentDashboard from "../pages/authentificated/StudentDashboard.jsx";
+import RegisterPage from "../auth/RegisterPage.jsx";
+import AdminDashboard from "../pages/authentificated/AdminDashboard.jsx";
+import AdminLayout from "../pages/AdminLayout.jsx";
+import AdminUsersPage from "../pages/authentificated/AdminUsersPage.jsx";
+import AgentDashboard from "../pages/authentificated/AgentDashboard.jsx";
+import AgentLayout from "../pages/AgentLayout.jsx";
+import ManagerLayout from "../pages/ManagerLayout.jsx";
+import ManagerDashboard from "../pages/authentificated/ManagerDashboard.jsx";
+import ManagerUsersPage from "../pages/authentificated/ManagerUsersPage.jsx";
+import ManagerCategoriesPage from "../pages/authentificated/ManagerCategoriesPage.jsx";
+import ManagerPostsPage from "../pages/authentificated/ManagerPostsPage.jsx";
 
 
 const router = createBrowserRouter([
@@ -41,6 +55,15 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home />
             },
+            {
+                path: '/student/dashboard',
+                element: (
+                  <ProtectedRoute allowedRoles={["student"]}>
+                    <StudentDashboard />
+                  </ProtectedRoute>
+                )
+            },
+
             {
                 path: '/about/leadership',
                 element: <Leadership />
@@ -62,7 +85,7 @@ const router = createBrowserRouter([
                 element: <Administration />
             },{
                 path: '/about/aiu/international-relations',
-                element: <IntHome />
+                element: <InternationalRelations />
             },{
                 path: '/about/aiu/structure-of-university',
                 element: <InternationalRelations />
@@ -133,6 +156,94 @@ const router = createBrowserRouter([
                 element: <Gallery />
             },
         ]
+    },
+    {
+        path: '/admin',
+        element: <AdminLayout />,
+        children: [
+            {
+                path: 'dashboard',
+                element: (
+                  <ProtectedRoute allowedRoles={["admin"]}>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                )
+            },
+            {
+                path: 'dashboard/users',
+                element: (
+                  <ProtectedRoute allowedRoles={["admin"]}>
+                    <AdminUsersPage />
+                  </ProtectedRoute>
+                )
+            },
+
+            // Можно добавить другие маршруты для административной части
+        ]
+    },
+    {
+        path: '/agent',
+        element: <AgentLayout />,
+        children: [
+            {
+                path: 'dashboard',
+                element: (
+                  <ProtectedRoute allowedRoles={["agent"]}>
+                    <AgentDashboard />
+                  </ProtectedRoute>
+                )
+            },
+
+            // Можно добавить другие маршруты для административной части
+        ]
+    },
+    {
+        path: '/manager',
+        element: <ManagerLayout />,
+        children: [
+            {
+                path: 'dashboard',
+                element: (
+                  <ProtectedRoute allowedRoles={["manager"]}>
+                    <ManagerDashboard />
+                  </ProtectedRoute>
+                )
+            },
+            {
+                path: 'dashboard/users',
+                element: (
+                  <ProtectedRoute allowedRoles={["manager"]}>
+                    <ManagerUsersPage />
+                  </ProtectedRoute>
+                )
+            },
+            {
+                path: 'dashboard/category',
+                element: (
+                  <ProtectedRoute allowedRoles={["manager"]}>
+                    <ManagerCategoriesPage />
+                  </ProtectedRoute>
+                )
+            },
+            {
+                path: 'dashboard/posts',
+                element: (
+                  <ProtectedRoute allowedRoles={["manager"]}>
+                    <ManagerPostsPage />
+                  </ProtectedRoute>
+                )
+            },
+
+            // Можно добавить другие маршруты для административной части
+        ]
+    },
+    {
+        path: '/login',
+        element: <LoginPage />
+    },
+    {
+        path: '/register',
+        element: <RegisterPage />
     },
     {
         path: '*',

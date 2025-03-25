@@ -2,7 +2,10 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom';
 import FadeIn, {FadeInStagger} from "../components/FadeIn.jsx";
 import {motion} from "framer-motion";
+import { FaGlobe, FaHandshake, FaExchangeAlt, FaUniversity } from 'react-icons/fa';
+import { MdOutlineSchool } from 'react-icons/md';
 import Slider from 'react-infinite-logo-slider';
+
 function IntHome() {
     const [currentIndex, setCurrentIndex] = useState(0);
     // Массив изображений
@@ -14,7 +17,6 @@ function IntHome() {
 
     return (
         <div className='header-section'>
-
 
             <div className="header-section2 relative">
                 <div className=" mx-auto px-5">
@@ -30,7 +32,7 @@ function IntHome() {
                                 data-wow-duration="2s"
                                 className="wow fadeInUp text-white uppercase  font-bold text-3xl lg:text-4xl xl:text-4xl header-title"
                             >
-                                Innovative Teaching Methodologies
+                                INTERNATIONAL RELATIONS
                             </h1>{" "}
                             <p
                                 data-wow-offset={10}
@@ -38,13 +40,18 @@ function IntHome() {
                                 data-wow-duration="2s"
                                 className="wow fadeInUp text-lg mt-4 text-white max-w-3xl"
                             >
-                                Within the Faculty of Medicine at Asia International University, we are at the forefront
-                                of incorporating contemporary technology into the academic realm. Our cutting-edge
-                                distance education modules offer students distinctive learning prospects that are
-                                tailored to align with the most recent advancements in medical science and technology.
-                                Through the utilization of advanced educational platforms, our curriculum fosters
-                                interactive learning environments that promote better understanding and active
-                                participation among students.
+                                The International Relations department at Asia International University in Bukhara is
+                                committed to fostering a globally integrated educational environment. This commitment is
+                                reflected in its establishment of strategic partnerships with leading academic
+                                institutions and international organizations, facilitating collaborative research and
+                                educational exchanges. The department actively promotes academic mobility, offering
+                                students and faculty the opportunity to participate in study abroad programs and
+                                international workshops, thereby broadening their academic and cultural perspectives.
+                                Furthermore, the department strives for excellence by seeking international
+                                accreditation, ensuring that its programs meet global standards and fostering continuous
+                                improvement through alignment with best practices worldwide. These efforts collectively
+                                enhance the educational and professional opportunities for students, preparing them to
+                                thrive in an interconnected global landscape.
                             </p>{" "}
                             {/*        <div className="mt-6 flex flex-col sm:flex-row gap-3">*/}
                             {/*            <Link*/}
@@ -68,37 +75,38 @@ function IntHome() {
                                         blurBoderColor={'#fff'}
                                     >
                                         <div className='logos-slide'>
-                                            <img src="/part.png" alt="any" className='w-[250px] mx-auto' />
+                                            <img src="/part.png" alt="any" className='w-[250px] mx-auto'/>
                                         </div>
                                         <div className='logos-slide'>
-                                            <img src="/kfu_logo_0.jpg" alt="any" className='w-[250px] mx-auto' />
+                                            <img src="/kfu_logo_0.jpg" alt="any" className='w-[250px] mx-auto'/>
                                         </div>
                                         <div className='flex items-center w-[200px]'>
-                                            <img src="/okanlogo.webp" alt="any" className='w-[100px] mx-auto' />
+                                            <img src="/okanlogo.webp" alt="any" className='w-[100px] mx-auto'/>
                                         </div>
                                         <div className='logos-slide'>
-                                            <img src="/nara.webp" alt="any" className='w-[250px] mx-auto' />
+                                            <img src="/nara.webp" alt="any" className='w-[250px] mx-auto'/>
                                         </div>
                                         {/*<div className='logos-slide'>*/}
                                         {/*    <img src="/esara.jpeg" alt="any" className='w-[120px] mx-auto' />*/}
                                         {/*</div>*/}
                                         <div className="logos-slide ">
-                                            <img src="/originl.webp" alt="any" className='w-[250px] mx-auto' />
+                                            <img src="/originl.webp" alt="any" className='w-[250px] mx-auto'/>
                                         </div>
                                         <div className='logos-slide'>
-                                            <img src="/logonet.png" alt="any" className=' w-[250px] mx-auto' />
+                                            <img src="/logonet.png" alt="any" className=' w-[250px] mx-auto'/>
                                         </div>
                                         <div className='logos-slide'>
-                                            <img src="/diulogoside.png" alt="any" className='w-[250px] mx-auto' />
+                                            <img src="/diulogoside.png" alt="any" className='w-[250px] mx-auto'/>
                                         </div>
                                         <div className='logos-slide'>
-                                            <img src="/web-undip-logo.png" alt="any" className='w-[250px] mx-auto' />
+                                            <img src="/web-undip-logo.png" alt="any" className='w-[250px] mx-auto'/>
                                         </div>
                                         <div className='logos-slide'>
-                                            <img src="/imisp-logo-blue-cyr2.png" alt="any" className='w-[250px] mx-auto' />
+                                            <img src="/imisp-logo-blue-cyr2.png" alt="any"
+                                                 className='w-[250px] mx-auto'/>
                                         </div>
                                         <div className='flex items-center w-[220px]'>
-                                            <img src="/uomusLogo.png" alt="any2" className=' w-[150px] mx-auto' />
+                                            <img src="/uomusLogo.png" alt="any2" className=' w-[150px] mx-auto'/>
                                         </div>
                                         {/* <div className='logos-slide'>
                 <img src="/sabahttin-zaim-university-logo.png" alt="any3" className='w-[250px] mx-auto' />
@@ -107,7 +115,7 @@ function IntHome() {
                                         {/*    <img src="/main_logo_en_5.png" alt="any3" className='w-[250px] mx-auto' />*/}
                                         {/*</div>*/}
                                         <div className='logos-slide'>
-                                            <img src="/logo-ufla.jpg" alt="any3" className='w-[250px] mx-auto' />
+                                            <img src="/logo-ufla.jpg" alt="any3" className='w-[250px] mx-auto'/>
                                         </div>
                                     </Slider>
                                 </div>
@@ -127,8 +135,91 @@ function IntHome() {
             </div>
 
 
-
             <section className="py-12">
+
+                <main className="space-y-12">
+                    {/* Section: Focus on Global Integration */}
+                    <section className="bg-white shadow-md rounded-lg p-6">
+                        <div className="flex items-center mb-4">
+                            <FaGlobe className="text-blue-800 text-3xl mr-4"/>
+                            <h2 className="text-2xl font-semibold text-gray-800">Focus on Global Integration</h2>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed">
+                            The university actively incorporates international perspectives into forming global
+                            partnerships and promoting student and faculty exchanges at the international level.
+                        </p>
+                    </section>
+
+                    {/* Section: Collaborative Partnerships */}
+                    <section className="bg-white shadow-md rounded-lg p-6">
+                        <div className="flex items-center mb-4">
+                            <FaHandshake className="text-blue-800 text-3xl mr-4"/>
+                            <h2 className="text-2xl font-semibold text-gray-800">Collaborative Partnerships</h2>
+                        </div>
+                        <ul className="list-disc pl-8 text-gray-600">
+                            <li>
+                                <strong>Collaborative Networks:</strong> Partnerships with universities and research
+                                institutes worldwide for joint research projects and academic exchanges.
+                            </li>
+                            <li>
+                                <strong>Global Connections:</strong> Engagement with international organizations and
+                                embassies, providing students with practical exposure to global careers.
+                            </li>
+                        </ul>
+                    </section>
+
+                    {/* Section: Academic Mobility */}
+                    <section className="bg-white shadow-md rounded-lg p-6">
+                        <div className="flex items-center mb-4">
+                            <FaExchangeAlt className="text-blue-800 text-3xl mr-4"/>
+                            <h2 className="text-2xl font-semibold text-gray-800">Academic Mobility</h2>
+                        </div>
+                        <ul className="list-disc pl-8 text-gray-600">
+                            <li>
+                                <strong>Student Exchanges:</strong> Programs enabling students to study abroad,
+                                broadening their cultural and academic horizons.
+                            </li>
+                            <li>
+                                <strong>Teacher Exchanges and Workshops:</strong> Opportunities for faculty to
+                                participate in international conferences, workshops, and teaching at partner
+                                institutions.
+                            </li>
+                        </ul>
+                    </section>
+
+                    {/* Section: International Accreditation */}
+                    <section className="bg-white shadow-md rounded-lg p-6">
+                        <div className="flex items-center mb-4">
+                            <FaUniversity className="text-blue-800 text-3xl mr-4"/>
+                            <h2 className="text-2xl font-semibold text-gray-800">International Accreditation</h2>
+                        </div>
+                        <ul className="list-disc pl-8 text-gray-600">
+                            <li>
+                                <strong>Quality Assurance and Recognition:</strong> Accreditation from recognized
+                                international bodies to meet global educational standards.
+                            </li>
+                            <li>
+                                <strong>Continuous Improvement:</strong> Regular evaluations and updates based on
+                                international best practices.
+                            </li>
+                        </ul>
+                    </section>
+
+                    {/* Section: Global Research and Policy Formulation */}
+                    <section className="bg-white shadow-md rounded-lg p-6">
+                        <div className="flex items-center mb-4">
+                            <MdOutlineSchool className="text-blue-800 text-3xl mr-4"/>
+                            <h2 className="text-2xl font-semibold text-gray-800">Global Research and Policy
+                                Formulation</h2>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed">
+                            The university enables students and faculty to conduct thorough research and contribute to
+                            the formulation of international policies and strategies, preparing them to thrive in a
+                            globalized world.
+                        </p>
+                    </section>
+                </main>
+
 
                 <FadeInStagger>
                     <FadeIn>
@@ -139,9 +230,9 @@ function IntHome() {
                             <div className="lg:w-1/2 px-4">
                                 <div className="video-section relative">
                                     <img loading="lazy"
-                                        className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                                        src="/IMG_9276.JPG"
-                                        alt=""
+                                         className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
+                                         src="/IMG_9276.JPG"
+                                         alt=""
                                     />
                                 </div>
                             </div>

@@ -77,12 +77,12 @@ const BotNav = () => {
                     ]  },
             ] },
         { label: "Gallery ", link: "/gallery" },
-        { label: "Alumni ", link: "/international-relations" },
+        // { label: "Alumni ", link: "/international-relations" },
         { label: "Contact ", link: "/international-relations" },
     ];
 
     return (
-        <nav className="nav-bot sticky z-30 top-0 h-[65px]">
+        <nav className="nav-bot lg:block hidden bg-gradient-to-r from-[#092076] to-[#0a37b3] sticky z-30 top-0 h-[65px]">
             <div className=" mx-auto flex h-full justify-center ">
                 <div className="flex ">
                     {navItems.map((item, index) => (
@@ -92,7 +92,7 @@ const BotNav = () => {
                                     <MenuHandler>
                                         <div
                                             className="text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
-                                            {item.label} <ChevronDown size="20"/>
+                                            {item.label} <ChevronDown strokeWidth={1.2} size="20"/>
                                         </div>
                                     </MenuHandler>
                                     <MenuList className="absolute left-0 mt-2 overflow-hidden min-w-80 rounded-md">

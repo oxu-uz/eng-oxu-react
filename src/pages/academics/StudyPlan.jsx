@@ -102,7 +102,7 @@ const StudyPlan = () => {
                                             >
                                                 <Image
                                                     alt=""
-                                                    src="/Standart Academic  Study Plan-1.png"
+                                                    src="/MBBS-1.png"
                                                     style={{height: 243}}
                                                 />
                                             </motion.div>
@@ -112,7 +112,7 @@ const StudyPlan = () => {
                                             >
                                                 <Image
                                                     alt=""
-                                                    src="/Standart Academic  Study Plan-2.png"
+                                                    src="/MBBS-2.png"
                                                     style={{height: 243}}
                                                 />
                                             </motion.div>
@@ -122,7 +122,7 @@ const StudyPlan = () => {
                                             >
                                                 <Image
                                                     alt=""
-                                                    src="/Standart Academic  Study Plan-3.png"
+                                                    src="/MBBS-3.png"
                                                     style={{height: 243}}
                                                 />
                                             </motion.div>
@@ -138,7 +138,7 @@ const StudyPlan = () => {
                                     <a
                                         className="mceDataFile2 relative pl-8"
                                         data-hse-file="PDF"
-                                        href="/Standart Academic  Study Plan.pdf"
+                                        href="/MBBS.pdf"
                                     >
                                         Study Plan (PDF)
                                     </a>

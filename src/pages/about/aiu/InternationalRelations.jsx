@@ -45,9 +45,9 @@ const InternationalRelations = () => {
                     </div>
                 </div>
             </section>
-            <div className="container relative gap-5 justify-between flex mx-auto">
+            <div className="container mx-auto flex flex-col md:flex-row gap-5 px-5 mb-10">
                 <div>
-                    <div className="flex w-full gap-10">
+                    {/* <div className="flex w-full gap-10">
                         <img src="/DSC_6775.jpg" className="h-[300px] object-cover  w-[224px]"/>
                         <div>
                             <h6 className="text-[#012152]">Babayev Suxrob Tuyg’unovich</h6>
@@ -82,14 +82,14 @@ const InternationalRelations = () => {
                                 </p></div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <h1 className="uppercase text-2xl mb-3 font-bold text-white px-3 py-4 bg-[#012C6E] relative overflow-hidden">Meet
+                    <h1 className="uppercase text-2xl flex mb-3 font-bold text-white px-3 py-4 bg-[#012C6E] relative overflow-hidden">Meet
                         out team
                         <img src="/logo1.svg" className="opacity-20 h-52 absolute right-0 top-[-125%] rotate-[45deg]"/>
                     </h1>
 
-                    <div className="flex mb-5 w-full gap-10">
+                    <div className="flex flex-col md:flex-row items-center gap-5">
                         <img src="/DSC_6804.jpg" className="h-[300px] object-cover  w-[224px]"/>
                         <div>
                             <h6 className="text-[#012152]">Bahronov Ashurbek Bahodirovich</h6>
@@ -124,7 +124,7 @@ const InternationalRelations = () => {
                     </div>
 
                     <div>
-                        <div className="flex gap-10">
+                        <div className="flex flex-col md:flex-row items-center gap-5">
                             <img src="/DSC_6820.jpg" className="h-[300px] object-cover  w-[224px]"/>
                             <div>
                                 <h6 className="text-[#012152]">Mutti-Ur Rehman</h6>
@@ -165,7 +165,7 @@ const InternationalRelations = () => {
                         </div>
                     </div>
                 </div>
-                <aside className="w-1/4 sticky top-0 overflow-hidden">
+                <aside className="w-full md:w-1/3 overflow-hidden">
                     <ul className="sideNav">
                         <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
     <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">
