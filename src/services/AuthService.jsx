@@ -1,7 +1,7 @@
 import axiosInstance from '../api/axiosInstance';
 
 // Функция для логина, возвращает только токен
-export const login = async (identifier, password, registerType) => {
+export const Login = async (identifier, password, registerType) => {
   try {
     const payload =
       registerType === "student"

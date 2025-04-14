@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from "/logo_aiu.svg";
 import bg from "../../assets/footerbg.svg.svg";
 import {motion} from 'framer-motion';
@@ -172,24 +172,42 @@ const TopNav = () => {
         navigate('/login');
     };
 
-    const items = [
-        {
-            label: (
-                <a href={getPersonalCabinetPath()} className="text-white hover:underline">
-                    Enter profile
-                </a>
-            ),
-            key: '0',
-        },
-        {
-            label: (
-                <a onClick={handleLogout} className="hover:underline text-white">
-                    Logout profile
-                </a>
-            ),
-            key: '1',
-        },
-    ]
+    // User o'zgarganida items yangilanishi uchun useEffect
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        if (user) {
+            setItems([
+                {
+                    label: (
+                        <a href={getPersonalCabinetPath()} className="text-white hover:underline">
+                            Enter profile
+                        </a>
+                    ),
+                    key: '0',
+                },
+                {
+                    label: (
+                        <a onClick={handleLogout} className="hover:underline text-white">
+                            Logout profile
+                        </a>
+                    ),
+                    key: '1',
+                }
+            ]);
+        } else {
+            setItems([
+                {
+                    label: (
+                        <a href={getPersonalCabinetPath()} className="text-white hover:underline">
+                            Enter profile
+                        </a>
+                    ),
+                    key: '0',
+                }
+            ]);
+        }
+    }, [user]); // user o'zgarganda qayta render
 
     // Mobile Personal Cabinet Dropdown
     const MobilePersonalCabinet = () => {
@@ -212,12 +230,16 @@ const TopNav = () => {
                         >
                             Enter Profile
                         </a>
-                        <a
-                            onClick={handleLogout}
-                            className="block py-3 px-4 text-white hover:bg-[#072799] cursor-pointer"
-                        >
-                            Logout Profile
-                        </a>
+                        {
+                            user && (
+                                <a
+                                    onClick={handleLogout}
+                                    className="block py-3 px-4 text-white hover:bg-[#072799] cursor-pointer"
+                                >
+                                    Logout Profile
+                                </a>
+                            )
+                        }
                     </div>
                 )}
             </div>

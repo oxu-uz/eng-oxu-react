@@ -49,7 +49,7 @@ const Registrar = () => {
             <div className="container mx-auto flex flex-col md:flex-row gap-5 px-5 mb-10">
                 <div>
                     <div className="flex flex-col md:flex-row items-center gap-5">
-                        <img src="/dehkanov.jpg" className="h-[300px]"/>
+                        <img src="/PS5K3428.JPG" className="h-[300px]"/>
                         <div>
                             <h6 className="text-[#012152]">Dexkanov Bexruz Sobirovich</h6>
                             <div className="line"></div>

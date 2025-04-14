@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
-import {login} from "../services/AuthService";
+import {Login} from "../services/AuthService";
 import {Link, useNavigate} from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Select from "../components/Select";
+import {useAuth} from "../hooks/AuthContext.jsx";
 
 const LoginPage = () => {
     // Using "identifier" so it can represent either a phone or a login
@@ -11,6 +12,8 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
     const [registerType, setRegisterType] = useState("student"); // Default: student
     const [error, setError] = useState(null);
+    const {login} = useAuth();
+
 
     const navigate = useNavigate();
 
@@ -24,10 +27,11 @@ const LoginPage = () => {
         setError(null); // Reset error
 
         try {
-            const token = await login(identifier, password, registerType);
+            const token = await Login(identifier, password, registerType);
             const userData = {token, role: registerType};
             localStorage.setItem("user", JSON.stringify(userData));
             getPersonalCabinetPath(registerType);
+            login(userData)
         } catch (err) {
             setError(err.message);
         }
