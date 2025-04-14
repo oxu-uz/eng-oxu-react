@@ -12,29 +12,38 @@ const TuitionFeesPage = () => {
     const navigate = useNavigate();
 
     const navItems = [
-        { label: "Scholarship ", path: "/scholarships" },
-        { label: "Tuition and Cost ", path: "/tuition-fees" },
+        { label: "Scholarship", path: "/scholarships" },
+        { label: "Tuition and Cost", path: "/tuition-fees" },
     ];
 
     return (
         <div className="bg-gray-50">
             {/* Hero Section */}
-            <section className="page-heading-content mb-5" style={{height: "175px"}}>
-                <img className="bg-image bg-blue-900" src="/P1007464.MP4_snapshot_00.01.493.jpg" alt="Tuition Fees"/>
-                <div className="heading-content">
-                    <div className="container mx-auto px-5 title">
-                        <h1 className="text-white text-4xl font-bold">Tuition Fees</h1>
-                    </div>
-                    <div className="breadcrumb">
-                        <div className="container mx-auto">
-                            <ul>
-                                <li className="sideNav-link">
-                                    <a className="nav-link text-white" href="/en">
-                                        Home<ChevronRight size="16"/>
+            <section className="relative h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden mb-5">
+                <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="/P1007464.MP4_snapshot_00.01.493.jpg"
+                    alt="Tuition Fees"
+                    preview={false}
+                />
+                <div className="absolute inset-0 bg-[#00316b]/70 flex flex-col justify-end">
+                    <div className="container mx-auto px-4 sm:px-5">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2"
+                        >
+                            Tuition Fees
+                        </motion.h1>
+                        <div className="breadcrumb">
+                            <ul className="flex flex-wrap items-center text-sm text-white/80">
+                                <li className="flex items-center">
+                                    <a className="hover:text-white flex items-center" href="/en">
+                                        Home <ChevronRight className="mx-1" size="14" />
                                     </a>
                                 </li>
-                                <li className="sideNav-link">
-                                    <span className="nav-link text-white">Tuition Fees</span>
+                                <li className="flex items-center">
+                                    <span className="text-white font-medium">Tuition Fees</span>
                                 </li>
                             </ul>
                         </div>
@@ -42,151 +51,169 @@ const TuitionFeesPage = () => {
                 </div>
             </section>
 
-            {/* Tuition Info Section */}
-            <div className="flex gap-10 px-10 mb-5">
-                <section className="w-full px-5 py-10">
+            {/* Main Content */}
+            <div className="flex flex-col lg:flex-row gap-6 px-4 sm:px-6 lg:px-10 mb-5">
+                {/* Content Section */}
+                <section className="w-full lg:w-2/3 px-0 sm:px-5 py-6 sm:py-10">
                     <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={sectionVariants}
                         transition={{duration: 0.6}}
+                        className="space-y-8"
                     >
                         {/* Introduction */}
-                        <div className="mb-8">
-                            <h2 className="text-3xl font-bold text-[#00316b]">Dear Students and Parents,</h2>
-                            <p className="text-lg text-gray-600 mt-4">
+                        <div className="mb-6">
+                            <h2 className="text-2xl sm:text-3xl font-bold text-[#00316b]">Dear Students and Parents,</h2>
+                            <p className="text-base sm:text-lg text-gray-600 mt-3">
                                 It has come to our attention that there are circulating rumors regarding the tuition
-                                fees
-                                at Asia International University. We would like to take this opportunity to provide you
-                                with accurate information and dispel any misunderstandings.
+                                fees at Asia International University. We would like to provide you with accurate information.
                             </p>
                         </div>
 
                         {/* Tuition Fee Details */}
                         <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-[#00316b] mb-4">Tuition Fees for MBBS Program</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-                                <div className="bg-white flex gap-5 border border-[rgba(159,171,185,.2)] rounded-lg p-5">
-                                    <img src="/fee.svg" />
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-gray-700">Tuition and Management
-                                            Fees:</h3>
-                                        <p className="text-gray-600">$2600 per year</p>
-                                    </div>
-                                </div>
-                                <div
-                                    className="bg-white flex gap-5 border border-[rgba(159,171,185,.2)] rounded-lg p-5">
-                                    <img src="/hostel.svg"/>
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-gray-700">Hostel Fees:</h3>
-                                        <p className="text-gray-600">$600 per year (Optional)</p>
-                                    </div>
-                                </div>
-                                <div
-                                    className="bg-white flex gap-5 border border-[rgba(159,171,185,.2)] rounded-lg p-5">
-                                    <img src="/mess.svg"/>
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-gray-700">Mess Charge:</h3>
-                                        <p className="text-gray-600">$1000 per year (Optional)</p>
-                                    </div>
-                                </div>
-                                <div
-                                    className="bg-white flex gap-5 border border-[rgba(159,171,185,.2)] rounded-lg p-5">
-                                    <img src="/visa.svg"/>
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-gray-700">Visa and Registration
-                                            Fees:</h3>
-                                        <p className="text-gray-600">$500 per year (Optional; students can pay directly
-                                            to
-                                            the government)</p>
-                                    </div>
-                                </div>
+                            <h3 className="text-xl sm:text-2xl font-bold text-[#00316b] mb-4">Tuition Fees for MBBS Program</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {[
+                                    {
+                                        icon: "/fee.svg",
+                                        title: "Tuition and Management Fees",
+                                        amount: "$2600 per year"
+                                    },
+                                    {
+                                        icon: "/hostel.svg",
+                                        title: "Hostel Fees",
+                                        amount: "$600 per year (Optional)"
+                                    },
+                                    {
+                                        icon: "/mess.svg",
+                                        title: "Mess Charge",
+                                        amount: "$1000 per year (Optional)"
+                                    },
+                                    {
+                                        icon: "/visa.svg",
+                                        title: "Visa and Registration Fees",
+                                        amount: "$500 per year (Optional)"
+                                    }
+                                ].map((item, index) => (
+                                    <motion.div
+                                        key={index}
+                                        whileHover={{ y: -5 }}
+                                        className="bg-white flex gap-4 border border-gray-200 rounded-lg p-4"
+                                    >
+                                        <img src={item.icon} className="h-10 w-10" alt={item.title} />
+                                        <div>
+                                            <h3 className="text-sm sm:text-base font-semibold text-gray-700">{item.title}</h3>
+                                            <p className="text-gray-600 text-sm sm:text-base">{item.amount}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
                             </div>
-
                         </div>
 
                         {/* Clarification Statement */}
-                        <div className="mb-8">
-                            <p className="text-lg text-gray-600">
+                        <div className="mb-8 bg-white p-4 sm:p-5 rounded-lg shadow-sm">
+                            <p className="text-gray-600 text-sm sm:text-base">
                                 These fees have been set after careful consideration of various factors, including
-                                operational costs, academic resources, and the overall student experience we strive to
-                                provide. We encourage all prospective and current students to refer only to official
-                                communications from the university or our designated representatives for accurate
-                                information.
+                                operational costs, academic resources, and the overall student experience we provide.
                             </p>
                         </div>
 
                         {/* Rector's Message */}
-                        <div className="mb-8 relative">
-                            <img src="/quote.svg" className="absolute top-0 right-0" />
-                            <h3 className="text-2xl font-bold text-[#00316b] mb-4">Message from Rector</h3>
-                            <p className="text-gray-800 text-lg">
+                        <div className="mb-8 relative bg-white p-4 sm:p-5 rounded-lg shadow-sm">
+                            <img src="/quote.svg" className="absolute top-4 right-4 h-6 w-6" alt="Quote" />
+                            <h3 className="text-xl sm:text-2xl font-bold text-[#00316b] mb-3">Message from Rector</h3>
+                            <p className="text-gray-800 text-sm sm:text-base mb-3">
                                 If you have any questions or concerns regarding tuition fees or any other aspect of our
-                                university's offerings, we are here to assist you and provide clarity on any issues you
-                                may have.
+                                university's offerings, we are here to assist you.
                             </p>
-                            <p className="text-[#00316b] text-right mt-2 font-bold">Sincerely, Rector Dekhkanov Sukhrob Sobirovich</p>
+                            <p className="text-[#00316b] text-right font-bold text-sm sm:text-base">
+                                Sincerely, Rector Dekhkanov Sukhrob Sobirovich
+                            </p>
                         </div>
 
                         {/* Fee Table */}
-                        <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-[#00316b] mb-4">Tuition Fee Breakdown</h3>
-                            <table className="table-auto w-full text-left text-gray-600 mt-6">
+                        <div className="mb-8 overflow-x-auto">
+                            <h3 className="text-xl sm:text-2xl font-bold text-[#00316b] mb-4">Tuition Fee Breakdown</h3>
+                            <table className="min-w-full text-left text-gray-600 border">
                                 <thead>
                                 <tr className="bg-gray-100">
-                                    <th className="px-4 py-2 text-lg font-bold text-[#00316b]">Year</th>
-                                    <th className="px-4 py-2 text-lg font-bold text-[#00316b]">Description</th>
-                                    <th className="px-4 py-2 text-lg font-bold text-[#00316b]">Amount (USD)</th>
+                                    <th className="px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base font-bold text-[#00316b]">Year</th>
+                                    <th className="px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base font-bold text-[#00316b]">Description</th>
+                                    <th className="px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base font-bold text-[#00316b]">Amount (USD)</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td className="border px-4 py-2">1st Year</td>
-                                    <td className="border px-4 py-2">
-                                        Tuition, Hostel, Mess, Visa, Government Registration, Admission,
-                                        Documentation, Translation, Airport Pick-up
-                                    </td>
-                                    <td className="border px-4 py-2">International@oxu.uz</td>
-                                </tr>
-                                <tr>
-                                    <td className="border px-4 py-2">2nd to 5th Year</td>
-                                    <td className="border px-4 py-2">
-                                        Hostel Fees: $600<br/>
-                                        Tuition Fees: $2600<br/>
-                                        Visa Renewal: $250<br/>
-                                        Registration: $250
-                                    </td>
-                                    <td className="border px-4 py-2">$3700</td>
-                                </tr>
-                                <tr>
-                                    <td className="border px-4 py-2 font-bold">Total (5 Years)</td>
-                                    <td className="border px-4 py-2 font-bold">Including all expenses</td>
-                                    <td className="border px-4 py-2 font-bold">$22,100</td>
-                                </tr>
+                                {[
+                                    {
+                                        year: "1st Year",
+                                        description: "Tuition, Hostel, Mess, Visa, Government Registration, Admission, Documentation, Translation, Airport Pick-up",
+                                        amount: "International@oxu.uz"
+                                    },
+                                    {
+                                        year: "2nd to 5th Year",
+                                        description: "Hostel Fees: $600\nTuition Fees: $2600\nVisa Renewal: $250\nRegistration: $250",
+                                        amount: "$3700"
+                                    },
+                                    {
+                                        year: "Total (5 Years)",
+                                        description: "Including all expenses",
+                                        amount: "$22,100",
+                                        bold: true
+                                    }
+                                ].map((row, index) => (
+                                    <tr key={index} className="border-t border-gray-200">
+                                        <td className={`px-3 py-2 border sm:px-4 sm:py-3 text-sm sm:text-base ${row.bold ? "font-bold" : ""}`}>
+                                            {row.year}
+                                        </td>
+                                        <td className={`px-3 py-2 border sm:px-4 sm:py-3 text-sm sm:text-base ${row.bold ? "font-bold" : ""} whitespace-pre-line`}>
+                                            {row.description}
+                                        </td>
+                                        <td className={`px-3 py-2 border sm:px-4 sm:py-3 text-sm sm:text-base ${row.bold ? "font-bold" : ""}`}>
+                                            {row.amount}
+                                        </td>
+                                    </tr>
+                                ))}
                                 </tbody>
                             </table>
                         </div>
 
                         {/* Additional Notes */}
                         <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-[#00316b] mb-4">Additional Notes</h3>
-                            <ul className="list-disc pl-5 divide-y divide-[rgba(159,171,185,.2)] text-gray-600">
-                                <li className="py-5 list-none">6th-year fee is not included (depends on NMC rule).</li>
-                                <li className="py-5 list-none">Medical insurance, if applicable, will be paid extra and not included in the above
-                                    charge.
-                                </li>
-                                <li className="py-5 list-none">Annual charges include university fee and visa safety.</li>
-                                <li className="py-5 list-none">Annual Mess charge from 2nd year: $1000 (3 meals/day, approx. $1/meal).</li>
-                                <li className="py-5 list-none">Hostel and mess are compulsory for the 1st two years.</li>
-                                <li className="py-5 list-none">Self-cook kitchen is available (for hostel students).</li>
+                            <h3 className="text-xl sm:text-2xl font-bold text-[#00316b] mb-4">Additional Notes</h3>
+                            <ul className="space-y-3">
+                                {[
+                                    "6th-year fee is not included (depends on NMC rule).",
+                                    "Medical insurance, if applicable, will be paid extra and not included in the above charge.",
+                                    "Annual charges include university fee and visa safety.",
+                                    "Annual Mess charge from 2nd year: $1000 (3 meals/day, approx. $1/meal).",
+                                    "Hostel and mess are compulsory for the 1st two years.",
+                                    "Self-cook kitchen is available (for hostel students)."
+                                ].map((note, index) => (
+                                    <motion.li
+                                        key={index}
+                                        whileHover={{ x: 5 }}
+                                        className="bg-white p-3 sm:p-4 rounded-lg text-gray-600 text-sm sm:text-base"
+                                    >
+                                        {note}
+                                    </motion.li>
+                                ))}
                             </ul>
                         </div>
                     </motion.div>
                 </section>
-                <aside className="w-1/2 max-h-max sticky top-32 overflow-hidden">
-                    <ul className="sideNav">
-                        <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
-                            <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">
+
+                {/* Side Navigation */}
+                <aside className="w-full lg:w-1/3 mb-6 lg:mb-0 lg:sticky lg:top-32 h-max">
+                    <motion.ul
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="sideNav bg-white shadow-md rounded-lg overflow-hidden"
+                    >
+                        <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-3 sm:p-4 group">
+                            <span className="uppercase p-1 px-2 text-base sm:text-lg font-bold flex items-center gap-3 z-10">
                                 AIU ADMISSION
                                 <img
                                     className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
@@ -194,29 +221,31 @@ const TuitionFeesPage = () => {
                                     alt="Arrow"
                                 />
                             </span>
-                            <span className="text-7xl absolute font-bold opacity-10">AIU</span>
+                            <span className="text-4xl sm:text-5xl absolute font-bold opacity-10">AIU</span>
                             <img
                                 src="/Vector.svg"
-                                className="absolute opacity-10 h-20 right-0 bottom-0"
+                                className="absolute opacity-10 h-16 sm:h-20 right-0 bottom-0"
                                 alt="Vector"
                             />
                         </li>
 
                         {navItems.map((item, index) => (
-                            <li
-                                onClick={() => navigate(item.path)}
+                            <motion.li
                                 key={index}
-                                className={`sideNav-links transition-colors cursor-pointer p-2 ${
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.4 + (index * 0.1) }}
+                                onClick={() => navigate(item.path)}
+                                className={`sideNav-links transition-colors cursor-pointer p-3 sm:p-4 ${
                                     location.pathname === item.path ? "sideNav-active" : ""
                                 }`}
                             >
-                                <Link to={item.path}>{item.label}</Link>
-                            </li>
+                                <span className="block text-sm sm:text-base">{item.label}</span>
+                            </motion.li>
                         ))}
-                    </ul>
+                    </motion.ul>
                 </aside>
             </div>
-
         </div>
     );
 };

@@ -6,38 +6,43 @@ const Mbbs = () => {
     const navigate = useNavigate();
 
     const navItems = [
-        { label: "MD", path: "/admissions/md" },
-        { label: "MBBS", path: "/admissions/mbbs" }
+        {label: "MD", path: "/admissions/md"},
+        {label: "MBBS", path: "/admissions/mbbs"}
     ];
 
     return (
-        <div>
-            <section className="page-heading-content mb-5 " data-cid="714">
-                <img className="bg-image object-top" src="/medical-education-stethoscope-book-graduate-hat-medical-concept-blue-background-graduate.jpg" alt=""/>
-                <div className="heading-content">
-                    <div className="container mx-auto px-5 title">
-                        <h1>MBBS Program </h1>
-                    </div>
-                    <div className="breadcrumb">
-                        <div className="container mx-auto">
-                            <ul>
-                                <li className="sideNav-link">
-                                    <a className="nav-link" href="/">Home<ChevronRight size="16"/></a>
+        <div className="bg-white">
+            {/* Hero Section */}
+            <section className="relative h-64 md:h-96 overflow-hidden mb-5">
+                <img
+                    className="absolute inset-0 w-full h-full object-cover object-top"
+                    src="/medical-education-stethoscope-book-graduate-hat-medical-concept-blue-background-graduate.jpg"
+                    alt="Medical education"
+                />
+                <div className="absolute inset-0 bg-[#012c6e]/70 flex flex-col justify-end">
+                    <div className="container mx-auto px-4 md:px-6">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">MBBS Program</h1>
+
+                        {/* Breadcrumb */}
+                        <div className="breadcrumb py-3">
+                            <ul className="flex flex-wrap items-center text-sm md:text-base text-white/80">
+                                <li className="flex items-center">
+                                    <a className="hover:text-white flex items-center" href="/">
+                                        Home <ChevronRight className="mx-1" size="16"/>
+                                    </a>
                                 </li>
-                                <li className="sideNav-link">
-                                                                    <span className="nav-link">
-                                Admissions
-                                                                                   <ChevronRight size="16"/>
-                                                                    </span>
+                                <li className="flex items-center">
+                                    <span className="flex items-center mx-1">
+                                        Admissions <ChevronRight className="mx-1" size="16"/>
+                                    </span>
                                 </li>
-                                <li className="sideNav-link">
-                                                                    <span className="nav-link">
-                                Find Programs
-                                                                                   <ChevronRight size="16"/>
-                                                                    </span>
+                                <li className="flex items-center">
+                                    <span className="flex items-center mx-1">
+                                        Find Programs <ChevronRight className="mx-1" size="16"/>
+                                    </span>
                                 </li>
-                                <li className="sideNav-link">
-                                    <a className="nav-link" href="/admissions/mbbs">
+                                <li>
+                                    <a className="text-white font-medium" href="/admissions/mbbs">
                                         MBBS
                                     </a>
                                 </li>
@@ -47,171 +52,162 @@ const Mbbs = () => {
                 </div>
             </section>
 
-            <div className="flex px-10 gap-10 mb-5">
-                <div className="mx-auto w-full text-gray-800 space-y-10">
-                    <section className="space-y-6">
-                        <p className="text-lg font-semibold">
+            {/* Main Content */}
+            <div className="flex flex-col lg:flex-row px-4 md:px-6 lg:px-10 gap-6 lg:gap-10 mb-10">
+                {/* Content Section */}
+                <div className="w-full lg:w-1/2 order-2 lg:order-1 text-gray-800 space-y-8">
+                    {/* Introduction */}
+                    <section className="space-y-4">
+                        <p className="text-base md:text-lg font-medium leading-relaxed">
                             Embark on a rewarding journey to become a medical professional with the MBBS program at Asia
                             International University (AIU). Our program is designed to provide you with a solid
-                            foundation
-                            in medical science, clinical skills, and patient care, equipping you to meet the challenges
-                            of
-                            modern healthcare.
+                            foundation in medical science, clinical skills, and patient care.
                         </p>
                     </section>
 
-                    <section className="space-y-8">
-                        <h2 className="text-3xl font-bold text-[#012c6e] border-b pb-3">Why Choose AIU for Your
-                            MBBS?</h2>
+                    {/* Why Choose AIU */}
+                    <section className="space-y-6">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                            Why Choose AIU for Your MBBS?
+                        </h2>
 
                         <div className="space-y-6">
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900">Comprehensive Curriculum</h3>
-                                <p className="text-base">
-                                    Our MBBS program offers a well-rounded education that covers all essential aspects
-                                    of
-                                    medical science, from basic sciences to clinical practice. We ensure that our
-                                    curriculum
-                                    is aligned with international standards, preparing you for a successful career in
-                                    medicine anywhere in the world.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900">Expert Faculty</h3>
-                                <p className="text-base">
-                                    Learn from a team of accomplished and experienced faculty members who are dedicated
-                                    to
-                                    your academic and professional growth. Our professors are active practitioners and
-                                    researchers who bring real-world experience into the classroom, ensuring you receive
-                                    practical and up-to-date medical training.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900">Modern Facilities</h3>
-                                <p className="text-base">
-                                    AIU boasts state-of-the-art facilities, including advanced laboratories, simulation
-                                    centers, and research facilities. These resources allow you to gain hands-on
-                                    experience
-                                    and apply your knowledge in a controlled and supportive environment, bridging the
-                                    gap
-                                    between theory and practice.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900">Clinical Exposure</h3>
-                                <p className="text-base">
-                                    We believe that early and extensive clinical exposure is key to developing competent
-                                    medical professionals. Our MBBS program includes clinical rotations at top hospitals
-                                    and
-                                    healthcare centers, where you will work with patients under the supervision of
-                                    experienced clinicians, gaining valuable practical experience.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900">International Perspective</h3>
-                                <p className="text-base">
-                                    As a globally oriented university, AIU offers numerous opportunities for
-                                    international
-                                    exposure. Engage in student exchange programs, participate in international medical
-                                    conferences, and collaborate with peers from around the world, broadening your
-                                    medical
-                                    education and understanding of global healthcare challenges.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900">Supportive Academic Environment</h3>
-                                <p className="text-base">
-                                    At AIU, your success is our priority. We offer a nurturing academic environment with
-                                    personalized support services, academic advising, and mentorship programs to help
-                                    you
-                                    thrive in your studies and develop into a confident medical professional.
-                                </p>
-                            </div>
+                            {[
+                                {
+                                    title: "Comprehensive Curriculum",
+                                    content: "Our MBBS program offers a well-rounded education that covers all essential aspects of medical science, from basic sciences to clinical practice. We ensure that our curriculum is aligned with international standards."
+                                },
+                                {
+                                    title: "Expert Faculty",
+                                    content: "Learn from a team of accomplished and experienced faculty members who are dedicated to your academic and professional growth. Our professors are active practitioners and researchers."
+                                },
+                                {
+                                    title: "Modern Facilities",
+                                    content: "AIU boasts state-of-the-art facilities, including advanced laboratories, simulation centers, and research facilities. These resources allow you to gain hands-on experience."
+                                },
+                                {
+                                    title: "Clinical Exposure",
+                                    content: "We believe that early and extensive clinical exposure is key to developing competent medical professionals. Our MBBS program includes clinical rotations at top hospitals."
+                                },
+                                {
+                                    title: "International Perspective",
+                                    content: "As a globally oriented university, AIU offers numerous opportunities for international exposure. Engage in student exchange programs and international medical conferences."
+                                },
+                                {
+                                    title: "Supportive Academic Environment",
+                                    content: "At AIU, your success is our priority. We offer a nurturing academic environment with personalized support services, academic advising, and mentorship programs."
+                                }
+                            ].map((item, index) => (
+                                <div key={index} className="bg-gray-50 p-4 md:p-5 rounded-lg">
+                                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-sm md:text-base">
+                                        {item.content}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </section>
 
-                    <section className="space-y-6">
-                        <h2 className="text-3xl font-bold text-[#012c6e] border-b pb-3">Program Structure</h2>
-                        <p className="text-base">
-                            The MBBS program at AIU is structured over five years, followed by a one-year compulsory
-                            internship. The first two years focus on preclinical subjects, such as anatomy, physiology,
-                            and
-                            biochemistry, laying the foundation for your medical education. The next three years are
-                            dedicated to clinical subjects, including pathology, pharmacology, microbiology, and
-                            community
-                            medicine, as well as clinical rotations in various specialties. The final year of internship
-                            provides hands-on experience in hospitals, where you will apply your knowledge and skills in
-                            real patient care settings.
-                        </p>
+                    {/* Program Structure */}
+                    <section className="space-y-4">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                            Program Structure
+                        </h2>
+                        <div className="bg-gray-50 p-4 md:p-5 rounded-lg">
+                            <p className="text-sm md:text-base">
+                                The MBBS program at AIU is structured over five years, followed by a one-year compulsory
+                                internship. The first two years focus on preclinical subjects, such as anatomy,
+                                physiology,
+                                and biochemistry. The next three years are dedicated to clinical subjects, including
+                                pathology, pharmacology, microbiology, and community medicine, as well as clinical
+                                rotations.
+                                The final year of internship provides hands-on experience in hospitals.
+                            </p>
+                        </div>
                     </section>
 
-                    <section className="space-y-6">
-                        <h2 className="text-3xl font-bold text-[#012c6e] border-b pb-3">Admission Requirements</h2>
-                        <p className="text-base">
-                            We seek dedicated and academically talented students who are passionate about pursuing a
-                            career
-                            in medicine. Admission to the MBBS program is competitive, and we consider applicants who
-                            demonstrate:
-                        </p>
-                        <ul className="list-disc pl-6 space-y-2">
-                            <li>Strong academic performance, particularly in the sciences</li>
-                            <li>A deep commitment to the field of medicine</li>
-                            <li>Involvement in extracurricular activities, such as volunteer work, research, or
-                                leadership
-                                roles
-                            </li>
-                            <li>Proficiency in English, with a required minimum score on language proficiency tests</li>
-                        </ul>
+                    {/* Admission Requirements */}
+                    <section className="space-y-4">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                            Admission Requirements
+                        </h2>
+                        <div className="bg-gray-50 p-4 md:p-5 rounded-lg">
+                            <p className="text-sm md:text-base mb-3">
+                                We seek dedicated and academically talented students who are passionate about pursuing a
+                                career in medicine. Admission to the MBBS program is competitive, and we consider
+                                applicants who
+                                demonstrate:
+                            </p>
+                            <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
+                                <li>Strong academic performance, particularly in the sciences</li>
+                                <li>A deep commitment to the field of medicine</li>
+                                <li>Involvement in extracurricular activities</li>
+                                <li>Proficiency in English</li>
+                            </ul>
+                        </div>
                     </section>
 
-                    <section className="space-y-6">
-                        <h2 className="text-3xl font-bold text-[#012c6e] border-b pb-3">How to Apply</h2>
-                        <p className="text-base">
-                            If you’re ready to take the first step toward a fulfilling career in medicine, we invite you
-                            to
-                            apply to the MBBS program at AIU. Our admissions team is here to support you throughout the
-                            application process and answer any questions you may have. Visit our admissions page for
-                            detailed information on the application requirements, deadlines, and how to submit your
-                            application.
-                        </p>
+                    {/* How to Apply */}
+                    <section className="space-y-4">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                            How to Apply
+                        </h2>
+                        <div className="bg-gray-50 p-4 md:p-5 rounded-lg">
+                            <p className="text-sm md:text-base">
+                                If you're ready to take the first step toward a fulfilling career in medicine, we invite
+                                you
+                                to apply to the MBBS program at AIU. Our admissions team is here to support you
+                                throughout the
+                                application process. Visit our admissions page for detailed information.
+                            </p>
+                            <button
+                                onClick={() => navigate('/admissions/apply')}
+                                className="mt-4 bg-[#012c6e] text-white px-6 py-2 rounded-md hover:bg-[#0a37b3] transition-colors"
+                            >
+                                Apply Now
+                            </button>
+                        </div>
                     </section>
                 </div>
-                <aside className="w-1/2 max-h-max sticky top-32 overflow-hidden">
-                    <ul className="sideNav">
-                        <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
-    <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">
-       FIND PROGRAMS
-        <img
-            className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
-            src="/arrow.svg"
-            alt="Arrow"
-        />
-    </span>
-                            <span className="text-7xl absolute font-bold opacity-10">AIU</span>
-                            <img
-                                src="/Vector.svg"
-                                className="absolute opacity-10 h-20 right-0 bottom-0"
-                                alt="Vector"
-                            />
-                        </li>
 
-                        {navItems.map((item, index) => (
-                            <li
-                                onClick={() => navigate(item.path)}
-                                key={index}
-                                className={`sideNav-links transition-colors cursor-pointer ${
-                                    location.pathname === item.path ? "sideNav-active" : ""
-                                }`}
-                            >
-                                <Link to={item.path}>{item.label}</Link>
+                {/* Side Navigation - Hidden on mobile, shown on desktop */}
+                <aside className="w-full lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 lg:sticky lg:top-32 h-max">
+                    <div className="lg:pl-6">
+                        <ul className="sideNav bg-white shadow-md rounded-lg overflow-hidden">
+                            <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-3 md:p-4 group">
+                                <span
+                                    className="uppercase p-1 px-2 text-base md:text-lg font-bold flex items-center gap-3 z-10">
+                                    FIND PROGRAMS
+                                    <img
+                                        className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
+                                        src="/arrow.svg"
+                                        alt="Arrow"
+                                    />
+                                </span>
+                                <span
+                                    className="text-4xl md:text-5xl lg:text-7xl absolute font-bold opacity-10">AIU</span>
+                                <img
+                                    src="/Vector.svg"
+                                    className="absolute opacity-10 h-12 md:h-16 lg:h-20 right-0 bottom-0"
+                                    alt="Vector"
+                                />
                             </li>
-                        ))}
-                    </ul>
+
+                            {navItems.map((item, index) => (
+                                <li
+                                    key={index}
+                                    onClick={() => navigate(item.path)}
+                                    className={`sideNav-links transition-colors cursor-pointer p-3 md:p-4 ${
+                                        location.pathname === item.path ? "sideNav-active" : ""
+                                    }`}
+                                >
+                                    <span className="block text-sm md:text-base">{item.label}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </aside>
             </div>
         </div>

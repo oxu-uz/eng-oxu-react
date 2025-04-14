@@ -4,18 +4,30 @@ import TopNav from "../components/navigation/TopNav.jsx";
 import BotNav from "../components/navigation/BotNav.jsx";
 import {Facebook, Instagram} from "lucide-react";
 import FooterStatic from "../components/footerStatic.jsx";
+import ContactModal from "../components/ContactModal.jsx";
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleContactClick = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleSend = (formData) => {
+        console.log("Form yuborildi:", formData);
+        // Bu yerda API ga yuborish yoki boshqa action qilishingiz mumkin
+    };
+
     return (
         <div >
          <nav className="bg-gradient-to-r lg:block hidden from-[#092076] to-[#0a37b3] border-b border-[hsla(0,0%,100%,.1)] py-2 text-white">
   <div className="container mx-auto flex flex-row items-center justify-center md:justify-between gap-4">
     {/* Блок 1 */}
     <div className="flex flex-col items-center text-center">
-      <span className="text-base font-semibold leading-tight">
+      <a href="mailto:info@oxu.uz" className="text-base font-semibold leading-tight">
       info@oxu.uz
-      </span>
+      </a>
       <span className="text-xs opacity-80">
         Cooperative email
       </span>
@@ -26,9 +38,9 @@ const Layout = () => {
 
     {/* Блок 2 */}
     <div className="flex flex-col items-center text-center">
-      <span className="text-base font-semibold leading-tight">
+      <a href="tel:+998553050009" className="text-base font-semibold leading-tight">
       +998 55 305 00 09
-      </span>
+      </a>
       <span className="text-xs opacity-80">
       Hotline for applicants
       </span>
@@ -39,13 +51,19 @@ const Layout = () => {
 
     {/* Блок 3 */}
     <div className="flex flex-col items-center text-center">
-      <span className="text-base font-semibold leading-tight">
+      <span onClick={handleContactClick} className="text-base cursor-pointer font-semibold leading-tight">
         Contacts
       </span>
       <span className="text-xs opacity-80">
        Address and telephone
       </span>
     </div>
+
+      <ContactModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onSubmit={handleSend}
+      />
 
     {/* Разделитель */}
     <div className="block h-6 border-l border-white/20"></div>

@@ -99,6 +99,7 @@ function NewsAndEvents() {
             variants={animationVariants}
           >
             <NewsCard
+                id={newsItem.id}
               title={newsItem.title}
               image={newsItem.images[0].image_path}
               description={newsItem.description}

@@ -60,6 +60,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+.html {
+    scroll-behavior: smooth;
+}
+
 .nav-link {
     font-family: "Outfit", serif;
     font-size: .9rem;

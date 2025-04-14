@@ -73,12 +73,12 @@ const BotNav = () => {
                 { label: "Scholarship ", link: "/scholarships" },
                 { label: "Tuition and Cost ", link: "/tuition-fees" },
                 { label: "For partners / For applicants", link: "/research/labs", submenu: [
-                        { label: "Login", link: "/md" },
+                        { label: "Login", link: "/login" },
                     ]  },
             ] },
         { label: "Gallery ", link: "/gallery" },
         // { label: "Alumni ", link: "/international-relations" },
-        { label: "Contact ", link: "/international-relations" },
+        { label: "Contact ", link: "/international-relations/contact" },
     ];
 
     return (

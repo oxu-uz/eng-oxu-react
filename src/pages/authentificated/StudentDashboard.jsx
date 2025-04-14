@@ -324,14 +324,14 @@ const StudentDashboard = () => {
         <h2 className="text-xl font-bold mb-5">Student Profile</h2>
         <form onSubmit={handleProfileSubmit}>
           <div className="mb-4">
-            <label className="inline-block text-sm font-medium text-slate-700 dark:text-white mb-2">Gender (1 - Male, 2 - Female)</label>
-            <Input
-              type="number"
-              name="gender"
-              value={profileForm.gender}
-              onChange={(e) => setProfileForm({ ...profileForm, gender: e.target.value })}
-              placeholder="Enter gender"
-            />
+            <label className="inline-block text-sm font-medium text-slate-700 dark:text-white mb-2">Gender</label>
+            <Select
+                selectedValue={profileForm.gender}
+                onValueChange={(value) => setProfileForm({ ...profileForm, gender: value })}
+            >
+              <Select.Option value="1">Male</Select.Option>
+              <Select.Option value="2">Female</Select.Option>
+            </Select>
           </div>
           <div className="mb-4">
             <label className="inline-block text-sm font-medium text-slate-700 dark:text-white mb-2">Nationality ID</label>

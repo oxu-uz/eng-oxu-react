@@ -7,6 +7,8 @@ import {AnimatePresence, motion, useAnimation, useInView, useReducedMotion, useS
 import FadeIn, {FadeInStagger} from "../components/FadeIn.jsx";
 import Slider from "react-infinite-logo-slider";
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
+import { Link, Element } from 'react-scroll';
+
 
 
 const HomePage = () => {
@@ -577,7 +579,9 @@ const HomePage = () => {
                 </div>
             </Slider>
 
-            <NewsAndEvents/>
+            <Element name="news">
+                <NewsAndEvents/>
+            </Element>
         </div>
     );
 };

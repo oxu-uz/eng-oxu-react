@@ -1,4 +1,4 @@
-    import {createBrowserRouter, Navigate} from "react-router-dom";
+import {createBrowserRouter, Navigate} from "react-router-dom";
 import Layout from "../pages/Layout.jsx";
 import Home from "../pages/HomePage.jsx";
 import NotFound from "../pages/NotFound.jsx";
@@ -11,25 +11,25 @@ import Administration from "../pages/about/aiu/Administration.jsx";
 import InternationalRelations from "../pages/about/aiu/InternationalRelations.jsx";
 import Md from "../pages/admissions/programs/Md.jsx";
 import Mbbs from "../pages/admissions/programs/Mbbs.jsx";
-    import AcademicCalendar from "../pages/academics/AcademicCalendar.jsx";
-    import StudyPlan from "../pages/academics/StudyPlan.jsx";
-    import AboutUz from "../pages/about-uz/AboutUz.jsx";
-    import LifeInBukhara from "../pages/about-uz/LifeInBukhara.jsx";
-    import ScholarshipPage from "../pages/ScholarshipPage.jsx";
-    import StudentCouncilPage from "../pages/StudentCouncilPage.jsx";
-    import AcademicCouncilPage from "../pages/AcademicCouncilPage.jsx";
-    import ScientificCouncilPage from "../pages/ScientificCouncilPage.jsx";
-    import SportsCouncilPage from "../pages/SportsCouncilPage.jsx";
-    import CulturalCouncilPage from "../pages/CulturalCouncilPage.jsx";
-    import ITMediaCouncilPage from "../pages/ITMediaCouncilPage.jsx";
-    import DepartmentOfFundamentalMedicinePage from "../pages/departments/DepartmentOfFundamentalMedicinePage.jsx";
-    import ClinicalSciencesPage from "../pages/departments/ClinicalSciences.jsx";
-    import GeneralSciencesPage from "../pages/departments/GeneralSciencesPage.jsx";
-    import TuitionFeesPage from "../pages/admissions/TuitionsFeePage.jsx";
-    import FindProgramms from "../pages/FindProgramms.jsx";
-    import RegulatoryDocuments from "../pages/RegulatoryDocuments.jsx";
-    import Gallery from "../pages/Gallery.jsx";
-    import IntHome from "../pages/IntHome.jsx";
+import AcademicCalendar from "../pages/academics/AcademicCalendar.jsx";
+import StudyPlan from "../pages/academics/StudyPlan.jsx";
+import AboutUz from "../pages/about-uz/AboutUz.jsx";
+import LifeInBukhara from "../pages/about-uz/LifeInBukhara.jsx";
+import ScholarshipPage from "../pages/ScholarshipPage.jsx";
+import StudentCouncilPage from "../pages/StudentCouncilPage.jsx";
+import AcademicCouncilPage from "../pages/AcademicCouncilPage.jsx";
+import ScientificCouncilPage from "../pages/ScientificCouncilPage.jsx";
+import SportsCouncilPage from "../pages/SportsCouncilPage.jsx";
+import CulturalCouncilPage from "../pages/CulturalCouncilPage.jsx";
+import ITMediaCouncilPage from "../pages/ITMediaCouncilPage.jsx";
+import DepartmentOfFundamentalMedicinePage from "../pages/departments/DepartmentOfFundamentalMedicinePage.jsx";
+import ClinicalSciencesPage from "../pages/departments/ClinicalSciences.jsx";
+import GeneralSciencesPage from "../pages/departments/GeneralSciencesPage.jsx";
+import TuitionFeesPage from "../pages/admissions/TuitionsFeePage.jsx";
+import FindProgramms from "../pages/FindProgramms.jsx";
+import RegulatoryDocuments from "../pages/RegulatoryDocuments.jsx";
+import Gallery from "../pages/Gallery.jsx";
+import IntHome from "../pages/IntHome.jsx";
 import LoginPage from "../auth/Login.jsx";
 import ProtectedRoute from "../auth/ProtectedRoute.jsx";
 import StudentDashboard from "../pages/authentificated/StudentDashboard.jsx";
@@ -44,6 +44,8 @@ import ManagerDashboard from "../pages/authentificated/ManagerDashboard.jsx";
 import ManagerUsersPage from "../pages/authentificated/ManagerUsersPage.jsx";
 import ManagerCategoriesPage from "../pages/authentificated/ManagerCategoriesPage.jsx";
 import ManagerPostsPage from "../pages/authentificated/ManagerPostsPage.jsx";
+import NewsInDetail from "../components/home/NewsInDetail.jsx";
+import InternationalRelationsContact from "../pages/InternationalRelationsContact.jsx";
 
 
 const router = createBrowserRouter([
@@ -53,128 +55,135 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home/>
             },
             {
                 path: '/student/dashboard',
                 element: (
-                  <ProtectedRoute allowedRoles={["student"]}>
-                    <StudentDashboard />
-                  </ProtectedRoute>
+                    <ProtectedRoute allowedRoles={["student"]}>
+                        <StudentDashboard/>
+                    </ProtectedRoute>
                 )
             },
-
+            {
+                path: '/news/:id',
+                element: <NewsInDetail/>
+            },
             {
                 path: '/about/leadership',
-                element: <Leadership />
-            },{
+                element: <Leadership/>
+            }, {
                 path: '/about/aiu/vision',
-                element: <Vision />
+                element: <Vision/>
             },
             {
                 path: '/about/aiu/mission',
-                element: <Mission />
-            },{
+                element: <Mission/>
+            }, {
                 path: '/about/aiu/history',
-                element: <History />
-            },{
+                element: <History/>
+            }, {
                 path: '/about/aiu/registrar',
-                element: <Registrar />
-            },{
+                element: <Registrar/>
+            }, {
                 path: '/about/aiu/administration',
-                element: <Administration />
-            },{
+                element: <Administration/>
+            }, {
                 path: '/about/aiu/international-relations',
-                element: <InternationalRelations />
-            },{
+                element: <InternationalRelations/>
+            }, {
                 path: '/about/aiu/structure-of-university',
-                element: <InternationalRelations />
+                element: <InternationalRelations/>
             }
-            ,{
+            , {
                 path: '/admissions/md',
-                element: <Md />
+                element: <Md/>
             }
-            ,{
+            , {
                 path: '/admissions/mbbs',
-                element: <Mbbs />
-            },,{
+                element: <Mbbs/>
+            }, , {
                 path: '/find-programs',
-                element: <FindProgramms />
+                element: <FindProgramms/>
             },
             {
                 path: '/academics/academic-calendar',
-                element: <AcademicCalendar />
+                element: <AcademicCalendar/>
             },
 
             {
                 path: '/academics/study-plan',
-                element: <StudyPlan />
+                element: <StudyPlan/>
             }, {
                 path: '/about-uzbekistan',
-                element: <AboutUz />
-            },{
+                element: <AboutUz/>
+            }, {
                 path: '/life-in-bukhara',
-                element: <LifeInBukhara />
-            },{
+                element: <LifeInBukhara/>
+            }, {
                 path: '/scholarships',
-                element: <ScholarshipPage />
-            },{
+                element: <ScholarshipPage/>
+            }, {
                 path: '/students-council',
-                element: <StudentCouncilPage />
-            },{
+                element: <StudentCouncilPage/>
+            }, {
                 path: '/academic-council',
-                element: <AcademicCouncilPage />
-            },{
+                element: <AcademicCouncilPage/>
+            }, {
                 path: '/scientific-council',
-                element: <ScientificCouncilPage />
-            },{
+                element: <ScientificCouncilPage/>
+            }, {
                 path: '/sports-council',
-                element: <SportsCouncilPage />
-            },{
+                element: <SportsCouncilPage/>
+            }, {
                 path: '/cultural-council',
-                element: <CulturalCouncilPage />
-            },{
+                element: <CulturalCouncilPage/>
+            }, {
                 path: '/it-media-council',
-                element: <ITMediaCouncilPage />
-            },{
+                element: <ITMediaCouncilPage/>
+            }, {
                 path: '/about/departments/fundamental-medicine',
-                element: <DepartmentOfFundamentalMedicinePage />
-            },{
+                element: <DepartmentOfFundamentalMedicinePage/>
+            }, {
                 path: '/about/departments/clinical-science',
-                element: <ClinicalSciencesPage />
-            },{
+                element: <ClinicalSciencesPage/>
+            }, {
                 path: '/about/departments/general-science',
-                element: <GeneralSciencesPage />
-            },{
+                element: <GeneralSciencesPage/>
+            }, {
                 path: '/tuition-fees',
-                element: <TuitionFeesPage />
-            },{
+                element: <TuitionFeesPage/>
+            }, {
                 path: '/about/aiu/regulatory-documents',
-                element: <RegulatoryDocuments />
-            },{
+                element: <RegulatoryDocuments/>
+            }, {
                 path: '/gallery',
-                element: <Gallery />
+                element: <Gallery/>
             },
+            {
+                path: '/international-relations/contact',
+                element: <InternationalRelationsContact/>
+            }
         ]
     },
     {
         path: '/admin',
-        element: <AdminLayout />,
+        element: <AdminLayout/>,
         children: [
             {
                 path: 'dashboard',
                 element: (
-                  <ProtectedRoute allowedRoles={["admin"]}>
-                    <AdminDashboard />
-                  </ProtectedRoute>
+                    <ProtectedRoute allowedRoles={["admin"]}>
+                        <AdminDashboard/>
+                    </ProtectedRoute>
                 )
             },
             {
                 path: 'dashboard/users',
                 element: (
-                  <ProtectedRoute allowedRoles={["admin"]}>
-                    <AdminUsersPage />
-                  </ProtectedRoute>
+                    <ProtectedRoute allowedRoles={["admin"]}>
+                        <AdminUsersPage/>
+                    </ProtectedRoute>
                 )
             },
 
@@ -183,14 +192,14 @@ const router = createBrowserRouter([
     },
     {
         path: '/agent',
-        element: <AgentLayout />,
+        element: <AgentLayout/>,
         children: [
             {
                 path: 'dashboard',
                 element: (
-                  <ProtectedRoute allowedRoles={["agent"]}>
-                    <AgentDashboard />
-                  </ProtectedRoute>
+                    <ProtectedRoute allowedRoles={["agent"]}>
+                        <AgentDashboard/>
+                    </ProtectedRoute>
                 )
             },
 
@@ -199,38 +208,38 @@ const router = createBrowserRouter([
     },
     {
         path: '/manager',
-        element: <ManagerLayout />,
+        element: <ManagerLayout/>,
         children: [
             {
                 path: 'dashboard',
                 element: (
-                  <ProtectedRoute allowedRoles={["manager"]}>
-                    <ManagerDashboard />
-                  </ProtectedRoute>
+                    <ProtectedRoute allowedRoles={["manager"]}>
+                        <ManagerDashboard/>
+                    </ProtectedRoute>
                 )
             },
             {
                 path: 'dashboard/users',
                 element: (
-                  <ProtectedRoute allowedRoles={["manager"]}>
-                    <ManagerUsersPage />
-                  </ProtectedRoute>
+                    <ProtectedRoute allowedRoles={["manager"]}>
+                        <ManagerUsersPage/>
+                    </ProtectedRoute>
                 )
             },
             {
                 path: 'dashboard/category',
                 element: (
-                  <ProtectedRoute allowedRoles={["manager"]}>
-                    <ManagerCategoriesPage />
-                  </ProtectedRoute>
+                    <ProtectedRoute allowedRoles={["manager"]}>
+                        <ManagerCategoriesPage/>
+                    </ProtectedRoute>
                 )
             },
             {
                 path: 'dashboard/posts',
                 element: (
-                  <ProtectedRoute allowedRoles={["manager"]}>
-                    <ManagerPostsPage />
-                  </ProtectedRoute>
+                    <ProtectedRoute allowedRoles={["manager"]}>
+                        <ManagerPostsPage/>
+                    </ProtectedRoute>
                 )
             },
 
@@ -239,11 +248,11 @@ const router = createBrowserRouter([
     },
     {
         path: '/login',
-        element: <LoginPage />
+        element: <LoginPage/>
     },
     {
         path: '/register',
-        element: <RegisterPage />
+        element: <RegisterPage/>
     },
     {
         path: '*',

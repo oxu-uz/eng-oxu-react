@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { MenuUnfoldOutlined, MenuFoldOutlined, DashboardOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import FooterStatic from '../components/footerStatic';
 import { useAuth } from '../hooks/AuthContext';
+import ContactModal from "../components/ContactModal.jsx";
 
 const { Header, Sider, Content } = Layout;
 
@@ -11,6 +12,16 @@ const AgentLayout = () => {
   const [collapsed, setCollapsed] = useState(true);
   const navigate = useNavigate();
   const { logout } = useAuth();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleContactClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleSend = (formData) => {
+    console.log("Form yuborildi:", formData);
+    // Bu yerda API ga yuborish yoki boshqa action qilishingiz mumkin
+  };
 
   const toggle = () => {
     setCollapsed(!collapsed);
@@ -27,9 +38,9 @@ const AgentLayout = () => {
   <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
     {/* Блок 1 */}
     <div className="flex flex-col items-center text-center md:items-start md:text-left">
-      <span className="text-base font-semibold leading-tight">
+      <a href="mailto:info@oxu.uz" className="text-base font-semibold leading-tight">
       info@oxu.uz
-      </span>
+      </a>
       <span className="text-xs opacity-80">
         Cooperative email
       </span>
@@ -40,9 +51,9 @@ const AgentLayout = () => {
 
     {/* Блок 2 */}
     <div className="flex flex-col items-center text-center md:items-start md:text-left">
-      <span className="text-base font-semibold leading-tight">
+      <a href="tel:+998553050009" className="text-base font-semibold leading-tight">
       +998 55 305 00 09
-      </span>
+      </a>
       <span className="text-xs opacity-80">
       Hotline for applicants
       </span>
@@ -53,13 +64,19 @@ const AgentLayout = () => {
 
     {/* Блок 3 */}
     <div className="flex flex-col items-center text-center md:items-start md:text-left">
-      <span className="text-base font-semibold leading-tight">
+      <span onClick={handleContactClick} className="text-base cursor-pointer font-semibold leading-tight">
         Contacts
       </span>
       <span className="text-xs opacity-80">
        Address and telephone
       </span>
     </div>
+
+    <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSubmit={handleSend}
+    />
 
     {/* Разделитель */}
     <div className="hidden md:block h-6 border-l border-white/20"></div>
@@ -77,7 +94,7 @@ const AgentLayout = () => {
 </nav>
       {/* Header */}
       <Header className="header flex items-center px-5" style={{ background: '#fff' }}>
-        <img src="/lg.svg" className="h-[55px] my-auto will-change-auto" alt="Logo" />
+        <img onClick={()=>navigate('/')} src="/lg.svg" className="h-[55px] my-auto will-change-auto" alt="Logo" />
         {React.createElement(
           collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
           {

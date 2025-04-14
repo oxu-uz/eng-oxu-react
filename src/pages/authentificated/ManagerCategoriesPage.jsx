@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Modal, Form, Input, message } from 'antd';
-import { getAllCategories, createCategory, updateCategory, deleteCategory } from '../../services/manager/category/ManagerCategoryService';
+import {Button, Modal, Form, Input, message, Card, List, Typography, Skeleton, Divider} from 'antd';
+import {
+  createCategory,
+  deleteCategory,
+  getAllCategories,
+  updateCategory
+} from "../../services/manager/category/ManagerCategoryService.jsx";
+
+const { Text, Title } = Typography;
 
 const ManagerCategoriesPage = () => {
   const [categories, setCategories] = useState([]);
@@ -45,11 +52,9 @@ const ManagerCategoriesPage = () => {
     try {
       const values = await form.validateFields();
       if (editingCategory) {
-        // Update existing category
         await updateCategory(editingCategory.id, values);
         message.success('Category updated');
       } else {
-        // Create new category
         await createCategory(values);
         message.success('Category created');
       }
@@ -60,53 +65,124 @@ const ManagerCategoriesPage = () => {
     }
   };
 
-  return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Manager Categories</h1>
-      <Button type="primary" onClick={() => openModal(null)}>
-        Create Category
-      </Button>
-      <table className="min-w-full mt-4 border">
-        <thead className="bg-gray-100">
-          <tr>
-            <th className="px-4 py-2 border">ID</th>
-            <th className="px-4 py-2 border">Title</th>
-            <th className="px-4 py-2 border">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {categories.map((cat) => (
-            <tr key={cat.id} className="border-b">
-              <td className="px-4 py-2 border">{cat.id}</td>
-              <td className="px-4 py-2 border">{cat.title}</td>
-              <td className="px-4 py-2 border">
-                <Button onClick={() => openModal(cat)}>Edit</Button>
-                <Button danger onClick={() => handleDelete(cat.id)} className="ml-2">
-                  Delete
-                </Button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+  // Mobile category card renderer
+  const renderMobileCategory = (category) => (
+      <Card className="mb-4 shadow-sm">
+        <div className="space-y-3">
+          <div className="flex justify-between">
+            <Text strong>ID:</Text>
+            <Text>{category.id}</Text>
+          </div>
+          <Divider className="my-2" />
 
-      <Modal
-        title={editingCategory ? "Edit Category" : "Create Category"}
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={() => setIsModalVisible(false)}
-      >
-        <Form form={form} layout="vertical">
-          <Form.Item
-            label="Title"
-            name="title"
-            rules={[{ required: true, message: 'Please input category title' }]}
+          <div className="flex justify-between">
+            <Text strong>Title:</Text>
+            <Text>{category.title}</Text>
+          </div>
+
+          <div className="flex space-x-2">
+            <Button
+                size="small"
+                onClick={() => openModal(category)}
+                block
+            >
+              Edit
+            </Button>
+            <Button
+                size="small"
+                onClick={() => handleDelete(category.id)}
+                block
+                danger
+            >
+              Delete
+            </Button>
+          </div>
+        </div>
+      </Card>
+  );
+
+  return (
+      <div className="container mx-auto p-2 md:p-4">
+        <Title level={3} className="mb-4">Manager Categories</Title>
+
+        <div className="mb-4">
+          <Button
+              type="primary"
+              onClick={() => openModal(null)}
+              size="large"
           >
-            <Input />
-          </Form.Item>
-        </Form>
-      </Modal>
-    </div>
+            Create Category
+          </Button>
+        </div>
+
+        {loading ? (
+            <Skeleton active paragraph={{ rows: 6 }} />
+        ) : (
+            <>
+              {/* Desktop Table (hidden on mobile) */}
+              <div className="hidden md:block">
+                <table className="min-w-full border rounded-lg overflow-hidden">
+                  <thead className="bg-gray-100">
+                  <tr>
+                    <th className="px-4 py-2 border">ID</th>
+                    <th className="px-4 py-2 border">Title</th>
+                    <th className="px-4 py-2 border">Actions</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {categories.map((cat) => (
+                      <tr key={cat.id} className="border-b hover:bg-gray-50">
+                        <td className="px-4 py-2 border">{cat.id}</td>
+                        <td className="px-4 py-2 border">{cat.title}</td>
+                        <td className="px-4 py-2 border">
+                          <Button size="middle" onClick={() => openModal(cat)}>
+                            Edit
+                          </Button>
+                          <Button
+                              size="middle"
+                              danger
+                              onClick={() => handleDelete(cat.id)}
+                              className="ml-2"
+                          >
+                            Delete
+                          </Button>
+                        </td>
+                      </tr>
+                  ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile List (visible only on mobile) */}
+              <div className="md:hidden">
+                <List
+                    dataSource={categories}
+                    renderItem={renderMobileCategory}
+                    locale={{ emptyText: 'No categories found' }}
+                />
+              </div>
+            </>
+        )}
+
+        <Modal
+            title={editingCategory ? "Edit Category" : "Create Category"}
+            visible={isModalVisible}
+            onOk={handleOk}
+            onCancel={() => setIsModalVisible(false)}
+            width="90%"
+            style={{ maxWidth: '600px' }}
+        >
+          <Form form={form} layout="vertical">
+            <Form.Item
+                label="Title"
+                name="title"
+                rules={[{ required: true, message: 'Please input category title' }]}
+            >
+              <Input size="large" />
+            </Form.Item>
+          </Form>
+        </Modal>
+      </div>
   );
 };
 
