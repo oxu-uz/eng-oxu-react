@@ -22,17 +22,43 @@ const Gallery = () => {
         {
             label: "2nd Campus",
             images: [
-                "/2campus/2.JPG",
-                "/2campus/4.JPG",
-                "/2campus/5.jpg",
-                "/2campus/3.JPG",
-                "/2campus/6.jpg",
-                "/2campus/7.jpg",
+                "/2campus/P1007523.MP4_snapshot_00.23.972.jpg",
+                "/2campus/P1007526.MP4_snapshot_00.11.167.jpg",
+                "/2campus/P1007534.MP4_snapshot_00.00.664 (2).jpg",
+                "/2campus/P1007537.MP4_snapshot_00.00.437 (2).jpg",
             ],
         }, {
             label: "3rd Campus",
             images: [
-                "/2campus/2.JPG",
+                "/3campus/DSC_0285.JPG",
+                "/3campus/DSC_0284.JPG",
+                "/3campus/DSC_0286.JPG",
+                "/3campus/DSC_0287.JPG",
+                "/3campus/DSC_0288.JPG",
+                "/3campus/DSC_0289.JPG",
+                "/3campus/DSC_0290.JPG",
+                "/3campus/DSC_0291.JPG",
+            ],
+        },{
+            label: "4th Campus",
+            images: [
+                "/4campus/2.JPG",
+                "/4campus/4.JPG",
+                "/4campus/5.jpg",
+                "/4campus/3.JPG",
+                "/4campus/6.jpg",
+                "/4campus/7.jpg",
+            ],
+        },{
+            label: "5th Campus",
+            images: [
+                "/5campus/DSC_0291 (2).JPG",
+                "/5campus/DSC_0294.JPG",
+                "/5campus/DSC_0295.JPG",
+                "/5campus/DSC_0298.JPG",
+                "/5campus/DSC_0300.JPG",
+                "/5campus/DSC_0301.JPG",
+                "/5campus/DSC_0307.JPG",
             ],
         },
     ];

@@ -540,9 +540,9 @@ const HomePage = () => {
                 <div className='logos-slide'>
                     <img src="/Group 1410110485.png" alt="any" className='w-[120px] mx-12'/>
                 </div>
-                <div className='logos-slide'>
-                    <img src="/part.png" alt="any" className='w-[250px] mx-12'/>
-                </div>
+                {/*<div className='logos-slide'>*/}
+                {/*    <img src="/part.png" alt="any" className='w-[250px] mx-12'/>*/}
+                {/*</div>*/}
                 <div className='logos-slide'>
                     <img src="/kfu_logo_0.jpg" alt="any" className='w-[250px] mx-12'/>
                 </div>

@@ -28,7 +28,7 @@ const LifeInBukhara = () => {
             <section className="relative overflow-hidden mb-5 h-[150px] sm:h-[175px] md:h-[200px]">
                 <img
                     className="absolute inset-0 w-full h-full object-cover bg-blue-900"
-                    src="https://mediaim.expedia.com/destination/1/bc97c15b32d7c7b3c40c5d7dbffa4387.jpg"
+                    src="/lifeinbukhara/head-bukh.webp"
                     alt="Bukhara"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -164,7 +164,7 @@ const LifeInBukhara = () => {
                             <div
                                 className="group relative h-48 sm:h-56 md:h-64 lg:h-72 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                                 <img
-                                    src="https://minzifatravel.com/wp-content/uploads/2021/04/bukhara.jpg"
+                                    src="/aboutuz/uzb-1.jpg"
                                     loading="lazy"
                                     alt="Bukhara"
                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -176,7 +176,7 @@ const LifeInBukhara = () => {
                             <div
                                 className="group relative h-48 sm:h-56 md:h-64 lg:h-72 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow sm:col-span-2 lg:col-span-1">
                                 <img
-                                    src="https://minzifatravel.com/wp-content/uploads/2022/02/bukhara-uzbekistan-best-things-to-see-and-do-kalan-mosque-header.jpg"
+                                    src="/aboutuz/uzb-3.jpg"
                                     loading="lazy"
                                     alt="Bukhara Mosque"
                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -188,7 +188,7 @@ const LifeInBukhara = () => {
                             <div
                                 className="group relative h-48 sm:h-56 md:h-64 lg:h-72 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow sm:col-span-2">
                                 <img
-                                    src="https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg"
+                                    src="/lifeinbukhara/bukh-3.jpg"
                                     loading="lazy"
                                     alt="Bukhara Streets"
                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -200,7 +200,7 @@ const LifeInBukhara = () => {
                             <div
                                 className="group relative h-48 sm:h-56 md:h-64 lg:h-72 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                                 <img
-                                    src="https://mediaim.expedia.com/destination/1/0fa07e58724840de3c528174f4eb921a.jpg"
+                                    src="/lifeinbukhara/bukh-4.webp"
                                     loading="lazy"
                                     alt="Bukhara Architecture"
                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"

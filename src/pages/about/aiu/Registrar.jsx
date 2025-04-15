@@ -11,7 +11,7 @@ const Registrar = () => {
         { label: "Vision", path: "/about/aiu/vision" },
         { label: "Mission", path: "/about/aiu/mission" },
         { label: "History", path: "/about/aiu/history" },
-        { label: "Registrar", path: "/about/aiu/registrar" },
+        { label: "Vice Rector for Operations", path: "/about/aiu/registrar" },
         { label: "Administration", path: "/about/aiu/administration" },
         { label: "International Relations Office", path: "/about/aiu/international-relations" },
     ];
@@ -21,7 +21,7 @@ const Registrar = () => {
                 <img className="bg-image" src="/headerbg3.svg" alt="Header background" />
                 <div className="heading-content">
                     <div className="container mx-auto px-5 title">
-                        <h1 className="text-2xl md:text-4xl font-bold">Registrar</h1>
+                        <h1 className="text-2xl md:text-4xl font-bold">VICE RECTOR FOR OPERATIONS</h1>
                     </div>
                     <div className="breadcrumb">
                         <div className="container mx-auto">
@@ -38,7 +38,7 @@ const Registrar = () => {
                                 </li>
                                 <li>
                                     <a className="nav-link" href="/about/aiu/registrar">
-                                        Registrar
+                                        VICE RECTOR FOR OPERATIONS
                                     </a>
                                 </li>
                             </ul>
@@ -53,25 +53,14 @@ const Registrar = () => {
                         <div>
                             <h6 className="text-[#012152]">Dexkanov Bexruz Sobirovich</h6>
                             <div className="line"></div>
-                            <p className="text-gray-800 font-medium">The head of administration department</p>
+                            <p className="text-gray-800 font-medium">Vice Rector for Operations</p>
                             <div className="flex items-center divide-x gap-3">
-                                <a className="text-blue-600 font-medium">rector@oxu.uz</a>
+                                <a className="text-blue-600 font-medium">head@oxu.uz</a>
                                 <a className="text-blue-600 pl-3 font-medium">+998 (55) 305-00-09</a>
                             </div>
                             <div className="flex flex-col mt-4 gap-y-3">
-                                <p className="text-gray-500  max-w-5xl">The Registrar Office is responsible for the provisions of
-                                    Administrative, HRM and Academic support to various departments/sections/campuses of
-                                    the
-                                    University. The core task of the Registrar is to execute or provide strict and
-                                    straight
-                                    administrative compliance / support and assistance to the Rector`s directive /orders
-                                    in
-                                    general. </p>
-                                <p className="text-gray-500  ">Mr. Dexkanov Bexruz Sobirovich has been working as Head
-                                    of
-                                    the Registrar Office, AIU University since 2022 and currently, has been assigned to
-                                    work
-                                    as Registrar, AIU University</p>
+                                <p className="text-gray-500  max-w-5xl">The Vice Rector for Operations is responsible for providing administrative, HRM, and academic support across various departments, sections, and campuses of the University. The core responsibility of the Vice Rector for Operations is to ensure strict and efficient administrative compliance and support in executing the directives and orders of the Rector.</p>
+                                <p className="text-gray-500  ">Mr. Dexkanov Bexruz Sobirovich has been serving as the Head of Operations at AIU University since 2022 and is currently appointed as the Vice Rector for Operations at AIU University.</p>
                             </div>
                         </div>
                     </div>

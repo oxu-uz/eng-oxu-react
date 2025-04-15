@@ -11,7 +11,7 @@ const Vision = () => {
         { label: "Vision", path: "/about/aiu/vision" },
         { label: "Mission", path: "/about/aiu/mission" },
         { label: "History", path: "/about/aiu/history" },
-        { label: "Registrar", path: "/about/aiu/registrar" },
+        { label: "Vice Rector for Operations", path: "/about/aiu/registrar" },
         { label: "Administration", path: "/about/aiu/administration" },
         { label: "International Relations Office", path: "/about/aiu/international-relations" },
     ];
