@@ -5,18 +5,29 @@ import BotNav from "../components/navigation/BotNav.jsx";
 import {Facebook, Instagram} from "lucide-react";
 import FooterStatic from "../components/footerStatic.jsx";
 import ContactModal from "../components/ContactModal.jsx";
+import {message} from "antd";
+import {createContact} from "../services/contact/contactService.jsx";
 
 const Layout = () => {
-  const [isOpen, setIsOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const handleContactClick = () => {
         setIsModalOpen(true);
     };
 
-    const handleSend = (formData) => {
-        console.log("Form yuborildi:", formData);
-        // Bu yerda API ga yuborish yoki boshqa action qilishingiz mumkin
+    const handleSend = async (formData) => {
+        setLoading(true)
+        try {
+            // API ga yuborish
+            await createContact(formData);
+            message.success('Message successfully sent!');
+        } catch (error) {
+            console.error("Error while sending message:", error);
+            message.error('There was an error sending the message. Please try again.');
+        }finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -63,6 +74,7 @@ const Layout = () => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           onSubmit={handleSend}
+          loading={loading}
       />
 
     {/* Разделитель */}

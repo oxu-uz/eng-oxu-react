@@ -72,11 +72,11 @@ const AgentLayout = () => {
       </span>
     </div>
 
-    <ContactModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmit={handleSend}
-    />
+    {/*<ContactModal*/}
+    {/*    isOpen={isModalOpen}*/}
+    {/*    onClose={() => setIsModalOpen(false)}*/}
+    {/*    onSubmit={handleSend}*/}
+    {/*/>*/}
 
     {/* Разделитель */}
     <div className="hidden md:block h-6 border-l border-white/20"></div>

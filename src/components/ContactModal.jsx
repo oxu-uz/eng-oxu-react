@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Modal, Input, Form, Button, Row, Col } from 'antd';
 
 const { TextArea } = Input;
 
 function ContactModal({ isOpen, onClose, onSubmit }) {
     const [form] = Form.useForm();
+    const [loading, setLoading] = useState(false);
 
-    const handleFinish = (values) => {
-        onSubmit(values);
-        form.resetFields();
-        onClose();
+    const handleFinish = async (values) => {
+        setLoading(true);
+        try {
+            await onSubmit(values);
+            form.resetFields();
+            onClose();
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -33,7 +39,7 @@ function ContactModal({ isOpen, onClose, onSubmit }) {
             >
                 <Form.Item
                     label={<span className="font-medium text-gray-700">Full Name</span>}
-                    name="fullname"
+                    name="name"
                     rules={[{ required: true, message: 'Please enter your full name' }]}
                 >
                     <Input
@@ -84,7 +90,7 @@ function ContactModal({ isOpen, onClose, onSubmit }) {
 
                 <Form.Item className="flex justify-center mt-6">
                     <button
-                        type="submit"
+                        type="primary"
                         className="w-full mx-auto block px-6 py-2 text-white bg-[#0a37b3] hover:bg-[#01408e] rounded-lg shadow transition duration-300"
                     >
                         Send Message
