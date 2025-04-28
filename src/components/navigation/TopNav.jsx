@@ -316,6 +316,21 @@ const TopNav = () => {
                         <MenuIcon size="25" className="my-7 lg:hidden block"/>
                     </button>
                 </div>
+
+                {/* Top Navigation Links */}
+                <div className="top-nav-sup bg-[#072799] absolute right-0 lg:top-0 bottom-0 divide-x divide-[hsla(0,0%,100%,.15)] flex h-max z-10">
+                    <a target="_blank" href="https://library.oxu.uz" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Library</a>
+                    <Link
+                        to="news"
+                        smooth={true}
+                        duration={1000}
+                        className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link"
+                    >
+                        News & Events
+                    </Link>
+                    <a href="https://int.vacancy.oxu.uz/" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Career @ OXU</a>
+                    <a href="http://localhost:5173/international-form" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Apply Now</a>
+                </div>
             </div>
 
             {/* Mobile Menu */}
