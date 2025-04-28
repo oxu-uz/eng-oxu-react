@@ -162,20 +162,35 @@ const HomePage = () => {
         "/icons/Group 1410110396.svg"
     ];
 
+    const photos = [
+        "/for site/Accredited Academic Programs.png",
+        "/for site/Innovative Teaching Methods.JPG",
+        "/for site/.Strong Research Opportunities.JPG",
+        "/for site/Collaborative Learning Environment.jpg",
+        "/for site/Comprehensive-Support-Services.png",
+        "/for site/International Partnerships.JPG",
+        "/for site/Community Engagement Initiatives.JPG",
+        "/for site/Advanced Facilities and Laboratories.jpg",
+        "/for site/Cultural and Extracurricular Activities.JPG",
+        "/for site/Emphasis on Lifelong Learning.jpg",
+        "/for site/Strong Alumni Network.jpg",
+        "/for site/Vibrant Campus Life.JPG",
+    ]
+
     const slides = [
         {
             type: "image",
-            src: "/IMG_2327.JPG",
-            poster: "/IMG_2327.JPG",
+            src: "/photo_2025-04-28(2).jpg",
+            poster: "/photo_2025-04-28(2).jpg",
         },
         {
             type: "image",
-            src: "/IMG_2298.JPG",
+            src: "/DSC_1537.JPG",
             alt: "Image 1",
         },
         {
             type: "image",
-            src: "/IMG_2372.JPG",
+            src: "/photo_2025-04-28.jpg",
             alt: "Image 2",
         },
         // Можно добавить ещё слайды
@@ -290,14 +305,20 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <div ref={ref} className="px-4 md:px-32 mt-10 mx-auto">
+            <Element name="news">
+                <NewsAndEvents/>
+            </Element>
+
+            <div ref={ref} className="px-4 md:px-32 mx-auto">
                 <motion.h2
-                    initial={{opacity: 0, y: -20}}
-                    animate={inView ? {opacity: 1, y: 0} : {}}
-                    transition={{duration: 0.8, ease: 'easeOut'}}
-                    className="text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
                 >
                     Why Choose Us
+
+                    <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#0a37b3]"></span>
                 </motion.h2>
 
                 <motion.div
@@ -307,20 +328,22 @@ const HomePage = () => {
                     animate={inView ? "visible" : "hidden"}
                 >
                     {features.map((feature, index) => (
-                        <motion.div key={index} className="text_rev_card relative" variants={itemVariants}>
-                            <div
-                                className="h-16 w-16 bg-white flex flex-col items-center text-center border border-[rgba(159,171,185,.2)] rounded-lg p-2 mx-auto">
-                                <img src={icons[index]} alt={`Icon for ${feature.split(':')[0]}`}/>
+                        <motion.div
+                            key={index}
+                            className="relative group overflow-hidden rounded-lg shadow-lg border"
+                            variants={itemVariants}
+                        >
+                            {/* Default photo view */}
+                            <div className="flex items-center justify-center h-64 bg-white transition-all duration-500 ">
+                                <img src={photos[index]} alt={`Icon for ${feature.split(':')[0]}`} className="w-full h-full object-cover"/>
                             </div>
-                            <div className="absolute top-0 inset-0 flex justify-center pointer-events-none">
-                                <div
-                                    className="w-full h-[1px] animate-border-width rounded-full bg-gradient-to-r from-transparent via-white to-transparent"/>
-                            </div>
-                            <div className="relative z-10 text-center">
-                                <h3 className="text-lg glow-effect font-bold will-change-transform mb-2 tracking-wide">
+
+                            {/* Hover text view */}
+                            <div className="absolute inset-0 bg-[#0a37b3] flex flex-col items-center justify-center opacity-0 group-hover:opacity-70 transition-all duration-500 text-white text-center p-4">
+                                <h3 className="text-lg md:text-xl font-bold mb-2">
                                     {feature.split(':')[0]}
                                 </h3>
-                                <p className="text-sm leading-relaxed will-change-transform">
+                                <p className="text-sm md:text-base">
                                     {feature.split(':')[1]}
                                 </p>
                             </div>
@@ -339,7 +362,7 @@ const HomePage = () => {
                             <div className="video-section relative">
                                 <img
                                     className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                                    src="/IMG_2363.JPG"
+                                    src="/photo_2025-04-28.jpg"
                                     alt=""
                                 />
                             </div>
@@ -396,7 +419,7 @@ const HomePage = () => {
                             <div className="video-section relative">
                                 <img
                                     className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                                    src="/IMG_2372.JPG"
+                                    src="/DSC_9787.JPG"
                                     alt=""
                                 />
                             </div>
@@ -578,10 +601,6 @@ const HomePage = () => {
                     <img src="/logo-ufla.jpg" alt="any3" className='w-[250px] mx-12'/>
                 </div>
             </Slider>
-
-            <Element name="news">
-                <NewsAndEvents/>
-            </Element>
         </div>
     );
 };
