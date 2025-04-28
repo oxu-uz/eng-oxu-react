@@ -46,6 +46,8 @@ import ManagerCategoriesPage from "../pages/authentificated/ManagerCategoriesPag
 import ManagerPostsPage from "../pages/authentificated/ManagerPostsPage.jsx";
 import NewsInDetail from "../components/home/NewsInDetail.jsx";
 import InternationalRelationsContact from "../pages/InternationalRelationsContact.jsx";
+import IntForm from "../pages/IntForm.jsx";
+import FAQ from "../pages/FAQ.jsx";
 
 
 const router = createBrowserRouter([
@@ -110,7 +112,10 @@ const router = createBrowserRouter([
                 path: '/academics/academic-calendar',
                 element: <AcademicCalendar/>
             },
-
+            {
+              path: '/international-form',
+                element: <IntForm/>
+            },
             {
                 path: '/academics/study-plan',
                 element: <StudyPlan/>
@@ -163,6 +168,10 @@ const router = createBrowserRouter([
             {
                 path: '/international-relations/contact',
                 element: <InternationalRelationsContact/>
+            },
+            {
+              path: '/international/faq',
+              element: <FAQ/>
             }
         ]
     },

@@ -30,13 +30,25 @@ const navItems = [
       { label: "Academic Calendar", link: "/academics/academic-calendar" },
       { label: "Study Plan/ Curriculum", link: "/academics/study-plan" },
       { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
-      { label: "Structure of the faculty", link: "/about/aiu/faculty-structure" },
-      { label: "Department of General Science", link: "/about/departments/general-science" },
-      { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
-      { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
+      {
+          label: "Structure of the faculty",
+          // link: "/about/aiu/faculty-structure",
+          submenu: [
+              { label: "Department of General Science", link: "/about/departments/general-science" },
+              { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
+              { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
+          ]
+      },
     ],
   },
-  { label: "International relations", link: "/about/aiu/international-relations" },
+  {
+      label: "International relations",
+      link: "/about/aiu",
+      dropdown: [
+          {label: "International Relations Office",link: "/about/aiu/international-relations"},
+          {label: "ERASMUS+",link: "/about/aiu/erasmus"},
+      ]
+  },
   {
     label: "Student Life in AIU",
     link: "/schools",
@@ -73,7 +85,8 @@ const navItems = [
     ],
   },
   { label: "Gallery", link: "/gallery" },
-  { label: "Contact", link: "/international-relations/contact" },
+  // { label: "Contact", link: "/international-relations/contact" },
+  { label: "FAQ", link: "/international/faq" },
 ];
 
 const MobileMenuItem = ({ item }) => {
@@ -303,21 +316,6 @@ const TopNav = () => {
                         <MenuIcon size="25" className="my-7 lg:hidden block"/>
                     </button>
                 </div>
-
-                {/* Top Navigation Links */}
-                <div className="top-nav-sup bg-[#072799] absolute right-0 lg:top-0 bottom-0 divide-x divide-[hsla(0,0%,100%,.15)] flex h-max z-10">
-                    <a target="_blank" href="https://library.oxu.uz" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Library</a>
-                    <Link
-                        to="news"
-                        smooth={true}
-                        duration={1000}
-                        className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link"
-                    >
-                        News & Events
-                    </Link>
-                    <a href="https://int.vacancy.oxu.uz/" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Career @ OXU</a>
-                    <a className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Apply Now</a>
-                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -396,7 +394,7 @@ const TopNav = () => {
                                     <a
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        href="https://www.instagram.com/aiu_uzbekistan/"
+                                        href="https://www.instagram.com/aiu.uzb/"
                                     >
                                         <svg
                                             className="mx-1"

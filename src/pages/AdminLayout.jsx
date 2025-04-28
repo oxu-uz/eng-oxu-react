@@ -99,7 +99,7 @@ const AdminLayout = () => {
                                               fill="white"></path>
                                     </svg>
                                 </i></a> <a data-v-4b8a97f0="" target="_blank"
-                                            href="https://www.instagram.com/aiu_uzbekistan/"><i data-v-4b8a97f0="">
+                                            href="https://www.instagram.com/aiu.uzb/"><i data-v-4b8a97f0="">
                             <svg class="mx-1" data-v-4b8a97f0="" width="26" height="26" viewBox="0 0 32 32" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path data-v-4b8a97f0=""

@@ -16,7 +16,7 @@ const ClinicalSciencesPage = () => {
         { label: "Academic Calendar", path: "/academics/academic-calendar" },
         { label: "Study Plan/ Curriculum", path: "/academics/study-plan" },
         { label: "Faculty development plan", path: "/about/aiu/faculty-development-plan" },
-        { label: "Structure of the faculty", path: "/about/aiu/faculty-structure" },
+        // { label: "Structure of the faculty", path: "/about/aiu/faculty-structure" },
         { label: "Department of General Science", path: "/about/departments/general-science" },
         { label: "Department of Fundamental Medicine", path: "/about/departments/fundamental-medicine" },
         { label: "Department of Clinical Science", path: "/about/departments/clinical-science" },

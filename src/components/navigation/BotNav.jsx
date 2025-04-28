@@ -38,13 +38,25 @@ const BotNav = () => {
                 { label: "Academic Calendar", link: "/academics/academic-calendar" },
                 { label: "Study Plan/ Curriculum", link: "/academics/study-plan" },
                 { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
-                { label: "Structure of the faculty", link: "/about/aiu/faculty-structure" },
-                { label: "Department of General Science", link: "/about/departments/general-science" },
-                { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
-                { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
+                {
+                    label: "Structure of the faculty",
+                    // link: "/about/aiu/faculty-structure",
+                    submenu: [
+                        { label: "Department of General Science", link: "/about/departments/general-science" },
+                        { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
+                        { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
+                    ]
+                },
             ],
         },
-        { label: "International relations", link: "/about/aiu/international-relations" },
+        {
+            label: "International relations",
+            link: "/about/aiu",
+            dropdown: [
+                {label: "International Relations Office",link: "/about/aiu/international-relations"},
+                {label: "ERASMUS+",link: "/about/aiu/erasmus"},
+            ]
+        },
         {
             label: "Student Life in AIU",
             link: "/schools",
@@ -78,7 +90,8 @@ const BotNav = () => {
             ] },
         { label: "Gallery ", link: "/gallery" },
         // { label: "Alumni ", link: "/international-relations" },
-        { label: "Contact ", link: "/international-relations/contact" },
+        // { label: "Contact ", link: "/international-relations/contact" },
+        { label: "FAQ", link: "/international/faq" },
     ];
 
     return (
