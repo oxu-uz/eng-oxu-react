@@ -95,22 +95,16 @@ const HomePage = () => {
 
 
     const containerVariants = {
-        hidden: {
-            opacity: 0,
-        },
+        hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                // Указываем, что перед анимацией дочерних элементов
-                // контейнер должен стать видимым
                 when: "beforeChildren",
-                // Задержка между появлением каждого элемента
-                staggerChildren: 0.2,
+                staggerChildren: 0.15, // reduced from 0.2
             },
         },
     };
 
-    // Варианты анимации для каждого элемента
     const itemVariants = {
         hidden: {
             opacity: 0,
@@ -122,7 +116,6 @@ const HomePage = () => {
             scale: 1,
             rotate: 0,
             transition: {
-                // Spring-анимация для более «живого» движения
                 type: "spring",
                 stiffness: 100,
                 damping: 12,
@@ -130,6 +123,39 @@ const HomePage = () => {
             },
         },
     };
+
+    const StableCard = React.memo(({ title, subtitle, imageSrc }) => {
+        return (
+            <div className="w-full h-80 relative overflow-hidden group rounded-xl shadow-lg">
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                    <img
+                        src={imageSrc}
+                        alt={title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                    />
+                </div>
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"/>
+
+                {/* Always Visible Title */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10 transition-opacity duration-300 group-hover:opacity-0">
+                    <h3 className="font-medium text-lg">{title}</h3>
+                    <p className="text-white transition-colors duration-300 text-sm mt-1">
+                        {subtitle.split(' ').slice(0, 10).join(' ')}...
+                    </p>
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-[#0a37b3]/90 p-6 flex flex-col justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
+                    <h3 className="text-xl font-bold mb-2">{title}</h3>
+                    <p className="text-sm">{subtitle}</p>
+                </div>
+            </div>
+        );
+    });
 
 
     const features = [
@@ -163,7 +189,7 @@ const HomePage = () => {
     ];
 
     const photos = [
-        "/for site/Accredited Academic Programs.png",
+        "/for site/Accredited.png",
         "/for site/Innovative Teaching Methods.JPG",
         "/for site/.Strong Research Opportunities.JPG",
         "/for site/Collaborative Learning Environment.jpg",
@@ -173,15 +199,15 @@ const HomePage = () => {
         "/for site/Advanced Facilities and Laboratories.jpg",
         "/for site/Cultural and Extracurricular Activities.JPG",
         "/for site/Emphasis on Lifelong Learning.jpg",
-        "/for site/Strong Alumni Network.jpg",
+        "/for site/Strong Alumini Network.jpeg",
         "/for site/Vibrant Campus Life.JPG",
     ]
 
     const slides = [
         {
             type: "image",
-            src: "/photo_2025-04-28(2).jpg",
-            poster: "/photo_2025-04-28(2).jpg",
+            src: "/DSC_9787.JPG",
+            poster: "/DSC_9787.JPG",
         },
         {
             type: "image",
@@ -190,7 +216,7 @@ const HomePage = () => {
         },
         {
             type: "image",
-            src: "/photo_2025-04-28.jpg",
+            src: "/DSC_9801.JPG",
             alt: "Image 2",
         },
         // Можно добавить ещё слайды
@@ -266,26 +292,25 @@ const HomePage = () => {
                 </AnimatePresence>
 
                 {/* Блок управления (controls) */}
-                <div
-                    className="absolute bottom-4 md:bottom-14 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 md:space-x-6 z-30">
+                <div className="absolute bottom-4 md:bottom-14 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 md:space-x-6 z-30">
                     {/* "01 --- 06" с прогресс-баром */}
-                    <div className="flex items-center space-x-2 md:space-x-3 text-white">
-                        {/* Текущее значение (двухзначное) */}
-                        <span className="text-base md:text-xl font-semibold tabular-nums">
-        {String(currentIndex + 1).padStart(2, "0")}
-      </span>
-                        {/* Мини-прогресс-бар */}
-                        <div className="relative w-16 md:w-24 h-[2px] bg-gray-400/60">
-                            <motion.div
-                                className="h-full bg-white"
-                                style={{width: widthValue}}
-                            />
-                        </div>
-                        {/* Общее число слайдов (двухзначное) */}
-                        <span className="text-base md:text-xl font-semibold text-white/60 tabular-nums">
-        {String(slides.length).padStart(2, "0")}
-      </span>
-                    </div>
+                    {/*<div className="flex items-center space-x-2 md:space-x-3 text-white">*/}
+                    {/*    /!* Текущее значение (двухзначное) *!/*/}
+                    {/*    <span className="text-base md:text-xl font-semibold tabular-nums">*/}
+                    {/*        {String(currentIndex + 1).padStart(2, "0")}*/}
+                    {/*        </span>*/}
+                    {/*    /!* Мини-прогресс-бар *!/*/}
+                    {/*    <div className="relative w-16 md:w-24 h-[2px] bg-gray-400/60">*/}
+                    {/*        <motion.div*/}
+                    {/*            className="h-full bg-white"*/}
+                    {/*            style={{width: widthValue}}*/}
+                    {/*        />*/}
+                    {/*    </div>*/}
+                    {/*    /!* Общее число слайдов (двухзначное) *!/*/}
+                    {/*    <span className="text-base md:text-xl font-semibold text-white/60 tabular-nums">*/}
+                    {/*        {String(slides.length).padStart(2, "0")}*/}
+                    {/*    </span>*/}
+                    {/*</div>*/}
 
                     {/* Кнопки переключения слайдов */}
                     <div className="flex items-center space-x-2 md:space-x-3">
@@ -309,7 +334,7 @@ const HomePage = () => {
                 <NewsAndEvents/>
             </Element>
 
-            <div ref={ref} className="px-4 md:px-32 mx-auto">
+            <div ref={ref} className="px-4 md:px-32 mx-auto py-12">
                 <motion.h2
                     initial={{ opacity: 0, y: -20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -317,40 +342,27 @@ const HomePage = () => {
                     className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
                 >
                     Why Choose Us
-
                     <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#0a37b3]"></span>
                 </motion.h2>
 
                 <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 my-5"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
                     variants={containerVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
                 >
                     {features.map((feature, index) => (
-                        <motion.div
-                            key={index}
-                            className="relative group overflow-hidden rounded-lg shadow-lg border"
-                            variants={itemVariants}
-                        >
-                            {/* Default photo view */}
-                            <div className="flex items-center justify-center h-64 bg-white transition-all duration-500 ">
-                                <img src={photos[index]} alt={`Icon for ${feature.split(':')[0]}`} className="w-full h-full object-cover"/>
-                            </div>
-
-                            {/* Hover text view */}
-                            <div className="absolute inset-0 bg-[#0a37b3] flex flex-col items-center justify-center opacity-0 group-hover:opacity-70 transition-all duration-500 text-white text-center p-4">
-                                <h3 className="text-lg md:text-xl font-bold mb-2">
-                                    {feature.split(':')[0]}
-                                </h3>
-                                <p className="text-sm md:text-base">
-                                    {feature.split(':')[1]}
-                                </p>
-                            </div>
+                        <motion.div key={`feature-${index}`} variants={itemVariants}>
+                            <StableCard
+                                title={feature.split(':')[0].trim()}
+                                subtitle={feature.split(':')[1].trim()}
+                                imageSrc={photos[index]}
+                            />
                         </motion.div>
                     ))}
                 </motion.div>
             </div>
+
 
             <FadeInStagger>
                 <FadeIn>
@@ -419,7 +431,7 @@ const HomePage = () => {
                             <div className="video-section relative">
                                 <img
                                     className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                                    src="/DSC_9787.JPG"
+                                    src="/InShot_20241228_222756999.jpg"
                                     alt=""
                                 />
                             </div>
