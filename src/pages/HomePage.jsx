@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useTransition, useRef, lazy, Suspense} from 'react';
+import React, {useState, useEffect, useTransition, useRef, lazy, Suspense, useMemo} from 'react';
 import CampusSection from "../components/home/CampusSection.jsx";
 import CountUp from 'react-countup';
 import NewsAndEvents from "../components/home/NewsAndEvents.jsx";
@@ -14,9 +14,10 @@ import {
     useTransform
 } from "framer-motion";
 import FadeIn, {FadeInStagger} from "../components/FadeIn.jsx";
-import Slider from "react-infinite-logo-slider";
 import {ChevronLeftIcon, ChevronRightIcon} from 'lucide-react';
 import {Link, Element} from 'react-scroll';
+import InfiniteLogoSlider from "../components/home/InfiniteLogoSlider.jsx";
+import StableCard from "../components/home/StableCard.jsx";
 
 
 const HomePage = () => {
@@ -70,7 +71,6 @@ const HomePage = () => {
         return () => clearInterval(intervalRef.current);
     }, [currentIndex]);
 
-
     useEffect(() => {
         const handleScroll = () => {
             const scrollThreshold = window.innerHeight * 0.2;
@@ -94,71 +94,33 @@ const HomePage = () => {
     }, [controls, inView]);
 
 
+    // Animatsiya variantlari
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
                 when: "beforeChildren",
-                staggerChildren: 0.15, // reduced from 0.2
+                staggerChildren: 0.1,
             },
         },
     };
 
     const itemVariants = {
-        hidden: {
-            opacity: 0,
-            scale: 0.8,
-            rotate: -5,
-        },
+        hidden: { opacity: 0, y: 20 },
         visible: {
             opacity: 1,
-            scale: 1,
-            rotate: 0,
+            y: 0,
             transition: {
                 type: "spring",
                 stiffness: 100,
-                damping: 12,
-                duration: 0.6,
+                damping: 15,
             },
         },
     };
 
-    const StableCard = React.memo(({ title, subtitle, imageSrc }) => {
-        return (
-            <div className="w-full h-80 relative overflow-hidden group rounded-xl shadow-lg">
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                    <img
-                        src={imageSrc}
-                        alt={title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                    />
-                </div>
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"/>
-
-                {/* Always Visible Title */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    <h3 className="font-medium text-lg">{title}</h3>
-                    <p className="text-white transition-colors duration-300 text-sm mt-1">
-                        {subtitle.split(' ').slice(0, 10).join(' ')}...
-                    </p>
-                </div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-[#0a37b3]/90 p-6 flex flex-col justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
-                    <h3 className="text-xl font-bold mb-2">{title}</h3>
-                    <p className="text-sm">{subtitle}</p>
-                </div>
-            </div>
-        );
-    });
-
-
-    const features = [
+    const features = useMemo(() => [
         "Accredited Academic Programs: AIU offers a wide range of accredited undergraduate and graduate degrees, ensuring graduates meet national and international standards in their respective disciplines.",
         "Innovative Teaching Methods: We utilize modern teaching techniques such as interactive learning, case studies, and digital resources to enhance critical thinking and practical application.",
         "Strong Research Opportunities: AIU encourages student involvement in research activities, fostering analytical skills and contributing to advancements across various fields.",
@@ -171,7 +133,7 @@ const HomePage = () => {
         "Emphasis on Lifelong Learning: We foster a culture of continuous education through workshops, specialty training, and professional development programs to keep graduates at the forefront of their fields.",
         "Strong Alumni Network: Our robust alumni network connects current students with industry professionals for mentorship, internships, and career opportunities.",
         "Vibrant campus life: AIU’s campus provides a supportive and inclusive environment where students from diverse backgrounds can form lasting friendships, share experiences, and grow both personally and professionally.",
-    ];
+    ],[]);
 
     const icons = [
         "/icons/Vector-5.svg",
@@ -188,7 +150,7 @@ const HomePage = () => {
         "/icons/Group 1410110396.svg"
     ];
 
-    const photos = [
+    const photos = useMemo(()=> [
         "/for site/Accredited.png",
         "/for site/Innovative Teaching Methods.JPG",
         "/for site/.Strong Research Opportunities.JPG",
@@ -201,7 +163,7 @@ const HomePage = () => {
         "/for site/Emphasis on Lifelong Learning.jpg",
         "/for site/Strong Alumini Network.jpeg",
         "/for site/Vibrant Campus Life.JPG",
-    ]
+    ],[])
 
     const slides = [
         {
@@ -346,13 +308,18 @@ const HomePage = () => {
                 </motion.h2>
 
                 <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
                     variants={containerVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
                 >
                     {features.map((feature, index) => (
-                        <motion.div key={`feature-${index}`} variants={itemVariants}>
+                        <motion.div
+                            key={`feature-${index}`}
+                            variants={itemVariants}
+                            layout // Qo'shimcha optimallashtirish
+                            className="w-full max-w-xs sm:max-w-none"
+                        >
                             <StableCard
                                 title={feature.split(':')[0].trim()}
                                 subtitle={feature.split(':')[1].trim()}
@@ -560,59 +527,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-
-            <Slider
-                className="partners-slider w-full"
-                width="340px"
-                duration={60}
-                pauseOnHover={true}
-                blurBorders={false}
-                blurBoderColor={'#fff'}
-            >
-                <div className='logos-slide'>
-                    <img src="/Рисунок5.png" alt="any" className='w-[230px] mx-12'/>
-                </div>
-                <div className='logos-slide'>
-                    <img src="/Group 1410110485.png" alt="any" className='w-[120px] mx-12'/>
-                </div>
-                {/*<div className='logos-slide'>*/}
-                {/*    <img src="/part.png" alt="any" className='w-[250px] mx-12'/>*/}
-                {/*</div>*/}
-                <div className='logos-slide'>
-                    <img src="/kfu_logo_0.jpg" alt="any" className='w-[250px] mx-12'/>
-                </div>
-                <div className='flex items-center w-[200px]'>
-                    <img src="/okanlogo.webp" alt="any" className='w-[100px] mx-12'/>
-                </div>
-                <div className='logos-slide'>
-                    <img src="/nara.webp" alt="any" className='w-[250px] mx-12'/>
-                </div>
-                {/*<div className='logos-slide'>*/}
-                {/*    <img src="/esara.jpeg" alt="any" className='w-[120px] mx-auto' />*/}
-                {/*</div>*/}
-                <div className="logos-slide ">
-                    <img src="/originl.webp" alt="any" className='w-[250px] mx-12'/>
-                </div>
-                <div className='logos-slide'>
-                    <img src="/logonet.png" alt="any" className=' w-[250px] mx-12'/>
-                </div>
-                <div className='logos-slide'>
-                    <img src="/diulogoside.png" alt="any" className='w-[250px] mx-12'/>
-                </div>
-                <div className='logos-slide'>
-                    <img src="/web-undip-logo.png" alt="any" className='w-[250px] mx-12'/>
-                </div>
-                <div className='logos-slide'>
-                    <img src="/imisp-logo-blue-cyr2.png" alt="any"
-                         className='w-[250px] mx-12'/>
-                </div>
-                <div className='flex items-center w-[220px]'>
-                    <img src="/uomusLogo.png" alt="any2" className=' w-[150px] mx-12'/>
-                </div>
-                <div className='logos-slide'>
-                    <img src="/logo-ufla.jpg" alt="any3" className='w-[250px] mx-12'/>
-                </div>
-            </Slider>
+            <InfiniteLogoSlider/>
         </div>
     );
 };
