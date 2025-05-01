@@ -18,6 +18,7 @@ import {ChevronLeftIcon, ChevronRightIcon} from 'lucide-react';
 import {Link, Element} from 'react-scroll';
 import InfiniteLogoSlider from "../components/home/InfiniteLogoSlider.jsx";
 import StableCard from "../components/home/StableCard.jsx";
+import Testimonials from "../components/home/Testimonials.jsx";
 
 
 const HomePage = () => {
@@ -296,39 +297,41 @@ const HomePage = () => {
                 <NewsAndEvents/>
             </Element>
 
-            <div ref={ref} className="px-4 md:px-32 mx-auto py-12">
-                <motion.h2
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
-                >
-                    Why Choose Us
-                    <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#0a37b3]"></span>
-                </motion.h2>
+            <section ref={ref} className="px-4 md:px-32 mx-auto py-12">
+                <div className="max-w-[1663px] max-md:max-w-full w-full mx-auto">
+                    <motion.h2
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
+                    >
+                        Why Choose Us
+                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#0a37b3]"></span>
+                    </motion.h2>
 
-                <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={inView ? "visible" : "hidden"}
-                >
-                    {features.map((feature, index) => (
-                        <motion.div
-                            key={`feature-${index}`}
-                            variants={itemVariants}
-                            layout // Qo'shimcha optimallashtirish
-                            className="w-full max-w-xs sm:max-w-none"
-                        >
-                            <StableCard
-                                title={feature.split(':')[0].trim()}
-                                subtitle={feature.split(':')[1].trim()}
-                                imageSrc={photos[index]}
-                            />
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </div>
+                    <motion.div
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate={inView ? "visible" : "hidden"}
+                    >
+                        {features.map((feature, index) => (
+                            <motion.div
+                                key={`feature-${index}`}
+                                variants={itemVariants}
+                                layout // Qo'shimcha optimallashtirish
+                                className="w-full max-w-xs sm:max-w-none"
+                            >
+                                <StableCard
+                                    title={feature.split(':')[0].trim()}
+                                    subtitle={feature.split(':')[1].trim()}
+                                    imageSrc={photos[index]}
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
+            </section>
 
 
             <FadeInStagger>
@@ -367,43 +370,44 @@ const HomePage = () => {
 
             <FadeInStagger>
                 <FadeIn>
-                    <div
-                        className="mx-auto  py-5 bg-white sm:py-10 lg:py-5 flex flex-col lg:flex-row items-center justify-between gap-x-12 relative"
-                    >
-                        {/* Text Section */}
-                        <div className="lg:w-1/2 px-4">
-                            <h1 className="lg:text-4xl text-3xl leading-tight tracking-tight title-text font-extrabold">
-                                Excellence in Global Education: Asia International University Among World's Leading
-                                Institutions
-                            </h1>
-                            <p className="mt-4 text-lg leading-8 text-gray-600">
-                                Asia International University stands as a beacon of academic distinction, recognized
-                                among the world's most prestigious educational institutions. As an institution committed
-                                to developing future leaders and innovators, AIU has earned its place in international
-                                rankings of top universities.
+                    {/*<div*/}
+                    {/*    className="mx-auto  py-5 bg-white sm:py-10 lg:py-5 flex flex-col lg:flex-row items-center justify-between gap-x-12 relative"*/}
+                    {/*>*/}
+                    {/*    /!* Text Section *!/*/}
+                    {/*    <div className="lg:w-1/2 px-4">*/}
+                    {/*        <h1 className="lg:text-4xl text-3xl leading-tight tracking-tight title-text font-extrabold">*/}
+                    {/*            Excellence in Global Education: Asia International University Among World's Leading*/}
+                    {/*            Institutions*/}
+                    {/*        </h1>*/}
+                    {/*        <p className="mt-4 text-lg leading-8 text-gray-600">*/}
+                    {/*            Asia International University stands as a beacon of academic distinction, recognized*/}
+                    {/*            among the world's most prestigious educational institutions. As an institution committed*/}
+                    {/*            to developing future leaders and innovators, AIU has earned its place in international*/}
+                    {/*            rankings of top universities.*/}
 
-                                Through our steadfast dedication to academic rigor, research advancement, and global
-                                partnerships, AIU continues to shape the landscape of higher education. We empower
-                                students from all disciplines to excel in our rapidly changing world, providing them
-                                with the knowledge and skills to make meaningful contributions to society.
+                    {/*            Through our steadfast dedication to academic rigor, research advancement, and global*/}
+                    {/*            partnerships, AIU continues to shape the landscape of higher education. We empower*/}
+                    {/*            students from all disciplines to excel in our rapidly changing world, providing them*/}
+                    {/*            with the knowledge and skills to make meaningful contributions to society.*/}
 
-                                Join our academic community and discover a world of opportunities where boundaries are
-                                pushed, horizons are expanded, and potential is realized. At AIU, we don't just educate
-                                - we inspire transformation.
-                            </p>
-                        </div>
+                    {/*            Join our academic community and discover a world of opportunities where boundaries are*/}
+                    {/*            pushed, horizons are expanded, and potential is realized. At AIU, we don't just educate*/}
+                    {/*            - we inspire transformation.*/}
+                    {/*        </p>*/}
+                    {/*    </div>*/}
 
-                        {/* Image Section */}
-                        <div className="lg:w-1/2 px-4">
-                            <div className="video-section relative">
-                                <img
-                                    className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"
-                                    src="/InShot_20241228_222756999.jpg"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    {/*    /!* Image Section *!/*/}
+                    {/*    <div className="lg:w-1/2 px-4">*/}
+                    {/*        <div className="video-section relative">*/}
+                    {/*            <img*/}
+                    {/*                className="w-full object-cover h-auto rounded-tl-2xl rounded-br-2xl"*/}
+                    {/*                src="/InShot_20241228_222756999.jpg"*/}
+                    {/*                alt=""*/}
+                    {/*            />*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
+                    <Testimonials/>
                 </FadeIn>
             </FadeInStagger>
 

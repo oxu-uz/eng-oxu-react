@@ -1,5 +1,6 @@
 import React from 'react';
-import {ChevronRight} from "lucide-react";
+import {ChevronRight, FileText} from "lucide-react";
+import { motion } from "framer-motion";
 
 const RegulatoryDocuments = () => {
 
@@ -96,38 +97,86 @@ const RegulatoryDocuments = () => {
         "Fire safety regulations"
     ];
 
+    // Animation variants
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const item = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0, transition: { duration: 1 } }
+    };
 
     return (
-        <div className="bg-gray-100">
-            <section className="page-heading-content mb-5" style={{height: "175px"}} data-cid="714">
-                <img className="bg-image bg-blue-900" src="/66e36e9d6e251891f12cc791_Managed IT Services.jpg" alt="Scholarship"/>
-                <div className="heading-content">
-                    <div className="container mx-auto px-5 title">
-                        <h1 className="text-white text-4xl font-bold">Regulatory Documents</h1>
-                    </div>
-                    <div className="breadcrumb">
-                        <div className="container mx-auto">
-                            <ul>
-                                <li className="sideNav-link">
-                                    <a className="nav-link text-white" href="/">
-                                        Home<ChevronRight size="16"/>
+        <div className="bg-gray-50 min-h-screen">
+            {/* Hero Section */}
+            <section className="relative h-64 overflow-hidden bg-blue-900">
+                <img
+                    className="absolute inset-0 w-full h-full object-cover opacity-30"
+                    src="/66e36e9d6e251891f12cc791_Managed IT Services.jpg"
+                    alt="Documents background"
+                />
+                <div className="relative z-10 h-full flex flex-col justify-center">
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 className="text-4xl font-bold text-white mb-2">Regulatory Documents</h1>
+                        <nav className="flex" aria-label="Breadcrumb">
+                            <ol className="inline-flex items-center space-x-1 md:space-x-2">
+                                <li className="inline-flex items-center">
+                                    <a href="/" className="inline-flex items-center text-sm font-medium text-white hover:text-blue-200">
+                                        HOME
                                     </a>
                                 </li>
-                                <li className="sideNav-link">
-                                    <span className="nav-link text-white">Regulatory Documents</span>
+                                <li>
+                                    <div className="flex items-center">
+                                        <ChevronRight className="mx-2 text-white" size={16} />
+                                        <span className="text-sm font-medium text-white">REGULATORY DOCUMENTS</span>
+                                    </div>
                                 </li>
-                            </ul>
-                        </div>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
             </section>
-            <ul className="space-y-2 p-5 flex flex-col divide-y divide-[rgba(159,171,185,.2)] list-none list-inside">
-                {regulations.map((item, index) => (
-                    <li key={index} className="text-gray-700 py-3">
-                        {item}
-                    </li>
-                ))}
-            </ul>
+
+            {/* Animated Documents List */}
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div className="px-6 py-4 border-b border-gray-200">
+                        <h2 className="text-xl font-semibold text-gray-800">All Documents</h2>
+                        <p className="text-sm text-gray-500 mt-1">{regulations.length} documents available</p>
+                    </div>
+
+                    <motion.ul
+                        className="divide-y divide-gray-200"
+                        variants={container}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        {regulations.map((docName, index) => (
+                            <motion.li
+                                key={index}
+                                variants={item}
+                                whileHover={{ scale: 1.01 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="hover:bg-gray-50 transition-colors duration-150"
+                            >
+                                <div className="px-6 py-4 flex items-center">
+                                    <div className="flex-shrink-0 bg-blue-100 p-2 rounded-lg mr-4">
+                                        <FileText className="text-blue-600" size={18} />
+                                    </div>
+                                    <span className="text-gray-800 font-medium">{docName}</span>
+                                </div>
+                            </motion.li>
+                        ))}
+                    </motion.ul>
+                </div>
+            </div>
         </div>
     );
 };

@@ -3,42 +3,50 @@ import '../leadership/style.css'
 import {ChevronRight} from "lucide-react";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 
-const Registrar = () => {
+const ViceRectorForFinancial = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
     const navItems = [
-        { label: "Vision", path: "/about/aiu/vision" },
-        { label: "Mission", path: "/about/aiu/mission" },
-        { label: "History", path: "/about/aiu/history" },
-        { label: "Vice Rector for Operations", path: "/about/aiu/registrar" },
-        { label: "Administration", path: "/about/aiu/administration" },
-        { label: "International Relations Office", path: "/about/aiu/international-relations" },
+        {label: "Vision", path: "/about/aiu/vision"},
+        {label: "Mission", path: "/about/aiu/mission"},
+        {label: "History", path: "/about/aiu/history"},
+        {label: "Administration", path: "/about/aiu/administration"},
+        {label: "Vice-rector for academic affairs", path: "/about/aiu/vice-rector/academic"},
+        {
+            label: "First vice-rector for youth policy and recreational and educational affairs",
+            path: "/about/aiu/vice-rector/youth"
+        },
+        {label: "Vice-rector for scientific affairs and innovations", path: "/about/aiu/vice-rector/innovation"},
+        {label: "Vice-rector for financial and economic affairs", path: "/about/aiu/vice-rector/financial"},
+        {label: "Head of Administration Department", path: "/about/aiu/registrar"},
+        {label: "Head of International Relations  Department", path: "/about/aiu/international"},
+        // { label: "International Relations Office", path: "/about/aiu/international-relations" },
     ];
     return (
         <div>
-         <section className="page-heading-content mb-5" data-cid="714">
-                <img className="bg-image" src="/headerbg3.svg" alt="Header background" />
+            <section className="page-heading-content mb-5" data-cid="714">
+                <img className="bg-image" src="/headerbg3.svg" alt="Header background"/>
                 <div className="heading-content">
                     <div className="container mx-auto px-5 title">
-                        <h1 className="text-2xl md:text-4xl font-bold">VICE RECTOR FOR OPERATIONS</h1>
+                        <h1 className="text-2xl md:text-4xl font-bold">VVICE-RECTOR FOR FINANCIAL AND ECONOMIC AFFAIRS</h1>
                     </div>
                     <div className="breadcrumb">
                         <div className="container mx-auto">
                             <ul className="flex flex-wrap items-center text-sm">
                                 <li>
                                     <a href="/en" className="nav-link">
-                                        Home <ChevronRight size="16" />
+                                        Home <ChevronRight size="16"/>
                                     </a>
                                 </li>
                                 <li>
                                     <span className="nav-link">
-                                        About <ChevronRight size="16" />
+                                        About <ChevronRight size="16"/>
                                     </span>
                                 </li>
                                 <li>
-                                    <a className="nav-link" href="/about/aiu/registrar">
-                                        VICE RECTOR FOR OPERATIONS
+                                    <a className="nav-link" href="/about/aiu/vice-rector/innovation">
+                                        VICE-RECTOR FOR FINANCIAL AND ECONOMIC AFFAIRS
                                     </a>
                                 </li>
                             </ul>
@@ -49,37 +57,52 @@ const Registrar = () => {
             <div className="container mx-auto flex flex-col md:flex-row gap-5 px-5 mb-10">
                 <div>
                     <div className="flex flex-col md:flex-row items-center gap-5">
-                        <img src="/PS5K3428.JPG" className="h-[300px]"/>
+                        <img src="/_MG_5005.jpg" className="h-[300px]"/>
                         <div>
-                            <h6 className="text-[#012152]">Dexkanov Bexruz Sobirovich</h6>
+                            <h6 className="text-[#012152]">Bafoev Ilkhom Inoyatovich</h6>
                             <div className="line"></div>
-                            <p className="text-gray-800 font-medium">Vice Rector for Operations</p>
+                            <p className="text-gray-800 font-medium">Vice-rector for financial and economic affairs</p>
                             <div className="flex items-center divide-x gap-3">
-                                <a className="text-blue-600 font-medium">head@oxu.uz</a>
+                                {/*<a className="text-blue-600 font-medium">rector@oxu.uz</a>*/}
                                 <a className="text-blue-600 pl-3 font-medium">+998 (55) 305-00-09</a>
                             </div>
                             <div className="flex flex-col mt-4 gap-y-3">
-                                <p className="text-gray-500  max-w-5xl">The Vice Rector for Operations is responsible for providing administrative, HRM, and academic support across various departments, sections, and campuses of the University. The core responsibility of the Vice Rector for Operations is to ensure strict and efficient administrative compliance and support in executing the directives and orders of the Rector.</p>
-                                <p className="text-gray-500  ">Mr. Dexkanov Bexruz Sobirovich has been serving as the Head of Operations at AIU University since 2022 and is currently appointed as the Vice Rector for Operations at AIU University.</p>
+                                <p className="text-gray-500  max-w-5xl">about vice rector</p>
+                                {/*<p className="text-gray-500  ">-</p>*/}
                             </div>
                         </div>
                     </div>
-                    <h2 className="text-lg font-bold mt-6 mb-4 uppercase">Educational information</h2>
-                    <div className="mb-6">
-                        <div className="flex  flex-wrap gap-2 w-full"><span
-                            className="text-gray-700 font-bold"></span><p><span className="text-gray-700 mr-2">Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management</span><br/>
-                        </p></div>
+                    <h2 className="text-lg font-bold mt-6 mb-4 uppercase">Educational Information</h2>
+                    <div className="space-y-4">
+                        <div className="flex items-start">
+                            <div className="w-3 h-3 bg-gray-400 rounded-full mt-1 mr-3 flex-shrink-0"></div>
+                            <div>
+                                <p className="text-gray-700">
+                                    <span className="font-semibold">Tashkent Institute of National Economy</span> (1985)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start">
+                            <div className="w-3 h-3 bg-gray-400 rounded-full mt-1 mr-3 flex-shrink-0"></div>
+                            <div>
+                                <p className="text-gray-700">
+                                    <span className="font-semibold">Academy of State and Society Building under the President of the Republic of Uzbekistan</span> (Physical Education)
+                                    (Master's degree) (2003)
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div className="mb-6">
+                    <div className="mb-6 mt-6">
                         <div className="flex justify-between flex-wrap gap-2 w-full"><span
                             className="text-lg font-bold uppercase">Work schedule </span><p><span
-                            className="text-gray-700 mr-2">Tuesday, Thursday and Friday from 15:00 to 17:00</span></p>
+                            className="text-gray-700 mr-2">Every day from 09.00 to 18.00</span></p>
                         </div>
                     </div>
                     <div className="mb-6">
                         <div className="flex justify-between flex-wrap gap-2 w-full"><span
                             className="text-lg font-bold uppercase">Address</span><p><span
-                            className="text-gray-700 mr-2">Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74</span>
+                            className="text-gray-700 mr-2">Bukhara city, "Yangiabad MFY", Gijduvan street, house 74.</span>
                         </p></div>
                     </div>
                 </div>
@@ -120,4 +143,5 @@ const Registrar = () => {
     );
 };
 
-export default Registrar;
+export default ViceRectorForFinancial;
+

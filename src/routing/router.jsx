@@ -6,7 +6,7 @@ import Leadership from "../pages/about/leadership/Leadership.jsx";
 import Vision from "../pages/about/aiu/Vision.jsx";
 import Mission from "../pages/about/aiu/Mission.jsx";
 import History from "../pages/about/aiu/History.jsx";
-import Registrar from "../pages/about/aiu/Registrar.jsx";
+import HeadOfAdministration from "../pages/about/aiu/HeadOfAdministration.jsx";
 import Administration from "../pages/about/aiu/Administration.jsx";
 import InternationalRelations from "../pages/about/aiu/InternationalRelations.jsx";
 import Md from "../pages/admissions/programs/Md.jsx";
@@ -48,6 +48,11 @@ import NewsInDetail from "../components/home/NewsInDetail.jsx";
 import InternationalRelationsContact from "../pages/InternationalRelationsContact.jsx";
 import IntForm from "../pages/IntForm.jsx";
 import FAQ from "../pages/FAQ.jsx";
+import ViceRectorAcademic from "../pages/about/aiu/ViceRectorAcademic.jsx";
+import ViceRectorForYouth from "../pages/about/aiu/ViceRectorForYouth.jsx";
+import ViceRectorForInnovation from "../pages/about/aiu/ViceRectorForInnovation.jsx";
+import ViceRectorForFinancial from "../pages/about/aiu/ViceRectorForFinancial.jsx";
+import HeadOfInterRelat from "../pages/about/aiu/HeadOfInterRelat.jsx";
 
 
 const router = createBrowserRouter([
@@ -84,27 +89,52 @@ const router = createBrowserRouter([
             }, {
                 path: '/about/aiu/history',
                 element: <History/>
-            }, {
-                path: '/about/aiu/registrar',
-                element: <Registrar/>
-            }, {
+            },
+            {
                 path: '/about/aiu/administration',
                 element: <Administration/>
-            }, {
+            },
+            {
+                path: '/about/aiu/vice-rector/academic',
+                element: <ViceRectorAcademic/>
+            },
+            {
+                path: '/about/aiu/vice-rector/youth',
+                element: <ViceRectorForYouth/>
+            },
+            {
+                path: '/about/aiu/vice-rector/innovation',
+                element: <ViceRectorForInnovation/>
+            },
+            {
+                path: '/about/aiu/vice-rector/financial',
+                element: <ViceRectorForFinancial/>
+            },
+            {
+                path: '/about/aiu/international',
+                element: <HeadOfInterRelat/>
+            },
+            {
+                path: '/about/aiu/registrar',
+                element: <HeadOfAdministration/>
+            },
+            {
                 path: '/about/aiu/international-relations',
                 element: <InternationalRelations/>
-            }, {
+            },
+            {
                 path: '/about/aiu/structure-of-university',
-                element: <InternationalRelations/>
-            }
-            , {
+                element: <ViceRectorAcademic/> //prorektor pagega navigate bo'ladi
+            },
+            {
                 path: '/admissions/md',
                 element: <Md/>
-            }
-            , {
+            },
+            {
                 path: '/admissions/mbbs',
                 element: <Mbbs/>
-            }, , {
+            },
+            {
                 path: '/find-programs',
                 element: <FindProgramms/>
             },
@@ -113,7 +143,7 @@ const router = createBrowserRouter([
                 element: <AcademicCalendar/>
             },
             {
-              path: '/international-form',
+                path: '/international-form',
                 element: <IntForm/>
             },
             {
@@ -170,8 +200,8 @@ const router = createBrowserRouter([
                 element: <InternationalRelationsContact/>
             },
             {
-              path: '/international/faq',
-              element: <FAQ/>
+                path: '/international/faq',
+                element: <FAQ/>
             }
         ]
     },

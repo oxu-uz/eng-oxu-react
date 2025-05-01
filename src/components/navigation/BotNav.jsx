@@ -14,7 +14,7 @@ const BotNav = () => {
         //         { label: "Mission", link: "/about/aiu/mission" },
         //         { label: "Message from the Rector ", link: "/about/leadership" },
         //         { label: "History", link: "/about/aiu/history" },
-        //         { label: "Registrar", link: "/about/aiu/registrar" },
+        //         { label: "HeadOfAdministration", link: "/about/aiu/registrar" },
         //         { label: "Administration", link: "/about/aiu/administration" },
         //         { label: "International Relations Office", link: "/about/aiu/international-relations" },
         //
