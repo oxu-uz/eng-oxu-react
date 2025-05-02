@@ -53,7 +53,7 @@ const FooterStatic = () => {
                             </a>
                         </li>
                         <li className="main-footer__item">
-                            <a className="main-footer__link" href="tel:++998500305876">
+                            <a className="main-footer__link" href="tel:+998500305876">
                                 Tel: +998 50 030 58 76
                             </a>
                         </li>

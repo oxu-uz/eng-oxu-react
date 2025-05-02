@@ -50,7 +50,7 @@ const Layout = () => {
 
                     {/* Блок 2 */}
                     <div className="flex flex-col items-center text-center">
-                        <a href="tel:++998500305876" className="text-base font-semibold leading-tight">
+                        <a href="tel:+998500305876" className="text-base font-semibold leading-tight">
                             +998 50 030 58 76
                         </a>
                         <span className="text-xs opacity-80">
