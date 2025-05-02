@@ -46,7 +46,7 @@ const navItems = [
       link: "/about/aiu",
       dropdown: [
           {label: "International Relations Office",link: "/about/aiu/international-relations"},
-          {label: "ERASMUS+",link: "/about/aiu/erasmus"},
+          {label: "ERASMUS+",link: "https://erasmus-plus.ec.europa.eu/"},
       ]
   },
   {
@@ -329,7 +329,7 @@ const TopNav = () => {
                         News & Events
                     </Link>
                     <a href="https://int.vacancy.oxu.uz/" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Career @ OXU</a>
-                    <a href="http://localhost:5173/international-form" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Apply Now</a>
+                    <a href="https://aiu.uz/international-form" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Apply Now</a>
                 </div>
             </div>
 

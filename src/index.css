@@ -17,14 +17,14 @@
     font-weight: 900;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: 'Gilroy';
     src: url('./assets/font/gilroy/Gilroy-BlackItalic.ttf') format('truetype');
     font-weight: 900;
     font-style: italic;
   }
-  
+
   /* Полужирный (Bold) начертания */
   @font-face {
     font-family: 'Gilroy';
@@ -32,14 +32,14 @@
     font-weight: 700;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: 'Gilroy';
     src: url('./assets/font/gilroy/Gilroy-BoldItalic.ttf') format('truetype');
     font-weight: 700;
     font-style: italic;
   }
-  
+
   /* Обычный (Regular) начертания */
   @font-face {
     font-family: 'Gilroy';
@@ -47,7 +47,7 @@
     font-weight: 400;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: 'Gilroy';
     src: url('./assets/font/gilroy/Gilroy-RegularItalic.ttf') format('truetype');
@@ -116,6 +116,69 @@
 
     --color-border-light: #e0e0e0;
     --color-border-dark: #343a40;
+}
+
+.apply-now-btn {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #0a37b3, #01408e);
+    color: white;
+    padding: 14px 32px;
+    font-size: 20px;
+    /*font-weight: bold;*/
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0, 123, 255, 0.7);
+    animation: pulse 2s infinite;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.apply-now-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.4);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0,123,255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(0,123,255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0,123,255, 0);
+    }
+}
+
+.apply-now-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0.2) 100%
+    );
+    transform: skewX(-20deg);
+}
+
+.apply-now-btn:hover::before {
+    animation: shine 1s ease forwards;
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
 }
 
 .title-text {

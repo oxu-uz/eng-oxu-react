@@ -20,7 +20,6 @@ const ViceRectorForYouth = () => {
         {label: "Vice-rector for scientific affairs and innovations", path: "/about/aiu/vice-rector/innovation"},
         {label: "Vice-rector for financial and economic affairs", path: "/about/aiu/vice-rector/financial"},
         {label: "Head of Administration Department", path: "/about/aiu/registrar"},
-        {label: "Head of International Relations  Department", path: "/about/aiu/international"},
         // { label: "International Relations Office", path: "/about/aiu/international-relations" },
     ];
     return (
@@ -58,7 +57,7 @@ const ViceRectorForYouth = () => {
             <div className="container mx-auto flex flex-col md:flex-row gap-5 px-5 mb-10">
                 <div>
                     <div className="flex flex-col md:flex-row items-center gap-5">
-                        <img src="/024.jpg" className="h-[300px]"/>
+                        <img src="/024.jpg" className="h-[300px] object-cover  w-[224px]"/>
                         <div>
                             <h6 className="text-[#012152]">Davronova Shakhlo Farmonovna</h6>
                             <div className="line"></div>
@@ -68,9 +67,17 @@ const ViceRectorForYouth = () => {
                                 {/*<a className="text-blue-600 font-medium">rector@oxu.uz</a>*/}
                                 <a className="text-blue-600 pl-3 font-medium">+998 (55) 305-00-09</a>
                             </div>
-                            <div className="flex flex-col mt-4 gap-y-3">
-                                <p className="text-gray-500  max-w-5xl">about first vice rector</p>
-                                {/*<p className="text-gray-500  ">-</p>*/}
+                            <div className="mb-6 mt-6">
+                                <div className="flex justify-between flex-wrap gap-2 w-full"><span
+                                    className="text-lg font-bold uppercase">Work schedule </span><p><span
+                                    className="text-gray-700 mr-2">Every day from 09.00 to 18.00</span></p>
+                                </div>
+                            </div>
+                            <div className="mb-6">
+                                <div className="flex justify-between flex-wrap gap-2 w-full"><span
+                                    className="text-lg font-bold uppercase">Address</span><p><span
+                                    className="text-gray-700 mr-2">Bukhara city, "Yangiabad MFY", Gijduvan street, house 74.</span>
+                                </p></div>
                             </div>
                         </div>
                     </div>
@@ -157,20 +164,8 @@ const ViceRectorForYouth = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mb-6 mt-6">
-                        <div className="flex justify-between flex-wrap gap-2 w-full"><span
-                            className="text-lg font-bold uppercase">Work schedule </span><p><span
-                            className="text-gray-700 mr-2">Every day from 09.00 to 18.00</span></p>
-                        </div>
-                    </div>
-                    <div className="mb-6">
-                        <div className="flex justify-between flex-wrap gap-2 w-full"><span
-                            className="text-lg font-bold uppercase">Address</span><p><span
-                            className="text-gray-700 mr-2">Bukhara city, "Yangiabad MFY", Gijduvan street, house 74.</span>
-                        </p></div>
-                    </div>
                 </div>
-                <aside className="w-full md:w-1/2 overflow-hidden">
+                <aside className="w-full md:w-1/3 overflow-hidden">
                     <ul className="sideNav">
                         <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
     <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">

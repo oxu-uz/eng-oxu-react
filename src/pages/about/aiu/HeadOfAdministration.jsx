@@ -17,7 +17,6 @@ const HeadOfAdministration = () => {
         { label: "Vice-rector for scientific affairs and innovations", path: "/about/aiu/vice-rector/innovation" },
         { label: "Vice-rector for financial and economic affairs", path: "/about/aiu/vice-rector/financial" },
         { label: "Head of Administration Department", path: "/about/aiu/registrar" },
-        { label: "Head of International Relations  Department", path: "/about/aiu/international" },
         // { label: "International Relations Office", path: "/about/aiu/international-relations" },
     ];
     return (
@@ -54,18 +53,26 @@ const HeadOfAdministration = () => {
             <div className="container mx-auto flex flex-col md:flex-row gap-5 px-5 mb-10">
                 <div>
                     <div className="flex flex-col md:flex-row items-center gap-5">
-                        <img src="/PS5K3428.JPG" className="h-[300px]"/>
+                        <img src="/PS5K3428.JPG" className="h-[300px] object-cover  w-[224px]"/>
                         <div>
                             <h6 className="text-[#012152]">Dexkanov Bexruz Sobirovich</h6>
                             <div className="line"></div>
-                            <p className="text-gray-800 font-medium">Vice Rector for Operations</p>
+                            <p className="text-gray-800 font-medium">Head of Administration Department</p>
                             <div className="flex items-center divide-x gap-3">
                                 <a className="text-blue-600 font-medium">head@oxu.uz</a>
                                 <a className="text-blue-600 pl-3 font-medium">+998 (55) 305-00-09</a>
                             </div>
-                            <div className="flex flex-col mt-4 gap-y-3">
-                                <p className="text-gray-500  max-w-5xl">The Vice Rector for Operations is responsible for providing administrative, HRM, and academic support across various departments, sections, and campuses of the University. The core responsibility of the Vice Rector for Operations is to ensure strict and efficient administrative compliance and support in executing the directives and orders of the Rector.</p>
-                                <p className="text-gray-500  ">Mr. Dexkanov Bexruz Sobirovich has been serving as the Head of Operations at AIU University since 2022 and is currently appointed as the Vice Rector for Operations at AIU University.</p>
+                            <div className="mt-6">
+                                <div className="flex justify-between flex-wrap gap-2 w-full"><span
+                                    className="text-lg font-bold uppercase">Work schedule </span><p><span
+                                    className="text-gray-700 mr-2">Tuesday, Thursday and Friday from 15:00 to 17:00</span></p>
+                                </div>
+                            </div>
+                            <div className="mt-6">
+                                <div className="flex justify-between flex-wrap gap-2 w-full"><span
+                                    className="text-lg font-bold uppercase">Address</span><p><span
+                                    className="text-gray-700 mr-2">Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74</span>
+                                </p></div>
                             </div>
                         </div>
                     </div>
@@ -75,20 +82,8 @@ const HeadOfAdministration = () => {
                             className="text-gray-700 font-bold"></span><p><span className="text-gray-700 mr-2">Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management</span><br/>
                         </p></div>
                     </div>
-                    <div className="mb-6">
-                        <div className="flex justify-between flex-wrap gap-2 w-full"><span
-                            className="text-lg font-bold uppercase">Work schedule </span><p><span
-                            className="text-gray-700 mr-2">Tuesday, Thursday and Friday from 15:00 to 17:00</span></p>
-                        </div>
-                    </div>
-                    <div className="mb-6">
-                        <div className="flex justify-between flex-wrap gap-2 w-full"><span
-                            className="text-lg font-bold uppercase">Address</span><p><span
-                            className="text-gray-700 mr-2">Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74</span>
-                        </p></div>
-                    </div>
                 </div>
-                <aside className="w-full md:w-1/2 overflow-hidden">
+                <aside className="w-full md:w-1/3 overflow-hidden">
                     <ul className="sideNav">
                         <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
     <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">

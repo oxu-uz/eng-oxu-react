@@ -17,7 +17,6 @@ const Mission = () => {
         { label: "Vice-rector for scientific affairs and innovations", path: "/about/aiu/vice-rector/innovation" },
         { label: "Vice-rector for financial and economic affairs", path: "/about/aiu/vice-rector/financial" },
         { label: "Head of Administration Department", path: "/about/aiu/registrar" },
-        { label: "Head of International Relations  Department", path: "/about/aiu/international" },
         // { label: "International Relations Office", path: "/about/aiu/international-relations" },
     ];
 

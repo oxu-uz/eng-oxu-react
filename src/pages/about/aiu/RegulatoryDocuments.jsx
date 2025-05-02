@@ -1,6 +1,6 @@
 import React from 'react';
 import {ChevronRight, FileText} from "lucide-react";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 const RegulatoryDocuments = () => {
 
@@ -99,7 +99,7 @@ const RegulatoryDocuments = () => {
 
     // Animation variants
     const container = {
-        hidden: { opacity: 0 },
+        hidden: {opacity: 0},
         show: {
             opacity: 1,
             transition: {
@@ -109,8 +109,8 @@ const RegulatoryDocuments = () => {
     };
 
     const item = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 1 } }
+        hidden: {opacity: 0, y: 20},
+        show: {opacity: 1, y: 0, transition: {duration: 1}}
     };
 
     return (
@@ -119,7 +119,7 @@ const RegulatoryDocuments = () => {
             <section className="relative h-64 overflow-hidden bg-blue-900">
                 <img
                     className="absolute inset-0 w-full h-full object-cover opacity-30"
-                    src="/66e36e9d6e251891f12cc791_Managed IT Services.jpg"
+                    src="/66e36e9d6e251891f12cc791_Managed%20IT%20Services.jpg"
                     alt="Documents background"
                 />
                 <div className="relative z-10 h-full flex flex-col justify-center">
@@ -128,13 +128,14 @@ const RegulatoryDocuments = () => {
                         <nav className="flex" aria-label="Breadcrumb">
                             <ol className="inline-flex items-center space-x-1 md:space-x-2">
                                 <li className="inline-flex items-center">
-                                    <a href="/" className="inline-flex items-center text-sm font-medium text-white hover:text-blue-200">
+                                    <a href="/public"
+                                       className="inline-flex items-center text-sm font-medium text-white hover:text-blue-200">
                                         HOME
                                     </a>
                                 </li>
                                 <li>
                                     <div className="flex items-center">
-                                        <ChevronRight className="mx-2 text-white" size={16} />
+                                        <ChevronRight className="mx-2 text-white" size={16}/>
                                         <span className="text-sm font-medium text-white">REGULATORY DOCUMENTS</span>
                                     </div>
                                 </li>
@@ -162,15 +163,20 @@ const RegulatoryDocuments = () => {
                             <motion.li
                                 key={index}
                                 variants={item}
-                                whileHover={{ scale: 1.01 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="hover:bg-gray-50 transition-colors duration-150"
+                                whileHover={{
+                                    scale: 1.01,
+                                    backgroundColor: "#0a37b3",
+                                }}
+                                whileTap={{scale: 0.98}}
+                                className="group sideNav-links transition-colors cursor-pointer"
                             >
                                 <div className="px-6 py-4 flex items-center">
                                     <div className="flex-shrink-0 bg-blue-100 p-2 rounded-lg mr-4">
-                                        <FileText className="text-blue-600" size={18} />
+                                        <FileText className="text-[#0a37b3]" size={18}/>
                                     </div>
-                                    <span className="text-gray-800 font-medium">{docName}</span>
+                                    <span className="text-gray-800 font-medium group-hover:text-white">
+            {docName}
+        </span>
                                 </div>
                             </motion.li>
                         ))}

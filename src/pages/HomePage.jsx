@@ -19,9 +19,11 @@ import {Link, Element} from 'react-scroll';
 import InfiniteLogoSlider from "../components/home/InfiniteLogoSlider.jsx";
 import StableCard from "../components/home/StableCard.jsx";
 import Testimonials from "../components/home/Testimonials.jsx";
+import {useNavigate} from "react-router-dom";
 
 
 const HomePage = () => {
+    const navigate = useNavigate();
     const [isCarouselVisible, setCarouselVisible] = useState(false);
     const ref = useRef(null)
     const inView = useInView(ref, {once: true})
@@ -97,7 +99,7 @@ const HomePage = () => {
 
     // Animatsiya variantlari
     const containerVariants = {
-        hidden: { opacity: 0 },
+        hidden: {opacity: 0},
         visible: {
             opacity: 1,
             transition: {
@@ -108,7 +110,7 @@ const HomePage = () => {
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: {opacity: 0, y: 20},
         visible: {
             opacity: 1,
             y: 0,
@@ -134,7 +136,7 @@ const HomePage = () => {
         "Emphasis on Lifelong Learning: We foster a culture of continuous education through workshops, specialty training, and professional development programs to keep graduates at the forefront of their fields.",
         "Strong Alumni Network: Our robust alumni network connects current students with industry professionals for mentorship, internships, and career opportunities.",
         "Vibrant campus life: AIU’s campus provides a supportive and inclusive environment where students from diverse backgrounds can form lasting friendships, share experiences, and grow both personally and professionally.",
-    ],[]);
+    ], []);
 
     const icons = [
         "/icons/Vector-5.svg",
@@ -151,7 +153,7 @@ const HomePage = () => {
         "/icons/Group 1410110396.svg"
     ];
 
-    const photos = useMemo(()=> [
+    const photos = useMemo(() => [
         "/for site/Accredited.png",
         "/for site/Innovative Teaching Methods.JPG",
         "/for site/.Strong Research Opportunities.JPG",
@@ -164,23 +166,29 @@ const HomePage = () => {
         "/for site/Emphasis on Lifelong Learning.jpg",
         "/for site/Strong Alumini Network.jpeg",
         "/for site/Vibrant Campus Life.JPG",
-    ],[])
+    ], [])
 
     const slides = [
         {
             type: "image",
             src: "/DSC_9787.JPG",
             poster: "/DSC_9787.JPG",
+            description: "Ready to start on an exciting journey with us? Explore our university and become part of the family.",
+            cta: "Apply Now"
         },
         {
             type: "image",
             src: "/DSC_1537.JPG",
             alt: "Image 1",
+            description: "One of Central Asia's leading universities, providing premier education to shape students for global careers.",
+            cta: "Admission Open"
         },
         {
             type: "image",
             src: "/DSC_9801.JPG",
             alt: "Image 2",
+            description: "A Central Asian home for students from all over the world.",
+            cta: "Book your seat"
         },
         // Можно добавить ещё слайды
     ];
@@ -216,7 +224,7 @@ const HomePage = () => {
                         {/* Картинка текущего слайда */}
                         <img
                             src={slides[currentIndex].src}
-                            alt={slides[currentIndex].alt}
+                            alt={slides[currentIndex].alt || "Slide image"}
                             className="absolute inset-0 object-cover w-full h-full"
                         />
 
@@ -241,41 +249,45 @@ const HomePage = () => {
                                 transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.5}}
                             >
                                 <h1 className="text-2xl md:text-5xl font-extrabold uppercase mb-3 md:mb-5">
-                                    {/*Asia International University: */}
                                     One of the Leading Universities Offering Premier Education in Central Asia
                                 </h1>
-                                <p className="text-xs md:text-2xl">
-                                    Asia International University (AIU) is one of the leading institutions in Central
-                                    Asia, offering premier education across diverse fields designed to prepare students
-                                    for successful careers in a dynamic global environment.
+                                <p className="text-xs md:text-2xl mb-6">
+                                    {slides[currentIndex].description}
                                 </p>
+                                <button onClick={()=>navigate('/international-form')} className="apply-now-btn mb-4">{slides[currentIndex].cta}</button>
+                                {/*<motion.button*/}
+                                {/*    onClick={() => navigate('/international-form')}*/}
+                                {/*    className="px-6 py-3 rounded-md text-white font-medium text-sm md:text-lg"*/}
+                                {/*    initial={{scale: 0.9, opacity: 0.8}}*/}
+                                {/*    animate={{*/}
+                                {/*        scale: [1, 1.095, 1],*/}
+                                {/*        backgroundColor: ["#0a37b3"],*/}
+                                {/*        // boxShadow: ["0 0 0 #0a37b3", "0 0 15px #1a4bcf", "0 0 0 #0a37b3"]*/}
+                                {/*    }}*/}
+                                {/*    transition={{*/}
+                                {/*        duration: 1.3,*/}
+                                {/*        repeat: Infinity,*/}
+                                {/*        ease: "linear"*/}
+                                {/*    }}*/}
+                                {/*    whileHover={{*/}
+                                {/*        // scale: 1.1,*/}
+                                {/*        boxShadow: "0 0 25px rgba(10, 55, 179, 0.8)"*/}
+                                {/*    }}*/}
+                                {/*    whileTap={{*/}
+                                {/*        scale: 0.95,*/}
+                                {/*        boxShadow: "0 0 15px rgba(10, 55, 179, 0.6)"*/}
+                                {/*    }}*/}
+                                {/*>*/}
+                                {/*    {slides[currentIndex].cta}*/}
+                                {/*</motion.button>*/}
                             </motion.div>
                         </div>
                     </motion.div>
                 </AnimatePresence>
 
                 {/* Блок управления (controls) */}
-                <div className="absolute bottom-4 md:bottom-14 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 md:space-x-6 z-30">
-                    {/* "01 --- 06" с прогресс-баром */}
-                    {/*<div className="flex items-center space-x-2 md:space-x-3 text-white">*/}
-                    {/*    /!* Текущее значение (двухзначное) *!/*/}
-                    {/*    <span className="text-base md:text-xl font-semibold tabular-nums">*/}
-                    {/*        {String(currentIndex + 1).padStart(2, "0")}*/}
-                    {/*        </span>*/}
-                    {/*    /!* Мини-прогресс-бар *!/*/}
-                    {/*    <div className="relative w-16 md:w-24 h-[2px] bg-gray-400/60">*/}
-                    {/*        <motion.div*/}
-                    {/*            className="h-full bg-white"*/}
-                    {/*            style={{width: widthValue}}*/}
-                    {/*        />*/}
-                    {/*    </div>*/}
-                    {/*    /!* Общее число слайдов (двухзначное) *!/*/}
-                    {/*    <span className="text-base md:text-xl font-semibold text-white/60 tabular-nums">*/}
-                    {/*        {String(slides.length).padStart(2, "0")}*/}
-                    {/*    </span>*/}
-                    {/*</div>*/}
-
-                    {/* Кнопки переключения слайдов */}
+                <div
+                    className="absolute bottom-4 md:bottom-14 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 md:space-x-6 z-30">
                     <div className="flex items-center space-x-2 md:space-x-3">
                         <button
                             onClick={prevSlide}
@@ -300,13 +312,14 @@ const HomePage = () => {
             <section ref={ref} className="px-4 md:px-32 mx-auto py-12">
                 <div className="max-w-[1663px] max-md:max-w-full w-full mx-auto">
                     <motion.h2
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={inView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        initial={{opacity: 0, y: -20}}
+                        animate={inView ? {opacity: 1, y: 0} : {}}
+                        transition={{duration: 0.8, ease: 'easeOut'}}
                         className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
                     >
                         Why Choose Us
-                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#0a37b3]"></span>
+                        <span
+                            className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#0a37b3]"></span>
                     </motion.h2>
 
                     <motion.div

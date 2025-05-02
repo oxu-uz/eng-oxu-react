@@ -27,7 +27,7 @@ import ClinicalSciencesPage from "../pages/departments/ClinicalSciences.jsx";
 import GeneralSciencesPage from "../pages/departments/GeneralSciencesPage.jsx";
 import TuitionFeesPage from "../pages/admissions/TuitionsFeePage.jsx";
 import FindProgramms from "../pages/FindProgramms.jsx";
-import RegulatoryDocuments from "../pages/RegulatoryDocuments.jsx";
+import RegulatoryDocuments from "../pages/about/aiu/RegulatoryDocuments.jsx";
 import Gallery from "../pages/Gallery.jsx";
 import IntHome from "../pages/IntHome.jsx";
 import LoginPage from "../auth/Login.jsx";
@@ -52,7 +52,7 @@ import ViceRectorAcademic from "../pages/about/aiu/ViceRectorAcademic.jsx";
 import ViceRectorForYouth from "../pages/about/aiu/ViceRectorForYouth.jsx";
 import ViceRectorForInnovation from "../pages/about/aiu/ViceRectorForInnovation.jsx";
 import ViceRectorForFinancial from "../pages/about/aiu/ViceRectorForFinancial.jsx";
-import HeadOfInterRelat from "../pages/about/aiu/HeadOfInterRelat.jsx";
+import HeadOfInterRelat from "../pages/HeadOfInterRelat.jsx";
 
 
 const router = createBrowserRouter([

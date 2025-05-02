@@ -4,7 +4,7 @@ import {motion, AnimatePresence, useInView} from 'framer-motion';
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const ref = useRef(null);
-    const isInView = useInView(ref, {once: false, margin: "-100px"});
+    const isInView = useInView(ref, {once: false, margin: "-50px"});
 
     const testimonials = [
         {
@@ -16,31 +16,28 @@ const Testimonials = () => {
         },
         {
             id: 2,
-            quote: "The reason I choose this university because of quality of education Nd low budget fees and there is best option to get a scholarship. All facilities are provided here Including -Indian food good hostel best and most experienced faculty professors and lot of extracurricular activities.\n" +
-                "Choosing Asia international university is my best decision.",
+            quote: "The reason I choose this university because of quality of education Nd low budget fees and there is best option to get a scholarship. All facilities are provided here Including -Indian food good hostel best and most experienced faculty professors and lot of extracurricular activities. Choosing Asia international university is my best decision.",
             name: "Ms. Kavita Chauhan",
             title: "1st Year-India",
             img: "/for site/IMG_7304.JPG"
         },
         {
             id: 3,
-            quote: "I have seen that so many abroad colleges don’t feel like the colleges in our native. But here in ASIA INTERNATIONAL UNIVERSITY, it feels like home. I feel like I have chosen a right college for me to study well for my medical studies and help me to develop in so many other ways.",
+            quote: "I have seen that so many abroad colleges don't feel like the colleges in our native. But here in ASIA INTERNATIONAL UNIVERSITY, it feels like home. I feel like I have chosen a right college for me to study well for my medical studies and help me to develop in so many other ways.",
             name: "Mr. Jignesh",
             title: "1st Year-India",
             img: "/for site/IMG_7300.JPG"
         },
         {
             id: 4,
-            quote: "I chose this university because of its strong academic reputation and very supportive teachers. One of key factors that influenced my decision was the availability of scholarships. " +
-                "Receiving a Scholarship not only eases the financial burden but also motivates me to work even harder and contribute actively in my academics.",
+            quote: "I chose this university because of its strong academic reputation and very supportive teachers. One of key factors that influenced my decision was the availability of scholarships. Receiving a Scholarship not only eases the financial burden but also motivates me to work even harder and contribute actively in my academics.",
             name: "Ms. Laiba Sajjad",
             title: "Medicine, 1st Year – Pakistan",
             img: "/for site/IMG_7302.JPG"
         },
         {
             id: 5,
-            quote: "I would like to thank the ASIA INTERNATIONAL UNIVERSITY for providing us with a good learning environment. The faculty is supportive, and the facilities are helpful for our studies. I hope there will be continuous improvement in areas like practical exposure, library resources, " +
-                "and student support services. But still, some allegations always have, little bit of consequences, Overall, I am grateful for the opportunity to study here.",
+            quote: "I would like to thank the ASIA INTERNATIONAL UNIVERSITY for providing us with a good learning environment. The faculty is supportive, and the facilities are helpful for our studies. I hope there will be continuous improvement in areas like practical exposure, library resources, and student support services. But still, some allegations always have, little bit of consequences, Overall, I am grateful for the opportunity to study here.",
             name: "Mr. Velu Gowtham",
             title: "1st Year-India",
             img: "/for site/IMG_7299.JPG"
@@ -88,7 +85,7 @@ const Testimonials = () => {
     return (
         <section
             ref={ref}
-            className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-900"
+            className="relative py-10 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-900"
             id="testimonials"
         >
             {/* Blurred Background Image */}
@@ -111,22 +108,22 @@ const Testimonials = () => {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={containerVariants}
-                    className="text-center mb-16"
+                    className="text-center mb-8 md:mb-16"
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-4xl md:text-5xl font-bold text-white mb-4"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4"
                     >
-                        What our Student Say
+                        What our Students Say
                     </motion.h2>
                     <motion.div
                         variants={itemVariants}
-                        className="w-[30%] h-1 bg-white mx-auto"
+                        className="w-[60%] sm:w-[50%] md:w-[30%] h-1 bg-white mx-auto"
                     ></motion.div>
                 </motion.div>
 
                 {/* Testimonial Slider */}
-                <div className="relative h-[500px] md:h-[400px]">
+                <div className="relative h-[500px] md:h-[400px] mb-8 md:mb-0">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={testimonials[currentIndex].id}
@@ -143,28 +140,47 @@ const Testimonials = () => {
                             }}
                             className="absolute inset-0"
                         >
-                            <div
-                                className="bg-white/65 backdrop-blur-sm rounded-xl shadow-2xl flex flex-col md:flex-row h-full overflow-hidden">
-                                {/* Student Image */}
-                                <div className="md:w-1/3 h-64 md:h-full relative">
+                            {/* Mobile Layout - Full background image with overlay */}
+                            <div className="md:hidden relative w-full h-full rounded-xl overflow-hidden">
+                                <img
+                                    src={testimonials[currentIndex].img}
+                                    alt={testimonials[currentIndex].name}
+                                    className="w-full h-full object-cover absolute inset-0"
+                                />
+                                <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-10 pb-6 px-6 flex flex-col justify-end">
+                                    <blockquote className="text-white text-base italic mb-4 leading-relaxed">
+                                        "{testimonials[currentIndex].quote}"
+                                    </blockquote>
+                                    <div className="mt-auto flex items-center w-full justify-between">
+                                        <p className="text-white text-lg font-semibold">
+                                            {testimonials[currentIndex].name}
+                                        </p>
+                                        <p className="text-blue-gray-200 text-base">
+                                            {testimonials[currentIndex].title}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Desktop Layout - Side by side */}
+                            <div className="hidden md:flex bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl w-full h-full overflow-hidden">
+                                <div className="w-1/3 h-full relative">
                                     <img
                                         src={testimonials[currentIndex].img}
                                         alt={testimonials[currentIndex].name}
                                     />
-                                    <div
-                                        className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent md:bg-gradient-to-r"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
                                 </div>
 
-                                {/* Testimonial Content */}
-                                <div className="md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
-                                    <blockquote className="text-lg md:text-xl italic text-gray-700 mb-8">
+                                <div className="w-2/3 p-8 lg:p-10 flex flex-col justify-center">
+                                    <blockquote className="text-gray-800 text-lg lg:text-xl italic mb-6 leading-relaxed">
                                         "{testimonials[currentIndex].quote}"
                                     </blockquote>
                                     <div>
-                                        <p className="text-xl font-semibold text-gray-900">
+                                        <p className="text-gray-900 text-xl font-semibold">
                                             {testimonials[currentIndex].name}
                                         </p>
-                                        <p className="text-[#0a37b3]">
+                                        <p className="text-[#0a37b3] text-base">
                                             {testimonials[currentIndex].title}
                                         </p>
                                     </div>
@@ -179,14 +195,14 @@ const Testimonials = () => {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={containerVariants}
-                    className="flex justify-center mt-12 space-x-3"
+                    className="flex justify-center mt-6 md:mt-10 space-x-2 md:space-x-3"
                 >
                     {testimonials.map((_, index) => (
                         <motion.button
                             key={index}
                             variants={itemVariants}
                             onClick={() => setCurrentIndex(index)}
-                            className={`w-3 h-3 rounded-full transition-all ${
+                            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
                                 currentIndex === index
                                     ? 'bg-[#0a37b3] scale-125'
                                     : 'bg-white/50 hover:bg-white/70'

@@ -54,7 +54,7 @@ const BotNav = () => {
             link: "/about/aiu",
             dropdown: [
                 {label: "International Relations Office",link: "/about/aiu/international-relations"},
-                {label: "ERASMUS+",link: "/about/aiu/erasmus"},
+                {label: "ERASMUS+",link: "https://erasmus-plus.ec.europa.eu/"},
             ]
         },
         {
