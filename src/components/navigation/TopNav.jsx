@@ -29,7 +29,7 @@ const navItems = [
     dropdown: [
       { label: "Academic Calendar", link: "/academics/academic-calendar" },
       { label: "Study Plan/ Curriculum", link: "/academics/study-plan" },
-      { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
+      // { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
       {
           label: "Structure of the faculty",
           // link: "/about/aiu/faculty-structure",
@@ -84,7 +84,8 @@ const navItems = [
       },
     ],
   },
-  { label: "Gallery", link: "/gallery" },
+    { label: "Research and Publications ", link: "/research" },
+  // { label: "Gallery", link: "/gallery" },
   // { label: "Contact", link: "/international-relations/contact" },
   { label: "FAQ", link: "/international/faq" },
 ];

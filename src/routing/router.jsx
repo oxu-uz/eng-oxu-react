@@ -53,6 +53,7 @@ import ViceRectorForYouth from "../pages/about/aiu/ViceRectorForYouth.jsx";
 import ViceRectorForInnovation from "../pages/about/aiu/ViceRectorForInnovation.jsx";
 import ViceRectorForFinancial from "../pages/about/aiu/ViceRectorForFinancial.jsx";
 import HeadOfInterRelat from "../pages/HeadOfInterRelat.jsx";
+import ResearchAndPublications from "../pages/ResearchAndPublications.jsx";
 
 
 const router = createBrowserRouter([
@@ -191,10 +192,15 @@ const router = createBrowserRouter([
             }, {
                 path: '/about/aiu/regulatory-documents',
                 element: <RegulatoryDocuments/>
-            }, {
-                path: '/gallery',
-                element: <Gallery/>
             },
+            {
+                path: '/research',
+                element: <ResearchAndPublications/>
+            },
+            // {
+            //     path: '/gallery',
+            //     element: <Gallery/>
+            // },
             {
                 path: '/international-relations/contact',
                 element: <InternationalRelationsContact/>

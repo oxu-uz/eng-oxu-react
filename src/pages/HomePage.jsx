@@ -173,21 +173,24 @@ const HomePage = () => {
             type: "image",
             src: "/DSC_9787.JPG",
             poster: "/DSC_9787.JPG",
-            description: "Ready to start on an exciting journey with us? Explore our university and become part of the family.",
+            title:" Welcome to AIU. Ready to start on an exciting journey with us? Explore our university and become part of the family. ",
+            description: "Experience world-class education guided by expert International faculty and supported by a vibrant, diverse I community. ",
             cta: "Apply Now"
         },
         {
             type: "image",
             src: "/DSC_1537.JPG",
             alt: "Image 1",
-            description: "One of Central Asia's leading universities, providing premier education to shape students for global careers.",
+            title:"One of Central Asia's leading universities, providing premier education to shape students for global careers.",
+            description: "Our state-of-the-art campus, innovative programs, and strong international partnerships empower students with the skills and knowledge to thrive in a competitive world.",
             cta: "Admission Open"
         },
         {
             type: "image",
             src: "/DSC_9801.JPG",
             alt: "Image 2",
-            description: "A Central Asian home for students from all over the world.",
+            title: "A Central Asian home for students from all over the world.",
+            description: "We make sure every student feels at home—no matter where they come from. It's more than just a place to study; it's a place to belong, where diverse cultures come together to learn, grow, and connect",
             cta: "Book your seat"
         },
         // Можно добавить ещё слайды
@@ -249,12 +252,12 @@ const HomePage = () => {
                                 transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.5}}
                             >
                                 <h1 className="text-2xl md:text-5xl font-extrabold uppercase mb-3 md:mb-5">
-                                    One of the Leading Universities Offering Premier Education in Central Asia
+                                    {slides[currentIndex].title}
                                 </h1>
                                 <p className="text-xs md:text-2xl mb-6">
                                     {slides[currentIndex].description}
                                 </p>
-                                <button onClick={()=>navigate('/international-form')} className="apply-now-btn mb-4">{slides[currentIndex].cta}</button>
+                                <button onClick={()=>navigate('/international-form')} className="apply-now-btn">{slides[currentIndex].cta}</button>
                                 {/*<motion.button*/}
                                 {/*    onClick={() => navigate('/international-form')}*/}
                                 {/*    className="px-6 py-3 rounded-md text-white font-medium text-sm md:text-lg"*/}
@@ -287,7 +290,7 @@ const HomePage = () => {
 
                 {/* Блок управления (controls) */}
                 <div
-                    className="absolute bottom-4 md:bottom-14 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 md:space-x-6 z-30">
+                    className="absolute bottom-4 md:bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 md:space-x-6 z-30">
                     <div className="flex items-center space-x-2 md:space-x-3">
                         <button
                             onClick={prevSlide}

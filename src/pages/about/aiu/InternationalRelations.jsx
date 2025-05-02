@@ -7,12 +7,12 @@ const InternationalRelations = () => {
     const navigate = useNavigate();
 
     const navItems = [
-        {label: "Vision", path: "/about/aiu/vision"},
-        {label: "Mission", path: "/about/aiu/mission"},
-        {label: "History", path: "/about/aiu/history"},
-        {label: "Vice Rector for Operations", path: "/about/aiu/registrar"},
-        {label: "Administration", path: "/about/aiu/administration"},
-        {label: "International Relations Office", path: "/about/aiu/international-relations"},
+        {label: "ERASMUS+", path: "https://erasmus-plus.ec.europa.eu/"},
+        // {label: "Mission", path: "/about/aiu/mission"},
+        // {label: "History", path: "/about/aiu/history"},
+        // {label: "Vice Rector for Operations", path: "/about/aiu/registrar"},
+        // {label: "Administration", path: "/about/aiu/administration"},
+        // {label: "International Relations Office", path: "/about/aiu/international-relations"},
     ];
 
     return (
@@ -186,13 +186,12 @@ const InternationalRelations = () => {
 
                         {navItems.map((item, index) => (
                             <li
-                                onClick={() => navigate(item.path)}
                                 key={index}
                                 className={`sideNav-links transition-colors cursor-pointer ${
                                     location.pathname === item.path ? "sideNav-active" : ""
                                 }`}
                             >
-                                <Link to={item.path}>{item.label}</Link>
+                                <Link to={item.path} target={'_blank'}>{item.label}</Link>
                             </li>
                         ))}
                     </ul>

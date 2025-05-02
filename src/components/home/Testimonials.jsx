@@ -16,7 +16,7 @@ const Testimonials = () => {
         },
         {
             id: 2,
-            quote: "The reason I choose this university because of quality of education Nd low budget fees and there is best option to get a scholarship. All facilities are provided here Including -Indian food good hostel best and most experienced faculty professors and lot of extracurricular activities. Choosing Asia international university is my best decision.",
+            quote: "The reason I choose this university because of quality of education and low budget fees and there is best option to get a scholarship. All facilities are provided here Including -Indian food good hostel best and most experienced faculty professors and lot of extracurricular activities. Choosing Asia international university is my best decision.",
             name: "Ms. Kavita Chauhan",
             title: "1st Year-India",
             img: "/for site/IMG_7304.JPG"
