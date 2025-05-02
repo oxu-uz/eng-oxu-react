@@ -13,7 +13,12 @@ const InfiniteLogoSlider = () => {
         { src: "/web-undip-logo.png", width: "w-[250px]" },
         { src: "/imisp-logo-blue-cyr2.png", width: "w-[250px]" },
         { src: "/uomusLogo.png", width: "w-[150px]", containerClass: "flex items-center w-[220px]" },
-        { src: "/logo-ufla.jpg", width: "w-[250px]" }
+        { src: "/photo_2025-05-02_14-59-35.jpg", width: "w-[250px]" },
+        { src: "/photo_2025-05-02_14-59-35 (2).jpg", width: "w-[250px]" },
+        { src: "/photo_2025-05-02_14-59-35 (3).jpg", width: "w-[200px]" },
+        { src: "/photo_2025-05-02_14-59-35 (4).jpg", width: "w-[250px]" },
+        { src: "/photo_2025-05-02_14-59-35 (5).jpg", width: "w-[180px]" },
+        { src: "/photo_2025-05-02_14-59-36.jpg", width: "w-[250px]" },
     ];
 
     // Duplicate logos for seamless infinite effect

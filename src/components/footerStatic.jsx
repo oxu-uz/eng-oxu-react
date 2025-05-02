@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
+import {FaFacebook, FaTelegram, FaWhatsapp, FaYoutube} from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -77,27 +77,33 @@ const FooterStatic = () => {
                             </a>
                         </li>
                         <li className="main-footer__item">
-                            <a className="main-footer__link flex items-center gap-3" href="https://t.me/Oxu_uz">
+                            <a className="main-footer__link flex items-center gap-3" href="https://t.me/AzMU_UZ">
                                 <FaTelegram size="25" />
                                 <span>Telegram</span>
                             </a>
                         </li>
                         <li className="main-footer__item">
-                            <a className="main-footer__link flex items-center gap-3" href="https://www.instagram.com/oxu_uz/">
+                            <a className="main-footer__link flex items-center gap-3" href="https://www.instagram.com/aiu.uzb/">
                                 <PiInstagramLogoFill size="25" />
                                 <span>Instagram</span>
                             </a>
                         </li>
                         <li className="main-footer__item">
-                            <a className="main-footer__link flex items-center gap-3" href="https://www.facebook.com/people/Osiyo-Xalqaro-Universiteti/100088012691808/?sk=about">
+                            <a className="main-footer__link flex items-center gap-3" href="https://www.facebook.com/share/1UaPBeZp76/?mibextid=wwXIfr">
                                 <FaFacebook size="25" />
                                 <span>Facebook</span>
                             </a>
                         </li>
                         <li className="main-footer__item">
-                            <a className="main-footer__link flex items-center gap-3" href="https://www.youtube.com/@Osiyo.Xalqaro.Universiteti.">
+                            <a className="main-footer__link flex items-center gap-3" href="https://youtube.com/@asiaintrntnluniversityofficial?si=XChd7BLqJXx6ODO-">
                                 <FaYoutube size="25" />
                                 <span>YouTube</span>
+                            </a>
+                        </li>
+                        <li className="main-footer__item">
+                            <a className="main-footer__link flex items-center gap-3" href="https://wa.me/998500305876">
+                                <FaWhatsapp size="25" />
+                                <span>Whatsapp</span>
                             </a>
                         </li>
                     </ul>

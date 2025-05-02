@@ -90,7 +90,7 @@ const AdminLayout = () => {
       </span> */}
                         <div class="flex items-center  divide-x divide-[hsla(0,0%,100%,.15)] ">
                             <a data-v-4b8a97f0="" target="_blank"
-                               href="https://www.facebook.com/people/Osiyo-Xalqaro-Universiteti/100088012691808/?sk=about">
+                               href="https://www.facebook.com/share/1UaPBeZp76/?mibextid=wwXIfr">
                                 <i data-v-4b8a97f0="">
                                     <svg class="mx-1" data-v-4b8a97f0="" width="26" height="26" viewBox="0 0 32 32"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +113,7 @@ const AdminLayout = () => {
                                       fill="white"></path>
                             </svg>
                         </i></a> <a data-v-4b8a97f0="" target="_blank"
-                                    href="https://t.me/Asiainternationaluniversity_uz"><i data-v-4b8a97f0="">
+                                    href="https://t.me/AzMU_UZ"><i data-v-4b8a97f0="">
                             <svg class="mx-1" data-v-4b8a97f0="" width="26" height="26" viewBox="0 0 32 32" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path data-v-4b8a97f0=""
@@ -121,7 +121,7 @@ const AdminLayout = () => {
                                       fill="white"></path>
                             </svg>
                         </i></a> <a data-v-4b8a97f0="" target="_blank"
-                                    href="https://www.youtube.com/@Osiyo.Xalqaro.Universiteti" class="pl-1">
+                                    href="https://youtube.com/@asiaintrntnluniversityofficial?si=XChd7BLqJXx6ODO-" class="pl-1">
                             <svg class="mx-1" data-v-4b8a97f0="" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path data-v-4b8a97f0=""

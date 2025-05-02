@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom';
 import FadeIn, {FadeInStagger} from "../components/FadeIn.jsx";
 import {motion} from "framer-motion";
-import { FaGlobe, FaHandshake, FaExchangeAlt, FaUniversity } from 'react-icons/fa';
-import { MdOutlineSchool } from 'react-icons/md';
+import {FaGlobe, FaHandshake, FaExchangeAlt, FaUniversity} from 'react-icons/fa';
+import {MdOutlineSchool} from 'react-icons/md';
 import Slider from 'react-infinite-logo-slider';
 
 function IntHome() {
@@ -116,6 +116,31 @@ function IntHome() {
                                         {/*</div>*/}
                                         <div className='logos-slide'>
                                             <img src="/logo-ufla.jpg" alt="any3" className='w-[250px] mx-auto'/>
+                                        </div>
+
+                                        <div className='logos-slide'>
+                                            <img src="/photo_2025-05-02_14-59-35.jpg" alt="any3"
+                                                 className='w-[250px] mx-auto'/>
+                                        </div>
+                                        <div className='logos-slide'>
+                                            <img src="/photo_2025-05-02_14-59-35 (2).jpg" alt="any3"
+                                                 className='w-[250px] mx-auto'/>
+                                        </div>
+                                        <div className='logos-slide'>
+                                            <img src="/photo_2025-05-02_14-59-35 (3).jpg" alt="any3"
+                                                 className='w-[250px] mx-auto'/>
+                                        </div>
+                                        <div className='logos-slide'>
+                                            <img src="/photo_2025-05-02_14-59-35 (4).jpg" alt="any3"
+                                                 className='w-[250px] mx-auto'/>
+                                        </div>
+                                        <div className='logos-slide'>
+                                            <img src="/photo_2025-05-02_14-59-35 (5).jpg" alt="any3"
+                                                 className='w-[250px] mx-auto'/>
+                                        </div>
+                                        <div className='logos-slide'>
+                                            <img src="/photo_2025-05-02_14-59-36.jpg" alt="any3"
+                                                 className='w-[250px] mx-auto'/>
                                         </div>
                                     </Slider>
                                 </div>
