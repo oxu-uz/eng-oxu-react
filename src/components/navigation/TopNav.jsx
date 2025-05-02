@@ -355,8 +355,8 @@ const TopNav = () => {
 
                             {/* Блок 2 */}
                             <div className="flex flex-col items-center text-center">
-                                <a href="tel:+998553050009" className="text-sm font-semibold leading-tight">
-                                    +998 55 305 00 09
+                                <a href="tel:++998500305876" className="text-sm font-semibold leading-tight">
+                                    +998 50 030 58 76
                                 </a>
                                 <span className="text-xs opacity-80">
         Hotline for applicants
