@@ -12,7 +12,6 @@ const InternationalRelations = () => {
         // {label: "History", path: "/about/aiu/history"},
         // {label: "Vice Rector for Operations", path: "/about/aiu/registrar"},
         // {label: "Administration", path: "/about/aiu/administration"},
-        // {label: "International Relations Office", path: "/about/aiu/international-relations"},
     ];
 
     return (
@@ -36,7 +35,7 @@ const InternationalRelations = () => {
                                 </span>
                                 </li>
                                 <li>
-                                    <a className="nav-link" href="/about/aiu/administration">
+                                    <a className="nav-link" href="/international-relations">
                                         International Relations Office
                                     </a>
                                 </li>
@@ -47,120 +46,50 @@ const InternationalRelations = () => {
             </section>
             <div className="container mx-auto flex flex-col md:flex-row gap-5 px-5 mb-10">
                 <div>
-                    {/* <div className="flex w-full gap-10">
-                        <img src="/DSC_6775.jpg" className="h-[300px] object-cover  w-[224px]"/>
-                        <div>
-                            <h6 className="text-[#012152]">Babayev Suxrob Tuyg’unovich</h6>
-                            <div className="line"></div>
-                            <p className="text-gray-800 font-medium">The head of International relations department</p>
-                            <div className="flex items-center divide-x gap-3">
-                                <a href="mailto:international@oxu.uz"
-                                   className="text-blue-600 font-medium">international@oxu.uz</a>
-                            </div>
-
-                            <div className="my-3">
-                                <div className="flex justify-between flex-wrap gap-2 w-full"><span
-                                    className=" font-bold uppercase">Work schedule </span><p><span
-                                    className="text-gray-700 mr-2">Tuesday, Thursday and Friday from 15:00 to 17:00</span>
-                                </p>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="flex justify-between flex-wrap gap-2 w-full"><span
-                                    className="font-bold uppercase">Address</span><p><span
-                                    className="text-gray-700 mr-2">Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74</span>
-                                </p></div>
-                            </div>
-
-                            <div className="mb-6 mt-2">
-                                <span className=" font-bold uppercase">Educational information</span>
-                                <div className="flex flex-wrap gap-2 w-full"><span
-                                    className="text-gray-700 font-bold"></span><p><span className="text-gray-700 mr-2">Graduate student of Bukhara State University (2007 - 2009)</span><br/><span
-                                    className="text-gray-700 mr-2">Graduate student of Kazan Federal University (2022 - 2024) (Master's Degree)</span><br/><span
-                                    className="text-gray-700 mr-2">Director of Strategic Development in the International Institute of Central Asian Studies (2019 - 2023)</span><br/><span
-                                    className="text-gray-700 mr-2">Head of International Relations Department of Asia International University (2023)</span>
-                                </p></div>
-                            </div>
-                        </div>
-                    </div> */}
-
-                    <h1 className="uppercase text-2xl flex mb-3 font-bold text-white px-3 py-4 bg-[#012C6E] relative overflow-hidden">Meet
-                        out team
-                        <img src="/logo1.svg" className="opacity-20 h-52 absolute right-0 top-[-125%] rotate-[45deg]"/>
-                    </h1>
-
                     <div className="flex flex-col md:flex-row items-center gap-5">
-                        <img src="/DSC_6804.jpg" className="h-[300px] object-cover  w-[224px]"/>
+                        <img src="/DSC_0890.JPG" className="h-[300px] object-cover w-[224px]"/>
                         <div>
-                            <h6 className="text-[#012152]">Bahronov Ashurbek Bahodirovich</h6>
+                            <h6 className="text-[#012152]">Inoyatov Boymurod Negmurodovich
+                            </h6>
                             <div className="line"></div>
-                            <div className="flex mt-2 items-center divide-x gap-3">
-                                <a href="tel:+998(93)836-72-70"
-                                   className="text-blue-600 font-medium">+998(93)836-72-70</a>
+                            <p className="text-gray-800 font-medium">Head of International Relations </p>
+                            <div className="flex items-center divide-x gap-3">
+                                {/*<a className="text-blue-600 font-medium">rector@oxu.uz</a>*/}
+                                <a className="text-blue-600 pl-3 font-medium">+998 (55) 305-00-09</a>
                             </div>
-
-                            <div className="my-3">
+                            <div className="mb-6 mt-6">
                                 <div className="flex justify-between flex-wrap gap-2 w-full"><span
-                                    className=" font-bold uppercase">Work schedule </span><p><span
-                                    className="text-gray-700 mr-2">Tuesday, Thursday and Friday from 15:00 to 17:00</span>
-                                </p>
+                                    className="text-lg font-bold uppercase">Work schedule </span><p><span
+                                    className="text-gray-700 mr-2">Every day from 09.00 to 18.00</span></p>
                                 </div>
                             </div>
-                            <div>
+                            <div className="mb-6">
                                 <div className="flex justify-between flex-wrap gap-2 w-full"><span
-                                    className="font-bold uppercase">Address</span><p><span
-                                    className="text-gray-700 mr-2">Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74</span>
-                                </p></div>
-                            </div>
-
-                            <div className="mb-6 mt-2">
-                                <span className=" font-bold uppercase">Educational information</span>
-                                <div className="flex flex-wrap gap-2 w-full"><span
-                                    className="text-gray-700 font-bold"></span><p><span className="text-gray-700 mr-2">Bukhara State University, Bachelors of English Philology (2014-2018)</span><br/><span
-                                    className="text-gray-700 mr-2">Yewon University, (Masters) Entertainment Management (2020-2022)</span><br/>
+                                    className="text-lg font-bold uppercase">Address</span><p><span
+                                    className="text-gray-700 mr-2">Bukhara city, "Yangiabad MFY", Gijduvan street, house 74.</span>
                                 </p></div>
                             </div>
                         </div>
                     </div>
-
-                    <div>
-                        <div className="flex flex-col md:flex-row items-center gap-5">
-                            <img src="/DSC_6820.jpg" className="h-[300px] object-cover  w-[224px]"/>
+                    <h2 className="text-lg font-bold mt-6 mb-4 uppercase">Educational Information</h2>
+                    <div className="space-y-4">
+                        <div className="flex items-start">
+                            <div className="w-3 h-3 bg-gray-400 rounded-full mt-1 mr-3 flex-shrink-0"></div>
                             <div>
-                                <h6 className="text-[#012152]">Mutti-Ur Rehman</h6>
-                                <div className="line"></div>
-                                <p className="text-gray-800 font-medium">Visiting Associate Professor (2023–2024):
-                                    University of Nevada, Reno, USA.</p>
-                                <div className="flex items-center divide-x gap-3">
-                                    <a className="text-blue-600 font-medium">mutti.abbasi@gmail.com</a>
-                                    <a className="text-blue-600 pl-3 font-medium">+1 755-287-4832</a>
-                                </div>
-                                <div className="flex flex-col mt-4 gap-y-3">
-                                    <p className="text-gray-500  max-w-3xl">
-                                        Dr. Mutti-Ur Rehman was a visiting associate
-                                        professor of mathematics at the Department of Mathematics and Statistics,
-                                        University of Nevada, Reno-USA during the period 2023-2024. Dr. Mutti-Ur Rehman
-                                        has broad research interests in the area of Numerical Analysis. Some areas of
-                                        interest include the Stability of numerical methods for differential equations,
-                                        Matrix Nearness Problems, Matrix Computation, and Stability, and Instability
-                                        analysis of feedback systems in the linear control theory. His main contribution
-                                        to his Ph.D. thesis is the "Development of a novel iterative method to
-                                        approximate the Structured Singular Values". He is a member of SIAM, Society for
-                                        Industrial and Applied Mathematics; AMS, American Mathematical Society, and IMA,
-                                        Institute of Mathematics and Applications.
-                                    </p>
-                                </div>
+                                <p className="text-gray-700">
+                                    <span
+                                        className="font-semibold">Uzbekistan State University of foreign Languages</span>,
+                                    (2016–2019)
+                                </p>
                             </div>
                         </div>
-                        <h2 className="text-lg font-bold mt-6 mb-4 uppercase">Educational information</h2>
-                        <div className="mb-6">
-                            <div className="flex  flex-wrap gap-2 w-full"><span
-                                className="text-gray-700 font-bold"></span>
-                                <p><span className="text-gray-700 mr-2">Ph.D. in Mathematics (2013–2017): Gran Sasso Science Institute (GSSI) and SISSA, Italy</span><br/>
-                                    <span className="text-gray-700 mr-2">Focus: Numerical Analysis (Structured Singular Values</span><br/>
-                                    <span className="text-gray-700 mr-2">Postdoctoral Studies (2020–2021): Massachusetts Institute of Technology (MIT), USA</span><br/>
-                                </p>
 
+                        <div className="flex items-start">
+                            <div className="w-3 h-3 bg-gray-400 rounded-full mt-1 mr-3 flex-shrink-0"></div>
+                            <div>
+                                <p className="text-gray-700">
+                                    <span className="font-semibold">Student at Ulster University </span> (2019–2022)
+                                </p>
                             </div>
                         </div>
                     </div>

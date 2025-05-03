@@ -32,20 +32,19 @@ const navItems = [
       // { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
       {
           label: "Structure of the faculty",
-          // link: "/about/aiu/faculty-structure",
-          submenu: [
-              { label: "Department of General Science", link: "/about/departments/general-science" },
-              { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
-              { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
-          ]
+          link: "/academics/faculty-structure",
+          // submenu: [
+          //     { label: "Department of General Science", link: "/about/departments/general-science" },
+          //     { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
+          //     { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
+          // ]
       },
     ],
   },
   {
       label: "International relations",
-      link: "/about/aiu",
       dropdown: [
-          {label: "International Relations Office",link: "/about/aiu/international-relations"},
+          {label: "International Relations Office",link: "/international-relations"},
           {label: "ERASMUS+",link: "https://erasmus-plus.ec.europa.eu/"},
       ]
   },

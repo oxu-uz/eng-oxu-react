@@ -11,13 +11,12 @@ const Mission = () => {
         { label: "Vision", path: "/about/aiu/vision" },
         { label: "Mission", path: "/about/aiu/mission" },
         { label: "History", path: "/about/aiu/history" },
-        { label: "Administration", path: "/about/aiu/administration" },
+        // { label: "Administration", path: "/about/aiu/administration" },
         { label: "Vice-rector for academic affairs", path: "/about/aiu/vice-rector/academic" },
         { label: "First vice-rector for youth policy and recreational and educational affairs", path: "/about/aiu/vice-rector/youth" },
         { label: "Vice-rector for scientific affairs and innovations", path: "/about/aiu/vice-rector/innovation" },
         { label: "Vice-rector for financial and economic affairs", path: "/about/aiu/vice-rector/financial" },
         { label: "Head of Administration Department", path: "/about/aiu/registrar" },
-        // { label: "International Relations Office", path: "/about/aiu/international-relations" },
     ];
 
     return (

@@ -54,6 +54,7 @@ import ViceRectorForInnovation from "../pages/about/aiu/ViceRectorForInnovation.
 import ViceRectorForFinancial from "../pages/about/aiu/ViceRectorForFinancial.jsx";
 import HeadOfInterRelat from "../pages/HeadOfInterRelat.jsx";
 import ResearchAndPublications from "../pages/ResearchAndPublications.jsx";
+import StructureOfFaculty from "../pages/academics/StructureOfFaculty.jsx";
 
 
 const router = createBrowserRouter([
@@ -120,7 +121,7 @@ const router = createBrowserRouter([
                 element: <HeadOfAdministration/>
             },
             {
-                path: '/about/aiu/international-relations',
+                path: '/international-relations',
                 element: <InternationalRelations/>
             },
             {
@@ -142,6 +143,10 @@ const router = createBrowserRouter([
             {
                 path: '/academics/academic-calendar',
                 element: <AcademicCalendar/>
+            },
+            {
+                path: '/academics/faculty-structure',
+                element: <StructureOfFaculty/>
             },
             {
                 path: '/international-form',

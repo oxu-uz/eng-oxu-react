@@ -6,20 +6,6 @@ const BotNav = () => {
     
     const navItems = [
         { label: "Home", link: "/" },
-        // {
-        //     label: "About",
-        //     link: "/about",
-        //     dropdown: [
-        //         { label: "Vision", link: "/about/aiu/vision" },
-        //         { label: "Mission", link: "/about/aiu/mission" },
-        //         { label: "Message from the Rector ", link: "/about/leadership" },
-        //         { label: "History", link: "/about/aiu/history" },
-        //         { label: "HeadOfAdministration", link: "/about/aiu/registrar" },
-        //         { label: "Administration", link: "/about/aiu/administration" },
-        //         { label: "International Relations Office", link: "/about/aiu/international-relations" },
-        //
-        //     ],
-        // },
         {
             label: "About",
             link: "/about",
@@ -40,20 +26,19 @@ const BotNav = () => {
                 // { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
                 {
                     label: "Structure of the faculty",
-                    // link: "/about/aiu/faculty-structure",
-                    submenu: [
-                        { label: "Department of General Science", link: "/about/departments/general-science" },
-                        { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
-                        { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
-                    ]
+                    link: "/academics/faculty-structure",
+                    // submenu: [
+                    //     { label: "Department of General Science", link: "/about/departments/general-science" },
+                    //     { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
+                    //     { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
+                    // ]
                 },
             ],
         },
         {
             label: "International relations",
-            link: "/about/aiu",
             dropdown: [
-                {label: "International Relations Office",link: "/about/aiu/international-relations"},
+                {label: "International Relations Office",link: "/international-relations"},
                 {label: "ERASMUS+",link: "https://erasmus-plus.ec.europa.eu/"},
             ]
         },

@@ -11,42 +11,42 @@ const Testimonials = () => {
             id: 1,
             quote: "I am currently pursuing my MBBS at Asia International University, Bukhara. I chose this university because of its strong academic reputation, affordable tuition fees, and supportive learning environment",
             name: "Mr. Avhimanyu Chand",
-            title: "1st Year – Nepal",
+            title: "Nepal",
             img: "/for site/IMG_7305.JPG"
         },
         {
             id: 2,
             quote: "The reason I choose this university because of quality of education and low budget fees and there is best option to get a scholarship. All facilities are provided here Including -Indian food good hostel best and most experienced faculty professors and lot of extracurricular activities. Choosing Asia international university is my best decision.",
             name: "Ms. Kavita Chauhan",
-            title: "1st Year-India",
+            title: "India",
             img: "/for site/IMG_7304.JPG"
         },
         {
             id: 3,
             quote: "I have seen that so many abroad colleges don't feel like the colleges in our native. But here in ASIA INTERNATIONAL UNIVERSITY, it feels like home. I feel like I have chosen a right college for me to study well for my medical studies and help me to develop in so many other ways.",
             name: "Mr. Jignesh",
-            title: "1st Year-India",
+            title: "India",
             img: "/for site/IMG_7300.JPG"
         },
         {
             id: 4,
             quote: "I chose this university because of its strong academic reputation and very supportive teachers. One of key factors that influenced my decision was the availability of scholarships. Receiving a Scholarship not only eases the financial burden but also motivates me to work even harder and contribute actively in my academics.",
             name: "Ms. Laiba Sajjad",
-            title: "Medicine, 1st Year – Pakistan",
+            title: "Pakistan",
             img: "/for site/IMG_7302.JPG"
         },
         {
             id: 5,
-            quote: "I would like to thank the ASIA INTERNATIONAL UNIVERSITY for providing us with a good learning environment. The faculty is supportive, and the facilities are helpful for our studies. I hope there will be continuous improvement in areas like practical exposure, library resources, and student support services. But still, some allegations always have, little bit of consequences, Overall, I am grateful for the opportunity to study here.",
-            name: "Mr. Velu Gowtham",
-            title: "1st Year-India",
-            img: "/for site/IMG_7299.JPG"
+            quote: "The University is very good, and the doctors are kind & University is equipped to the highest standard and I am very happy to have joined the Asia International University",
+            name: "MOHAMMED RAGAB ABDELHADY",
+            title: "Egypt",
+            img: "/for site/IMG_7583.JPG"
         },
         {
             id: 6,
             quote: "AIU was the best choice I have made to pursue my medical dream. The faculty is top notch with well-equipped facilities and advance clinical exposure for the aspirants, also providing rich cultural experience at the hub of silk road.",
             name: "Ms. Munira Rifat",
-            title: "3rd Year-Bangladesh",
+            title: "Bangladesh",
             img: "/for site/IMG_7301.JPG"
         },
     ];
@@ -147,7 +147,8 @@ const Testimonials = () => {
                                     alt={testimonials[currentIndex].name}
                                     className="w-full h-full object-cover absolute inset-0"
                                 />
-                                <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-10 pb-6 px-6 flex flex-col justify-end">
+                                <div
+                                    className="absolute bottom-0 left-0 right-0 h-[55%] bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-10 pb-6 px-6 flex flex-col justify-end">
                                     <blockquote className="text-white text-base italic mb-4 leading-relaxed">
                                         "{testimonials[currentIndex].quote}"
                                     </blockquote>
@@ -163,17 +164,20 @@ const Testimonials = () => {
                             </div>
 
                             {/* Desktop Layout - Side by side */}
-                            <div className="hidden md:flex bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl w-full h-full overflow-hidden">
+                            <div
+                                className="hidden md:flex bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl w-full h-full overflow-hidden">
                                 <div className="w-1/3 h-full relative">
                                     <img
                                         src={testimonials[currentIndex].img}
                                         alt={testimonials[currentIndex].name}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
+                                    <div
+                                        className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
                                 </div>
 
                                 <div className="w-2/3 p-8 lg:p-10 flex flex-col justify-center">
-                                    <blockquote className="text-gray-800 text-lg lg:text-xl italic mb-6 leading-relaxed">
+                                    <blockquote
+                                        className="text-gray-800 text-lg lg:text-xl italic mb-6 leading-relaxed">
                                         "{testimonials[currentIndex].quote}"
                                     </blockquote>
                                     <div>
