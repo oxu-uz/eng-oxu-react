@@ -73,25 +73,25 @@ const StructureOfUniversity = () => {
             id: 5,
             name: "Dexkanov Bexruz Sobirovich",
             image:"/structureUni/fotor-20250504162049.png",
-            position: "Head of Administration Department",
+            position: "Vice-rector for operations",
             work_schedule: "Tuesday, Thursday and Friday from 15:00 to 17:00",
             address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
             educational_info: [
                 "Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management",
             ],
         },
-        {
-            id: 6,
-            name: "Inoyatov Boymurod Negmurodovich",
-            image:"/structureUni/fotor-20250505122327.png",
-            position: "Head of International Relations",
-            work_schedule: "Every day from 09.00 to 18.00",
-            address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
-            educational_info: [
-                "Uzbekistan State University of foreign Languages, (2016–2019)",
-                "Student at Ulster University (2019–2022)",
-            ],
-        },
+        // {
+        //     id: 6,
+        //     name: "Inoyatov Boymurod Negmurodovich",
+        //     image:"/structureUni/fotor-20250505122327.png",
+        //     position: "Head of International Relations",
+        //     work_schedule: "Every day from 09.00 to 18.00",
+        //     address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
+        //     educational_info: [
+        //         "Uzbekistan State University of foreign Languages, (2016–2019)",
+        //         "Student at Ulster University (2019–2022)",
+        //     ],
+        // },
     ];
 
     const showModal = (member) => {

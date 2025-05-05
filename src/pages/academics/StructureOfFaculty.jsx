@@ -199,44 +199,44 @@ const StructureOfFaculty = () => {
                         ))}
                     </Row>
 
-                    <Modal
-                        title={null}
-                        visible={visible}
-                        onCancel={handleCancel}
-                        footer={null}
-                        width={700}
-                        bodyStyle={{padding: 0}}
-                    >
-                        {selectedMember && (
-                            <div style={{padding: 20}}>
-                                <Row gutter={24}>
-                                    <Col span={8}>
-                                        <img src={selectedMember.image} className="h-[150px] w-[150px]"/>
-                                    </Col>
-                                    <Col span={16}>
-                                        <Title level={3} style={{marginBottom: 8}}>
-                                            {selectedMember.name}
-                                        </Title>
-                                        <Text strong style={{
-                                            display: 'block',
-                                            color: '#1890ff',
-                                            marginBottom: 16,
-                                            fontSize: 16
-                                        }}>
-                                            {selectedMember.position}
-                                        </Text>
-                                        <Divider style={{margin: '16px 0'}}/>
-                                        <Text style={{fontSize: 15, lineHeight: 1.7}}>
-                                            {selectedMember.work_schedule}
-                                        </Text>
-                                        <Text style={{fontSize: 15, lineHeight: 1.7}}>
-                                            {selectedMember.address}
-                                        </Text>
-                                    </Col>
-                                </Row>
-                            </div>
-                        )}
-                    </Modal>
+                    {/*<Modal*/}
+                    {/*    title={null}*/}
+                    {/*    visible={visible}*/}
+                    {/*    onCancel={handleCancel}*/}
+                    {/*    footer={null}*/}
+                    {/*    width={700}*/}
+                    {/*    bodyStyle={{padding: 0}}*/}
+                    {/*>*/}
+                    {/*    {selectedMember && (*/}
+                    {/*        <div style={{padding: 20}}>*/}
+                    {/*            <Row gutter={24}>*/}
+                    {/*                <Col span={8}>*/}
+                    {/*                    <img src={selectedMember.image} className="h-[150px] w-[150px]"/>*/}
+                    {/*                </Col>*/}
+                    {/*                <Col span={16}>*/}
+                    {/*                    <Title level={3} style={{marginBottom: 8}}>*/}
+                    {/*                        {selectedMember.name}*/}
+                    {/*                    </Title>*/}
+                    {/*                    <Text strong style={{*/}
+                    {/*                        display: 'block',*/}
+                    {/*                        color: '#1890ff',*/}
+                    {/*                        marginBottom: 16,*/}
+                    {/*                        fontSize: 16*/}
+                    {/*                    }}>*/}
+                    {/*                        {selectedMember.position}*/}
+                    {/*                    </Text>*/}
+                    {/*                    <Divider style={{margin: '16px 0'}}/>*/}
+                    {/*                    <Text style={{fontSize: 15, lineHeight: 1.7}}>*/}
+                    {/*                        {selectedMember.work_schedule}*/}
+                    {/*                    </Text>*/}
+                    {/*                    <Text style={{fontSize: 15, lineHeight: 1.7}}>*/}
+                    {/*                        {selectedMember.address}*/}
+                    {/*                    </Text>*/}
+                    {/*                </Col>*/}
+                    {/*            </Row>*/}
+                    {/*        </div>*/}
+                    {/*    )}*/}
+                    {/*</Modal>*/}
                 </div>
 
                 <aside className="w-full md:w-1/5 overflow-hidden">

@@ -58,7 +58,7 @@ const HeadOfAdministration = () => {
                         <div>
                             <h6 className="text-[#012152]">Dexkanov Bexruz Sobirovich</h6>
                             <div className="line"></div>
-                            <p className="text-gray-800 font-medium">Head of Administration Department</p>
+                            <p className="text-gray-800 font-medium">Vice-rector for operations</p>
                             <div className="flex items-center divide-x gap-3">
                                 <a className="text-blue-600 font-medium">head@oxu.uz</a>
                                 <a className="text-blue-600 pl-3 font-medium">+998 (55) 305-00-09</a>

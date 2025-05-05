@@ -69,7 +69,7 @@ const HomePage = () => {
                 }
                 return prev + 1;
             });
-        }, 100); // 100мс * 100 шагов = 10 секунд
+        }, 60); // 60мс * 100 шагов = 6 секунд
 
         return () => clearInterval(intervalRef.current);
     }, [currentIndex]);
@@ -251,7 +251,7 @@ const HomePage = () => {
                                 animate={{y: 0, opacity: 1, scale: 1}}
                                 transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.5}}
                             >
-                                <h1 className="text-2xl md:text-5xl font-extrabold uppercase mb-3 md:mb-5">
+                                <h1 className="text-2xl md:text-3xl font-extrabold uppercase mb-3 md:mb-5">
                                     {slides[currentIndex].title}
                                 </h1>
                                 <p className="text-xs md:text-2xl mb-6">
