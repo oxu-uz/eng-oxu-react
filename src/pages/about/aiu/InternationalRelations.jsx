@@ -49,13 +49,12 @@ const InternationalRelations = () => {
                     <div className="flex flex-col md:flex-row items-center gap-5">
                         <img src="/DSC_0890.JPG" className="h-[300px] object-cover w-[224px]"/>
                         <div>
-                            <h6 className="text-[#012152]">Inoyatov Boymurod Negmurodovich
-                            </h6>
+                            <h6 className="text-[#012152]">Inoyatov Boymurod Negmurodovich</h6>
                             <div className="line"></div>
                             <p className="text-gray-800 font-medium">Head of International Relations </p>
                             <div className="flex items-center divide-x gap-3">
                                 {/*<a className="text-blue-600 font-medium">rector@oxu.uz</a>*/}
-                                <a className="text-blue-600 pl-3 font-medium">+998 (55) 305-00-09</a>
+                                <a className="text-blue-600 pl-3 font-medium">+998(99) 224-00-09</a>
                             </div>
                             <div className="mb-6 mt-6">
                                 <div className="flex justify-between flex-wrap gap-2 w-full"><span

@@ -11,15 +11,17 @@ const ViceRectorForFinancial = () => {
         {label: "Vision", path: "/about/aiu/vision"},
         {label: "Mission", path: "/about/aiu/mission"},
         {label: "History", path: "/about/aiu/history"},
+        {label: "Structure of the university", path: "/about/aiu/structure-of-university"},
+        {label: "Regulatory Documents", path: "/about/aiu/regulatory-documents"},
         // {label: "Administration", path: "/about/aiu/administration"},
-        {label: "Vice-rector for academic affairs", path: "/about/aiu/vice-rector/academic"},
-        {
-            label: "First vice-rector for youth policy and recreational and educational affairs",
-            path: "/about/aiu/vice-rector/youth"
-        },
-        {label: "Vice-rector for scientific affairs and innovations", path: "/about/aiu/vice-rector/innovation"},
-        {label: "Vice-rector for financial and economic affairs", path: "/about/aiu/vice-rector/financial"},
-        {label: "Head of Administration Department", path: "/about/aiu/registrar"},
+        // {label: "Vice-rector for academic affairs", path: "/about/aiu/vice-rector/academic"},
+        // {
+        //     label: "First vice-rector for youth policy and recreational and educational affairs",
+        //     path: "/about/aiu/vice-rector/youth"
+        // },
+        // {label: "Vice-rector for scientific affairs and innovations", path: "/about/aiu/vice-rector/innovation"},
+        // {label: "Vice-rector for financial and economic affairs", path: "/about/aiu/vice-rector/financial"},
+        // {label: "Head of Administration Department", path: "/about/aiu/registrar"},
     ];
     return (
         <div>
@@ -104,7 +106,7 @@ const ViceRectorForFinancial = () => {
                     <ul className="sideNav">
                         <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-2 py-5 mb-[1px] group">
     <span className="uppercase p-1 px-2 text-lg font-bold flex items-center gap-3 z-10">
-        University
+        About
         <img
             className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
             src="/arrow.svg"

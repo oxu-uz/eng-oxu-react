@@ -55,6 +55,7 @@ import ViceRectorForFinancial from "../pages/about/aiu/ViceRectorForFinancial.js
 import HeadOfInterRelat from "../pages/HeadOfInterRelat.jsx";
 import ResearchAndPublications from "../pages/ResearchAndPublications.jsx";
 import StructureOfFaculty from "../pages/academics/StructureOfFaculty.jsx";
+import StructureOfUiversity from "../pages/about/aiu/StructureOfUiversity.jsx";
 
 
 const router = createBrowserRouter([
@@ -126,7 +127,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/about/aiu/structure-of-university',
-                element: <ViceRectorAcademic/> //prorektor pagega navigate bo'ladi
+                element: <StructureOfUiversity/> //prorektor pagega navigate bo'ladi
             },
             {
                 path: '/admissions/md',

@@ -2,7 +2,8 @@
     background: #012c6e;
     height: 3px;
     transition: all .3s;
-    width: 15%;
+    width: 50%;
+    margin: 0 auto;
 }
 
 h4[data-v-0138892a], .structure-styles .white h5[data-v-0138892a], .structure-styles .white span[data-v-0138892a] {
