@@ -241,7 +241,7 @@ const InternationalRelations = () => {
                     {/* Partner Universities Section */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         <div className="p-4 bg-[#0a37b3] text-white">
-                            <h3 className="font-bold text-lg">Partner Universities</h3>
+                            <h3 className="font-bold text-lg">Partner Universities/Organizations</h3>
                         </div>
                         <div className="p-6">
                             <div className="grid grid-cols-2 gap-4">
