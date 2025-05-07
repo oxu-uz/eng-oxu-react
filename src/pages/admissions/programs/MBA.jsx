@@ -3,7 +3,7 @@ import {ChevronRight} from "lucide-react";
 import {Link, useNavigate} from "react-router-dom";
 import { motion } from 'framer-motion';
 
-const Md = () => {
+const Mba = () => {
     const navigate = useNavigate();
 
     const navItems = [
@@ -21,8 +21,8 @@ const Md = () => {
             <section className="relative h-64 md:h-96 overflow-hidden mb-5">
                 <img
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="/doctor-doing-their-work-pediatrics-office.jpg"
-                    alt="Doctor working in pediatrics office"
+                    src="/mba.jpg"
+                    alt="Business executives in meeting"
                 />
                 <div className="absolute inset-0 bg-[#012c6e]/70 flex flex-col justify-end">
                     <div className="container mx-auto px-4 md:px-6">
@@ -32,8 +32,16 @@ const Md = () => {
                             transition={{ duration: 0.5 }}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
                         >
-                            MD Program
+                            Master of Business Administration (MBA)
                         </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}
+                            className="text-lg md:text-xl text-white max-w-2xl"
+                        >
+                            Joint Program with WUST – USA
+                        </motion.p>
 
                         {/* Breadcrumb */}
                         <motion.div
@@ -59,8 +67,8 @@ const Md = () => {
                                     </span>
                                 </li>
                                 <li>
-                                    <a className="text-white font-medium" href="/admissions/md">
-                                        MD
+                                    <a className="text-white font-medium" href="/admissions/mba">
+                                        MBA
                                     </a>
                                 </li>
                             </ul>
@@ -81,13 +89,11 @@ const Md = () => {
                         className="space-y-4"
                     >
                         <p className="text-base md:text-lg font-medium leading-relaxed">
-                            Welcome to the MD Program at Asia International University (AIU), where we offer a comprehensive
-                            and rigorous medical education that prepares you to become a competent and compassionate
-                            healthcare professional.
+                            The MBA program at AIU is a transformative graduate-level experience designed to accelerate careers in leadership, innovation, and global business. With the opportunity to complete the second year at WUST in the USA, students benefit from direct exposure to international business environments.
                         </p>
                     </motion.section>
 
-                    {/* Why Choose AIU */}
+                    {/* Key Highlights */}
                     <motion.section
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -95,34 +101,26 @@ const Md = () => {
                         className="space-y-6"
                     >
                         <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
-                            Why Choose AIU for Your Medical Education?
+                            Key Highlights
                         </h2>
 
                         <div className="space-y-4">
                             {[
                                 {
-                                    title: "High-Quality Education",
-                                    content: "Our MD program combines cutting-edge research, innovative teaching methods, and a strong emphasis on clinical practice. Our curriculum is continuously updated to reflect the latest advancements in medicine."
+                                    title: "Executive-Level Curriculum",
+                                    content: "Aligned with U.S. and global business standards for maximum career impact"
                                 },
                                 {
-                                    title: "Experienced Faculty",
-                                    content: "Learn from a diverse team of experienced and dedicated faculty members who are leaders in their fields. Our professors are active practitioners and researchers."
+                                    title: "Immersive Learning",
+                                    content: "Hands-on experience through simulations, consulting projects, and networking events"
                                 },
                                 {
-                                    title: "State-of-the-Art Facilities",
-                                    content: "Our university is equipped with state-of-the-art laboratories, simulation centers, and research facilities that allow you to apply your theoretical knowledge."
+                                    title: "Global Faculty Access",
+                                    content: "Learn from American faculty, industry professionals, and cross-cultural exchange opportunities"
                                 },
                                 {
-                                    title: "Clinical Training and Internships",
-                                    content: "Gain practical experience through extensive clinical training and internships at leading hospitals and medical centers with our healthcare institution partners."
-                                },
-                                {
-                                    title: "International Opportunities",
-                                    content: "Participate in exchange programs, attend international conferences, and collaborate on research projects with peers from around the world."
-                                },
-                                {
-                                    title: "Supportive Learning Environment",
-                                    content: "We prioritize your success with academic advising, mentorship programs, and personalized support services."
+                                    title: "International Exposure",
+                                    content: "Direct experience with global business practices through our U.S. partnership"
                                 }
                             ].map((item, index) => (
                                 <motion.div
@@ -143,7 +141,7 @@ const Md = () => {
                         </div>
                     </motion.section>
 
-                    {/* Program Structure */}
+                    {/* Study Option */}
                     <motion.section
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -151,14 +149,31 @@ const Md = () => {
                         className="space-y-4"
                     >
                         <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
-                            Program Structure
+                            Study Option
+                        </h2>
+                        <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
+                            <ul className="space-y-3 text-sm md:text-base">
+                                <li className="flex items-start">
+                                    <span className="font-semibold mr-2">• 1+1 Pathway:</span>
+                                    <span>1 year at AIU + 1 year at WUST (USA)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </motion.section>
+
+                    {/* Career Opportunities */}
+                    <motion.section
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.3, duration: 0.5 }}
+                        className="space-y-4"
+                    >
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                            Career Opportunities
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
                             <p className="text-sm md:text-base">
-                                Our MD program spans six years, with the first two years focused on preclinical studies.
-                                The next three years involve intensive clinical training with rotations in various medical
-                                specialties. The final year is dedicated to advanced clinical practice and preparation for
-                                licensing exams.
+                                AIU-WUST MBA graduates are prepared for senior roles in management, finance, international trade, policy, and entrepreneurship — with the added prestige of U.S.-based education and potential post-study opportunities in the USA.
                             </p>
                         </div>
                     </motion.section>
@@ -167,22 +182,19 @@ const Md = () => {
                     <motion.section
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.3, duration: 0.5 }}
+                        transition={{ delay: 1.4, duration: 0.5 }}
                         className="space-y-4"
                     >
                         <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
                             Admission Requirements
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
-                            <p className="text-sm md:text-base mb-3">
-                                We seek motivated and academically strong candidates who are ready for the challenges of
-                                medical education. Admission is competitive, and we look for applicants who demonstrate:
-                            </p>
                             <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
-                                <li>A solid academic background in sciences</li>
-                                <li>A strong commitment to the medical profession</li>
-                                <li>Relevant extracurricular activities</li>
-                                <li>Proficiency in English</li>
+                                <li>Bachelor's degree from an accredited institution</li>
+                                <li>Minimum 2 years professional work experience (preferred)</li>
+                                <li>Strong academic record</li>
+                                <li>English language proficiency</li>
+                                <li>Statement of purpose and letters of recommendation</li>
                             </ul>
                         </div>
                     </motion.section>
@@ -191,7 +203,7 @@ const Md = () => {
                     <motion.section
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.4, duration: 0.5 }}
+                        transition={{ delay: 1.5, duration: 0.5 }}
                         className="space-y-4"
                     >
                         <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
@@ -199,8 +211,7 @@ const Md = () => {
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
                             <p className="text-sm md:text-base mb-4">
-                                Ready to embark on your medical journey? Our admissions team will guide you through the
-                                application process. Visit our admissions page for requirements and deadlines.
+                                Ready to transform your career with our internationally recognized MBA program? Our admissions team will guide you through the application process.
                             </p>
                             <button
                                 onClick={() => navigate('/admissions/apply')}
@@ -215,16 +226,15 @@ const Md = () => {
                     <motion.section
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.5, duration: 0.5 }}
+                        transition={{ delay: 1.6, duration: 0.5 }}
                         className="space-y-4"
                     >
                         <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
-                            Join Us at Asia International University
+                            Accelerate Your Leadership Journey
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
                             <p className="text-sm md:text-base">
-                                Becoming a doctor is a calling. At AIU, we're dedicated to helping you achieve your dream
-                                of becoming a skilled and compassionate physician. Start your journey with us today.
+                                Our AIU-WUST MBA program is designed for professionals ready to take their careers to the next level with global perspective and executive skills. Join a network of business leaders transforming organizations worldwide.
                             </p>
                         </div>
                     </motion.section>
@@ -278,4 +288,4 @@ const Md = () => {
     );
 };
 
-export default Md;
+export default Mba;

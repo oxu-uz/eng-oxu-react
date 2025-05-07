@@ -56,6 +56,9 @@ import HeadOfInterRelat from "../pages/HeadOfInterRelat.jsx";
 import ResearchAndPublications from "../pages/ResearchAndPublications.jsx";
 import StructureOfFaculty from "../pages/academics/StructureOfFaculty.jsx";
 import StructureOfUiversity from "../pages/about/aiu/StructureOfUiversity.jsx";
+import BSBA from "../pages/admissions/programs/BSBA.jsx";
+import BSIT from "../pages/admissions/programs/BSIT.jsx";
+import MBA from "../pages/admissions/programs/MBA.jsx";
 
 
 const router = createBrowserRouter([
@@ -132,6 +135,18 @@ const router = createBrowserRouter([
             {
                 path: '/admissions/md',
                 element: <Md/>
+            },
+            {
+                path: '/admissions/bsba',
+                element: <BSBA/>
+            },
+            {
+                path: '/admissions/bsit',
+                element: <BSIT/>
+            },
+            {
+                path: '/admissions/mba',
+                element: <MBA/>
             },
             {
                 path: '/admissions/mbbs',

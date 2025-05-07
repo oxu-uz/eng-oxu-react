@@ -6,8 +6,12 @@ const Mbbs = () => {
     const navigate = useNavigate();
 
     const navItems = [
+        {label: "Find Program", path: "/find-programs"},
         {label: "MD", path: "/admissions/md"},
-        {label: "MBBS", path: "/admissions/mbbs"}
+        {label: "MBBS", path: "/admissions/mbbs"},
+        {label: "BSBA", path: "/admissions/bsba"},
+        {label: "BSIT", path: "/admissions/bsit"},
+        {label: "MBA", path: "/admissions/mba"}
     ];
 
     return (
@@ -179,7 +183,7 @@ const Mbbs = () => {
                             <li className="transition-all cursor-pointer flex relative items-center gap-3 sideNav-active p-3 md:p-4 group">
                                 <span
                                     className="uppercase p-1 px-2 text-base md:text-lg font-bold flex items-center gap-3 z-10">
-                                    FIND PROGRAMS
+                                    Admission
                                     <img
                                         className="h-2.5 transform transition-transform duration-300 group-hover:translate-x-2"
                                         src="/arrow.svg"
