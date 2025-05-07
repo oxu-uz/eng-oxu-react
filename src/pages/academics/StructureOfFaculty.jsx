@@ -116,7 +116,7 @@ const StructureOfFaculty = () => {
         {
             id: 9,
             name: "Mutti-Ur Rehman",
-            image:"/structureFaculty/Mutti Ur rehman.png",
+            image:"/structureFaculty/Mutti(2).png",
             position: "Associate Professor, Researcher",
             // work_schedule: "Tuesday, Thursday and Friday from 15:00 to 17:00",
             // address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
@@ -185,12 +185,12 @@ const StructureOfFaculty = () => {
                                         <h6 className="text-[#012152]">{member.name}</h6>
                                         <div className="line"></div>
                                         <p className="text-gray-800 font-medium">{member.position}</p>
-                                        <button
-                                            onClick={() => showModal(member)}
-                                            style={{color: '#1890ff'}}
-                                        >
-                                            Read More
-                                        </button>
+                                        {/*<button*/}
+                                        {/*    onClick={() => showModal(member)}*/}
+                                        {/*    style={{color: '#1890ff'}}*/}
+                                        {/*>*/}
+                                        {/*    Read More*/}
+                                        {/*</button>*/}
                                     </div>
                                 </div>
                             </Col>
