@@ -12,8 +12,9 @@ const TuitionFeesPage = () => {
     const navigate = useNavigate();
 
     const navItems = [
-        { label: "Scholarship", path: "/scholarships" },
-        { label: "Tuition and Cost", path: "/tuition-fees" },
+        {label: "Scholarship", path: "/scholarships"},
+        {label: "Tuition and Cost", path: "/tuition-fees"},
+        {label: "Find Program", path: "/find-programs"},
     ];
 
     return (

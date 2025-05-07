@@ -14,6 +14,7 @@ const ScholarshipPage = () => {
     const navItems = [
         {label: "Scholarship", path: "/scholarships"},
         {label: "Tuition and Cost", path: "/tuition-fees"},
+        {label: "Find Program", path: "/find-programs"},
     ];
 
     return (

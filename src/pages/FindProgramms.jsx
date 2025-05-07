@@ -5,9 +5,9 @@ import {Link, useNavigate} from "react-router-dom";
 const FindPrograms = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
-        'https://oxu.uz/talabalar_hayoti-6.jpg',
-        'https://oxu.uz/talabalar_hayoti-6.jpg',
-        'https://oxu.uz/talabalar_hayoti-6.jpg',
+        '/IMG_7371.JPG',
+        '/IMG_7371.JPG',
+        '/IMG_7371.JPG',
     ];
 
     const nextSlide = () => {
@@ -21,6 +21,8 @@ const FindPrograms = () => {
     const navigate = useNavigate();
 
     const navItems = [
+        {label: "Scholarship", path: "/scholarships"},
+        {label: "Tuition and Cost", path: "/tuition-fees"},
         {label: "Find Program", path: "/find-programs"},
         {label: "MD", path: "/admissions/md"},
         {label: "MBBS", path: "/admissions/mbbs"},
