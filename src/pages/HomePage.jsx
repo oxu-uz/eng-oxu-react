@@ -132,10 +132,10 @@ const HomePage = () => {
         "International Partnerships: AIU offers opportunities for exchange programs, internships, and collaborative research through partnerships with prestigious global institutions.",
         null,// "Community Engagement Initiatives: We encourage participation in outreach programs and community projects, making a positive social impact locally and internationally.",
         "Advanced Facilities and Laboratories: Our modern labs, libraries, and resource centers provide hands-on experiences and cutting-edge tools for academic and professional development.",
-        "Emphasis on Lifelong Learning: We foster a culture of continuous education through workshops, specialty training, and professional development programs to keep graduates at the forefront of their fields.",
         "Cultural and Extracurricular Activities: AIU offers a vibrant selection of activities that promote personal development, leadership, and a well-rounded educational experience.",
         "Strong Alumni Network: Our robust alumni network connects current students with industry professionals for mentorship, internships, and career opportunities.",
-        null,// "Vibrant campus life: AIU’s campus provides a supportive and inclusive environment where students from diverse backgrounds can form lasting friendships, share experiences, and grow both personally and professionally.",
+        "Vibrant campus life: AIU’s campus provides a supportive and inclusive environment where students from diverse backgrounds can form lasting friendships, share experiences, and grow both personally and professionally.",
+        null,//"Emphasis on Lifelong Learning: We foster a culture of continuous education through workshops, specialty training, and professional development programs to keep graduates at the forefront of their fields.",
     ], []);
 
     const icons = [
@@ -162,10 +162,10 @@ const HomePage = () => {
         "/for site/International Partnerships.JPG",
         null, //"/for site/Community Engagement Initiatives.JPG",
         "/IMG_7685.JPG",
-        "/for site/Emphasis on Lifelong Learning.jpg",
         "/for site/Cultural and Extracurricular Activities.JPG",
+        "/for site/Vibrant Campus Life.JPG",
         "/for site/Strong Alumini Network.jpeg",
-        null, //"/for site/Vibrant Campus Life.JPG",
+        //"/for site/Emphasis on Lifelong Learning.jpg",
     ], [])
 
     const slides = [
@@ -344,7 +344,7 @@ const HomePage = () => {
                                         imageSrc={photos[index]}
                                     />
                                 ) : (
-                                    <div className="h-full bg-[#0a37b3] rounded-lg shadow-md p-6 flex flex-col justify-center">
+                                    <div className="h-full bg-gradient-to-r from-[#0a37b3] to-[#444] rounded-lg shadow-md p-6 flex flex-col justify-center">
                                         <h3 className="text-white text-xl font-bold mb-2">
                                             {feature?.split(':')[0].trim()}
                                         </h3>
