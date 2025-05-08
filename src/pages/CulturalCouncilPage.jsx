@@ -20,6 +20,11 @@ const CulturalCouncilPage = () => {
         { label: "Council for IT/ Media", path: "/it-media-council" },
     ];
 
+  // Sample images for the Academic Council gallery
+  const councilImages = [
+    "/IMG_2299.JPG",
+  ];
+
     return (
         <div className="bg-gray-50">
         {/* Hero Section */}
@@ -129,6 +134,28 @@ const CulturalCouncilPage = () => {
                     to get involved.
                   </li>
                 </ul>
+                {councilImages.map((img, index) => (
+                    <div key={index} className="overflow-hidden shadow-md hover:shadow-lg mt-4 transition-shadow">
+                      {/*<div className="p-3 bg-white">*/}
+                      {/*  <strong className="text-sm text-gray-600">*/}
+                      {/*    {index === 0 && "Academic Council Meeting"}*/}
+                      {/*    {index === 1 && "Science Exhibition 2023"}*/}
+                      {/*    {index === 2 && "Debate Competition Finals"}*/}
+                      {/*    {index === 3 && "Student Presentation"}*/}
+                      {/*    {index === 4 && "Council Planning Session"}*/}
+                      {/*    {index === 5 && "Inter-University Quiz"}*/}
+                      {/*  </strong>*/}
+                      {/*</div>*/}
+                      <Image
+                          src={img}
+                          alt={`Academic Council Activity ${index + 1}`}
+                          className="w-full h-48 object-cover"
+                          preview={{
+                            maskClassName: "rounded-lg",
+                          }}
+                      />
+                    </div>
+                ))}
               </motion.div>
             </section>
           </div>

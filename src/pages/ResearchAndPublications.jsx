@@ -152,11 +152,11 @@ function ResearchAndPublications() {
                     ))}
                 </List>
 
-                {/*<Typography variant="body1" paragraph sx={{ mt: 2, fontStyle: 'italic' }}>*/}
-                {/*    <Link href="#" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>*/}
-                {/*        [Link to: AIU Research Repository or Downloadable Publications List]*/}
-                {/*    </Link>*/}
-                {/*</Typography>*/}
+                <Typography variant="body1" paragraph sx={{ mt: 2, fontStyle: 'italic' }}>
+                    <Link href="https://oxu.uz/scientific-journal" target="_blank" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
+                        AIU Scientific Journal - Research Publications Archive
+                    </Link>
+                </Typography>
             </Box>
 
             <Divider sx={{ my: 4 }} />

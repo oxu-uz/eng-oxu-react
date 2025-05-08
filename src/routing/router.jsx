@@ -59,6 +59,7 @@ import StructureOfUiversity from "../pages/about/aiu/StructureOfUiversity.jsx";
 import BSBA from "../pages/admissions/programs/BSBA.jsx";
 import BSIT from "../pages/admissions/programs/BSIT.jsx";
 import MBA from "../pages/admissions/programs/MBA.jsx";
+import CampusDetailPage from "../components/home/CampusDetailPage.jsx";
 
 
 const router = createBrowserRouter([
@@ -218,10 +219,10 @@ const router = createBrowserRouter([
                 path: '/research',
                 element: <ResearchAndPublications/>
             },
-            // {
-            //     path: '/gallery',
-            //     element: <Gallery/>
-            // },
+            {
+                path: '/campuses/:id',
+                element: <CampusDetailPage/>
+            },
             {
                 path: '/international-relations/contact',
                 element: <InternationalRelationsContact/>

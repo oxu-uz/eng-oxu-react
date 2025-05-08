@@ -128,14 +128,14 @@ const HomePage = () => {
         "Innovative Teaching Methods: We utilize modern teaching techniques such as interactive learning, case studies, and digital resources to enhance critical thinking and practical application.",
         "Strong Research Opportunities: AIU encourages student involvement in research activities, fostering analytical skills and contributing to advancements across various fields.",
         "Collaborative Learning Environment: Our programs promote teamwork and communication skills essential for success through peer-learning opportunities and group projects.",
-        "Comprehensive Support Services: Students benefit from academic advising, counseling, and career services, guiding them throughout their educational journey and beyond.",
+        null,// "Comprehensive Support Services: Students benefit from academic advising, counseling, and career services, guiding them throughout their educational journey and beyond.",
         "International Partnerships: AIU offers opportunities for exchange programs, internships, and collaborative research through partnerships with prestigious global institutions.",
-        "Community Engagement Initiatives: We encourage participation in outreach programs and community projects, making a positive social impact locally and internationally.",
+        null,// "Community Engagement Initiatives: We encourage participation in outreach programs and community projects, making a positive social impact locally and internationally.",
         "Advanced Facilities and Laboratories: Our modern labs, libraries, and resource centers provide hands-on experiences and cutting-edge tools for academic and professional development.",
-        "Cultural and Extracurricular Activities: AIU offers a vibrant selection of activities that promote personal development, leadership, and a well-rounded educational experience.",
         "Emphasis on Lifelong Learning: We foster a culture of continuous education through workshops, specialty training, and professional development programs to keep graduates at the forefront of their fields.",
+        "Cultural and Extracurricular Activities: AIU offers a vibrant selection of activities that promote personal development, leadership, and a well-rounded educational experience.",
         "Strong Alumni Network: Our robust alumni network connects current students with industry professionals for mentorship, internships, and career opportunities.",
-        "Vibrant campus life: AIU’s campus provides a supportive and inclusive environment where students from diverse backgrounds can form lasting friendships, share experiences, and grow both personally and professionally.",
+        null,// "Vibrant campus life: AIU’s campus provides a supportive and inclusive environment where students from diverse backgrounds can form lasting friendships, share experiences, and grow both personally and professionally.",
     ], []);
 
     const icons = [
@@ -158,14 +158,14 @@ const HomePage = () => {
         "/for site/Innovative Teaching Methods.JPG",
         "/for site/.Strong Research Opportunities.JPG",
         "/for site/Collaborative Learning Environment.jpg",
-        "/IMG_7688.JPG",
+        null,// "/IMG_7688.JPG",
         "/for site/International Partnerships.JPG",
-        "/for site/Community Engagement Initiatives.JPG",
+        null, //"/for site/Community Engagement Initiatives.JPG",
         "/IMG_7685.JPG",
-        "/for site/Cultural and Extracurricular Activities.JPG",
         "/for site/Emphasis on Lifelong Learning.jpg",
+        "/for site/Cultural and Extracurricular Activities.JPG",
         "/for site/Strong Alumini Network.jpeg",
-        "/for site/Vibrant Campus Life.JPG",
+        null, //"/for site/Vibrant Campus Life.JPG",
     ], [])
 
     const slides = [
@@ -235,16 +235,15 @@ const HomePage = () => {
                         <div className="absolute inset-0 bg-black bg-opacity-50 z-10"/>
 
                         {/* Содержимое поверх слайда */}
-                        <div
-                            className="relative flex h-full flex-col items-center justify-center w-full z-20 text-white px-6 md:px-12 py-6 md:py-0">
-                            <motion.img
-                                src="/Frame 281.png"
-                                alt="Logo"
-                                className="mx-auto h-[150px] md:h-[210px] mb-6 md:mb-10"
-                                initial={{scale: 0.8, opacity: 0, rotate: -10}}
-                                animate={{scale: 1, opacity: 1, rotate: 0}}
-                                transition={{type: "spring", stiffness: 120, damping: 14, delay: 0.2}}
-                            />
+                        <div className="relative flex h-full flex-col items-center justify-center w-full z-20 text-white px-6 md:px-12 py-6 md:py-0">
+                            {/*<motion.img*/}
+                            {/*    src="/Frame 281.png"*/}
+                            {/*    alt="Logo"*/}
+                            {/*    className="mx-auto h-[150px] md:h-[210px] mb-6 md:mb-10"*/}
+                            {/*    initial={{scale: 0.8, opacity: 0, rotate: -10}}*/}
+                            {/*    animate={{scale: 1, opacity: 1, rotate: 0}}*/}
+                            {/*    transition={{type: "spring", stiffness: 120, damping: 14, delay: 0.2}}*/}
+                            {/*/>*/}
                             <motion.div
                                 className="max-w-7xl text-center"
                                 initial={{y: 100, opacity: 0, scale: 0.95}}
@@ -335,14 +334,25 @@ const HomePage = () => {
                             <motion.div
                                 key={`feature-${index}`}
                                 variants={itemVariants}
-                                layout // Qo'shimcha optimallashtirish
+                                layout
                                 className="w-full max-w-xs sm:max-w-none"
                             >
-                                <StableCard
-                                    title={feature.split(':')[0].trim()}
-                                    subtitle={feature.split(':')[1].trim()}
-                                    imageSrc={photos[index]}
-                                />
+                                {photos[index] ? (
+                                    <StableCard
+                                        title={feature?.split(':')[0].trim()}
+                                        subtitle={feature?.split(':')[1].trim()}
+                                        imageSrc={photos[index]}
+                                    />
+                                ) : (
+                                    <div className="h-full bg-[#0a37b3] rounded-lg shadow-md p-6 flex flex-col justify-center">
+                                        <h3 className="text-white text-xl font-bold mb-2">
+                                            {feature?.split(':')[0].trim()}
+                                        </h3>
+                                        <p className="text-blue-100">
+                                            {feature?.split(':')[1].trim()}
+                                        </p>
+                                    </div>
+                                )}
                             </motion.div>
                         ))}
                     </motion.div>

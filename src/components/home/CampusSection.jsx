@@ -70,17 +70,15 @@ function CampusSection() {
                             variants={textVariants}
                             initial="hidden"
                             animate={isInView3 ? "visible" : "hidden"}
-                            className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
+                            className="text-4xl font-extrabold tracking-tight title-text leading-tight"
                         >
                             Different Campuses – One University
-                            <span
-                                className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#0a37b3]"></span>
                         </motion.h2>
                         <motion.p
                             variants={textVariants}
                             initial="hidden"
                             animate={isInView3 ? "visible" : "hidden"}
-                            className="mt-6 text-xl text-center text-gray-700 leading-relaxed"
+                            className="mt-6 text-xl text-gray-700 leading-relaxed"
                         >
                             Explore our locations in Bukhara. Our campuses are united with features that encourage an
                             innovative AIU lifestyle.
