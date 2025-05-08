@@ -42,7 +42,7 @@ const ManagerLayout = () => {
     return (
         <Layout className="bg-[#eeeff4]" style={{minHeight: '100vh'}}>
             <nav
-                className="bg-gradient-to-r from-[#092076] to-[#0a37b3] border-b border-[hsla(0,0%,100%,.1)] py-2 text-white">
+                className="bg-[#012c6e] border-b border-[hsla(0,0%,100%,.1)] py-2 text-white">
                 <div
                     className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
                     {/* Блок 1 */}

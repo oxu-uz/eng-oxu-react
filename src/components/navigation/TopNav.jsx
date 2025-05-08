@@ -261,7 +261,7 @@ const TopNav = () => {
 
     return (
         <>
-            <div className="top-nav bg-gradient-to-r from-[#092076] to-[#0a37b3] lg:px-10 px-5 overflow-hidden h-[120px] border-b border-[hsla(0,0%,100%,.2)] relative flex justify-between">
+            <div className="top-nav bg-[#012c6e] lg:px-10 px-5 overflow-hidden h-[120px] border-b border-[hsla(0,0%,100%,.2)] relative flex justify-between">
                 <img src={logo} className="lg:h-20 h-[68px] lg:my-auto my-0 mt-2 z-10"/>
 
                 <div className='flex gap-5 items-center'>
@@ -318,7 +318,7 @@ const TopNav = () => {
                 </div>
 
                 {/* Top Navigation Links */}
-                <div className="top-nav-sup bg-[#072799] absolute right-0 lg:top-0 bottom-0 divide-x divide-[hsla(0,0%,100%,.15)] flex h-max z-10">
+                <div className="top-nav-sup bg-[#012152] absolute right-0 lg:top-0 bottom-0 divide-x divide-[hsla(0,0%,100%,.15)] flex h-max z-10">
                     <a target="_blank" href="https://library.oxu.uz" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Library</a>
                     <Link
                         to="news"
@@ -335,9 +335,9 @@ const TopNav = () => {
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-                <div className="md:hidden bg-gradient-to-r from-[#092076] to-[#0a37b3]">
+                <div className="md:hidden bg-[#012152]">
                     {/* Contact/Social Info */}
-                    <nav className="bg-gradient-to-r from-[#092076] to-[#0a37b3] border-b border-[hsla(0,0%,100%,.1)] py-3 text-white">
+                    <nav className="bg-[#012152] border-b border-[hsla(0,0%,100%,.1)] py-3 text-white">
                         <div className="container mx-auto px-4 flex flex-wrap items-center justify-center md:justify-between gap-4">
                             {/* Блок 1 */}
                             <div className="flex flex-col items-center text-center">

@@ -204,7 +204,7 @@ const Md = () => {
                             </p>
                             <button
                                 onClick={() => navigate('/admissions/apply')}
-                                className="bg-[#012c6e] text-white px-6 py-2 rounded-md hover:bg-[#0a37b3] transition-colors"
+                                className="bg-[#012c6e] text-white px-6 py-2 rounded-md hover:bg-[#012152] transition-colors"
                             >
                                 Apply Now
                             </button>

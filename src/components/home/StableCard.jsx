@@ -26,7 +26,7 @@ const StableCard = ({ title, subtitle, imageSrc }) => {
             </div>
 
             {/* Hover Overlay */}
-            <div className="absolute inset-0 bg-[#0a37b3]/90 p-6 flex flex-col justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
+            <div className="absolute inset-0 bg-[#012152]/90 p-6 flex flex-col justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
                 <h3 className="text-xl font-bold mb-2">{title}</h3>
                 <p className="text-sm">{subtitle}</p>
             </div>

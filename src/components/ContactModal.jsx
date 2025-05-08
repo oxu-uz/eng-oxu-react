@@ -91,7 +91,7 @@ function ContactModal({ isOpen, onClose, onSubmit }) {
                 <Form.Item className="flex justify-center mt-6">
                     <button
                         type="primary"
-                        className="w-full mx-auto block px-6 py-2 text-white bg-[#0a37b3] hover:bg-[#01408e] rounded-lg shadow transition duration-300"
+                        className="w-full mx-auto block px-6 py-2 text-white bg-[#012c6e] hover:bg-[#012152] rounded-lg shadow transition duration-300"
                     >
                         Send Message
                     </button>

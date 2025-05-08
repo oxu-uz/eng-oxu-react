@@ -70,9 +70,11 @@ function CampusSection() {
                             variants={textVariants}
                             initial="hidden"
                             animate={isInView3 ? "visible" : "hidden"}
-                            className="text-4xl font-extrabold tracking-tight title-text leading-tight"
+                            className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
                         >
                             Different Campuses – One University
+                            <span
+                                className="absolute left-1/2 bottom-0 translate-x-[-50%] w-36 h-[3px] bg-[#012c6e]"></span>
                         </motion.h2>
                         <motion.p
                             variants={textVariants}

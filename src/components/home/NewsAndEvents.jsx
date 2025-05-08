@@ -40,7 +40,7 @@ function NewsAndEvents() {
             <div className="flex flex-col w-full max-w-[1663px] max-md:max-w-full">
                 <header className="flex flex-wrap gap-5 justify-start items-center w-full max-md:max-w-full">
                     <motion.h1
-                        className="relative text-3xl w-full font-extrabold title-text text-center max-md:text-4xl pb-4"
+                        className="relative text-3xl w-full font-extrabold title-text text-center md:text-4xl pb-4"
                         initial="hidden"
                         animate={isInView5 ? 'visible' : 'hidden'}
                         variants={animationVariants}
@@ -48,10 +48,10 @@ function NewsAndEvents() {
                         Latest News
                         {/* & Events*/}
                         {/* Underline */}
-                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-18 h-[3px] bg-[#0a37b3]"></span>
+                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#012c6e]"></span>
                     </motion.h1>
                     {/*<motion.button*/}
-                    {/*    className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-[#0a37b3] font-medium text-white"*/}
+                    {/*    className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-[#012c6e] font-medium text-white"*/}
                     {/*    initial="hidden"*/}
                     {/*    animate={isInView5 ? 'visible' : 'hidden'}*/}
                     {/*    variants={animationVariants}*/}

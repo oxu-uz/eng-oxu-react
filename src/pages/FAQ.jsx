@@ -271,7 +271,7 @@
 //                                     <Text style={{fontSize: 24}}>{category.icon}</Text>
 //                                     <Title level={3} style={{
 //                                         margin: 0,
-//                                         color: "#0a37b3"
+//                                         color: "#012c6e"
 //                                     }}>
 //                                         {category.title}
 //                                     </Title>
@@ -327,7 +327,7 @@
 //                                             <Text style={{fontSize: 20}}>{category.sub.icon}</Text>
 //                                             <Title level={4} style={{
 //                                                 margin: 0,
-//                                                 color: "#0a37b3"
+//                                                 color: "#012c6e"
 //                                             }}>
 //                                                 {category.sub.title}
 //                                             </Title>
@@ -750,7 +750,7 @@ const FAQSection = () => {
                                         </motion.div>
                                         <Title level={3} style={{
                                             margin: 0,
-                                            color: "#0a37b3"
+                                            color: "#012c6e"
                                         }}>
                                             {category.title}
                                         </Title>
@@ -833,7 +833,7 @@ const FAQSection = () => {
                                                 </motion.div>
                                                 <Title level={4} style={{
                                                     margin: 0,
-                                                    color: "#0a37b3"
+                                                    color: "#012c6e"
                                                 }}>
                                                     {category.sub.title}
                                                 </Title>

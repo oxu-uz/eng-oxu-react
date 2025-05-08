@@ -86,7 +86,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #012c6e;
+    background: #012152;
 }
 
 /* Handle on hover */
@@ -96,9 +96,9 @@
 
 :root {
     /* --color-primary: #012C6E; */
-    --color-primary: #0a37b3;
+    --color-primary: #012c6e;
     --color-primary-light: #01408e;
-    --color-primary-dark: #011b4b;
+    --color-primary-dark: #012152;
 
     --color-secondary: #012152;
     --color-secondary-light: #013066;
@@ -121,7 +121,7 @@
 .apply-now-btn {
     position: relative;
     display: inline-block;
-    background: linear-gradient(135deg, #0a37b3, #01408e);
+    background: linear-gradient(135deg, #012c6e, #012152);
     color: white;
     padding: 14px 32px;
     font-size: 20px;
@@ -142,13 +142,13 @@
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(0,123,255, 0.7);
+        box-shadow: 0 0 0 0 rgb(1,33,82,0.7);
     }
     70% {
-        box-shadow: 0 0 0 20px rgba(0,123,255, 0);
+        box-shadow: 0 0 0 20px rgb(1,33,82,0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(0,123,255, 0);
+        box-shadow: 0 0 0 0 rgb(1,33,82,0);
     }
 }
 

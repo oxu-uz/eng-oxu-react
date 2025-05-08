@@ -263,8 +263,8 @@ const HomePage = () => {
                                 {/*    initial={{scale: 0.9, opacity: 0.8}}*/}
                                 {/*    animate={{*/}
                                 {/*        scale: [1, 1.095, 1],*/}
-                                {/*        backgroundColor: ["#0a37b3"],*/}
-                                {/*        // boxShadow: ["0 0 0 #0a37b3", "0 0 15px #1a4bcf", "0 0 0 #0a37b3"]*/}
+                                {/*        backgroundColor: ["#012c6e"],*/}
+                                {/*        // boxShadow: ["0 0 0 #012c6e", "0 0 15px #1a4bcf", "0 0 0 #012c6e"]*/}
                                 {/*    }}*/}
                                 {/*    transition={{*/}
                                 {/*        duration: 1.3,*/}
@@ -293,13 +293,13 @@ const HomePage = () => {
                     <div className="flex items-center space-x-2 md:space-x-3">
                         <button
                             onClick={prevSlide}
-                            className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-[#0a37b3] hover:bg-[#092076] transition-colors flex items-center justify-center"
+                            className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-[#012c6e] hover:bg-[#012152] transition-colors flex items-center justify-center"
                         >
                             <ChevronLeftIcon className="w-3 md:w-4 h-3 md:h-4 text-white" strokeWidth={2}/>
                         </button>
                         <button
                             onClick={nextSlide}
-                            className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-[#0a37b3] hover:bg-[#092076] transition-colors flex items-center justify-center"
+                            className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-[#012c6e] hover:bg-[#012152] transition-colors flex items-center justify-center"
                         >
                             <ChevronRightIcon className="w-3 md:w-4 h-3 md:h-4 text-white" strokeWidth={2}/>
                         </button>
@@ -321,7 +321,7 @@ const HomePage = () => {
                     >
                         Why Choose Us
                         <span
-                            className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#0a37b3]"></span>
+                            className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#012c6e]"></span>
                     </motion.h2>
 
                     <motion.div
@@ -344,7 +344,7 @@ const HomePage = () => {
                                         imageSrc={photos[index]}
                                     />
                                 ) : (
-                                    <div className="h-full bg-gradient-to-r from-[#0a37b3] to-[#444] rounded-lg shadow-md p-6 flex flex-col justify-center">
+                                    <div className="h-full bg-gradient-to-r from-[#012c6e] to-[#555] rounded-lg shadow-md p-6 flex flex-col justify-center">
                                         <h3 className="text-white text-xl font-bold mb-2">
                                             {feature?.split(':')[0].trim()}
                                         </h3>
@@ -447,7 +447,7 @@ const HomePage = () => {
             <section className="h-auto sm:h-[360px] bg-cover w-full flex items-center bg-fixed"
                      style={{backgroundImage: "url('/IMG_2348.JPG')"}}
             >
-                <div className="w-full h-full flex items-center bg-gradient-to-r from-[#092076]/70 to-[#0a37b3]/70">
+                <div className="w-full h-full flex items-center bg-[#012c6e]/70">
                     <div className="container mx-auto px-4 sm:px-8">
                         {/* Statistics Section */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-16">

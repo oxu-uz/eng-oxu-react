@@ -142,7 +142,7 @@ const AgentDashboard = () => {
                             variant="primary"
                             size="rg"
                             loading={creating}
-                            className="bg-[#0a37b3] hover:bg-[#01408e]"
+                            className="bg-[#012c6e] hover:bg-[#012152]"
                         >
                             {creating ? 'Adding...' : 'Add Student'}
                         </Button>

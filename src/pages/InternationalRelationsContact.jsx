@@ -210,7 +210,7 @@ function InternationalRelationsContact() {
                         className={`w-[80%] mx-auto block px-6 py-3 text-white rounded-lg shadow transition duration-300 ${
                             loading
                                 ? 'bg-blue-400 cursor-not-allowed'
-                                : 'bg-[#0a37b3] hover:bg-[#01408e]'
+                                : 'bg-[#012c6e] hover:bg-[#012152]'
                         }`}
                     >
                         {loading ? (

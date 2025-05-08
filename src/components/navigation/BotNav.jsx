@@ -81,7 +81,7 @@ const BotNav = () => {
     ];
 
     return (
-        <nav className="nav-bot lg:block hidden bg-gradient-to-r from-[#092076] to-[#0a37b3] sticky z-30 top-0 h-[65px]">
+        <nav className="nav-bot lg:block hidden bg-[#012152] sticky z-30 top-0 h-[65px]">
             <div className=" mx-auto flex h-full justify-center ">
                 <div className="flex ">
                     {navItems.map((item, index) => (

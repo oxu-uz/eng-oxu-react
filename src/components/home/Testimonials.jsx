@@ -184,7 +184,7 @@ const Testimonials = () => {
                                         <p className="text-gray-900 text-xl font-semibold">
                                             {testimonials[currentIndex].name}
                                         </p>
-                                        <p className="text-[#0a37b3] text-base">
+                                        <p className="text-[#012c6e] text-base">
                                             {testimonials[currentIndex].title}
                                         </p>
                                     </div>
@@ -208,7 +208,7 @@ const Testimonials = () => {
                             onClick={() => setCurrentIndex(index)}
                             className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
                                 currentIndex === index
-                                    ? 'bg-[#0a37b3] scale-125'
+                                    ? 'bg-[#012c6e] scale-125'
                                     : 'bg-white/50 hover:bg-white/70'
                             }`}
                             aria-label={`View testimonial from ${testimonials[index].name}`}

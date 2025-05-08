@@ -33,7 +33,7 @@ const Layout = () => {
     return (
         <div>
             <nav
-                className="bg-gradient-to-r lg:block hidden from-[#092076] to-[#0a37b3] border-b border-[hsla(0,0%,100%,.1)] py-2 text-white">
+                className="bg-[#012152] lg:block hidden border-b border-[hsla(0,0%,100%,.1)] py-2 text-white">
                 <div className="container mx-auto flex flex-row items-center justify-center md:justify-between gap-4">
                     {/* Блок 1 */}
                     <div className="flex flex-col items-center text-center">
