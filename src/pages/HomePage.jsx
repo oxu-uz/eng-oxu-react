@@ -171,15 +171,15 @@ const HomePage = () => {
     const slides = [
         {
             type: "image",
-            src: "/DSC_9787.JPG",
-            poster: "/DSC_9787.JPG",
+            src: "/STUDENTS (11).JPG",
+            poster: "/STUDENTS (11).JPG",
             title:" Welcome to AIU. Ready to start on an exciting journey with us? Explore our university and become part of the family. ",
             description: "Experience world-class education guided by expert International faculty and supported by a vibrant, diverse I community. ",
             cta: "Apply Now"
         },
         {
             type: "image",
-            src: "/DSC_1537.JPG",
+            src: "/library (5).JPG",
             alt: "Image 1",
             title:"One of Central Asia's leading universities, providing premier education to shape students for global careers.",
             description: "Our state-of-the-art campus, innovative programs, and strong international partnerships empower students with the skills and knowledge to thrive in a competitive world.",
@@ -187,7 +187,7 @@ const HomePage = () => {
         },
         {
             type: "image",
-            src: "/DSC_9801.JPG",
+            src: "/IMG_2363.JPG",
             alt: "Image 2",
             title: "A Central Asian home for students from all over the world.",
             description: "We make sure every student feels at home—no matter where they come from. It's more than just a place to study; it's a place to belong, where diverse cultures come together to learn, grow, and connect",
