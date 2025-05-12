@@ -26,7 +26,8 @@ const campusData = [
         name: 'AIU 4th Campus',
         image: 'https://cdn.builder.io/api/v1/image/assets/0e60d26ffe404316aa35b6241738714a/196d4d1016c534194eaa3cf33fa7c73a228c5a10afc726813ba0765ef939b825?apiKey=0e60d26ffe404316aa35b6241738714a&',
         description: '100 G`ijduvon Street , Bukhara city',
-    }, {
+    },
+    {
         id: 5,
         name: 'AIU 5th Campus',
         image: '/DSC_0307.JPG',
@@ -62,10 +63,10 @@ function CampusSection() {
     };
 
     return (
-        <section className="bg-white py-20 px-8">
+        <section className=" py-20 px-8">
             <div className=" mx-auto">
                 <div className="flex flex-col md:flex-row md:items-center md:gap-10">
-                    <div className="flex flex-col flex-1">
+                    <div className="flex flex-col items-center flex-1">
                         <motion.h2
                             variants={textVariants}
                             initial="hidden"
@@ -80,7 +81,7 @@ function CampusSection() {
                             variants={textVariants}
                             initial="hidden"
                             animate={isInView3 ? "visible" : "hidden"}
-                            className="mt-6 text-xl text-gray-700 leading-relaxed"
+                            className="text-2xl font-semibold w-[60%] text-[#012c6e] text-center leading-relaxed"
                         >
                             Explore our locations in Bukhara. Our campuses are united with features that encourage an
                             innovative AIU lifestyle.
@@ -96,6 +97,7 @@ function CampusSection() {
                                 variants={cardVariants}
                                 initial="hidden"
                                 animate={isInView3 ? "visible" : "hidden"}
+                                className={'bg-white'}
                             >
                                 <CampusCard {...campus} />
                             </motion.div>

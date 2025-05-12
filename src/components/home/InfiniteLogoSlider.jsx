@@ -4,7 +4,7 @@ const InfiniteLogoSlider = () => {
     const logos = [
         { src: "/Рисунок5.png", width: "w-[230px]" },
         { src: "/Group 1410110485.png", width: "w-[120px]" },
-        { src: "/kfu_logo_0.jpg", width: "w-[250px]" },
+        { src: "/kfu_logo_1.png", width: "w-[300px]" },
         { src: "/okanlogo.webp", width: "w-[100px]", containerClass: "flex items-center w-[200px]" },
         { src: "/nara.webp", width: "w-[250px]" },
         { src: "/originl.webp", width: "w-[250px]" },
@@ -13,12 +13,12 @@ const InfiniteLogoSlider = () => {
         { src: "/web-undip-logo.png", width: "w-[250px]" },
         { src: "/imisp-logo-blue-cyr2.png", width: "w-[250px]" },
         { src: "/uomusLogo.png", width: "w-[150px]", containerClass: "flex items-center w-[220px]" },
-        { src: "/photo_2025-05-02_14-59-35.jpg", width: "w-[250px]" },
-        { src: "/photo_2025-05-02_14-59-35 (2).jpg", width: "w-[250px]" },
-        { src: "/photo_2025-05-02_14-59-35 (3).jpg", width: "w-[200px]" },
-        { src: "/photo_2025-05-02_14-59-35 (4).jpg", width: "w-[250px]" },
-        { src: "/photo_2025-05-02_14-59-35 (5).jpg", width: "w-[180px]" },
-        { src: "/photo_2025-05-02_14-59-36.jpg", width: "w-[250px]" },
+        { src: "/photo_2025-05-02_14-59-35.png", width: "w-[300px]" },
+        { src: "/photo_2025-05-02_14-59-35__2.png", width: "w-[300px]" },
+        { src: "/photo_2025-05-02_14-59-35__3.png", width: "w-[200px]" },
+        { src: "/photo_2025-05-02_14-59-35__4.png", width: "w-[300px]" },
+        { src: "/photo_2025-05-02_14-59-35__5.png", width: "w-[200px]" },
+        { src: "/photo_2025-05-02_14-59-36.png", width: "w-[300px]" },
     ];
 
     // Duplicate logos for seamless infinite effect

@@ -1,63 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=REM:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'TT Norms Pro';
-    font-style: normal;
-    src: url('./assets/font/TT Norms Pro Regular.otf');
-}
+/*@font-face {*/
+/*    font-family: 'TT Norms Pro';*/
+/*    font-style: normal;*/
+/*    src: url('./assets/font/TT Norms Pro Regular.otf');*/
+/*}*/
 
 
-@font-face {
-    font-family: 'Gilroy';
-    src: url('./assets/font/gilroy/Gilroy-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-  }
+/*@font-face {*/
+/*    font-family: 'Gilroy';*/
+/*    src: url('./assets/font/gilroy/Gilroy-Black.ttf') format('truetype');*/
+/*    font-weight: 900;*/
+/*    font-style: normal;*/
+/*  }*/
 
-  @font-face {
-    font-family: 'Gilroy';
-    src: url('./assets/font/gilroy/Gilroy-BlackItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-  }
+/*  @font-face {*/
+/*    font-family: 'Gilroy';*/
+/*    src: url('./assets/font/gilroy/Gilroy-BlackItalic.ttf') format('truetype');*/
+/*    font-weight: 900;*/
+/*    font-style: italic;*/
+/*  }*/
 
-  /* Полужирный (Bold) начертания */
-  @font-face {
-    font-family: 'Gilroy';
-    src: url('./assets/font/gilroy/Gilroy-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-  }
+/*  !* Полужирный (Bold) начертания *!*/
+/*  @font-face {*/
+/*    font-family: 'Gilroy';*/
+/*    src: url('./assets/font/gilroy/Gilroy-Bold.ttf') format('truetype');*/
+/*    font-weight: 700;*/
+/*    font-style: normal;*/
+/*  }*/
 
-  @font-face {
-    font-family: 'Gilroy';
-    src: url('./assets/font/gilroy/Gilroy-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-  }
+/*  @font-face {*/
+/*    font-family: 'Gilroy';*/
+/*    src: url('./assets/font/gilroy/Gilroy-BoldItalic.ttf') format('truetype');*/
+/*    font-weight: 700;*/
+/*    font-style: italic;*/
+/*  }*/
 
-  /* Обычный (Regular) начертания */
-  @font-face {
-    font-family: 'Gilroy';
-    src: url('./assets/font/gilroy/Gilroy-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
+/*  !* Обычный (Regular) начертания *!*/
+/*  @font-face {*/
+/*    font-family: 'Gilroy';*/
+/*    src: url('./assets/font/gilroy/Gilroy-Regular.ttf') format('truetype');*/
+/*    font-weight: 400;*/
+/*    font-style: normal;*/
+/*  }*/
 
-  @font-face {
-    font-family: 'Gilroy';
-    src: url('./assets/font/gilroy/Gilroy-RegularItalic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-  }
+/*  @font-face {*/
+/*    font-family: 'Gilroy';*/
+/*    src: url('./assets/font/gilroy/Gilroy-RegularItalic.ttf') format('truetype');*/
+/*    font-weight: 400;*/
+/*    font-style: italic;*/
+/*  }*/
 
 
 * {
-    font-family: 'Inter', sans-serif;
+    font-family: 'MagnetTrial',sans-serif;
+}
+
+/* manrope-latin-wght-normal */
+@font-face {
+    font-family: 'Manrope Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 200 800;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/manrope:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+    font-family: 'MagnetTrial';
+    src: url('/src/assets/magnet/MagnetTrial-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MagnetTrial';
+    src: url('/src/assets/magnet/MagnetTrial-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MagnetTrial';
+    src: url('/src/assets/magnet/MagnetTrial-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MagnetTrial';
+    src: url('/src/assets/magnet/MagnetTrial-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MagnetTrial';
+    src: url('/src/assets/magnet/MagnetTrial-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MagnetTrial';
+    src: url('/src/assets/magnet/MagnetTrial-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MagnetTrial';
+    src: url('/src/assets/magnet/MagnetTrial-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MagnetTrial';
+    src: url('/src/assets/magnet/MagnetTrial-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }
 
 .html {
@@ -65,7 +133,7 @@
 }
 
 .nav-link {
-    font-family: "Outfit", serif;
+    font-family: "MagnetTrial","Montserrat", serif;
     font-size: .9rem;
     font-style: normal;
     font-weight: 500;
@@ -347,7 +415,7 @@
 }
 
 .tg-bg h5 {
-    font-family: 'TT Norms Pro', sans-serif;
+    font-family: "MagnetTrial", sans-serif;
     color: #fff;
     font-size: .875rem;
     font-weight: 700;
@@ -355,7 +423,7 @@
 }
 
 .tg-bg button {
-    font-family: 'TT Norms Pro', sans-serif;
+    font-family: "MagnetTrial", sans-serif;
     background: #fff;
     border: none;
     border-radius: 4px;
@@ -845,7 +913,7 @@ h2.builder-section__title::after, .decorate::after {
 }
 
 body {
-    font-family: "Lato", sans-serif;
+    font-family: "MagnetTrial", sans-serif;
     background-color: var(--color-background);
     color: var(--color-text-primary);
 }

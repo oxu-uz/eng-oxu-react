@@ -212,7 +212,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="bg-white">
+        <div style={{backgroundImage:"url(/header1.png)"}}>
             <section className="relative w-full min-h-[80vh] overflow-hidden">
                 <AnimatePresence>
                     <motion.div
@@ -363,7 +363,7 @@ const HomePage = () => {
             <FadeInStagger>
                 <FadeIn>
                     <div
-                        className="mx-auto  py-5 bg-white sm:py-10 lg:py-5 flex flex-col lg:flex-row items-center justify-between gap-x-12 relative"
+                        className="mx-auto  py-5 bg-white  sm:py-10 lg:py-5 flex flex-col lg:flex-row items-center justify-between gap-x-12 relative"
                     >
                         {/* Image Section */}
                         <div className="lg:w-1/2 px-4">
@@ -445,7 +445,7 @@ const HomePage = () => {
 
 
             <section className="h-auto sm:h-[360px] bg-cover w-full flex items-center bg-fixed"
-                     style={{backgroundImage: "url('/IMG_2348.JPG')"}}
+                     style={{backgroundImage: "url('/IMG_7687.JPG')"}}
             >
                 <div className="w-full h-full flex items-center bg-[#012c6e]/70">
                     <div className="container mx-auto px-4 sm:px-8">

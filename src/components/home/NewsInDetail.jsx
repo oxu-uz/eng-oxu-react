@@ -51,8 +51,8 @@ function NewsInDetail() {
                         />
                     )}
                 </div>
-                <h1 className="text-2xl font-bold mt-6">{announcement.title}</h1>
-                <Typography.Paragraph className="text-gray-700 mt-4 leading-6 text-base">
+                <h1 className="text-2xl font-bold mt-6 text-[#012c6e]">{announcement.title}</h1>
+                <Typography.Paragraph className="text-[#012c6e] mt-4 leading-6 text-base">
                     {announcement.description}
                 </Typography.Paragraph>
             </section>
@@ -61,7 +61,7 @@ function NewsInDetail() {
                 <div className="sticky top-12 flex flex-col gap-2 p-2 rounded-xl">
                     <div className="section-header-title pl-3">
                         <h2 className="section-title text-[#012c6e] uppercase text-3xl font-black">YANGILIKLAR</h2>
-                        <span className="section-green-link flex items-center gap-x-3">
+                        <span className="section-green-link text-[#292929] flex items-center gap-x-3">
                             Barcha xabarlar
                             <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.5303 6.53033C18.8232 6.23744 18.8232 5.76256 18.5303 5.46967L13.7574 0.696699C13.4645 0.403806 12.9896 0.403806 12.6967 0.696699C12.4038 0.989593 12.4038 1.46447 12.6967 1.75736L16.9393 6L12.6967 10.2426C12.4038 10.5355 12.4038 11.0104 12.6967 11.3033C12.9896 11.5962 13.4645 11.5962 13.7574 11.3033L18.5303 6.53033ZM0 6.75H18V5.25H0V6.75Z" fill="#182f53"></path>
@@ -76,7 +76,7 @@ function NewsInDetail() {
                                         key={item.id}
                                         className={`p-3 rounded-md border transition duration-200 bg-white hover:bg-[#f0f9ff] hover:border-[#012152] hover:shadow-lg hover:scale-[0.97]`}>
                                         <p className="text-xs text-gray-400">{item.created_at}</p>
-                                        <h3 className="text-sm font-semibold line-clamp-2">{item.title}</h3>
+                                        <h3 className="text-sm text-[#012c6e] font-semibold line-clamp-2">{item.title}</h3>
                                         <p className="text-xs text-gray-500 line-clamp-2 mt-1">{item.description}</p>
                                     </Link>
                                 ))}

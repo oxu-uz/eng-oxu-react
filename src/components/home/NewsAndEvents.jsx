@@ -34,7 +34,7 @@ function NewsAndEvents() {
 
     return (
         <section
-            className="flex flex-col items-center px-20 pt-14 mt-10 bg-white max-md:px-5 max-md:pb-24"
+            className="flex flex-col items-center px-20 pt-14 mt-10 max-md:px-5 max-md:pb-24"
             ref={ref5}
         >
             <div className="flex flex-col w-full max-w-[1663px] max-md:max-w-full">
@@ -100,6 +100,7 @@ function NewsAndEvents() {
             initial="hidden"
             animate={isInView5 ? "visible" : "hidden"}
             variants={animationVariants}
+            className='bg-white'
           >
             <NewsCard
                 id={newsItem.id}

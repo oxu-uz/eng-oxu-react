@@ -93,7 +93,7 @@ const MobileMenuItem = ({ item }) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="border-b border-blue-900">
+        <div className="border-b border-gray-500">
             {item.dropdown ? (
                 <div>
                     <button
@@ -227,7 +227,7 @@ const TopNav = () => {
         const [open, setOpen] = useState(false);
 
         return (
-            <div className="border-b border-blue-900">
+            <div>
                 <button
                     onClick={() => setOpen(!open)}
                     className="w-full flex justify-between items-center py-3 px-4 text-white capitalize lg:uppercase lg:text-base text-sm focus:outline-none"
@@ -261,7 +261,7 @@ const TopNav = () => {
 
     return (
         <>
-            <div className="top-nav bg-[#012c6e] lg:px-10 px-5 overflow-hidden h-[120px] border-b border-[hsla(0,0%,100%,.2)] relative flex justify-between">
+            <div className="top-nav bg-[#012c6e] lg:px-10 px-5 overflow-hidden h-[120px] relative flex justify-between">
                 <img src={logo} className="lg:h-20 h-[68px] lg:my-auto my-0 mt-2 z-10"/>
 
                 <div className='flex gap-5 items-center'>
@@ -337,16 +337,14 @@ const TopNav = () => {
             {mobileMenuOpen && (
                 <div className="md:hidden bg-[#012152]">
                     {/* Contact/Social Info */}
-                    <nav className="bg-[#012152] border-b border-[hsla(0,0%,100%,.1)] py-3 text-white">
-                        <div className="container mx-auto px-4 flex flex-wrap items-center justify-center md:justify-between gap-4">
+                    <nav className="bg-[#012152] py-3 text-white">
+                        <div className="container mx-auto px-4 flex flex-wrap items-center justify-center md:justify-between">
                             {/* Блок 1 */}
                             <div className="flex flex-col items-center text-center">
                                 <a href="mailto:info@oxu.uz" className="text-sm font-semibold leading-tight">
                                     info@oxu.uz
                                 </a>
-                                <span className="text-xs opacity-80">
-        Cooperative email
-      </span>
+                                <span className="text-xs opacity-80">Cooperative email</span>
                             </div>
 
                             {/* Разделитель (скрываем на маленьких экранах, показываем на md и выше) */}
@@ -357,9 +355,7 @@ const TopNav = () => {
                                 <a href="tel:+998500305876" className="text-sm font-semibold leading-tight">
                                     +998 50 030 58 76
                                 </a>
-                                <span className="text-xs opacity-80">
-        Hotline for applicants
-      </span>
+                                <span className="text-xs opacity-80">Hotline for applicants</span>
                             </div>
 
                             {/* Разделитель */}
@@ -367,19 +363,9 @@ const TopNav = () => {
 
                             {/* Блок 3 */}
                             <div className="flex flex-col items-center text-center">
-      <span onClick={handleContactClick} className="text-sm cursor-pointer font-semibold leading-tight">
-        Contacts
-      </span>
-                                <span className="text-xs opacity-80">
-        Address and telephone
-      </span>
+                                <span onClick={handleContactClick} className="text-sm cursor-pointer font-semibold leading-tight">Contacts</span>
+                                <span className="text-xs opacity-80">Address and telephone</span>
                             </div>
-
-                            {/*<ContactModal*/}
-                            {/*    isOpen={isModalOpen}*/}
-                            {/*    onClose={() => setIsModalOpen(false)}*/}
-                            {/*    onSubmit={handleSend}*/}
-                            {/*/>*/}
 
                             {/* Разделитель */}
                             <div className="block h-6 border-l border-white/20"></div>
