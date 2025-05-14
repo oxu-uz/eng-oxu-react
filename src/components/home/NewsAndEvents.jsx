@@ -48,7 +48,7 @@ function NewsAndEvents() {
                         Latest News
                         {/* & Events*/}
                         {/* Underline */}
-                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-24 h-[3px] bg-[#012c6e]"></span>
+                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-36 h-[3px] bg-[#012c6e]"></span>
                     </motion.h1>
                     {/*<motion.button*/}
                     {/*    className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-[#012c6e] font-medium text-white"*/}

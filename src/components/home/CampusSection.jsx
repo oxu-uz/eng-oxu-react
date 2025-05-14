@@ -75,7 +75,7 @@ function CampusSection() {
                         >
                             Different Campuses – One University
                             <span
-                                className="absolute left-1/2 bottom-0 translate-x-[-50%] w-36 h-[3px] bg-[#012c6e]"></span>
+                                className="absolute left-1/2 bottom-0 translate-x-[-50%] w-[50%] h-[3px] bg-[#012c6e]"></span>
                         </motion.h2>
                         <motion.p
                             variants={textVariants}
@@ -89,7 +89,7 @@ function CampusSection() {
                     </div>
                 </div>
                 <div ref={ref3} className="mt-12">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                         {campusData.slice(0, 5).map((campus, index) => (
                             <motion.div
                                 key={campus.id}

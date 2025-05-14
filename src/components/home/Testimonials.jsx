@@ -112,13 +112,13 @@ const Testimonials = () => {
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4"
+                        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4"
                     >
                         What our Students Say
                     </motion.h2>
                     <motion.div
                         variants={itemVariants}
-                        className="w-[60%] sm:w-[50%] md:w-[30%] h-1 bg-white mx-auto"
+                        className="w-[50%] sm:w-[40%] md:w-[20%] h-1 bg-white mx-auto"
                     ></motion.div>
                 </motion.div>
 
@@ -165,7 +165,7 @@ const Testimonials = () => {
 
                             {/* Desktop Layout - Side by side */}
                             <div
-                                className="hidden md:flex bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl w-full h-full overflow-hidden">
+                                className="hidden md:flex bg-white/80 mx-auto backdrop-blur-sm rounded-xl shadow-2xl w-[80%] h-full overflow-hidden">
                                 <div className="w-1/3 h-full relative">
                                     <img
                                         src={testimonials[currentIndex].img}
@@ -181,10 +181,10 @@ const Testimonials = () => {
                                         "{testimonials[currentIndex].quote}"
                                     </blockquote>
                                     <div>
-                                        <p className="text-gray-900 text-xl font-semibold">
+                                        <p className="text-[#012c6e] text-xl font-semibold">
                                             {testimonials[currentIndex].name}
                                         </p>
-                                        <p className="text-[#012c6e] text-base">
+                                        <p className="text-gray-800 text-base">
                                             {testimonials[currentIndex].title}
                                         </p>
                                     </div>
