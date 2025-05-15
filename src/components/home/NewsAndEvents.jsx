@@ -1,44 +1,84 @@
 import React, {useRef, useEffect, useState} from 'react';
 import NewsCard from './NewsCard';
 import {useInView, motion} from "framer-motion";
-import { getNews } from '../../services/manager/posts/ManagerPostsService';
-
-const newsData = [
-    { id: 1, image: 'https://cdn.builder.io/api/v1/image/assets/0e60d26ffe404316aa35b6241738714a/d9871df031dd822b2a0766bf3a2647c28b72ed737baeeda88b2ab7d80d3a8517?apiKey=0e60d26ffe404316aa35b6241738714a&', category: 'Academic', title: 'Call for Application: Joint Certificate Program in Climate Smart Animal Production Systems', description: 'Osiyo Xalqaro Universiteti (OXU) va Washington University of Science and Technology (WUST) o‘rtasida xalqaro hamkorlik memorandumi yo‘lga qo‘yildi. Ushbu kelishuv OXU talabalariga global ta’lim standartlariga mos bilim olish, ilmiy-tadqiqot ishlari bilan shug‘ullanish uchun yangi eshiklarni ochadi.' },
-    { id: 2, image: 'https://cdn.builder.io/api/v1/image/assets/0e60d26ffe404316aa35b6241738714a/dc33f13cf62ddc9a2e7032565f80e353788c1395af9f2ba66e01f59dfc1dccc7?apiKey=0e60d26ffe404316aa35b6241738714a&', category: 'Academic', title: 'Call for Application: Joint Certificate Program in Climate Smart Animal Production Systems' },
-    { id: 3, image: 'https://cdn.builder.io/api/v1/image/assets/0e60d26ffe404316aa35b6241738714a/d7034aca5029b520615e9c6981325ad2b917bb357bfaea1c7b69021e6851b6f6?apiKey=0e60d26ffe404316aa35b6241738714a&', category: 'Academic', title: 'Call for Application: Joint Certificate Program in Climate Smart Animal Production Systems' },
-    { id: 4, image: 'https://cdn.builder.io/api/v1/image/assets/0e60d26ffe404316aa35b6241738714a/34cd8d13aeaa938a0a6a1bc326981ec8719405870fbf13f7ae53b1f02914610e?apiKey=0e60d26ffe404316aa35b6241738714a&', category: 'Academic', title: 'Call for Application: Joint Certificate Program in Climate Smart Animal Production Systems' },
-];
+import {getNews} from '../../services/manager/posts/ManagerPostsService';
+import {useNavigate} from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function NewsAndEvents() {
     const [news, setNews] = useState([]);
     const ref5 = useRef(null);
-    const isInView5 = useInView(ref5, { once: false });
+    const isInView5 = useInView(ref5, {once: false});
+    const navigate = useNavigate();
 
     const animationVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+        hidden: {opacity: 0, y: 50},
+        visible: {opacity: 1, y: 0, transition: {duration: 1}},
+    };
+
+    const textVariants = {
+        hidden: {opacity: 0, y: 20},
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {duration: 0.8, ease: "easeOut"},
+        },
+    };
+
+    // Slider settings
+    const settings = {
+        dots: false, // Pastdagi nuqtalarni olib tashlaymiz
+        arrows: false, // Oldingi/keyingi tugmalarni olib tashlaymiz
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4, // Bir vaqtning o'zida ko'rsatiladigan slaydlar soni
+        slidesToScroll: 1, // Bir scrollda o'tadigan slaydlar soni
+        autoplay: true, // Avtomatik aylanish
+        autoplaySpeed: 2000, // 2 soniyada bir slayd almashinadi
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
     };
 
     useEffect(() => {
         const fetchNews = async () => {
-          try {
-            const data = await getNews();
-            setNews(data);
-          } catch (error) {
-            console.error("Error fetching news:", error);
-          }
+            try {
+                const data = await getNews();
+                setNews(data);
+            } catch (error) {
+                console.error("Error fetching news:", error);
+            }
         };
         fetchNews();
-      }, []);
+    }, []);
+
+    const handleViewAll = () => {
+        navigate('/news/all');
+    };
 
     return (
-        <section
-            className="flex flex-col items-center px-20 pt-14 mt-10 max-md:px-5 max-md:pb-24"
-            ref={ref5}
-        >
+        <section className="flex flex-col items-center px-20 max-md:px-5 md:pb-[50px]" ref={ref5}>
             <div className="flex flex-col w-full max-w-[1663px] max-md:max-w-full">
-                <header className="flex flex-wrap gap-5 justify-start items-center w-full max-md:max-w-full">
+                <header className="flex pt-[50px] flex-col justify-start items-center w-full max-md:max-w-full">
                     <motion.h1
                         className="relative text-3xl w-full font-extrabold title-text text-center md:text-4xl pb-4"
                         initial="hidden"
@@ -46,73 +86,48 @@ function NewsAndEvents() {
                         variants={animationVariants}
                     >
                         Latest News
-                        {/* & Events*/}
-                        {/* Underline */}
-                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-36 h-[3px] bg-[#012c6e]"></span>
+                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-36 h-[3px] bg-[#012152]"></span>
                     </motion.h1>
-                    {/*<motion.button*/}
-                    {/*    className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-[#012c6e] font-medium text-white"*/}
+                    {/*<motion.p*/}
+                    {/*    variants={textVariants}*/}
                     {/*    initial="hidden"*/}
-                    {/*    animate={isInView5 ? 'visible' : 'hidden'}*/}
-                    {/*    variants={animationVariants}*/}
+                    {/*    animate={isInView5 ? "visible" : "hidden"}*/}
+                    {/*    className="mt-4 text-xl md:text-2xl font-semibold text-[#012152] text-center max-w-3xl leading-relaxed px-4"*/}
                     {/*>*/}
-                    {/*    <div className="translate-x-0 transition group-hover:translate-x-[300%]">*/}
-                    {/*        <svg*/}
-                    {/*            width="15"*/}
-                    {/*            height="15"*/}
-                    {/*            viewBox="0 0 15 15"*/}
-                    {/*            fill="none"*/}
-                    {/*            xmlns="http://www.w3.org/2000/svg"*/}
-                    {/*            className="h-5 w-5"*/}
-                    {/*        >*/}
-                    {/*            <path*/}
-                    {/*                d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"*/}
-                    {/*                fill="currentColor"*/}
-                    {/*                fill-rule="evenodd"*/}
-                    {/*                clip-rule="evenodd"*/}
-                    {/*            ></path>*/}
-                    {/*        </svg>*/}
-                    {/*    </div>*/}
-                    {/*    <div className="absolute -translate-x-[300%] transition group-hover:translate-x-0">*/}
-                    {/*        <svg*/}
-                    {/*            width="15"*/}
-                    {/*            height="15"*/}
-                    {/*            viewBox="0 0 15 15"*/}
-                    {/*            fill="none"*/}
-                    {/*            xmlns="http://www.w3.org/2000/svg"*/}
-                    {/*            className="h-5 w-5"*/}
-                    {/*        >*/}
-                    {/*            <path*/}
-                    {/*                d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"*/}
-                    {/*                fill="currentColor"*/}
-                    {/*                fill-rule="evenodd"*/}
-                    {/*                clip-rule="evenodd"*/}
-                    {/*            ></path>*/}
-                    {/*        </svg>*/}
-                    {/*    </div>*/}
-                    {/*</motion.button>*/}
+                    {/*    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab dicta ipsam iure laborum pariatur.*/}
+                    {/*</motion.p>*/}
                 </header>
-                <main className="mt-8 max-md:max-w-full">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-        {news.slice(0, 4).map((newsItem) => (
-          <motion.div
-            key={newsItem.id}
-            initial="hidden"
-            animate={isInView5 ? "visible" : "hidden"}
-            variants={animationVariants}
-            className='bg-white'
-          >
-            <NewsCard
-                id={newsItem.id}
-              title={newsItem.title}
-              image={newsItem.images[0].image_path}
-              description={newsItem.description}
-              category={newsItem.category.title}
-            />
-          </motion.div>
-        ))}
-      </div>
-    </main>
+                <main className="mt-8 max-md:max-w-full flex flex-col items-center">
+                    <div className="w-full">
+                        <Slider {...settings}>
+                            {news.map((newsItem) => (
+                                <motion.div
+                                    key={newsItem.id}
+                                    initial="hidden"
+                                    animate={isInView5 ? "visible" : "hidden"}
+                                    variants={animationVariants}
+                                    className='px-2' // Padding qo'shamiz, slaydlar orasidagi bo'shliq uchun
+                                >
+                                    <NewsCard
+                                        id={newsItem.id}
+                                        title={newsItem.title}
+                                        image={newsItem.images[0].image_path}
+                                        description={newsItem.description}
+                                        category={newsItem.category.title}
+                                        className="bg-white"
+                                    />
+                                </motion.div>
+                            ))}
+                        </Slider>
+                    </div>
+                    <div className="mt-[25px]">
+                        <button onClick={handleViewAll} className="view-all-btn">
+                            {/* PNG pattern overlay */}
+                            <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
+                            View all news
+                        </button>
+                    </div>
+                </main>
             </div>
         </section>
     );

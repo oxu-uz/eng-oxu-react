@@ -30,7 +30,7 @@ const AcademicCalendar = () => {
                                 />
                             </div>
                             <motion.h1
-                                className="title p-5 bg-[#012C6E]/90 text-[35px] mt-5"
+                                className="title p-5 bg-[#012152]/90 text-[35px] mt-5"
                                 initial={{y: -50, opacity: 0}}
                                 animate={{y: 0, opacity: 1}}
                                 transition={{duration: 1}}
@@ -50,7 +50,7 @@ const AcademicCalendar = () => {
                             <div className="flex my-10 justify-between items-center w-full">
                                 <div
                                     className="_row self-start  text-left  promo-section _with-indent4 builder-section--bottom0">
-                                    <div className="h-2 bg-[#012C6E] w-20"></div>
+                                    <div className="h-2 bg-[#012152] w-20"></div>
                                     <h2 className="builder-section__title text-white">Brochures</h2>
                                     <div className="b-row">
                                         <div className="b-row__item  b-row__item--size_4">

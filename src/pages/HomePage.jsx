@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import CampusSection from "../components/home/CampusSection.jsx";
 import NewsAndEvents from "../components/home/NewsAndEvents.jsx";
 import FadeIn, {FadeInStagger} from "../components/FadeIn.jsx";
@@ -8,12 +8,15 @@ import Section1 from "../components/home/Section1.jsx";
 import ChooseUs from "../components/home/ChooseUs.jsx";
 import EmbarkJourneySec from "../components/home/EmbarkJourneySec.jsx";
 import CountUpSec from "../components/home/CountUpSec.jsx";
-
+import ContactUs from "../components/home/ContactUs.jsx";
 
 const HomePage = () => {
     const [isCarouselVisible, setCarouselVisible] = useState(false);
+    const [isBackgroundLoaded, setBackgroundLoaded] = useState(false);
+    const homeRef = useRef(null);
 
     useEffect(() => {
+        // Handle scroll for carousel visibility
         const handleScroll = () => {
             const scrollThreshold = window.innerHeight * 0.2;
             if (window.scrollY > scrollThreshold) {
@@ -29,19 +32,51 @@ const HomePage = () => {
         };
     }, []);
 
+    useEffect(() => {
+        // Lazy load background image using IntersectionObserver
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setBackgroundLoaded(true);
+                    observer.disconnect(); // Stop observing once loaded
+                }
+            },
+            {rootMargin: '100px'} // Load slightly before the element is in view
+        );
+
+        if (homeRef.current) {
+            observer.observe(homeRef.current);
+        }
+
+        return () => {
+            if (homeRef.current) {
+                observer.unobserve(homeRef.current);
+            }
+        };
+    }, []);
+
     return (
-        <div style={{backgroundImage: "url(/header1.png)"}}>
+        <div
+            ref={homeRef}
+            style={{
+                // backgroundImage: isBackgroundLoaded ? "url(/header1.png)" : 'none',
+                // minHeight: '100vh', // Ensure the div has enough height
+            }}
+            className="bg-white"
+        >
             <Section1/>
 
             <FadeInStagger>
                 <FadeIn>
-                    <NewsAndEvents/>
+                    <ChooseUs/>
                 </FadeIn>
             </FadeInStagger>
 
+            <div className="flex items-center justify-center w-full h-[50px]"/>
+
             <FadeInStagger>
                 <FadeIn>
-                    <ChooseUs/>
+                    <NewsAndEvents/>
                 </FadeIn>
             </FadeInStagger>
 
@@ -53,13 +88,13 @@ const HomePage = () => {
 
             <FadeInStagger>
                 <FadeIn>
-                    <Testimonials/>
+                    <CampusSection/>
                 </FadeIn>
             </FadeInStagger>
 
             <FadeInStagger>
                 <FadeIn>
-                    <CampusSection/>
+                    <Testimonials/>
                 </FadeIn>
             </FadeInStagger>
 
@@ -69,9 +104,15 @@ const HomePage = () => {
                 </FadeIn>
             </FadeInStagger>
 
+            {/*<FadeInStagger>*/}
+            {/*    <FadeIn>*/}
+            {/*        <InfiniteLogoSlider />*/}
+            {/*    </FadeIn>*/}
+            {/*</FadeInStagger>*/}
+
             <FadeInStagger>
                 <FadeIn>
-                    <InfiniteLogoSlider/>
+                    <ContactUs/>
                 </FadeIn>
             </FadeInStagger>
         </div>

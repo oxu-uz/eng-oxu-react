@@ -83,7 +83,7 @@ const Vision = () => {
                                     />
                                 </div>
                                 <motion.h1
-                                    className="title p-5 bg-[#012C6E]/90 text-[22px] mt-5"
+                                    className="title p-5 bg-[#012152]/90 text-[22px] mt-5"
                                     initial={{y: -50, opacity: 0}}
                                     animate={{y: 0, opacity: 1}}
                                     transition={{duration: 1}}

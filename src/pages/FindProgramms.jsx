@@ -39,7 +39,7 @@ const FindPrograms = () => {
                     <main
                         className="grid gap-x-10 gap-y-8 lg:grid-cols-2 place-items-center pt-12 pb-8 md:pt-12 md:pb-24">
                         <div className="order-2 lg:order-1">
-                            <div className="divider mb-3 h-[5px] w-[100px] bg-[#012C6E]"/>
+                            <div className="divider mb-3 h-[5px] w-[100px] bg-[#012152]"/>
                             <h1 className="text-white uppercase font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl">
                                 In Partnership with Western University of Science and Technology (WUST), USA
                             </h1>
@@ -99,7 +99,7 @@ const FindPrograms = () => {
             <div className="flex flex-col lg:flex-row px-4 sm:px-6 lg:px-10 gap-6 lg:gap-10 mb-5">
                 {/* Cards Section - Updated with WUST partnership benefits */}
                 <div className="w-full lg:w-1/2 order-2 lg:order-1 py-6 sm:py-8 lg:py-8">
-                    <div className="bg-[#012C6E] text-white p-6 rounded-xl mb-6">
+                    <div className="bg-[#012152] text-white p-6 rounded-xl mb-6">
                         <h2 className="text-2xl font-bold mb-4">Why Study at AIU + WUST (USA)?</h2>
                         <ul className="space-y-3">
                             {[
@@ -110,7 +110,7 @@ const FindPrograms = () => {
                                 "Student Visa Support: Guidance for smooth transfer and F-1 visa application process"
                             ].map((item, index) => (
                                 <li key={index} className="flex items-start">
-                                    <span className="inline-block bg-white text-[#012C6E] rounded-full w-5 h-5 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
+                                    <span className="inline-block bg-white text-[#012152] rounded-full w-5 h-5 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
                                     {item}
                                 </li>
                             ))}

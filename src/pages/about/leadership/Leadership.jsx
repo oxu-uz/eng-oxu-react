@@ -35,7 +35,7 @@ const Leadership = () => {
                         </div>
                     </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#012c6e] to-transparent opacity-90"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#012152] to-transparent opacity-90"></div>
             </section>
 
             {/* Rector Profile Section */}
@@ -55,7 +55,7 @@ const Leadership = () => {
                         <div className="md:w-2/3 p-6 md:p-8">
                             <div className="mb-6">
                                 <h2 className="text-2xl md:text-3xl font-bold text-[#012152]">Dexkanov Suxrob Sobirovich</h2>
-                                <div className="w-36 h-1 bg-[#012c6e] my-3"></div>
+                                <div className="w-36 h-1 bg-[#012152] my-3"></div>
                                 <p className="text-gray-700 font-medium text-lg">
                                     Founding Rector of Asia International University
                                 </p>
@@ -101,7 +101,7 @@ const Leadership = () => {
                         <h3 className="text-xl font-bold text-[#012152] mb-4 border-b pb-2">Education</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start">
-                                <div className="bg-[#012c6e] text-white rounded-full p-2 mr-3">
+                                <div className="bg-[#012152] text-white rounded-full p-2 mr-3">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
@@ -112,7 +112,7 @@ const Leadership = () => {
                                 </div>
                             </li>
                             <li className="flex items-start">
-                                <div className="bg-[#012c6e] text-white rounded-full p-2 mr-3">
+                                <div className="bg-[#012152] text-white rounded-full p-2 mr-3">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
@@ -129,7 +129,7 @@ const Leadership = () => {
                     <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
                         <h3 className="text-xl font-bold text-[#012152] mb-4 border-b pb-2">Office Hours</h3>
                         <div className="flex items-start">
-                            <div className="bg-[#012c6e] text-white rounded-full p-2 mr-3">
+                            <div className="bg-[#012152] text-white rounded-full p-2 mr-3">
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -146,7 +146,7 @@ const Leadership = () => {
                 <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-12">
                     <h3 className="text-xl font-bold text-[#012152] mb-4 border-b pb-2">Office Address</h3>
                     <div className="flex items-start">
-                        <div className="bg-[#012c6e] text-white rounded-full p-2 mr-3">
+                        <div className="bg-[#012152] text-white rounded-full p-2 mr-3">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />

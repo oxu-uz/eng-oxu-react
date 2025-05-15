@@ -261,7 +261,7 @@ const MidNav = () => {
 
     return (
         <>
-            <div className="top-nav md:hidden bg-[#012c6e] lg:px-10 px-5 overflow-hidden h-[120px] relative flex justify-between">
+            <div className="top-nav md:hidden bg-[#012152] lg:px-10 px-5 overflow-hidden h-[120px] relative flex justify-between">
                 <img src={logo} className="lg:h-20 h-[68px] lg:my-auto my-0 mt-2 z-10"/>
 
                 <div className='flex gap-5 items-center'>

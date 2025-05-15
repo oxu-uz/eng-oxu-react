@@ -34,7 +34,7 @@ const InternationalRelations = () => {
             {/* Hero Section */}
             <section style={{height:'450px'}} className="relative page-heading-content mb-12" data-cid="714">
                 <img className="bg-image object-cover" src="/international-office-bg.jpg" alt="International Relations Office"/>
-                <div className="absolute inset-0 bg-[#012c6e]/60"></div>
+                <div className="absolute inset-0 bg-[#012152]/60"></div>
                 <div className="heading-content relative">
                     <div className="container mx-auto px-5 title">
                         <h1 className="text-4xl md:text-5xl font-bold text-white">International Relations Office</h1>
@@ -71,7 +71,7 @@ const InternationalRelations = () => {
                             <div className="relative">
                                 <img
                                     src="/structureUni/fotor-20250505122327.png"
-                                    className="w-48 h-48 object-cover rounded-full border-4 border-[#012c6e]"
+                                    className="w-48 h-48 object-cover rounded-full border-4 border-[#012152]"
                                     alt="Head of International Relations"
                                 />
                                 <div className="absolute inset-0 rounded-full border-2 border-white -m-1"></div>
@@ -79,13 +79,13 @@ const InternationalRelations = () => {
 
                             <div className="flex-1">
                                 <div className="mb-6">
-                                    <h2 className="text-2xl font-bold text-[#012c6e]">Inoyatov Boymurod Negmurodovich</h2>
+                                    <h2 className="text-2xl font-bold text-[#012152]">Inoyatov Boymurod Negmurodovich</h2>
                                     <p className="text-lg text-gray-700 font-medium mt-1">Head of International Relations</p>
                                 </div>
 
                                 <div className="space-y-5">
                                     <div className="flex items-start">
-                                        <Briefcase className="text-[#012c6e] mt-1 mr-3 flex-shrink-0" size={20}/>
+                                        <Briefcase className="text-[#012152] mt-1 mr-3 flex-shrink-0" size={20}/>
                                         <div>
                                             <h4 className="font-semibold text-gray-800">Work Schedule</h4>
                                             <p className="text-gray-600">Monday to Friday: 09:00 - 18:00</p>
@@ -93,7 +93,7 @@ const InternationalRelations = () => {
                                     </div>
 
                                     <div className="flex items-start">
-                                        <MapPin className="text-[#012c6e] mt-1 mr-3 flex-shrink-0" size={20}/>
+                                        <MapPin className="text-[#012152] mt-1 mr-3 flex-shrink-0" size={20}/>
                                         <div>
                                             <h4 className="font-semibold text-gray-800">Office Address</h4>
                                             <p className="text-gray-600">
@@ -105,7 +105,7 @@ const InternationalRelations = () => {
                                     </div>
 
                                     <div className="flex items-start">
-                                        <Clock className="text-[#012c6e] mt-1 mr-3 flex-shrink-0" size={20}/>
+                                        <Clock className="text-[#012152] mt-1 mr-3 flex-shrink-0" size={20}/>
                                         <div>
                                             <h4 className="font-semibold text-gray-800">Contact Information</h4>
                                             <p className="text-gray-600">+998 (99) 224-00-09</p>
@@ -116,8 +116,8 @@ const InternationalRelations = () => {
                         </div>
 
                         <div className="mt-12 pt-8 border-t border-gray-200">
-                            <h2 className="text-xl font-bold text-[#012c6e] mb-6 flex items-center">
-                                <GraduationCap className="mr-3 text-[#012c6e]" size={24}/>
+                            <h2 className="text-xl font-bold text-[#012152] mb-6 flex items-center">
+                                <GraduationCap className="mr-3 text-[#012152]" size={24}/>
                                 Academic Background
                             </h2>
 
@@ -145,8 +145,8 @@ const InternationalRelations = () => {
 
                     {/* Department Overview Card */}
                     <div className="bg-white rounded-lg shadow-md p-8">
-                        <h2 className="text-2xl font-bold text-[#012c6e] mb-6 flex items-center">
-                            <Globe className="mr-3 text-[#012c6e]" size={24}/>
+                        <h2 className="text-2xl font-bold text-[#012152] mb-6 flex items-center">
+                            <Globe className="mr-3 text-[#012152]" size={24}/>
                             About Our Department
                         </h2>
                         <div className="prose max-w-none text-gray-700">
@@ -161,13 +161,13 @@ const InternationalRelations = () => {
 
                     {/* Key Focus Areas */}
                     <div className="bg-white rounded-lg shadow-md p-8">
-                        <h2 className="text-2xl font-bold text-[#012c6e] mb-6">Key Focus Areas</h2>
+                        <h2 className="text-2xl font-bold text-[#012152] mb-6">Key Focus Areas</h2>
 
                         <div className="grid md:grid-cols-2 gap-6">
                             {/* Global Partnerships */}
                             <div className="border-l-4 border-blue-700 pl-4">
                                 <div className="flex items-center mb-3">
-                                    <Users className="text-[#012c6e] mr-3" size={20}/>
+                                    <Users className="text-[#012152] mr-3" size={20}/>
                                     <h3 className="text-xl font-semibold text-gray-800">Global Partnerships</h3>
                                 </div>
                                 <p className="text-gray-700">
@@ -178,7 +178,7 @@ const InternationalRelations = () => {
                             {/* Academic Mobility */}
                             <div className="border-l-4 border-blue-700 pl-4">
                                 <div className="flex items-center mb-3">
-                                    <Globe className="text-[#012c6e] mr-3" size={20}/>
+                                    <Globe className="text-[#012152] mr-3" size={20}/>
                                     <h3 className="text-xl font-semibold text-gray-800">Academic Mobility</h3>
                                 </div>
                                 <p className="text-gray-700">
@@ -189,7 +189,7 @@ const InternationalRelations = () => {
                             {/* International Accreditation */}
                             <div className="border-l-4 border-blue-700 pl-4">
                                 <div className="flex items-center mb-3">
-                                    <Award className="text-[#012c6e] mr-3" size={20}/>
+                                    <Award className="text-[#012152] mr-3" size={20}/>
                                     <h3 className="text-xl font-semibold text-gray-800">International Accreditation</h3>
                                 </div>
                                 <p className="text-gray-700">
@@ -200,7 +200,7 @@ const InternationalRelations = () => {
                             {/* Global Research */}
                             <div className="border-l-4 border-blue-700 pl-4">
                                 <div className="flex items-center mb-3">
-                                    <BookOpen className="text-[#012c6e] mr-3" size={20}/>
+                                    <BookOpen className="text-[#012152] mr-3" size={20}/>
                                     <h3 className="text-xl font-semibold text-gray-800">Global Research & Policy</h3>
                                 </div>
                                 <p className="text-gray-700">
@@ -221,7 +221,7 @@ const InternationalRelations = () => {
                 <aside className="w-full md:w-1/3">
                     <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
                         <ul className="divide-y divide-gray-200">
-                            <li className="p-4 bg-[#012c6e] text-white">
+                            <li className="p-4 bg-[#012152] text-white">
                                 <h3 className="font-bold text-lg">International Programs</h3>
                             </li>
                             {navItems.map((item, index) => (
@@ -229,7 +229,7 @@ const InternationalRelations = () => {
                                     <Link
                                         to={item.path}
                                         target={item.path.startsWith('http') ? '_blank' : '_self'}
-                                        className={`block p-4 hover:bg-blue-50 transition-colors ${location.pathname === item.path ? 'text-[#012c6e] font-medium' : 'text-gray-700'}`}
+                                        className={`block p-4 hover:bg-blue-50 transition-colors ${location.pathname === item.path ? 'text-[#012152] font-medium' : 'text-gray-700'}`}
                                     >
                                         {item.label}
                                     </Link>
@@ -240,7 +240,7 @@ const InternationalRelations = () => {
 
                     {/* Partner Universities Section */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div className="p-4 bg-[#012c6e] text-white">
+                        <div className="p-4 bg-[#012152] text-white">
                             <h3 className="font-bold text-lg">Partner Universities/Organizations</h3>
                         </div>
                         <div className="p-6">

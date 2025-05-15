@@ -203,6 +203,27 @@
     transition: all 0.3s ease;
 }
 
+.view-all-btn {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #012c6e, #012152);
+    color: white;
+    width: 300px;
+    padding: 14px 32px;
+    font-size: 20px;
+    /*font-weight: bold;*/
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0, 123, 255, 0.7);
+    /*animation: pulse 2s infinite;*/
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+    transform: scale(1.07);
+}
+
 .apply-now-btn:hover {
     transform: scale(1.07);
     box-shadow: 0 10px 20px rgba(0, 123, 255, 0.4);

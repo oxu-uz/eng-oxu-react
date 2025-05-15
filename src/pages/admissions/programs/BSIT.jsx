@@ -24,7 +24,7 @@ const Bsit = () => {
                     src="/bsit.jpg"
                     alt="Tech team collaborating on project"
                 />
-                <div className="absolute inset-0 bg-[#012c6e]/70 flex flex-col justify-end">
+                <div className="absolute inset-0 bg-[#012152]/70 flex flex-col justify-end">
                     <div className="container mx-auto px-4 md:px-6">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
@@ -100,7 +100,7 @@ const Bsit = () => {
                         transition={{ delay: 0.5, duration: 0.5 }}
                         className="space-y-6"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             Key Highlights
                         </h2>
 
@@ -148,7 +148,7 @@ const Bsit = () => {
                         transition={{ delay: 1.2, duration: 0.5 }}
                         className="space-y-4"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             Study Options
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
@@ -172,7 +172,7 @@ const Bsit = () => {
                         transition={{ delay: 1.3, duration: 0.5 }}
                         className="space-y-4"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             Career Opportunities
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
@@ -189,7 +189,7 @@ const Bsit = () => {
                         transition={{ delay: 1.4, duration: 0.5 }}
                         className="space-y-4"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             Admission Requirements
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
@@ -210,7 +210,7 @@ const Bsit = () => {
                         transition={{ delay: 1.5, duration: 0.5 }}
                         className="space-y-4"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             How to Apply
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">
@@ -233,7 +233,7 @@ const Bsit = () => {
                         transition={{ delay: 1.6, duration: 0.5 }}
                         className="space-y-4"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             Become a Tech Innovator
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg shadow-sm">

@@ -56,7 +56,7 @@ const CustomCarousel = () => {
                             }}
                         >
                             <span
-                                className="absolute left-10 mx-auto max-w-max bg-[#012C6E] text-white text-xs p-1 px-1.5 z-10 top-[-12px]">CAMPUS</span>
+                                className="absolute left-10 mx-auto max-w-max bg-[#012152] text-white text-xs p-1 px-1.5 z-10 top-[-12px]">CAMPUS</span>
                             {/* Слой с градиентом */}
                             <div
                                 style={{
@@ -65,7 +65,7 @@ const CustomCarousel = () => {
                                     left: 0,
                                     right: 0,
                                     height: '220px', // Высота градиента меньше половины
-                                    background: 'linear-gradient(to top, #012C6E, rgba(4, 36, 123, 0.4), rgba(4, 36, 123, 0))',
+                                    background: 'linear-gradient(to top, #012152, rgba(4, 36, 123, 0.4), rgba(4, 36, 123, 0))',
                                     zIndex: 1,
                                     transition: 'all 0.3s ease', // Плавный переход для анимаций
                                 }}

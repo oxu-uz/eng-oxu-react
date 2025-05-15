@@ -165,14 +165,14 @@ const RegulatoryDocuments = () => {
                                 variants={item}
                                 whileHover={{
                                     scale: 1.01,
-                                    backgroundColor: "#012c6e",
+                                    backgroundColor: "#012152",
                                 }}
                                 whileTap={{scale: 0.98}}
                                 className="group sideNav-links transition-colors cursor-pointer"
                             >
                                 <div className="px-6 py-4 flex items-center">
                                     <div className="flex-shrink-0 bg-blue-100 p-2 rounded-lg mr-4">
-                                        <FileText className="text-[#012c6e]" size={18}/>
+                                        <FileText className="text-[#012152]" size={18}/>
                                     </div>
                                     <span className="text-gray-800 font-medium group-hover:text-white">
             {docName}

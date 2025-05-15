@@ -10,7 +10,7 @@ function CountUpSec(props) {
     return (
         <section className="h-auto sm:h-[360px] bg-cover w-full flex items-center bg-fixed"
                  style={{backgroundImage: "url('/IMG_7687.JPG')"}}>
-            <div className="w-full h-full flex items-center bg-[#012c6e]/70">
+            <div className="w-full h-full flex items-center bg-[#012152]/70">
                 <div className="container mx-auto px-4 sm:px-8">
                     {/* Statistics Section */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-16">

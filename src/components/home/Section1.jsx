@@ -35,14 +35,6 @@ function Section1(props) {
         },
     ];
 
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % slides.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-    };
-
     const navItems = [
         { type: "logo", src: "/logo_aiu.svg", src1: "/new_logo.svg", alt: "University Logo", link: "/" },
         {
@@ -133,123 +125,125 @@ function Section1(props) {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
         }}>
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 -z-10"/>
-            <motion.nav
-                className="lg:block hidden py-5"
-                variants={navVariants}
-                animate={isNavHovered || isMenuOpen ? "hovered" : "transparent"}
-                onMouseEnter={() => setIsNavHovered(true)}
-                onMouseLeave={() => setIsNavHovered(false)}
-            >
-                <div className="mx-auto w-full flex h-full justify-center">
-                    <div className="flex w-full items-center">
-                        {navItems.map((item, index) => (
-                            <div key={index} className="group flex relative">
-                                {item.type === "logo" ? (
-                                    <a
-                                        href={item.link}
-                                        className="flex items-center px-4 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
-                                    >
-                                        <img
-                                            src={isNavHovered ? item.src : item.src1}
-                                            alt={item.alt}
-                                            className="object-contain"
-                                        />
-                                    </a>
-                                ) : item.dropdown ? (
-                                    <Menu
-                                        allowHover
-                                        animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
-                                        onOpen={() => setIsMenuOpen(true)}
-                                        onClose={() => setIsMenuOpen(false)}
-                                    >
-                                        <MenuHandler>
-                                            <div
-                                                className={`${isNavHovered || isMenuOpen ? 'text-white' : 'text-[#012152]'} hover:text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg`}
-                                            >
-                                                {item.label} <ChevronDown strokeWidth={1.2} size="20"/>
-                                            </div>
-                                        </MenuHandler>
-                                        <MenuList
-                                            className="absolute left-0 mt-2 overflow-hidden min-w-80 rounded-md bg-white shadow-lg">
-                                            {item.dropdown.map((dropdownItem, i) => (
-                                                <div key={i}
-                                                     className="relative group outline-none right-0 hover:outline-none">
-                                                    {dropdownItem.submenu ? (
-                                                        <Menu
-                                                            animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
-                                                            placement="right-start"
-                                                            onOpen={() => setIsMenuOpen(true)}
-                                                            onClose={() => setIsMenuOpen(false)}
-                                                        >
-                                                            <MenuHandler>
-                                                                <MenuItem
-                                                                    className="text-[#012152] hover:bg-blue-50 group flex justify-between items-center transition-colors duration-300"
-                                                                >
-                                                                    {dropdownItem.label} <ChevronRight
-                                                                    className="transition-transform group-hover:-translate-x-1/2"
-                                                                    size="16"/>
-                                                                </MenuItem>
-                                                            </MenuHandler>
-                                                            <MenuList
-                                                                className="absolute left-full top-0 mt-[-8px] overflow-hidden min-w-80 rounded-md bg-white shadow-lg"
-                                                            >
-                                                                {dropdownItem.submenu.map((submenuItem, j) => (
-                                                                    <a href={submenuItem.link}
-                                                                       className="outline-none ring-0">
-                                                                        <MenuItem key={j}
-                                                                                  className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
-                                                                            {submenuItem.label}
-                                                                        </MenuItem>
-                                                                    </a>
-                                                                ))}
-                                                            </MenuList>
-                                                        </Menu>
-                                                    ) : (
-                                                        <a className="outline-none ring-0" href={dropdownItem.link}>
-                                                            <MenuItem
-                                                                className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
-                                                                {dropdownItem.label}
-                                                            </MenuItem>
-                                                        </a>
-                                                    )}
+            <div>
+                <motion.nav
+                    className="lg:block hidden py-5"
+                    variants={navVariants}
+                    animate={isNavHovered || isMenuOpen ? "hovered" : "transparent"}
+                    onMouseEnter={() => setIsNavHovered(true)}
+                    onMouseLeave={() => setIsNavHovered(false)}
+                >
+                    <div>
+                        <div className="flex w-full md:w-full items-center justify-center">
+                            {navItems.map((item, index) => (
+                                <div key={index} className="group flex relative">
+                                    {item.type === "logo" ? (
+                                        <a
+                                            href={item.link}
+                                            className="flex items-center px-4 py-2"
+                                        >
+                                            <img
+                                                src={isNavHovered ? item.src : item.src1}
+                                                alt={item.alt}
+                                                className="object-contain"
+                                            />
+                                        </a>
+                                    ) : item.dropdown ? (
+                                        <Menu
+                                            allowHover
+                                            animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
+                                            onOpen={() => setIsMenuOpen(true)}
+                                            onClose={() => setIsMenuOpen(false)}
+                                        >
+                                            <MenuHandler>
+                                                <div
+                                                    className={`${isNavHovered || isMenuOpen ? 'text-white' : 'text-[#012152]'} hover:text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg`}
+                                                >
+                                                    {item.label} <ChevronDown strokeWidth={1.2} size="20"/>
                                                 </div>
-                                            ))}
-                                        </MenuList>
-                                    </Menu>
-                                ) : (
-                                    <a
-                                        href={item.link}
-                                        className={`${isNavHovered || isMenuOpen ? 'text-white' : 'text-[#012152]'} hover:text-white uppercase nav-link flex items-center shadow-none outline-none ring-0 px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg`}
-                                    >
-                                        {item.label}
-                                    </a>
-                                )}
-                            </div>
-                        ))}
+                                            </MenuHandler>
+                                            <MenuList
+                                                className="absolute left-0 mt-2 overflow-hidden min-w-80 rounded-md bg-white shadow-lg">
+                                                {item.dropdown.map((dropdownItem, i) => (
+                                                    <div key={i}
+                                                         className="relative group outline-none right-0 hover:outline-none">
+                                                        {dropdownItem.submenu ? (
+                                                            <Menu
+                                                                animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
+                                                                placement="right-start"
+                                                                onOpen={() => setIsMenuOpen(true)}
+                                                                onClose={() => setIsMenuOpen(false)}
+                                                            >
+                                                                <MenuHandler>
+                                                                    <MenuItem
+                                                                        className="text-[#012152] hover:bg-blue-50 group flex justify-between items-center transition-colors duration-300"
+                                                                    >
+                                                                        {dropdownItem.label} <ChevronRight
+                                                                        className="transition-transform group-hover:-translate-x-1/2"
+                                                                        size="16"/>
+                                                                    </MenuItem>
+                                                                </MenuHandler>
+                                                                <MenuList
+                                                                    className="absolute left-full top-0 mt-[-8px] overflow-hidden min-w-80 rounded-md bg-white shadow-lg"
+                                                                >
+                                                                    {dropdownItem.submenu.map((submenuItem, j) => (
+                                                                        <a href={submenuItem.link}
+                                                                           className="outline-none ring-0">
+                                                                            <MenuItem key={j}
+                                                                                      className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
+                                                                                {submenuItem.label}
+                                                                            </MenuItem>
+                                                                        </a>
+                                                                    ))}
+                                                                </MenuList>
+                                                            </Menu>
+                                                        ) : (
+                                                            <a className="outline-none ring-0" href={dropdownItem.link}>
+                                                                <MenuItem
+                                                                    className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
+                                                                    {dropdownItem.label}
+                                                                </MenuItem>
+                                                            </a>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </MenuList>
+                                        </Menu>
+                                    ) : (
+                                        <a
+                                            href={item.link}
+                                            className={`${isNavHovered || isMenuOpen ? 'text-white' : 'text-[#012152]'} hover:text-white uppercase nav-link flex items-center shadow-none outline-none ring-0 px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg`}
+                                        >
+                                            {item.label}
+                                        </a>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </motion.nav>
+                </motion.nav>
 
-            <section className="relative w-full min-h-[100vh] overflow-hidden">
-                <div className="absolute inset-0">
-                    <div
-                        className="relative flex h-full flex-col items-start justify-center w-full z-20 text-white px-6 md:px-12 py-6 md:py-0">
-                        <div className="max-w-3xl text-left bg-black bg-opacity-25 p-6 md:p-8">
-                            <h1 className="text-2xl md:text-3xl font-extrabold uppercase mb-3 md:mb-5">
-                                {slides[currentIndex].title}
-                            </h1>
-                            <p className="text-xs md:text-xl mb-6">
-                                {slides[currentIndex].description}
-                            </p>
-                            <button onClick={() => props.navigate('/international-form')} className="apply-now-btn">
-                                {slides[currentIndex].cta}
-                            </button>
+                <div className="relative w-full min-h-[100vh] overflow-hidden">
+                    <div className="absolute inset-0">
+                        <div
+                            className="relative flex h-full flex-col items-start justify-center w-full z-20 text-white px-6 md:px-12 py-6 md:py-0">
+                            <div className="max-w-3xl text-left bg-black bg-opacity-25 p-6 md:p-8">
+                                <h1 className="text-2xl md:text-3xl font-extrabold uppercase mb-3 md:mb-5">
+                                    {slides[currentIndex].title}
+                                </h1>
+                                <p className="text-xs md:text-xl mb-6">
+                                    {slides[currentIndex].description}
+                                </p>
+                                <button onClick={() => props.navigate('/international-form')} className="apply-now-btn">
+                                    {/* PNG pattern overlay */}
+                                    <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
+                                    {slides[currentIndex].cta}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     );
 }

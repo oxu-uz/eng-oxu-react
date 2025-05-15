@@ -750,7 +750,7 @@ const FAQSection = () => {
                                         </motion.div>
                                         <Title level={3} style={{
                                             margin: 0,
-                                            color: "#012c6e"
+                                            color: "#012152"
                                         }}>
                                             {category.title}
                                         </Title>
@@ -833,7 +833,7 @@ const FAQSection = () => {
                                                 </motion.div>
                                                 <Title level={4} style={{
                                                     margin: 0,
-                                                    color: "#012c6e"
+                                                    color: "#012152"
                                                 }}>
                                                     {category.sub.title}
                                                 </Title>

@@ -60,6 +60,7 @@ import BSBA from "../pages/admissions/programs/BSBA.jsx";
 import BSIT from "../pages/admissions/programs/BSIT.jsx";
 import MBA from "../pages/admissions/programs/MBA.jsx";
 import CampusDetailPage from "../components/home/CampusDetailPage.jsx";
+import AllNewsPage from "../components/home/AllNewsPage.jsx";
 
 
 const router = createBrowserRouter([
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
                         <StudentDashboard/>
                     </ProtectedRoute>
                 )
+            },
+            {
+                path: '/news/all',
+                element: <AllNewsPage/>
             },
             {
                 path: '/news/:id',

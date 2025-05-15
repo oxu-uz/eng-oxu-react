@@ -25,7 +25,7 @@ function IntHome() {
                         {" "}
 
                         <div>
-                            <div className="divider mb-3 h-[5px] w-[100px] bg-[#012C6E]"/>
+                            <div className="divider mb-3 h-[5px] w-[100px] bg-[#012152]"/>
                             <h1
                                 data-wow-offset={10}
                                 data-wow-delay="0.5s"
@@ -321,7 +321,7 @@ function IntHome() {
                             <Link
                                 target="_blank"
                                 to="/international-form"
-                                className="px-5 py-2.5 overflow-hidden button-lg rounded-md group bg-[#012c6e] relative hover:bg-gradient-to-r hover:from-[#012c6e] hover:to-[#0d1f3b] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[#182f53] transition-all ease-out duration-300"
+                                className="px-5 py-2.5 overflow-hidden button-lg rounded-md group bg-[#012152] relative hover:bg-gradient-to-r hover:from-[#012c6e] hover:to-[#012152] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[#182f53] transition-all ease-out duration-300"
                             >
                   <span
                       className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"/>
@@ -337,7 +337,7 @@ function IntHome() {
             <div
                 className="mx-auto grid max-w-full grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-14 sm:px-6 sm:py-12 lg:max-w-full lg:grid-cols-2 lg:px-12">
                 <div>
-                    <div className="divider mb-3 h-[5px] w-[80px] bg-[#012C6E]"/>
+                    <div className="divider mb-3 h-[5px] w-[80px] bg-[#012152]"/>
                     <h2 className="text-3xl title-text font-bold tracking-tight sm:text-4xl">
                         Unlocking the Art of Healing
                     </h2>

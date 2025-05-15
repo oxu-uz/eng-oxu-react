@@ -7,7 +7,7 @@ function ResearchAndPublications() {
         <Box sx={{ maxWidth: 1200, margin: '0 auto', p: 4 }}>
             {/* Hero Section */}
             <Box sx={{ textAlign: 'center', mb: 6 }}>
-                <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold', color: '#012c6e' }}>
+                <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold', color: '#012152' }}>
                     Research and Publications
                 </Typography>
                 <Typography variant="h5" component="p" sx={{ color: '#292929'}}>
@@ -18,7 +18,7 @@ function ResearchAndPublications() {
             {/* Introduction */}
             <Box sx={{ mb: 6 }}>
                 <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'medium', display: 'flex', alignItems: 'center' }}>
-                    <Science sx={{ mr: 2, color: '#012c6e',fontSize: 40 }} />
+                    <Science sx={{ mr: 2, color: '#012152',fontSize: 40 }} />
                     Research at AIU
                 </Typography>
                 <Typography variant="body1" paragraph>
@@ -34,7 +34,7 @@ function ResearchAndPublications() {
             {/* Faculty Section */}
             <Box sx={{ mb: 6 }}>
                 <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'medium', display: 'flex', alignItems: 'center' }}>
-                    <School sx={{ mr: 2, color: '#012c6e',fontSize: 40 }} />
+                    <School sx={{ mr: 2, color: '#012152',fontSize: 40 }} />
                     For Faculty Members
                 </Typography>
                 <Typography variant="body1" paragraph>
@@ -67,7 +67,7 @@ function ResearchAndPublications() {
             {/* Student Section */}
             <Box sx={{ mb: 6 }}>
                 <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'medium', display: 'flex', alignItems: 'center' }}>
-                    <Groups sx={{ mr: 2, color: '#012c6e',fontSize: 40 }} />
+                    <Groups sx={{ mr: 2, color: '#012152',fontSize: 40 }} />
                     For Students
                 </Typography>
                 <Typography variant="body1" paragraph>
@@ -126,7 +126,7 @@ function ResearchAndPublications() {
             {/* Publications */}
             <Box sx={{ mb: 6 }}>
                 <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'medium', display: 'flex', alignItems: 'center' }}>
-                    <Article sx={{ mr: 2, color: '#012c6e',fontSize: 40 }} />
+                    <Article sx={{ mr: 2, color: '#012152',fontSize: 40 }} />
                     Publications
                 </Typography>
                 <Typography variant="body1" paragraph>
@@ -163,7 +163,7 @@ function ResearchAndPublications() {
 
             {/* Collaboration */}
             <Box sx={{ mb: 6, textAlign: 'center', p: 4, backgroundColor: 'action.hover', borderRadius: 2 }}>
-                <Handshake sx={{ fontSize: 60, color: '#012c6e', mb: 2 }} />
+                <Handshake sx={{ fontSize: 60, color: '#012152', mb: 2 }} />
                 <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'medium' }}>
                     Collaborate With Us
                 </Typography>

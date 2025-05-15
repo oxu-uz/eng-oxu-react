@@ -37,7 +37,6 @@ const campusData = [
 
 function CampusSection() {
     const ref3 = useRef(null);
-
     const isInView3 = useInView(ref3, {once: false});
 
     const cardVariants = {
@@ -46,7 +45,7 @@ function CampusSection() {
             opacity: 1,
             y: 0,
             transition: {
-                delay: i * 0.2, // Задержка появления для каждой карточки
+                delay: i * 0.2,
                 duration: 0.5,
                 ease: "easeOut",
             },
@@ -63,41 +62,42 @@ function CampusSection() {
     };
 
     return (
-        <section className=" py-20 px-8">
-            <div className=" mx-auto">
-                <div className="flex flex-col md:flex-row md:items-center md:gap-10">
-                    <div className="flex flex-col items-center flex-1">
-                        <motion.h2
-                            variants={textVariants}
-                            initial="hidden"
-                            animate={isInView3 ? "visible" : "hidden"}
-                            className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center mb-8"
-                        >
-                            Different Campuses – One University
-                            <span
-                                className="absolute left-1/2 bottom-0 translate-x-[-50%] w-[50%] h-[3px] bg-[#012c6e]"></span>
-                        </motion.h2>
-                        <motion.p
-                            variants={textVariants}
-                            initial="hidden"
-                            animate={isInView3 ? "visible" : "hidden"}
-                            className="text-2xl font-semibold w-[60%] text-[#012c6e] text-center leading-relaxed"
-                        >
-                            Explore our locations in Bukhara. Our campuses are united with features that encourage an
-                            innovative AIU lifestyle.
-                        </motion.p>
-                    </div>
+        <section className="py-20 px-4 sm:px-8">
+            <div className="mx-auto max-w-[1663px]">
+                {/* Header Section */}
+                <div className="flex flex-col items-center w-full mb-12">
+                    <motion.h2
+                        variants={textVariants}
+                        initial="hidden"
+                        animate={isInView3 ? "visible" : "hidden"}
+                        className="relative pb-4 text-3xl md:text-4xl font-extrabold title-text text-center"
+                    >
+                        Different Campuses – One University
+                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-[50%] h-[3px] bg-[#012152]"></span>
+                    </motion.h2>
+
+                    <motion.p
+                        variants={textVariants}
+                        initial="hidden"
+                        animate={isInView3 ? "visible" : "hidden"}
+                        className="mt-4 text-xl md:text-2xl font-semibold text-[#012152] text-center max-w-3xl leading-relaxed px-4"
+                    >
+                        Explore our locations in Bukhara. Our campuses are united with features that encourage an
+                        innovative AIU lifestyle.
+                    </motion.p>
                 </div>
-                <div ref={ref3} className="mt-12">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                        {campusData.slice(0, 5).map((campus, index) => (
+
+                {/* Campus Cards Grid */}
+                <div ref={ref3} className="w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 px-4">
+                        {campusData.map((campus, index) => (
                             <motion.div
                                 key={campus.id}
                                 custom={index}
                                 variants={cardVariants}
                                 initial="hidden"
                                 animate={isInView3 ? "visible" : "hidden"}
-                                className={'bg-white'}
+                                className="bg-white"
                             >
                                 <CampusCard {...campus} />
                             </motion.div>
@@ -106,7 +106,6 @@ function CampusSection() {
                 </div>
             </div>
         </section>
-
     );
 }
 

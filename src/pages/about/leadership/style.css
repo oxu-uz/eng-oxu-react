@@ -1,5 +1,5 @@
 .line {
-    background: #012c6e;
+    background: #012152;
     height: 3px;
     transition: all .3s;
     width: 50%;
@@ -65,7 +65,7 @@ h6 {
 
 .page-heading-content .breadcrumb::before, .page-heading-content .heading-content .container.title::before {
     content: "";
-    background: #012c6e;
+    background: #012152;
     opacity: .9;
     position: absolute;
     top: 0;
@@ -120,7 +120,7 @@ h6 {
 
 .page-heading-content .breadcrumb::before, .page-heading-content .heading-content .container.title::before {
     content: "";
-    background: #012c6e;
+    background: #012152;
     opacity: .9;
     position: absolute;
     top: 0;

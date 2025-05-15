@@ -67,7 +67,7 @@ const StudyPlan = () => {
                     transition={{duration: 0.8}}
                 >
                     <motion.div
-                        className="h-2 bg-[#012C6E] w-20"
+                        className="h-2 bg-[#012152] w-20"
                         initial={{width: 0}}
                         animate={{width: "80px"}}
                         transition={{duration: 0.8, delay: 0.2}}

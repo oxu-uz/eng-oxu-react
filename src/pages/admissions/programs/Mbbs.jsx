@@ -23,7 +23,7 @@ const Mbbs = () => {
                     src="/medical-education-stethoscope-book-graduate-hat-medical-concept-blue-background-graduate.jpg"
                     alt="Medical education"
                 />
-                <div className="absolute inset-0 bg-[#012c6e]/70 flex flex-col justify-end">
+                <div className="absolute inset-0 bg-[#012152]/70 flex flex-col justify-end">
                     <div className="container mx-auto px-4 md:px-6">
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">MBBS Program</h1>
 
@@ -71,7 +71,7 @@ const Mbbs = () => {
 
                     {/* Why Choose AIU */}
                     <section className="space-y-6">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             Why Choose AIU for Your MBBS?
                         </h2>
 
@@ -116,7 +116,7 @@ const Mbbs = () => {
 
                     {/* Program Structure */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             Program Structure
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg">
@@ -134,7 +134,7 @@ const Mbbs = () => {
 
                     {/* Admission Requirements */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             Admission Requirements
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg">
@@ -155,7 +155,7 @@ const Mbbs = () => {
 
                     {/* How to Apply */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#012c6e] border-b pb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#012152] border-b pb-2">
                             How to Apply
                         </h2>
                         <div className="bg-gray-50 p-4 md:p-5 rounded-lg">
