@@ -9,6 +9,8 @@ import ChooseUs from "../components/home/ChooseUs.jsx";
 import EmbarkJourneySec from "../components/home/EmbarkJourneySec.jsx";
 import CountUpSec from "../components/home/CountUpSec.jsx";
 import ContactUs from "../components/home/ContactUs.jsx";
+import ProgramHighlights from "../components/home/ProgramHighlights.jsx";
+import StudentLife from "../components/home/StudentLife.jsx";
 
 const HomePage = () => {
     const [isCarouselVisible, setCarouselVisible] = useState(false);
@@ -60,7 +62,7 @@ const HomePage = () => {
             ref={homeRef}
             style={{
                 // backgroundImage: isBackgroundLoaded ? "url(/header1.png)" : 'none',
-                // minHeight: '100vh', // Ensure the div has enough height
+                minHeight: '100vh', // Ensure the div has enough height
             }}
             className="bg-white"
         >
@@ -68,11 +70,17 @@ const HomePage = () => {
 
             <FadeInStagger>
                 <FadeIn>
+                    <ProgramHighlights/>
+                </FadeIn>
+            </FadeInStagger>
+
+            <FadeInStagger>
+                <FadeIn>
                     <ChooseUs/>
                 </FadeIn>
             </FadeInStagger>
 
-            <div className="flex items-center justify-center w-full h-[50px]"/>
+            <div className="flex items-center justify-center w-full h-[100px]"/>
 
             <FadeInStagger>
                 <FadeIn>
@@ -95,6 +103,12 @@ const HomePage = () => {
             <FadeInStagger>
                 <FadeIn>
                     <Testimonials/>
+                </FadeIn>
+            </FadeInStagger>
+
+            <FadeInStagger>
+                <FadeIn>
+                    <StudentLife/>
                 </FadeIn>
             </FadeInStagger>
 

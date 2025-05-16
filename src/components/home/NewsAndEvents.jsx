@@ -79,7 +79,7 @@ function NewsAndEvents() {
         <section className="flex flex-col items-center px-20 max-md:px-5 md:pb-[50px]" ref={ref5}>
             <div className="flex flex-col w-full max-w-[1663px] max-md:max-w-full">
                 <header className="flex pt-[50px] flex-col justify-start items-center w-full max-md:max-w-full">
-                    <motion.h1
+                    <motion.h2
                         className="relative text-3xl w-full font-extrabold title-text text-center md:text-4xl pb-4"
                         initial="hidden"
                         animate={isInView5 ? 'visible' : 'hidden'}
@@ -87,7 +87,7 @@ function NewsAndEvents() {
                     >
                         Latest News
                         <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-36 h-[3px] bg-[#012152]"></span>
-                    </motion.h1>
+                    </motion.h2>
                     {/*<motion.p*/}
                     {/*    variants={textVariants}*/}
                     {/*    initial="hidden"*/}

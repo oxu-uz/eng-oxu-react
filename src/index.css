@@ -189,7 +189,7 @@
 .apply-now-btn {
     position: relative;
     display: inline-block;
-    background: linear-gradient(135deg, #012c6e, #012152);
+    background: linear-gradient(135deg,#012152, #012c6e, #012152);
     color: white;
     width: 300px;
     padding: 14px 32px;
@@ -206,7 +206,7 @@
 .view-all-btn {
     position: relative;
     display: inline-block;
-    background: linear-gradient(135deg, #012c6e, #012152);
+    background: linear-gradient(135deg,#012152, #012c6e,#012152);
     color: white;
     width: 300px;
     padding: 14px 32px;
@@ -271,7 +271,7 @@
 }
 
 .title-text {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
 }
 
 .main-metro {
@@ -1182,4 +1182,53 @@ motion.div {
 
 .top-nav-sup-link:hover::after {
     width: 100%;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.animate-ticker {
+    animation: ticker 20s linear infinite;
+}
+
+/* Custom scrollbar for testimonials */
+.testimonial-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.testimonial-carousel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.testimonial-carousel::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.testimonial-carousel::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .student-life-hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content .tagline {
+        font-size: 1.25rem;
+    }
+}
+
+.cta-section{
+    background: #012152;
+    /*background: linear-gradient(135deg,#012152, #012c6e,#012152);*/
 }

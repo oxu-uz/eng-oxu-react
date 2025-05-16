@@ -117,7 +117,7 @@ function ChooseUs(props) {
     return (
         <section
             ref={ref}
-            className="relative py-12 bg-cover bg-center bg-[#012152] h-[60vh]"
+            className="relative py-12 bg-cover bg-center cta-section h-[60vh]"
         >
             {/* PNG pattern overlay */}
             <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
