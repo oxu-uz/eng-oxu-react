@@ -139,7 +139,10 @@ module.exports = withMT({
         '5': '5px',
         '6': '6px',
         '7': '7px',
-      }
+      },
+      transitionProperty: {
+        'colors': 'background-color, color',
+      },
     },
   },
   plugins: [],

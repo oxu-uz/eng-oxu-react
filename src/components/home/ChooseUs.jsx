@@ -56,7 +56,7 @@ function ChooseUs(props) {
     ], []);
 
     const photos = useMemo(() => [
-        "/for site/Accredited.png",
+        "/for site/accredited-academic-program.jfif",
         "/for site/Innovative Teaching Methods.JPG",
         "/for site/.Strong Research Opportunities.JPG",
         "/for site/Collaborative Learning Environment.jpg",

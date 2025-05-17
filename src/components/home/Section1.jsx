@@ -140,7 +140,7 @@ function Section1(props) {
                                     {item.type === "logo" ? (
                                         <a
                                             href={item.link}
-                                            className="flex items-center px-4 py-2"
+                                            className="flex items-center px-4"
                                         >
                                             <img
                                                 src={isNavHovered ? item.src : item.src1}

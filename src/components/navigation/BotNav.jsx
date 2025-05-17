@@ -1,131 +1,72 @@
 import React, { useState } from "react";
-import {Menu, MenuHandler, MenuList, MenuItem, Button} from "@material-tailwind/react";
+import { Menu, MenuHandler, MenuList, MenuItem } from "@material-tailwind/react";
 import { ChevronDown, ChevronRight } from "lucide-react";
+import { navItems } from "../../config/navigation";
+import { useLocation } from "react-router-dom";
 
 const BotNav = () => {
-    
-    const navItems = [
-        { label: "Home", link: "/" },
-        {
-            label: "About",
-            link: "/about",
-            dropdown: [
-                { label: "Vision", link: "/about/aiu/vision" },
-                { label: "Mission", link: "/about/aiu/mission" },
-                { label: "Message from the Rector", link: "/about/leadership" },
-                { label: "Structure of the university", link: "/about/aiu/structure-of-university" },
-                { label: "Regulatory Documents", link: "/about/aiu/regulatory-documents" },
-            ],
-        },
-        {
-            label: "Academics ",
-            link: "/admissions",
-            dropdown: [
-                { label: "Academic Calendar", link: "/academics/academic-calendar" },
-                { label: "Study Plan/ Curriculum", link: "/academics/study-plan" },
-                // { label: "Faculty development plan", link: "/about/aiu/faculty-development-plan" },
-                {
-                    label: "Structure of the faculty",
-                    link: "/academics/faculty-structure",
-                    // submenu: [
-                    //     { label: "Department of General Science", link: "/about/departments/general-science" },
-                    //     { label: "Department of Fundamental Medicine", link: "/about/departments/fundamental-medicine" },
-                    //     { label: "Department of Clinical Science", link: "/about/departments/clinical-science" },
-                    // ]
-                },
-            ],
-        },
-        {
-            label: "International relations",
-            dropdown: [
-                {label: "International Relations Office",link: "/international-relations"},
-                {label: "ERASMUS+",link: "https://erasmus-plus.ec.europa.eu/"},
-            ]
-        },
-        {
-            label: "Student Life in AIU",
-            link: "/schools",
-            dropdown: [
-                { label: "Council of the Academic Activities", link: "/academic-council" },
-                { label: "Council for the Scientific Activities", link: "/scientific-council" },
-                { label: "Council for Sport", link: "/sports-council" },
-                { label: "Council for Cultural Activities", link: "/cultural-council" },
-                { label: "Council for IT/ Media", link: "/it-media-council" },
-            ],
-        },
-        {
-            label: "About Uzbekistan",
-            link: "/experience",
-            dropdown: [
-                { label: "About Uzbekistan", link: "/about-uzbekistan" },
-                { label: "Life in Bukhara ", link: "/life-in-bukhara" }
-            ],
-        },
-        { label: "Admission", link: "/society",
-            dropdown: [
-                {
-                    label: "Find program ",
-                    link: "/find-programs"
-                },
-                { label: "Scholarship ", link: "/scholarships" },
-                { label: "Tuition and Cost ", link: "/tuition-fees" },
-                { label: "For partners / For applicants", link: "/research/labs", submenu: [
-                        { label: "Login", link: "/login" },
-                    ]  },
-            ] },
-        { label: "Research and Publications ", link: "/research" },
-        // { label: "Gallery ", link: "/gallery" },
-        // { label: "Alumni ", link: "/international-relations" },
-        // { label: "Contact ", link: "/international-relations/contact" },
-        { label: "FAQ", link: "/international/faq" },
-    ];
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+    const isHomePage = location.pathname === "/";
 
     return (
-        <nav className="lg:block hidden bg-[#012152] sticky z-30 top-0 h-[65px]">
-            <div className=" mx-auto flex h-full justify-center ">
-                <div className="flex ">
+        <nav className={`lg:block hidden sticky top-0 z-30 bg-[#012152] ${isHomePage ? 'py-5' : 'py-5'}`}>
+            <div className="mx-auto">
+                <div className="flex w-full items-center justify-center">
                     {navItems.map((item, index) => (
-                        <div key={index} className="group flex  relative">
-                            {item.dropdown ? (
-                                <Menu allowHover animate={{mount: {y: 0}, unmount: {y: 25}}}>
+                        <div key={index} className="group flex relative">
+                            {item.type === "logo" ? (
+                                <a href={item.link} className="flex items-center px-4">
+                                    <img
+                                        src={item.src} // Always use the light version since background is always dark
+                                        alt={item.alt}
+                                        className="object-contain"
+                                    />
+                                </a>
+                            ) : item.dropdown ? (
+                                <Menu
+                                    allowHover
+                                    animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
+                                    onOpen={() => setIsMenuOpen(true)}
+                                    onClose={() => setIsMenuOpen(false)}
+                                >
                                     <MenuHandler>
-                                        <div
-                                            className="text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+                                        <div className="text-white hover:text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg">
                                             {item.label} <ChevronDown strokeWidth={1.2} size="20"/>
                                         </div>
                                     </MenuHandler>
-                                    <MenuList className="absolute left-0 mt-2 overflow-hidden min-w-80 rounded-md">
+                                    <MenuList className="absolute left-0 mt-2 overflow-hidden min-w-80 rounded-md bg-white shadow-lg">
                                         {item.dropdown.map((dropdownItem, i) => (
-                                            <div key={i} className="relative group outline-none right-0  hover:outline-none">
+                                            <div key={i} className="relative group outline-none right-0 hover:outline-none">
                                                 {dropdownItem.submenu ? (
-                                                    <Menu animate={{mount: {y: 0}, unmount: {y: 25}}}
-                                                          placement="right-start">
+                                                    <Menu
+                                                        animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
+                                                        placement="right-start"
+                                                        onOpen={() => setIsMenuOpen(true)}
+                                                        onClose={() => setIsMenuOpen(false)}
+                                                    >
                                                         <MenuHandler>
-                                                            <MenuItem
-                                                                className="hover:bg-blue-50 hover:text-blue-700 link group flex justify-between items-center">
+                                                            <MenuItem className="text-[#012152] hover:bg-blue-50 group flex justify-between items-center transition-colors duration-300">
                                                                 {dropdownItem.label} <ChevronRight className="transition-transform group-hover:-translate-x-1/2" size="16"/>
                                                             </MenuItem>
                                                         </MenuHandler>
-                                                        <MenuList
-                                                            className="absolute left-full top-0 mt-[-8px] overflow-hidden min-w-80 rounded-md">
+                                                        <MenuList className="absolute left-full top-0 mt-[-8px] overflow-hidden min-w-80 rounded-md bg-white shadow-lg">
                                                             {dropdownItem.submenu.map((submenuItem, j) => (
-                                                                <a href={submenuItem.link} className="outline-none ring-0">
-                                                                    <MenuItem key={j} className="hover:bg-blue-50 hover:text-blue-700 link">
+                                                                <a href={submenuItem.link} key={j} className="outline-none ring-0">
+                                                                    <MenuItem className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
                                                                         {submenuItem.label}
-                                                                </MenuItem>
+                                                                    </MenuItem>
                                                                 </a>
                                                             ))}
                                                         </MenuList>
                                                     </Menu>
                                                 ) : (
-                                                    <a className="outline-none ring-0 hover:outline-2 hover:ring-0"
-                                                       href={dropdownItem.link}>
-                                                        <MenuItem
-                                                            className="hover:bg-blue-50 hover:text-blue-700 link outline-none ring-0 hover:outline-2 hover:ring-0">
+                                                    <a className="outline-none ring-0" href={dropdownItem.link}>
+                                                        <MenuItem className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
                                                             {dropdownItem.label}
-                                                    </MenuItem>
+                                                        </MenuItem>
                                                     </a>
-                                                    )}
+                                                )}
                                             </div>
                                         ))}
                                     </MenuList>
@@ -133,7 +74,7 @@ const BotNav = () => {
                             ) : (
                                 <a
                                     href={item.link}
-                                    className="text-white uppercase nav-link flex items-center shadow-none outline-none ring-0 px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+                                    className="text-white hover:text-white uppercase nav-link flex items-center shadow-none outline-none ring-0 px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg"
                                 >
                                     {item.label}
                                 </a>

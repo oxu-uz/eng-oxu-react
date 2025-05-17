@@ -32,13 +32,13 @@ function AllNewsPage() {
             {/* Hero section with full width image */}
             <div className="w-full relative">
                 <motion.div
-                    className="relative w-full h-[300px] bg-gray-300"
+                    className="relative w-full h-[350px] bg-gray-300"
                     initial="hidden"
                     animate={isInView ? 'visible' : 'hidden'}
                     variants={animationVariants}
                 >
                     <img
-                        src="https://via.placeholder.com/1663x256" // Replace with actual news header image URL
+                        src="/headerbg3.svg" // Replace with actual news header image URL
                         alt="News Header"
                         className="w-full h-full object-cover"
                     />
@@ -63,9 +63,9 @@ function AllNewsPage() {
             {/* Breadcrumb navigation */}
             <div className="max-w-[1663px] mx-auto px-4 py-4">
                 <nav className="text-gray-600 text-sm">
-                    <a href="/" className="hover:text-blue-600">Home</a> /{' '}
-                    <a href="/about" className="hover:text-blue-600">About</a> /{' '}
-                    <a href="/news" className="text-blue-600 font-medium">News and Events</a>
+                    <a href="/" className="hover:text-[#012152]">Home</a> /{' '}
+                    <a href="/about" className="hover:text-[#012152]">About</a> /{' '}
+                    <a href="/news" className="text-[#012152] font-medium">News and Events</a>
                 </nav>
             </div>
 

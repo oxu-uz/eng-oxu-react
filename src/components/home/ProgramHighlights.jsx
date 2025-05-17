@@ -34,11 +34,11 @@ const ProgramHighlights = () => {
     ];
 
     return (
-        <section className="py-16 px-4 sm:px-8 bg-white">
-            <div className="max-w-7xl mx-auto">
+        <section className="py-16 px-4 sm:px-8">
+            <div className="max-w-[1663px] mx-auto">
                 <div className="flex flex-col lg:flex-row gap-12">
                     {/* Left Column - Images with Text Overlays */}
-                    <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2">
+                    <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2">
                         {programs.map((program, index) => (
                             <motion.div
                                 key={index}
@@ -75,7 +75,7 @@ const ProgramHighlights = () => {
                                                 opacity: hoveredIndex === index ? 1 : 0.9
                                             }}
                                             transition={{ duration: 0.3 }}
-                                            className="text-xl font-bold mb-1"
+                                            className="text-xl uppercase mb-1"
                                         >
                                             {program.title}
                                         </motion.h3>
@@ -96,9 +96,9 @@ const ProgramHighlights = () => {
                     </div>
 
                     {/* Right Column - Text Content */}
-                    <div className="lg:w-1/3 flex flex-col justify-center">
-                        <div className="space-y-8">
-                            <div>
+                    <div className="lg:w-1/2 flex flex-col justify-center">
+                        <div className="space-y-16">
+                            <div className="max-w-[70%]">
                                 <h3 className="text-2xl md:text-3xl font-bold text-[#012152] mb-4">
                                     Breaking Borders, Building Futures: Gateway to Global Education
                                 </h3>

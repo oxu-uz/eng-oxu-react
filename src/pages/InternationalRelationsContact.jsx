@@ -118,7 +118,7 @@ function InternationalRelationsContact() {
                 className="w-full max-w-3xl bg-white shadow-lg rounded-xl p-6 sm:p-8 space-y-6"
                 noValidate
             >
-                <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#01408e]">International Relations Contact Form</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#012152]">International Relations Contact Form</h2>
 
                 {submitSuccess && (
                     <div className="p-4 bg-green-100 text-green-700 rounded-md">
