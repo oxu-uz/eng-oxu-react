@@ -1,10 +1,13 @@
-import React, {useState, useEffect, useRef} from 'react';
-import {motion, AnimatePresence, useInView} from 'framer-motion';
+import React, {useRef, useState, useEffect} from 'react';
+import {useInView, motion} from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const ref = useRef(null);
-    const isInView = useInView(ref, {once: false, margin: "-50px"});
+    const isInView = useInView(ref, {once: false});
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     const testimonials = [
         {
@@ -12,82 +15,84 @@ const Testimonials = () => {
             quote: "I am currently pursuing my MBBS at Asia International University, Bukhara. I chose this university because of its strong academic reputation, affordable tuition fees, and supportive learning environment",
             name: "Mr. Avhimanyu Chand",
             title: "Nepal",
-            img: "/for site/IMG_7305.JPG"
+            img: "/for site/testimonials6.png"
         },
         {
             id: 2,
             quote: "The reason I choose this university because of quality of education and low budget fees and there is best option to get a scholarship. All facilities are provided here Including -Indian food good hostel best and most experienced faculty professors and lot of extracurricular activities. Choosing Asia international university is my best decision.",
             name: "Ms. Kavita Chauhan",
             title: "India",
-            img: "/for site/IMG_7304.JPG"
+            img: "/for site/testimonials5.png"
         },
         {
             id: 3,
             quote: "I have seen that so many abroad colleges don't feel like the colleges in our native. But here in ASIA INTERNATIONAL UNIVERSITY, it feels like home. I feel like I have chosen a right college for me to study well for my medical studies and help me to develop in so many other ways.",
             name: "Mr. Jignesh",
             title: "India",
-            img: "/for site/IMG_7300.JPG"
+            img: "/for site/testimonials2.png"
         },
         {
             id: 4,
             quote: "I chose this university because of its strong academic reputation and very supportive teachers. One of key factors that influenced my decision was the availability of scholarships. Receiving a Scholarship not only eases the financial burden but also motivates me to work even harder and contribute actively in my academics.",
             name: "Ms. Laiba Sajjad",
             title: "Pakistan",
-            img: "/for site/IMG_7302.JPG"
+            img: "/for site/testimonials4.png"
         },
         {
             id: 5,
             quote: "The University is very good, and the doctors are kind & University is equipped to the highest standard and I am very happy to have joined the Asia International University",
             name: "MOHAMMED RAGAB ABDELHADY",
             title: "Egypt",
-            img: "/for site/IMG_7583.JPG"
+            img: "/for site/testimonials7.png"
         },
         {
             id: 6,
             quote: "AIU was the best choice I have made to pursue my medical dream. The faculty is top notch with well-equipped facilities and advance clinical exposure for the aspirants, also providing rich cultural experience at the hub of silk road.",
             name: "Ms. Munira Rifat",
             title: "Bangladesh",
-            img: "/for site/IMG_7301.JPG"
+            img: "/for site/testimonials3.png"
         },
     ];
 
-    // Auto-rotate testimonials
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
-        }, 8000);
-        return () => clearInterval(interval);
-    }, [testimonials.length]);
-
-    // Animation variants
-    const containerVariants = {
-        hidden: {opacity: 0},
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
+    const animationVariants = {
+        hidden: {opacity: 0, y: 50},
+        visible: {opacity: 1, y: 0, transition: {duration: 1}},
     };
 
-    const itemVariants = {
-        hidden: {opacity: 0, y: 20},
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
+    // Slider settings
+    const settings = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        beforeChange: (current, next) => setCurrentIndex(next),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
             }
-        }
+        ]
     };
 
     return (
         <section
-            ref={ref}
-            className="relative py-10 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-900"
+            className="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#012152] overflow-hidden"
             id="testimonials"
+            ref={ref}
         >
+            {/*<div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat" />*/}
             {/* Blurred Background Image */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -101,120 +106,78 @@ const Testimonials = () => {
                 />
             </div>
 
-            {/* Content Container */}
-            <div className="relative z-10 max-w-7xl mx-auto">
+            <div className="relative z-10 max-w-[1663px] mx-auto">
                 {/* Section Header */}
-                <motion.div
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    variants={containerVariants}
-                    className="text-center mb-8 md:mb-16"
-                >
+                <header className="flex flex-col justify-start items-center w-full mb-12">
                     <motion.h2
-                        variants={itemVariants}
-                        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4"
+                        className="relative text-3xl w-full font-extrabold text-white text-center md:text-4xl pb-4"
+                        initial="hidden"
+                        animate={isInView ? 'visible' : 'hidden'}
+                        variants={animationVariants}
                     >
                         What our Students Say
+                        <span className="absolute left-1/2 bottom-0 translate-x-[-50%] w-36 h-[3px] bg-white"></span>
                     </motion.h2>
-                    <motion.div
-                        variants={itemVariants}
-                        className="w-[50%] sm:w-[40%] md:w-[20%] h-1 bg-white mx-auto"
-                    ></motion.div>
-                </motion.div>
+                </header>
 
                 {/* Testimonial Slider */}
-                <div className="relative h-[500px] md:h-[400px] mb-8 md:mb-0">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={testimonials[currentIndex].id}
-                            initial={{opacity: 0, x: 100}}
-                            animate={{
-                                opacity: 1,
-                                x: 0,
-                                transition: {duration: 0.6, ease: "easeInOut"}
-                            }}
-                            exit={{
-                                opacity: 0,
-                                x: -100,
-                                transition: {duration: 0.4}
-                            }}
-                            className="absolute inset-0"
-                        >
-                            {/* Mobile Layout - Full background image with overlay */}
-                            <div className="md:hidden relative w-full h-full rounded-xl overflow-hidden">
-                                <img
-                                    src={testimonials[currentIndex].img}
-                                    alt={testimonials[currentIndex].name}
-                                    className="w-full h-full object-cover absolute inset-0"
-                                />
-                                <div
-                                    className="absolute bottom-0 left-0 right-0 h-[55%] bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-10 pb-6 px-6 flex flex-col justify-end">
-                                    <blockquote className="text-white text-base italic mb-4 leading-relaxed">
-                                        "{testimonials[currentIndex].quote}"
-                                    </blockquote>
-                                    <div className="mt-auto flex items-center w-full justify-between">
-                                        <p className="text-white text-lg font-semibold">
-                                            {testimonials[currentIndex].name}
-                                        </p>
-                                        <p className="text-blue-gray-200 text-base">
-                                            {testimonials[currentIndex].title}
-                                        </p>
+                <main className="w-full">
+                    <Slider {...settings}>
+                        {testimonials.map((testimonial) => (
+                            <motion.div
+                                key={testimonial.id}
+                                initial="hidden"
+                                animate={isInView ? "visible" : "hidden"}
+                                variants={animationVariants}
+                                className="px-3 h-[450px]"
+                            >
+                                <div className="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                    {/* Circular Image Container */}
+                                    <div className="flex justify-center pt-8">
+                                        <div className="relative w-[180px] h-[180px] rounded-full overflow-hidden border-4 border-white shadow-lg">
+                                            <img
+                                                src={testimonial.img}
+                                                alt={testimonial.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Text Content */}
+                                    <div className="p-6 flex-1 flex flex-col">
+                                        <blockquote className="text-gray-800 italic mb-4 flex-1">
+                                            "{testimonial.quote}"
+                                        </blockquote>
+                                        <div className="mt-auto text-center">
+                                            <p className="text-[#012152] font-semibold text-lg">
+                                                {testimonial.name}
+                                            </p>
+                                            <p className="text-gray-600 text-sm">
+                                                {testimonial.title}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
+                        ))}
+                    </Slider>
+                </main>
 
-                            {/* Desktop Layout - Side by side */}
-                            <div
-                                className="hidden md:flex bg-white/80 mx-auto backdrop-blur-sm rounded-xl shadow-2xl w-[80%] h-full overflow-hidden">
-                                <div className="w-1/3 h-full relative">
-                                    <img
-                                        src={testimonials[currentIndex].img}
-                                        alt={testimonials[currentIndex].name}
-                                    />
-                                    <div
-                                        className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
-                                </div>
-
-                                <div className="w-2/3 p-8 lg:p-10 flex flex-col justify-center">
-                                    <blockquote
-                                        className="text-gray-800 text-lg lg:text-xl italic mb-6 leading-relaxed">
-                                        "{testimonials[currentIndex].quote}"
-                                    </blockquote>
-                                    <div>
-                                        <p className="text-[#012152] text-xl font-semibold">
-                                            {testimonials[currentIndex].name}
-                                        </p>
-                                        <p className="text-gray-800 text-base">
-                                            {testimonials[currentIndex].title}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
-
-                {/* Navigation Dots */}
-                <motion.div
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    variants={containerVariants}
-                    className="flex justify-center mt-6 md:mt-10 space-x-2 md:space-x-3"
-                >
+                {/* Custom Navigation Dots */}
+                <div className="flex justify-center mt-8">
                     {testimonials.map((_, index) => (
-                        <motion.button
+                        <button
                             key={index}
-                            variants={itemVariants}
                             onClick={() => setCurrentIndex(index)}
-                            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
+                            className={`mx-1 w-3 h-3 rounded-full transition-all ${
                                 currentIndex === index
-                                    ? 'bg-[#012152] scale-125'
-                                    : 'bg-white/50 hover:bg-white/70'
+                                    ? 'bg-white w-6'
+                                    : 'bg-white/50'
                             }`}
-                            aria-label={`View testimonial from ${testimonials[index].name}`}
+                            aria-label={`Go to testimonial ${index + 1}`}
                         />
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );

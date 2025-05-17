@@ -121,7 +121,7 @@ function NewsAndEvents() {
                         </Slider>
                     </div>
                     <div className="mt-[25px]">
-                        <button onClick={handleViewAll} className="view-all-btn">
+                        <button onClick={handleViewAll} className="view-all-btn rounded-lg">
                             {/* PNG pattern overlay */}
                             <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
                             View all news

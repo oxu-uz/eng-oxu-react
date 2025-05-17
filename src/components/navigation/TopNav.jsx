@@ -30,8 +30,8 @@ function TopNav(props) {
             <nav className="bg-[#012152] h-[55px] lg:block hidden border-b border-[hsla(0,0%,100%,.1)] py-2 text-white">
                 <div className="flex flex-row items-center justify-between px-4">
                     {/* Блок 1 */}
-                    <div className="flex flex-col items-center text-center">
-                        <a href="mailto:info@oxu.uz" className="text-base font-semibold leading-tight">
+                    <div className="flex flex-col items-center hover:text-white text-center">
+                        <a href="mailto:info@oxu.uz" className="text-base  leading-tight">
                             info@oxu.uz
                         </a>
                         <span className="text-xs opacity-80">Cooperative email</span>
@@ -42,7 +42,7 @@ function TopNav(props) {
 
                     {/* Блок 2 */}
                     <div className="flex flex-col items-center text-center">
-                        <a href="tel:+998500305876" className="text-base font-semibold leading-tight">
+                        <a href="tel:+998500305876" className="text-base hover:text-white leading-tight">
                             +998 50 030 58 76
                         </a>
                         <span className="text-xs opacity-80">Hotline for applicants</span>
@@ -52,9 +52,9 @@ function TopNav(props) {
                     <div className="block h-6 border-l border-white/20"></div>
 
                     {/* Блок 3 */}
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center text-center hover:text-white">
                         <span onClick={handleContactClick}
-                              className="text-base cursor-pointer font-semibold leading-tight">Contacts</span>
+                              className="text-base cursor-pointer  leading-tight">Contacts</span>
                         <span className="text-xs opacity-80">Address and telephone</span>
                     </div>
 
@@ -64,6 +64,45 @@ function TopNav(props) {
                         onSubmit={handleSend}
                         loading={loading}
                     />
+
+                    {/* Разделитель */}
+                    <div className="block h-6 border-l border-white/20"></div>
+
+                    {/* Разделитель */}
+                    <div className="block h-6 border-l border-white/20"></div>
+
+                    {/* Block 4 - Student HEMIS */}
+                    <div className="flex flex-col items-center text-center">
+                        <a
+                            href="https://student.oxu.uz/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base leading-tight hover:text-white transition-colors"
+                        >
+                            Student HEMIS
+                        </a>
+                        <span className="text-xs opacity-80 mt-1">
+        Student information system
+    </span>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="block h-6 border-l border-white/20"></div>
+
+                    {/* Block 5 - HEMIS */}
+                    <div className="flex flex-col items-center text-center">
+                        <a
+                            href="https://hemis.oxu.uz/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base leading-tight hover:text-white transition-colors"
+                        >
+                            HEMIS
+                        </a>
+                        <span className="text-xs opacity-80 mt-1">
+        University management system
+    </span>
+                    </div>
 
                     {/* Разделитель */}
                     <div className="block h-6 border-l border-white/20"></div>

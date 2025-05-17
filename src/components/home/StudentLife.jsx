@@ -39,27 +39,27 @@ const StudentLife = () => {
     return (
         <section className="student-life-combined" ref={ref}>
             {/* Highlights Ticker */}
-            <div className="relative cta-section py-4 overflow-hidden">
-                {/* PNG pattern overlay */}
-                <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round"/>
-                <div className="flex justify-around animate-ticker">
-                    <div className="mx-10 font-semibold text-white whitespace-nowrap">
-                        <span className="mr-2">📚</span> 50+ Academic Programs
-                    </div>
-                    <div className="mx-10 font-semibold text-white whitespace-nowrap">
-                        <span className="mr-2">🔬</span> Cutting-Edge Research
-                    </div>
-                    <div className="mx-10 font-semibold text-white whitespace-nowrap">
-                        <span className="mr-2">⚽</span> 12 Varsity Sports
-                    </div>
-                    <div className="mx-10 font-semibold text-white whitespace-nowrap">
-                        <span className="mr-2">🎨</span> Cultural Festivals
-                    </div>
-                    <div className="mx-10 font-semibold text-white whitespace-nowrap">
-                        <span className="mr-2">💻</span> Tech Innovation Hub
-                    </div>
-                </div>
-            </div>
+            {/*<div className="relative cta-section py-4 overflow-hidden">*/}
+            {/*    /!* PNG pattern overlay *!/*/}
+            {/*    <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round"/>*/}
+            {/*    <div className="flex justify-around animate-ticker">*/}
+            {/*        <div className="mx-10 font-semibold text-white whitespace-nowrap">*/}
+            {/*            <span className="mr-2">📚</span> 50+ Academic Programs*/}
+            {/*        </div>*/}
+            {/*        <div className="mx-10 font-semibold text-white whitespace-nowrap">*/}
+            {/*            <span className="mr-2">🔬</span> Cutting-Edge Research*/}
+            {/*        </div>*/}
+            {/*        <div className="mx-10 font-semibold text-white whitespace-nowrap">*/}
+            {/*            <span className="mr-2">⚽</span> 12 Varsity Sports*/}
+            {/*        </div>*/}
+            {/*        <div className="mx-10 font-semibold text-white whitespace-nowrap">*/}
+            {/*            <span className="mr-2">🎨</span> Cultural Festivals*/}
+            {/*        </div>*/}
+            {/*        <div className="mx-10 font-semibold text-white whitespace-nowrap">*/}
+            {/*            <span className="mr-2">💻</span> Tech Innovation Hub*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
             {/* Interactive Card Grid */}
             <div id="life-highlights" className="py-20 max-w-[1663px] mx-auto px-4">
@@ -237,7 +237,7 @@ const StudentLife = () => {
                     </motion.div>
                     <motion.button
                         onClick={handleNavigate}
-                        className="mt-8 bg-white relative z-30 text-[#012152] px-8 py-3 font-semibold hover:bg-gray-100 shadow-md"
+                        className="mt-8 bg-white rounded-lg relative z-30 text-[#012152] px-8 py-3 font-semibold hover:bg-gray-100 shadow-md"
                         whileHover={{scale: 1.05}}
                         whileTap={{scale: 0.98}}
                     >

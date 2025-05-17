@@ -19,7 +19,7 @@ const ProgramHighlights = () => {
         {
             title: "LEAD & STRATEGIZE",
             subtitle: "BSBA (Bachelor of Science in Business Administration)",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            image: "/bsba.jfif"
         },
         {
             title: "CODE & INNOVATE",
@@ -112,7 +112,7 @@ const ProgramHighlights = () => {
 
                             <button
                                 onClick={handleFindPrograms}
-                                className="relative view-all-btn"
+                                className="relative view-all-btn rounded-lg"
                             >
                                 <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat " />
                                 FIND YOUR PROGRAM

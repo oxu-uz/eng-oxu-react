@@ -92,7 +92,7 @@ function ContactUs() {
                             </motion.p>
                             <motion.button
                                 onClick={handleEnquireClick}
-                                className="bg-white text-[#012152] px-8 py-3 font-semibold hover:bg-gray-100 transition-colors shadow-md"
+                                className="bg-white rounded-lg text-[#012152] px-8 py-3 font-semibold hover:bg-gray-100 transition-colors shadow-md"
                                 variants={itemVariants}
                                 whileHover={{scale: 1.05}}
                                 whileTap={{scale: 0.98}}

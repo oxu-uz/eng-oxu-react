@@ -2,7 +2,7 @@ import React from 'react';
 
 function EmbarkJourneySec(props) {
     return (
-        <div className="mx-auto cta-section flex flex-col lg:flex-row items-center justify-between gap-x-12 relative">
+        <div className="mx-auto mt-4 cta-section flex flex-col lg:flex-row items-center justify-between gap-x-12 relative">
             <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
             {/* Text Section */}
             <div className="lg:w-1/2 px-4">

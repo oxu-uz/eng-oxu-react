@@ -7,33 +7,58 @@ function Section1(props) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isNavHovered, setIsNavHovered] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [displayText, setDisplayText] = useState('');
+    const [isTyping, setIsTyping] = useState(true);
+    const [isDeleting, setIsDeleting] = useState(false);
 
     const slides = [
         {
             type: "image",
-            src: "/STUDENTS (11).JPG",
-            poster: "/STUDENTS (11).JPG",
+            src: "/PS5K0361.JPG",
+            poster: "/PS5K0361.JPG",
             title: "Welcome to AIU. Ready to start on an exciting journey with us? Explore our university and become part of the family.",
             description: "Experience world-class education guided by expert International faculty and supported by a vibrant, diverse I community.",
             cta: "Apply Now"
         },
-        {
-            type: "image",
-            src: "/library (5).JPG",
-            alt: "Image 1",
-            title: "One of Central Asia's leading universities, providing premier education to shape students for global careers.",
-            description: "Our state-of-the-art campus, innovative programs, and strong international partnerships empower students with the skills and knowledge to thrive in a competitive world.",
-            cta: "Admission Open"
-        },
-        {
-            type: "image",
-            src: "/IMG_2363.JPG",
-            alt: "Image 2",
-            title: "A Central Asian home for students from all over the world.",
-            description: "We make sure every student feels at home—no matter where they come from. It's more than just a place to study; it's a place to belong, where diverse cultures come together to learn, grow, and connect",
-            cta: "Book your seat"
-        },
     ];
+
+    // Extract "Welcome to AIU" from the title
+    const welcomeText = slides[currentIndex].title.split('.')[0];
+    const remainingText = slides[currentIndex].title.split('.').slice(1).join('.').trim();
+
+    useEffect(() => {
+        let timer;
+        const typingSpeed = 100;
+        const deletingSpeed = 100;
+        const pauseDurationAfterType = 3000;
+        const pauseDurationAfterDelete = 2000;
+
+        if (isTyping && !isDeleting) {
+            if (displayText.length < welcomeText.length) {
+                timer = setTimeout(() => {
+                    setDisplayText(welcomeText.substring(0, displayText.length + 1));
+                }, typingSpeed);
+            } else {
+                timer = setTimeout(() => {
+                    setIsTyping(false);
+                    setIsDeleting(true);
+                }, pauseDurationAfterType);
+            }
+        } else if (isDeleting) {
+            if (displayText.length > 0) {
+                timer = setTimeout(() => {
+                    setDisplayText(displayText.substring(0, displayText.length - 1));
+                }, deletingSpeed);
+            } else {
+                timer = setTimeout(() => {
+                    setIsDeleting(false);
+                    setIsTyping(true);
+                }, pauseDurationAfterDelete);
+            }
+        }
+
+        return () => clearTimeout(timer);
+    }, [displayText, isTyping, isDeleting, welcomeText]);
 
     const navItems = [
         { type: "logo", src: "/logo_aiu.svg", src1: "/new_logo.svg", alt: "University Logo", link: "/" },
@@ -120,7 +145,7 @@ function Section1(props) {
 
     return (
         <div className="bg-opacity-50 z-10" style={{
-            backgroundImage: "url(/P1087891.JPG)",
+            backgroundImage: "url(/PS5K0361.JPG)",
             height: '[100vh]',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -143,7 +168,7 @@ function Section1(props) {
                                             className="flex items-center px-4"
                                         >
                                             <img
-                                                src={isNavHovered ? item.src : item.src1}
+                                                src={isNavHovered ? item.src : item.src}
                                                 alt={item.alt}
                                                 className="object-contain"
                                             />
@@ -157,7 +182,7 @@ function Section1(props) {
                                         >
                                             <MenuHandler>
                                                 <div
-                                                    className={`${isNavHovered || isMenuOpen ? 'text-white' : 'text-[#012152]'} hover:text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg`}
+                                                    className={`${isNavHovered || isMenuOpen ? 'text-white' : 'text-white'} hover:text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg`}
                                                 >
                                                     {item.label} <ChevronDown strokeWidth={1.2} size="20"/>
                                                 </div>
@@ -176,7 +201,7 @@ function Section1(props) {
                                                             >
                                                                 <MenuHandler>
                                                                     <MenuItem
-                                                                        className="text-[#012152] hover:bg-blue-50 group flex justify-between items-center transition-colors duration-300"
+                                                                        className="text-white hover:bg-blue-50 group flex justify-between items-center transition-colors duration-300"
                                                                     >
                                                                         {dropdownItem.label} <ChevronRight
                                                                         className="transition-transform group-hover:-translate-x-1/2"
@@ -190,7 +215,7 @@ function Section1(props) {
                                                                         <a href={submenuItem.link}
                                                                            className="outline-none ring-0">
                                                                             <MenuItem key={j}
-                                                                                      className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
+                                                                                      className="text-white hover:bg-blue-50 link transition-colors duration-300">
                                                                                 {submenuItem.label}
                                                                             </MenuItem>
                                                                         </a>
@@ -200,7 +225,7 @@ function Section1(props) {
                                                         ) : (
                                                             <a className="outline-none ring-0" href={dropdownItem.link}>
                                                                 <MenuItem
-                                                                    className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
+                                                                    className="text-white hover:bg-blue-50 link transition-colors duration-300">
                                                                     {dropdownItem.label}
                                                                 </MenuItem>
                                                             </a>
@@ -212,7 +237,7 @@ function Section1(props) {
                                     ) : (
                                         <a
                                             href={item.link}
-                                            className={`${isNavHovered || isMenuOpen ? 'text-white' : 'text-[#012152]'} hover:text-white uppercase nav-link flex items-center shadow-none outline-none ring-0 px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg`}
+                                            className={`${isNavHovered || isMenuOpen ? 'text-white' : 'text-white'} hover:text-white uppercase nav-link flex items-center shadow-none outline-none ring-0 px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg`}
                                         >
                                             {item.label}
                                         </a>
@@ -225,20 +250,61 @@ function Section1(props) {
 
                 <div className="relative w-full min-h-[100vh] overflow-hidden">
                     <div className="absolute inset-0">
-                        <div
-                            className="relative flex h-full flex-col items-start justify-center w-full z-20 text-white px-6 md:px-12 py-6 md:py-0">
-                            <div className="max-w-3xl text-left bg-black bg-opacity-25 p-6 md:p-8">
-                                <h1 className="text-2xl md:text-3xl font-extrabold uppercase mb-3 md:mb-5">
-                                    {slides[currentIndex].title}
-                                </h1>
-                                <p className="text-xs md:text-xl mb-6">
+                        <div className="relative flex h-full flex-col items-start justify-center w-full z-20 text-white px-6 md:px-12 py-6 md:py-0">
+                            <div className="max-w-3xl text-left bg-black bg-opacity-25 p-6 md:p-8 rounded-lg">
+                                {/* Welcome Text with Backspace Animation */}
+                                <div className="flex items-center">
+                                    <motion.span
+                                        className="text-2xl md:text-4xl font-extrabold uppercase"
+                                    >
+                                        {displayText}
+                                    </motion.span>
+                                    <motion.span
+                                        animate={{ opacity: [0, 1, 0] }}
+                                        transition={{
+                                            repeat: Infinity,
+                                            duration: 1,
+                                            repeatDelay: isTyping && !isDeleting ? 0 : 0.5
+                                        }}
+                                        className="ml-1 text-2xl md:text-4xl"
+                                    >
+                                        |
+                                    </motion.span>
+                                </div>
+
+                                {/* Remaining Title Text */}
+                                <motion.h2
+                                    className="text-xl md:text-2xl font-bold mb-3 md:mb-5 mt-2"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 }}
+                                >
+                                    {remainingText}
+                                </motion.h2>
+
+                                {/* Description */}
+                                <motion.p
+                                    className="text-xs md:text-xl mb-6"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.7 }}
+                                >
                                     {slides[currentIndex].description}
-                                </p>
-                                <button onClick={() => props.navigate('/international-form')} className="apply-now-btn">
-                                    {/* PNG pattern overlay */}
+                                </motion.p>
+
+                                {/* CTA Button */}
+                                <motion.button
+                                    onClick={() => props.navigate('/international-form')}
+                                    className="apply-now-btn rounded-lg relative overflow-hidden"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.9 }}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
                                     <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
-                                    {slides[currentIndex].cta}
-                                </button>
+                                    <span className="relative z-10">{slides[currentIndex].cta}</span>
+                                </motion.button>
                             </div>
                         </div>
                     </div>
