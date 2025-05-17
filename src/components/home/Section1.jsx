@@ -293,18 +293,13 @@ function Section1(props) {
                                 </motion.p>
 
                                 {/* CTA Button */}
-                                <motion.button
+                                <button
                                     onClick={() => props.navigate('/international-form')}
                                     className="apply-now-btn rounded-lg relative overflow-hidden"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.9 }}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
                                 >
                                     <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
                                     <span className="relative z-10">{slides[currentIndex].cta}</span>
-                                </motion.button>
+                                </button>
                             </div>
                         </div>
                     </div>
