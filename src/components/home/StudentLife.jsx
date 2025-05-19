@@ -217,7 +217,7 @@ const StudentLife = () => {
             {/* CTA Section */}
             <div className="py-20 px-5">
                 <motion.div
-                    className="max-w-[1663px] relative mx-auto cta-section shadow-lg p-12 text-center"
+                    className="max-w-[1663px] relative mx-auto cta-section shadow-lg p-12 text-center rounded-lg"
                     initial={{opacity: 0, y: 50}}
                     animate={inView ? {opacity: 1, y: 0} : {}}
                     transition={{duration: 0.7}}

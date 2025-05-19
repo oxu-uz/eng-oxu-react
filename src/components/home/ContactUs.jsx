@@ -65,7 +65,7 @@ function ContactUs() {
                 >
                     {/* Make an Enquiry Section */}
                     <motion.div
-                        className="relative cta-section p-8 text-white overflow-hidden"
+                        className="relative cta-section p-8 text-white overflow-hidden rounded-lg"
                         whileHover="hover"
                         variants={cardVariants}
                     >
@@ -104,7 +104,7 @@ function ContactUs() {
 
                     {/* Contact Info Section */}
                     <motion.div
-                        className="relative cta-section p-8 text-white overflow-hidden"
+                        className="relative cta-section p-8 text-white rounded-lg overflow-hidden"
                         whileHover="hover"
                         variants={cardVariants}
                     >
@@ -128,7 +128,7 @@ function ContactUs() {
                                 </motion.div>
                                 <motion.div variants={itemVariants}>
                                     <p className="opacity-80">From outside Uzbekistan</p>
-                                    <p className="text-lg">+998 50 754 20 19</p>
+                                    <p className="text-lg">+998 50 030 58 76</p>
                                 </motion.div>
                             </motion.div>
                         </div>
@@ -147,7 +147,7 @@ function ContactUs() {
                     variants={containerVariants}
                 >
                     <motion.div
-                        className="relative cta-section p-6 text-white overflow-hidden"
+                        className="relative cta-section p-6 text-white rounded-lg overflow-hidden"
                         whileHover="hover"
                         variants={cardVariants}
                     >
@@ -165,7 +165,7 @@ function ContactUs() {
                     </motion.div>
 
                     <motion.div
-                        className="relative cta-section p-6 text-white overflow-hidden"
+                        className="relative cta-section p-6 text-white rounded-lg overflow-hidden"
                         whileHover="hover"
                         variants={cardVariants}
                     >
@@ -183,7 +183,7 @@ function ContactUs() {
                     </motion.div>
 
                     <motion.div
-                        className="relative cta-section p-6 text-white overflow-hidden"
+                        className="relative cta-section p-6 text-white rounded-lg overflow-hidden"
                         whileHover="hover"
                         variants={cardVariants}
                     >
