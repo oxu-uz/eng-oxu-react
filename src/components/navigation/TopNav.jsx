@@ -31,7 +31,7 @@ function TopNav(props) {
                 <div className="flex flex-row items-center justify-between px-4">
                     {/* Блок 1 */}
                     <div className="flex flex-col items-center hover:text-white text-center">
-                        <a href="mailto:info@oxu.uz" className="text-base  leading-tight">
+                        <a href="mailto:info@oxu.uz" className="text-[14px] leading-tight">
                             info@oxu.uz
                         </a>
                         <span className="text-xs opacity-80">Cooperative email</span>
@@ -42,7 +42,7 @@ function TopNav(props) {
 
                     {/* Блок 2 */}
                     <div className="flex flex-col items-center text-center">
-                        <a href="tel:+998500305876" className="text-base hover:text-white leading-tight">
+                        <a href="tel:+998500305876" className="text-[14px] hover:text-white leading-tight">
                             +998 50 030 58 76
                         </a>
                         <span className="text-xs opacity-80">Hotline for applicants</span>
@@ -54,7 +54,7 @@ function TopNav(props) {
                     {/* Блок 3 */}
                     <div className="flex flex-col items-center text-center hover:text-white">
                         <span onClick={handleContactClick}
-                              className="text-base cursor-pointer  leading-tight">Contacts</span>
+                              className="text-[14px] cursor-pointer  leading-tight">Contacts</span>
                         <span className="text-xs opacity-80">Address and telephone</span>
                     </div>
 
@@ -77,7 +77,7 @@ function TopNav(props) {
                             href="https://student.oxu.uz/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-base leading-tight hover:text-white transition-colors"
+                            className="text-[14px] leading-tight hover:text-white transition-colors"
                         >
                             Student HEMIS
                         </a>
@@ -95,7 +95,7 @@ function TopNav(props) {
                             href="https://hemis.oxu.uz/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-base leading-tight hover:text-white transition-colors"
+                            className="text-[14px] leading-tight hover:text-white transition-colors"
                         >
                             HEMIS
                         </a>

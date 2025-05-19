@@ -84,7 +84,7 @@ const HomePage = () => {
 
             <FadeInStagger>
                 <FadeIn>
-                    <NewsAndEvents/>
+                    <StudentLife/>
                 </FadeIn>
             </FadeInStagger>
 
@@ -96,7 +96,7 @@ const HomePage = () => {
 
             <FadeInStagger>
                 <FadeIn>
-                    <CampusSection/>
+                    <NewsAndEvents/>
                 </FadeIn>
             </FadeInStagger>
 
@@ -108,7 +108,7 @@ const HomePage = () => {
 
             <FadeInStagger>
                 <FadeIn>
-                    <StudentLife/>
+                    <CampusSection/>
                 </FadeIn>
             </FadeInStagger>
 

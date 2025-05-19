@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, MenuHandler, MenuItem, MenuList } from "@material-tailwind/react";
 import { ChevronDown, ChevronRight } from "lucide-react";
+import {useNavigate} from "react-router-dom";
 
 function Section1(props) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,6 +11,7 @@ function Section1(props) {
     const [displayText, setDisplayText] = useState('');
     const [isTyping, setIsTyping] = useState(true);
     const [isDeleting, setIsDeleting] = useState(false);
+    const navigate = useNavigate();
 
     const slides = [
         {
@@ -131,22 +133,30 @@ function Section1(props) {
         { label: "FAQ", link: "/international/faq" },
     ];
 
-    // Animation variants for navbar background
+    // Updated navVariants in your existing code
     const navVariants = {
         transparent: {
-            backgroundColor: "rgba(0, 0, 0, 0)",
-            transition: { duration: 0.3, ease: "easeInOut" }
+            backgroundColor: "rgba(0,0,0, 0.1)", // Subtle white overlay
+            backdropFilter: "blur(2px)",
+            transition: { duration: 0.3 }
         },
         hovered: {
-            backgroundColor: "#012152",
-            transition: { duration: 0.3, ease: "easeInOut" }
+            backgroundColor: "#012152", // More opaque when hovered
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            transition: { duration: 0.3 }
         }
+    };
+
+    // Fixed button click handler
+    const handleApplyNow = () => {
+        navigate('/international-form'); // Using the explicit link from slides data
     };
 
     return (
         <div className="bg-opacity-50 z-10" style={{
             backgroundImage: "url(/PS5K0361.JPG)",
-            height: '[100vh]',
+            height: '100vh',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
         }}>
@@ -292,14 +302,16 @@ function Section1(props) {
                                     {slides[currentIndex].description}
                                 </motion.p>
 
-                                {/* CTA Button */}
-                                <button
-                                    onClick={() => props.navigate('/international-form')}
-                                    className="apply-now-btn rounded-lg relative overflow-hidden"
-                                >
-                                    <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
-                                    <span className="relative z-10">{slides[currentIndex].cta}</span>
-                                </button>
+                                <div>
+                                    {/* Fixed CTA Button */}
+                                    <button
+                                        onClick={handleApplyNow} // Using the fixed handler
+                                        className="apply-now-btn rounded-lg"
+                                    >
+                                        <div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat round" />
+                                        <span className="relative z-10">{slides[currentIndex].cta}</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
