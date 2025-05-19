@@ -13,7 +13,33 @@ function CountUpSec(props) {
             <div className="w-full h-full flex items-center bg-[#012152]/70">
                 <div className="container mx-auto px-4 sm:px-8">
                     {/* Statistics Section */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-16">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-16">
+                        {/* Statistic Item */}
+                        <motion.div
+                            ref={ref4}
+                            className="stat flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6"
+                            initial={{opacity: 0, y: 50}}
+                            animate={{opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50}}
+                            transition={{duration: 0.8, ease: "easeOut"}}
+                        >
+                            <div
+                                className="flex items-center justify-center gap-4 sm:gap-6 border-b border-white pb-4 sm:pb-6">
+            <span className="text-white text-5xl sm:text-7xl font-extrabold">
+              <CountUp
+                  start={0}
+                  end={5}
+                  duration={2.5}
+                  separator=","
+                  scrollSpy={true}
+                  scrollSpyOnce={true}
+              />
+            </span>
+                            </div>
+                            <span className="text-white uppercase font-semibold text-lg sm:text-xl tracking-wider">
+            Campuses
+          </span>
+                        </motion.div>
+
                         {/* Statistic Item */}
                         <motion.div
                             ref={ref4}
@@ -53,7 +79,7 @@ function CountUpSec(props) {
             <span className="text-white text-5xl sm:text-7xl font-extrabold">
               <CountUp
                   start={0}
-                  end={62}
+                  end={88}
                   duration={2.5}
                   scrollSpy={true}
                   scrollSpyOnce={true}
@@ -62,6 +88,31 @@ function CountUpSec(props) {
                             </div>
                             <span className="text-white uppercase font-semibold text-lg sm:text-xl tracking-wider">
             Faculty
+          </span>
+                        </motion.div>
+
+                        {/* Faculty Statistic */}
+                        <motion.div
+                            ref={ref4}
+                            className="stat flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6"
+                            initial={{opacity: 0, y: 50}}
+                            animate={{opacity: isInView4 ? 1 : 0, y: isInView4 ? 0 : 50}}
+                            transition={{duration: 0.8, ease: "easeOut"}}
+                        >
+                            <div
+                                className="flex items-center justify-center gap-4 sm:gap-6 border-b border-white pb-4 sm:pb-6">
+            <span className="text-white text-5xl sm:text-7xl font-extrabold">
+              <CountUp
+                  start={0}
+                  end={470}
+                  duration={2.5}
+                  scrollSpy={true}
+                  scrollSpyOnce={true}
+              />
+            </span>
+                            </div>
+                            <span className="text-white uppercase font-semibold text-lg sm:text-xl tracking-wider">
+                Professors
           </span>
                         </motion.div>
 

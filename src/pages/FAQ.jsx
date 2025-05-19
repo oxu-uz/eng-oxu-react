@@ -444,7 +444,7 @@ const FAQSection = () => {
             items: [
                 {
                     question: 'What is the duration of the MBBS program?',
-                    answer: 'The MBBS program typically takes 5–6 years, including one year of clinical internship.'
+                    answer: 'The MBBS program typically takes 6 years, including one year of clinical internship.'
                 },
                 {
                     question: 'Is the MBBS degree internationally recognized?',
@@ -452,7 +452,7 @@ const FAQSection = () => {
                 },
                 {
                     question: 'What are the admission requirements?',
-                    answer: 'Applicants must have completed high school with Biology, Chemistry, and Physics. A minimum GPA and proof of English proficiency (IELTS/TOEFL) are required.'
+                    answer: 'Applicants must have completed high school with Biology, Chemistry, and Physics.'
                 },
                 {
                     question: 'Is NEET mandatory for Indian students?',
@@ -460,7 +460,7 @@ const FAQSection = () => {
                 },
                 {
                     question: 'Are there entrance exams?',
-                    answer: 'In most cases, international students are selected based on academic performance and interviews. Some countries may require entrance exams.'
+                    answer: 'International students are selected based on academic performance and interviews.'
                 },
                 {
                     question: 'What is the medium of instruction?',
@@ -486,7 +486,7 @@ const FAQSection = () => {
             items: [
                 {
                     question: 'How long is the MBA program?',
-                    answer: 'The MBA program is typically 1–2 years depending on full-time or part-time enrollment.'
+                    answer: 'The MBA program is typically 2 years , 1 years in AIU and 1 year in WUST, USA depending on full-time or part-time enrollment.'
                 },
                 {
                     question: 'What are the admission requirements?',
@@ -523,7 +523,7 @@ const FAQSection = () => {
                 subitems: [
                     {
                         question: 'What is the duration of the BBA program?',
-                        answer: 'The BBA program typically lasts 3–4 years.'
+                        answer: 'The BBA program typically lasts 4 years, 1+3 and 2+2 program in AIU and WUST consecutively.'
                     },
                     {
                         question: 'What are the eligibility criteria for BBA?',
@@ -575,7 +575,7 @@ const FAQSection = () => {
                     },
                     {
                         question: 'What is the duration of the IT degree?',
-                        answer: "Bachelor's programs last 3–4 years. Master's programs are usually 1.5–2 years."
+                        answer: "Bachelor's programs last 4 years, 1+3 and 2+2 program in AIU and WUST consecutively.. Master's programs are usually 1.5–2 years."
                     },
                     {
                         question: 'What are the admission requirements?',
