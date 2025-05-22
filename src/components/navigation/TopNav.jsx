@@ -5,7 +5,7 @@ import {message} from "antd";
 
 function TopNav(props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const handleContactClick = () => {
         setIsModalOpen(true);

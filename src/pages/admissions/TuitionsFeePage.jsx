@@ -90,7 +90,7 @@ const TuitionFeesPage = () => {
                                     {
                                         icon: "/mess.svg",
                                         title: "Mess Charge",
-                                        amount: "$1000 per year (Optional)"
+                                        amount: "$1200 per year (Optional)"
                                     },
                                     {
                                         icon: "/visa.svg",

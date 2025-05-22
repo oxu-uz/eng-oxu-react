@@ -92,7 +92,6 @@ const AdminLayout = () => {
                             isOpen={isModalOpen}
                             onClose={() => setIsModalOpen(false)}
                             onSubmit={handleSend}
-                            loading={loading}
                         />
 
                         {/* Разделитель */}

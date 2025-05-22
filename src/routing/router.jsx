@@ -91,14 +91,16 @@ const router = createBrowserRouter([
             {
                 path: '/about/leadership',
                 element: <Leadership/>
-            }, {
+            },
+            {
                 path: '/about/aiu/vision',
                 element: <Vision/>
             },
             {
                 path: '/about/aiu/mission',
                 element: <Mission/>
-            }, {
+            },
+            {
                 path: '/about/aiu/history',
                 element: <History/>
             },
@@ -177,46 +179,60 @@ const router = createBrowserRouter([
             {
                 path: '/academics/study-plan',
                 element: <StudyPlan/>
-            }, {
+            },
+            {
                 path: '/about-uzbekistan',
                 element: <AboutUz/>
-            }, {
+            },
+            {
                 path: '/life-in-bukhara',
                 element: <LifeInBukhara/>
-            }, {
+            },
+            {
                 path: '/scholarships',
                 element: <ScholarshipPage/>
-            }, {
+            },
+            {
                 path: '/students-council',
                 element: <StudentCouncilPage/>
-            }, {
+            },
+            {
                 path: '/academic-council',
                 element: <AcademicCouncilPage/>
-            }, {
+            },
+            {
                 path: '/scientific-council',
                 element: <ScientificCouncilPage/>
-            }, {
+            },
+            {
                 path: '/sports-council',
                 element: <SportsCouncilPage/>
-            }, {
+            },
+            {
                 path: '/cultural-council',
                 element: <CulturalCouncilPage/>
-            }, {
+            },
+            {
                 path: '/it-media-council',
                 element: <ITMediaCouncilPage/>
-            }, {
+            },
+            {
                 path: '/about/departments/fundamental-medicine',
                 element: <DepartmentOfFundamentalMedicinePage/>
-            }, {
+            },
+            {
                 path: '/about/departments/clinical-science',
                 element: <ClinicalSciencesPage/>
-            }, {
+            },
+            {
                 path: '/about/departments/general-science',
                 element: <GeneralSciencesPage/>
-            }, {
+            },
+            {
                 path: '/tuition-fees',
                 element: <TuitionFeesPage/>
-            }, {
+            },
+            {
                 path: '/about/aiu/regulatory-documents',
                 element: <RegulatoryDocuments/>
             },
