@@ -261,11 +261,24 @@ const MidNav = () => {
 
     return (
         <>
-            <div className="top-nav md:hidden bg-[#012152] lg:px-10 px-5 overflow-hidden h-[120px] relative flex justify-between">
-                <img src={logo} className="lg:h-20 h-[68px] lg:my-auto my-0 mt-2 z-10"/>
+            <div className="top-nav bg-[#012152] lg:px-10 px-5 overflow-hidden p-2 border-b border-[hsla(0,0%,100%,.1)] relative flex justify-between">
+                {/* Top Navigation Links */}
+                <div className="bg-[#012152] flex items-center">
+                    <a target="_blank" href="https://library.oxu.uz" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Library</a>
+                    <Link
+                        to="news"
+                        smooth={true}
+                        duration={1000}
+                        className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link"
+                    >
+                        News & Events
+                    </Link>
+                    <a href="https://int.vacancy.oxu.uz/" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Career @ OXU</a>
+                    <a href="https://aiu.uz/international-form" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Apply Now</a>
+                </div>
 
                 <div className='flex gap-5 items-center'>
-                    <div className="lg:block hidden pt-14">
+                    <div className="lg:block hidden">
                         <div className="main-panel__right ">
                             <form className="main-input hidden md:flex">
                                 <button className="main-input__button" title="Поиск">
@@ -295,7 +308,7 @@ const MidNav = () => {
                     </div>
 
                     {/* Desktop Personal Cabinet Dropdown */}
-                    <div className='self-end text-sm mb-4.5 hidden md:block'>
+                    <div className='text-sm hidden md:block'>
                         <Dropdown menu={{ items }} trigger={['click']}>
                             <a onClick={(e) => e.preventDefault()}>
                                 <Space className="cursor-pointer text-white">
@@ -315,21 +328,6 @@ const MidNav = () => {
                     >
                         <MenuIcon size="25" className="my-7 lg:hidden block"/>
                     </button>
-                </div>
-
-                {/* Top Navigation Links */}
-                <div className="top-nav-sup bg-[#012152] absolute right-0 lg:top-0 bottom-0 divide-x divide-[hsla(0,0%,100%,.15)] flex h-max z-10">
-                    <a target="_blank" href="https://library.oxu.uz" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Library</a>
-                    <Link
-                        to="news"
-                        smooth={true}
-                        duration={1000}
-                        className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link"
-                    >
-                        News & Events
-                    </Link>
-                    <a href="https://int.vacancy.oxu.uz/" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Career @ OXU</a>
-                    <a href="https://aiu.uz/international-form" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Apply Now</a>
                 </div>
             </div>
 
