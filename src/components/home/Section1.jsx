@@ -19,7 +19,7 @@ function Section1(props) {
             src: "/PS5K0361.JPG",
             poster: "/PS5K0361.JPG",
             title: "Welcome to AIU. Ready to start on an exciting journey with us? Explore our university and become part of the family.",
-            description: "Experience world-class education guided by expert International faculty and supported by a vibrant, diverse I community.",
+            description: "Experience world-class education guided by expert International faculty and supported by a vibrant, diverse community.",
             cta: "Apply Now"
         },
     ];
@@ -260,7 +260,7 @@ function Section1(props) {
 
                 <div className="relative w-full min-h-[100vh] overflow-hidden">
                     <div className="absolute inset-0">
-                        <div className="relative flex h-full flex-col items-start justify-center w-full z-20 text-[#012152] px-6 md:px-12 py-6 md:py-0">
+                        <div className="relative flex h-full flex-col items-start justify-center w-full z-20 text-[#012152] py-6 md:py-0">
                             <div className="max-w-3xl text-left bg-white opacity-80 p-6 md:p-8 rounded-lg">
                                 {/* Welcome Text with Backspace Animation */}
                                 <div className="flex items-center">
