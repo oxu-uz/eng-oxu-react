@@ -1167,6 +1167,7 @@ motion.div {
 
 .top-nav-sup-link:hover {
     background-color: #012152;
+    color: #fff;
 }
 
 .top-nav-sup-link::after {

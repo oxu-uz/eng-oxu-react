@@ -27,3 +27,13 @@ export const internationalRelationsContact = async (contactData) => {
         };
     }
 };
+
+export const applicationForm = async (contactData) => {
+    try {
+        const response = await axiosInstance.post("/applicant", contactData);
+        return response?.data;
+    } catch (error) {
+        console.error("Error while creating applicationForm:", error.response?.data || error.message);
+        throw error;
+    }
+}

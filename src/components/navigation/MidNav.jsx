@@ -124,7 +124,7 @@ const MobileMenuItem = ({ item }) => {
             ) : (
                 <a
                     href={item.link}
-                    className="block py-3 px-4 text-white capitalize lg:uppercase lg:text-base text-sm  hover:bg-[#072799]"
+                    className="block py-3 px-4 text-white capitalize lg:uppercase lg:text-base text-sm  hover:bg-[#012ce6]"
                 >
                     {item.label}
                 </a>
@@ -274,7 +274,7 @@ const MidNav = () => {
                         News & Events
                     </Link>
                     <a href="https://int.vacancy.oxu.uz/" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Career @ OXU</a>
-                    <a href="https://aiu.uz/international-form" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Apply Now</a>
+                    <a href="http://localhost:5174/international-form" target="_blank" className="lg:text-sm text-xs p-3 lg:px-4 px-2 cursor-pointer transition-colors top-nav-sup-link">Apply Now</a>
                 </div>
 
                 <div className='flex gap-5 items-center'>

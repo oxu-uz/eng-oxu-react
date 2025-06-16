@@ -61,6 +61,7 @@ import BSIT from "../pages/admissions/programs/BSIT.jsx";
 import MBA from "../pages/admissions/programs/MBA.jsx";
 import CampusDetailPage from "../components/home/CampusDetailPage.jsx";
 import AllNewsPage from "../components/home/AllNewsPage.jsx";
+import ManagerApplicants from "../pages/authentificated/ManagerApplicants.jsx";
 
 
 const router = createBrowserRouter([
@@ -311,6 +312,14 @@ const router = createBrowserRouter([
                 element: (
                     <ProtectedRoute allowedRoles={["manager"]}>
                         <ManagerUsersPage/>
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: 'dashboard/applicants',
+                element: (
+                    <ProtectedRoute allowedRoles={["manager"]}>
+                        <ManagerApplicants/>
                     </ProtectedRoute>
                 )
             },
