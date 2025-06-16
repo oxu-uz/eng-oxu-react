@@ -79,7 +79,7 @@ const AgentLayout = () => {
                         </Menu.Item>
                     </Menu>
                 </Sider>
-                <Content style={{margin: '24px 16px', background: '#fff'}}>
+                <Content style={{margin: '24px 16px', background: '#fff',minHeight: '80vh'}}>
                     <Outlet/>
                 </Content>
             </Layout>
