@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }) => {
     if (storedUser) {
       try {
         const parsedUser = JSON.parse(storedUser);
-        console.log(parsedUser)
         setUser(parsedUser);
       } catch (error) {
         console.error("Error parsing stored user:", error);

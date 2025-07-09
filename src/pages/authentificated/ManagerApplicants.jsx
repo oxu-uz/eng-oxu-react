@@ -62,7 +62,7 @@ const ManagerApplicants = () => {
         try {
             setLoading(true);
             const response = await getApplicants();
-            setApplicants(response?.data?.data || []);
+            setApplicants(response?.data || []);
         } catch (error) {
             console.error("Error fetching applicants:", error);
             message.error("Failed to fetch applicants");
@@ -168,8 +168,8 @@ const ManagerApplicants = () => {
             key: 'name',
             render: (record) => (
                 <span className="font-medium">
-                    {record?.firstname} {record?.surname}
-                </span>
+                {record?.firstname} {record?.surname}
+            </span>
             ),
             sorter: (a, b) => `${a?.firstname} ${a?.surname}`.localeCompare(`${b?.firstname} ${b?.surname}`),
         },
@@ -187,6 +187,85 @@ const ManagerApplicants = () => {
                 <Tag color={status === 'bachelor' ? 'blue' : 'purple'}>
                     {status.toUpperCase()}
                 </Tag>
+            ),
+        },
+        {
+            title: 'Admission Documents',
+            key: 'letters',
+            width: 280,
+            render: (_, record) => (
+                <div className="max-h-48 overflow-y-auto pr-2">
+                    {record?.letter?.length > 0 ? (
+                        <div className="space-y-2">
+                            {record.letter?.map((letter) => (
+                                <div
+                                    key={letter?.id}
+                                    className="border border-gray-100 rounded-lg p-3 bg-gray-50 hover:bg-gray-100 transition-colors"
+                                >
+                                    <div className="flex justify-between items-start">
+                                        <div className="flex-1">
+                                            <div className="flex items-center mb-1">
+                                            <span className="font-medium text-gray-800 mr-2">
+                                                {letter?.course}
+                                            </span>
+                                                <Tag color="blue" className="text-xs">
+                                                    Sem {letter?.semestr}
+                                                </Tag>
+                                            </div>
+                                            <div className="flex items-center text-sm">
+                                                <Tag
+                                                    color={
+                                                        letter?.type === 'letter' ? 'green' :
+                                                            letter?.type === 'decree' ? 'orange' :
+                                                                'cyan'
+                                                    }
+                                                    className="mr-2 text-xs"
+                                                >
+                                                    {letter?.type}
+                                                </Tag>
+                                                <span className="text-gray-500 text-xs">
+                                                {new Date(letter?.created_at).toLocaleDateString()}
+                                            </span>
+                                            </div>
+                                        </div>
+                                        <div className="flex-shrink-0">
+                                            {letter?.url ? (
+                                                <AntButton
+                                                    type="link"
+                                                    href={letter?.url}
+                                                    target="_blank"
+                                                    icon={<FilePdfOutlined />}
+                                                    className="text-blue-600 hover:text-blue-800 px-0"
+                                                    download
+                                                >
+                                                    PDF
+                                                </AntButton>
+                                            ) : (
+                                                <span className="inline-flex items-center text-gray-400 text-sm">
+                                                <ClockCircleOutlined className="mr-1" />
+                                                Generating
+                                            </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-4 border border-dashed border-gray-200 rounded-lg bg-gray-50">
+                            <FilePdfOutlined className="text-gray-300 text-2xl mb-2" />
+                            <p className="text-gray-500 text-sm mb-2">No documents generated</p>
+                            <AntButton
+                                type="dashed"
+                                onClick={() => handleGenerateLetter(record)}
+                                icon={<PlusOutlined />}
+                                className="text-center"
+                            >
+                                Create Document
+                            </AntButton>
+                        </div>
+                    )}
+                </div>
             ),
         },
         {
