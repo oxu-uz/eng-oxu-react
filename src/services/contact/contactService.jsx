@@ -37,3 +37,13 @@ export const applicationForm = async (contactData) => {
         throw error;
     }
 }
+
+export const generateLetter = async (data) => {
+    try {
+        const response = await axiosInstance.post("/admission_letter", data);
+        return response?.data;
+    } catch (error) {
+        console.error("Error while generating letter:", error.response?.data || error.message);
+        throw error;
+    }
+}

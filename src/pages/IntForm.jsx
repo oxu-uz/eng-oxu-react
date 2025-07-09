@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, Input, Button, Checkbox, message} from 'antd';
+import {Form, Input, Button, Checkbox, message, Select, DatePicker} from 'antd';
 import {PhoneInput} from 'react-international-phone';
 import 'react-international-phone/style.css';
 import {RiWhatsappFill} from 'react-icons/ri';
@@ -22,17 +22,19 @@ const IntForm = () => {
                 whatsapp: values.whatsapp ? values.whatsapp.replace(/\D/g, '') : null
             };
 
+            console.log(formData)
+
             // Call the API service
-            const response = await applicationForm(formData);
+            // const response = await applicationForm(formData);
 
             // Check if the request was successful
-            if (response && response.success) {
-                message.success('Application submitted successfully!');
-                form.resetFields(); // Reset the form after successful submission
-                setAcceptTerms(false); // Reset the terms checkbox
-            } else {
-                message.error(response.message || 'Failed to submit application. Please try again.');
-            }
+            // if (response && response.success) {
+            //     message.success('Application submitted successfully!');
+            //     form.resetFields(); // Reset the form after successful submission
+            //     setAcceptTerms(false); // Reset the terms checkbox
+            // } else {
+            //     message.error(response.message || 'Failed to submit application. Please try again.');
+            // }
         } catch (error) {
             console.error('Submission error:', error);
             // Handle different types of errors appropriately
@@ -104,6 +106,27 @@ const IntForm = () => {
                                     rules={[{required: true, message: 'Please input your last name'}]}
                                 >
                                     <Input size="large" placeholder="Last Name"/>
+                                </Form.Item>
+                            </div>
+
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                                <Form.Item
+                                    name="gender"
+                                    label="Gender"
+                                    rules={[{required: true, message: 'Please select gender'}]}
+                                >
+                                    <Select size={'large'} allowClear placeholder="Select gender">
+                                        <Option value="M">Male</Option>
+                                        <Option value="F">Female</Option>
+                                    </Select>
+                                </Form.Item>
+
+                                <Form.Item
+                                    name="b_date"
+                                    label="Birth Date"
+                                    rules={[{required: true, message: 'Please select birth date'}]}
+                                >
+                                    <DatePicker size={'large'} style={{width: '100%'}}/>
                                 </Form.Item>
                             </div>
 
