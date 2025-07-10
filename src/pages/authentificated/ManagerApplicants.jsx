@@ -139,6 +139,7 @@ const ManagerApplicants = () => {
             console.error("Error generating letter:", error);
             message.error("Failed to generate letter");
         } finally {
+            fetchApplicants();
             setModalLoading(false);
         }
     };
@@ -234,7 +235,7 @@ const ManagerApplicants = () => {
                                                     type="link"
                                                     href={letter?.url}
                                                     target="_blank"
-                                                    icon={<FilePdfOutlined />}
+                                                    icon={<FilePdfOutlined/>}
                                                     className="text-blue-600 hover:text-blue-800 px-0"
                                                     download
                                                 >
@@ -242,7 +243,7 @@ const ManagerApplicants = () => {
                                                 </AntButton>
                                             ) : (
                                                 <span className="inline-flex items-center text-gray-400 text-sm">
-                                                <ClockCircleOutlined className="mr-1" />
+                                                <ClockCircleOutlined className="mr-1"/>
                                                 Generating
                                             </span>
                                             )}
@@ -253,12 +254,12 @@ const ManagerApplicants = () => {
                         </div>
                     ) : (
                         <div className="text-center py-4 border border-dashed border-gray-200 rounded-lg bg-gray-50">
-                            <FilePdfOutlined className="text-gray-300 text-2xl mb-2" />
+                            <FilePdfOutlined className="text-gray-300 text-2xl mb-2"/>
                             <p className="text-gray-500 text-sm mb-2">No documents generated</p>
                             <AntButton
                                 type="dashed"
                                 onClick={() => handleGenerateLetter(record)}
-                                icon={<PlusOutlined />}
+                                icon={<PlusOutlined/>}
                                 className="text-center"
                             >
                                 Create Document
