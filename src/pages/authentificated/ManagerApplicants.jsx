@@ -122,24 +122,23 @@ const ManagerApplicants = () => {
     };
 
     const handleGenerateLetterSubmit = async (values) => {
+        setModalLoading(true);
         try {
-            setModalLoading(true);
             delete values?.kurs;
             const formattedValues = {
                 ...values,
-                // letter_date: values?.letter_date.format('YYYY-MM-DD'),
+                date: values?.date.format('YYYY-MM-DD'),
                 applicant_id: selectedApplicant.id
             };
-
             await generateLetter(formattedValues);
             message.success('Letter generated successfully');
             letterForm.resetFields();
             setLetterModalVisible(false);
+            fetchApplicants();
         } catch (error) {
             console.error("Error generating letter:", error);
             message.error("Failed to generate letter");
         } finally {
-            fetchApplicants();
             setModalLoading(false);
         }
     };
@@ -737,26 +736,26 @@ const ManagerApplicants = () => {
                         </Col>
                     </Row>
 
-                    {/*<Row gutter={16}>*/}
-                    {/*    <Col span={12}>*/}
-                    {/*        <Form.Item*/}
-                    {/*            name="letter_num"*/}
-                    {/*            label="Letter Number"*/}
-                    {/*            rules={[{required: true, message: 'Please enter letter number'}]}*/}
-                    {/*        >*/}
-                    {/*            <Input placeholder="Letter number"/>*/}
-                    {/*        </Form.Item>*/}
-                    {/*    </Col>*/}
-                    {/*    <Col span={12}>*/}
-                    {/*        <Form.Item*/}
-                    {/*            name="letter_date"*/}
-                    {/*            label="Letter Date"*/}
-                    {/*            rules={[{required: true, message: 'Please select letter date'}]}*/}
-                    {/*        >*/}
-                    {/*            <DatePicker style={{width: '100%'}}/>*/}
-                    {/*        </Form.Item>*/}
-                    {/*    </Col>*/}
-                    {/*</Row>*/}
+                    <Row gutter={16}>
+                        <Col span={12}>
+                            <Form.Item
+                                name="number"
+                                label="Letter Number"
+                                rules={[{required: true, message: 'Please enter letter number'}]}
+                            >
+                                <Input placeholder="Letter number"/>
+                            </Form.Item>
+                        </Col>
+                        <Col span={12}>
+                            <Form.Item
+                                name="date"
+                                label="Letter Date"
+                                rules={[{required: true, message: 'Please select letter date'}]}
+                            >
+                                <DatePicker style={{width: '100%'}}/>
+                            </Form.Item>
+                        </Col>
+                    </Row>
 
                     <Form.Item
                         name="type"
