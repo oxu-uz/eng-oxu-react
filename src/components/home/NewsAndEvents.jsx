@@ -102,18 +102,18 @@ function NewsAndEvents() {
                         <Slider {...settings}>
                             {news.map((newsItem) => (
                                 <motion.div
-                                    key={newsItem.id}
+                                    key={newsItem?.id}
                                     initial="hidden"
                                     animate={isInView5 ? "visible" : "hidden"}
                                     variants={animationVariants}
                                     className='px-2' // Padding qo'shamiz, slaydlar orasidagi bo'shliq uchun
                                 >
                                     <NewsCard
-                                        id={newsItem.id}
-                                        title={newsItem.title}
-                                        image={newsItem.images[0].image_path}
-                                        description={newsItem.description}
-                                        category={newsItem.category.title}
+                                        id={newsItem?.id}
+                                        title={newsItem?.title}
+                                        image={newsItem?.images[0].image_path}
+                                        description={newsItem?.description}
+                                        category={newsItem?.category.title}
                                         className="bg-white"
                                     />
                                 </motion.div>
