@@ -27,6 +27,9 @@ const InternationalRelations = () => {
         { src: "/photo_2025-05-02_14-59-35 (4).jpg", width: "w-[250px]" },
         { src: "/photo_2025-05-02_14-59-35 (5).jpg", width: "w-[180px]" },
         { src: "/photo_2025-05-02_14-59-36.jpg", width: "w-[250px]" },
+    //     ---------|
+        { src: "/photo_2025-07-22_17-12-49.jpg", width: "w-[250px]" },
+        { src: "/photo_2025-07-22_17-14-52.jpg", width: "w-[250px]" },
     ];
 
     return (

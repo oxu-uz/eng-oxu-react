@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {
-    getApplicants,
+    deleteApplicant,
+    getApplicants, updateApplicant
 } from '../../services/manager/managerApplicantService.jsx';
 import {
     Table,
@@ -22,7 +23,7 @@ import {
     Select,
     DatePicker,
     Row,
-    Col
+    Col, Tooltip
 } from 'antd';
 import {
     EditOutlined,
@@ -39,6 +40,7 @@ import {
     PlusOutlined,
     FilePdfOutlined
 } from '@ant-design/icons';
+import moment from 'moment';
 import Button from '../../components/Button';
 import {applicationForm, generateLetter} from "../../services/contact/contactService.jsx";
 
@@ -52,11 +54,13 @@ const ManagerApplicants = () => {
     const [loading, setLoading] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
     const [createModalVisible, setCreateModalVisible] = useState(false);
+    const [editModalVisible, setEditModalVisible] = useState(false);
     const [modalLoading, setModalLoading] = useState(false);
     const [letterModalVisible, setLetterModalVisible] = useState(false);
     const [applicantForm] = Form.useForm();
     const [letterForm] = Form.useForm();
     const [selectedSemester, setSelectedSemester] = useState(null);
+    const [message1, contextHolder] = message.useMessage();
 
     const fetchApplicants = async () => {
         try {
@@ -65,7 +69,7 @@ const ManagerApplicants = () => {
             setApplicants(response?.data || []);
         } catch (error) {
             console.error("Error fetching applicants:", error);
-            message.error("Failed to fetch applicants");
+            message1.error("Failed to fetch applicants");
         } finally {
             setLoading(false);
         }
@@ -80,15 +84,27 @@ const ManagerApplicants = () => {
         setModalVisible(true);
     };
 
+    const handleEdit = (applicant) => {
+        setSelectedApplicant(applicant);
+        applicantForm.setFieldsValue({
+            ...applicant,
+            b_date: applicant.b_date ? moment(applicant.b_date, 'YYYY-MM-DD') : null,
+            gender: applicant.gender?.toLowerCase() // Ensure gender matches option values
+        });
+        setEditModalVisible(true);
+    };
+
     const handleDelete = async (id) => {
-        // try {
-        //     await deleteApplicant(id);
-        //     message.success('Applicant deleted successfully');
-        //     fetchApplicants();
-        // } catch (error) {
-        //     console.error("Error deleting applicant:", error);
-        //     message.error("Failed to delete applicant");
-        // }
+        setLoading(true)
+        try {
+            await deleteApplicant(id);
+            message1.success('Applicant deleted successfully');
+            fetchApplicants();
+        } catch (error) {
+            console.error("Error deleting applicant:", error);
+            message1.error("Failed to delete applicant");
+        }
+        setLoading(false);
     };
 
     const handleGenerateLetter = (applicant) => {
@@ -109,13 +125,37 @@ const ManagerApplicants = () => {
             };
 
             await applicationForm(formattedValues);
-            message.success('Applicant created successfully');
+            message1.success('Applicant created successfully');
             applicantForm.resetFields();
             setCreateModalVisible(false);
             fetchApplicants();
         } catch (error) {
             console.error("Error creating applicant:", error);
-            message.error("Failed to create applicant");
+            message1.error("Failed to create applicant");
+        } finally {
+            setModalLoading(false);
+        }
+    };
+
+    const handleUpdateApplicant = async (values) => {
+        setModalLoading(true);
+        try {
+            const formattedValues = {
+                ...values,
+                b_date: values?.b_date?.format('YYYY-MM-DD'),
+                contact: values?.contact?.replace(/\D/g, ''),
+                extra_contact: values?.extra_contact ? values?.extra_contact.replace(/\D/g, '') : null,
+                whatsapp: values?.whatsapp ? values?.whatsapp.replace(/\D/g, '') : null
+            };
+
+            await updateApplicant(selectedApplicant.id, formattedValues);
+            message1.success('Applicant updated successfully');
+            applicantForm.resetFields();
+            setEditModalVisible(false);
+            fetchApplicants();
+        } catch (error) {
+            console.error("Error updating applicant:", error);
+            message1.error("Failed to update applicant");
         } finally {
             setModalLoading(false);
         }
@@ -131,13 +171,13 @@ const ManagerApplicants = () => {
                 applicant_id: selectedApplicant.id
             };
             await generateLetter(formattedValues);
-            message.success('Letter generated successfully');
+            message1.success('Letter generated successfully');
             letterForm.resetFields();
             setLetterModalVisible(false);
             fetchApplicants();
         } catch (error) {
             console.error("Error generating letter:", error);
-            message.error("Failed to generate letter");
+            message1.error("Failed to generate letter");
         } finally {
             setModalLoading(false);
         }
@@ -271,40 +311,49 @@ const ManagerApplicants = () => {
         {
             title: 'Actions',
             key: 'actions',
-            width: 200,
+            width: 150,
+            fixed: 'right',
             render: (_, record) => (
-                <Space size="small">
-                    <AntButton
-                        type="text"
-                        icon={<EyeOutlined style={{color: '#1890ff'}}/>}
-                        onClick={() => handleViewDetails(record)}
-                        title="View Details"
-                    />
-                    <AntButton
-                        type="text"
-                        icon={<FilePdfOutlined style={{color: '#ff4d4f'}}/>}
-                        onClick={() => handleGenerateLetter(record)}
-                        title="Generate Letter"
-                    />
-                    <AntButton
-                        type="text"
-                        icon={<EditOutlined style={{color: '#52c41a'}}/>}
-                        onClick={() => console.log('Edit', record?.id)}
-                        title="Edit"
-                    />
+                <Space>
+                    <Tooltip title="View details">
+                        <AntButton
+                            shape="circle"
+                            icon={<EyeOutlined/>}
+                            onClick={() => handleViewDetails(record)}
+                            className="text-blue-500 hover:bg-blue-50"
+                        />
+                    </Tooltip>
+                    <Tooltip title="Edit">
+                        <AntButton
+                            shape="circle"
+                            icon={<EditOutlined/>}
+                            onClick={() => handleEdit(record)}
+                            className="text-orange-500 hover:bg-orange-50"
+                        />
+                    </Tooltip>
+                    <Tooltip title="Generate document">
+                        <AntButton
+                            shape="circle"
+                            icon={<FilePdfOutlined/>}
+                            onClick={() => handleGenerateLetter(record)}
+                            className="text-green-500 hover:bg-green-50"
+                        />
+                    </Tooltip>
                     <Popconfirm
                         title="Delete this applicant?"
-                        description="Are you sure you want to delete this applicant?"
-                        onConfirm={() => handleDelete(record?.id)}
+                        description="This action cannot be undone"
+                        onConfirm={() => handleDelete(record.id)}
                         okText="Delete"
                         cancelText="Cancel"
-                        okButtonProps={{danger: true}}
                     >
-                        <AntButton
-                            type="text"
-                            icon={<DeleteOutlined style={{color: '#ff4d4f'}}/>}
-                            title="Delete"
-                        />
+                        <Tooltip title="Delete">
+                            <AntButton
+                                shape="circle"
+                                icon={<DeleteOutlined/>}
+                                danger
+                                className="hover:bg-red-50"
+                            />
+                        </Tooltip>
                     </Popconfirm>
                 </Space>
             ),
@@ -313,6 +362,7 @@ const ManagerApplicants = () => {
 
     const renderMobileItem = (applicant) => (
         <Card className="mb-4 shadow-sm hover:shadow-md transition-shadow">
+            {contextHolder}
             <div className="space-y-3">
                 <div className="flex items-center gap-3">
                     <Avatar size={40} icon={<UserOutlined/>}/>
@@ -371,7 +421,7 @@ const ManagerApplicants = () => {
                         size="sm"
                         variant="outline"
                         icon={<EditOutlined/>}
-                        onClick={() => console.log('Edit', applicant.id)}
+                        onClick={() => handleEdit(applicant)}
                         block
                     >
                         Edit
@@ -399,6 +449,7 @@ const ManagerApplicants = () => {
 
     return (
         <div className="container mx-auto p-2 md:p-4">
+            {contextHolder}
             <div className="flex justify-between items-center mb-6">
                 <Title level={3} className="!mb-0">Applicant Management</Title>
                 <AntButton
@@ -653,6 +704,155 @@ const ManagerApplicants = () => {
                                 loading={modalLoading}
                             >
                                 Create Applicant
+                            </AntButton>
+                        </div>
+                    </Form.Item>
+                </Form>
+            </Modal>
+
+            {/* Edit Applicant Modal */}
+            <Modal
+                title={`Edit Applicant - ${selectedApplicant?.firstname} ${selectedApplicant?.surname}`}
+                open={editModalVisible}
+                onCancel={() => setEditModalVisible(false)}
+                footer={null}
+                width={700}
+                centered
+                destroyOnClose
+            >
+                <Form
+                    form={applicantForm}
+                    layout="vertical"
+                    onFinish={handleUpdateApplicant}
+                >
+                    <Row gutter={16}>
+                        <Col span={12}>
+                            <Form.Item
+                                name="firstname"
+                                label="First Name"
+                                rules={[{required: true, message: 'Please enter first name'}]}
+                            >
+                                <Input placeholder="First name"/>
+                            </Form.Item>
+                        </Col>
+                        <Col span={12}>
+                            <Form.Item
+                                name="surname"
+                                label="Last Name"
+                                rules={[{required: true, message: 'Please enter last name'}]}
+                            >
+                                <Input placeholder="Last name"/>
+                            </Form.Item>
+                        </Col>
+                    </Row>
+
+                    <Row gutter={16}>
+                        <Col span={12}>
+                            <Form.Item
+                                name="gender"
+                                label="Gender"
+                                rules={[{required: true, message: 'Please select gender'}]}
+                            >
+                                <Select placeholder="Select gender">
+                                    <Option value="male">Male</Option>
+                                    <Option value="female">Female</Option>
+                                </Select>
+                            </Form.Item>
+                        </Col>
+                        <Col span={12}>
+                            <Form.Item
+                                name="b_date"
+                                label="Birth Date"
+                                rules={[{required: true, message: 'Please select birth date'}]}
+                            >
+                                <DatePicker style={{width: '100%'}}/>
+                            </Form.Item>
+                        </Col>
+                    </Row>
+
+                    <Row gutter={16}>
+                        <Col span={12}>
+                            <Form.Item
+                                name="nationality"
+                                label="Nationality"
+                                rules={[{required: true, message: 'Please enter nationality'}]}
+                            >
+                                <Input placeholder="Nationality"/>
+                            </Form.Item>
+                        </Col>
+                        <Col span={12}>
+                            <Form.Item
+                                name="study_status"
+                                label="Study Status"
+                                rules={[{required: true, message: 'Please select study status'}]}
+                            >
+                                <Input placeholder="Study Status"/>
+                            </Form.Item>
+                        </Col>
+                    </Row>
+
+                    <Row gutter={16}>
+                        <Col span={12}>
+                            <Form.Item
+                                name="email"
+                                label="Email"
+                                rules={[
+                                    {required: true, message: 'Please enter email'},
+                                    {type: 'email', message: 'Please enter a valid email'}
+                                ]}
+                            >
+                                <Input placeholder="Email"/>
+                            </Form.Item>
+                        </Col>
+                        <Col span={12}>
+                            <Form.Item
+                                name="contact"
+                                label="Primary Phone"
+                                rules={[{required: true, message: 'Please enter phone number'}]}
+                            >
+                                <Input placeholder="Phone number"/>
+                            </Form.Item>
+                        </Col>
+                    </Row>
+
+                    <Row gutter={16}>
+                        <Col span={12}>
+                            <Form.Item
+                                name="extra_contact"
+                                label="Secondary Phone (Optional)"
+                            >
+                                <Input placeholder="Secondary phone number"/>
+                            </Form.Item>
+                        </Col>
+                        <Col span={12}>
+                            <Form.Item
+                                name="whatsapp"
+                                label="WhatsApp (Optional)"
+                            >
+                                <Input placeholder="WhatsApp number"/>
+                            </Form.Item>
+                        </Col>
+                    </Row>
+
+                    <Form.Item
+                        name="address"
+                        label="Address"
+                        rules={[{required: true, message: 'Please enter address'}]}
+                    >
+                        <TextArea rows={2} placeholder="Full address"/>
+                    </Form.Item>
+
+                    <Form.Item>
+                        <div className="flex justify-end gap-3">
+                            <AntButton onClick={() => setEditModalVisible(false)}>
+                                Cancel
+                            </AntButton>
+                            <AntButton
+                                type="primary"
+                                htmlType="submit"
+                                loading={modalLoading}
+                            >
+                                Update Applicant
                             </AntButton>
                         </div>
                     </Form.Item>
