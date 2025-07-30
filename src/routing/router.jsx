@@ -62,6 +62,7 @@ import MBA from "../pages/admissions/programs/MBA.jsx";
 import CampusDetailPage from "../components/home/CampusDetailPage.jsx";
 import AllNewsPage from "../components/home/AllNewsPage.jsx";
 import ManagerApplicants from "../pages/authentificated/ManagerApplicants.jsx";
+import HospitalAffiliated from "../pages/HospitalAffiliated.jsx";
 
 
 const router = createBrowserRouter([
@@ -236,6 +237,10 @@ const router = createBrowserRouter([
             {
                 path: '/about/aiu/regulatory-documents',
                 element: <RegulatoryDocuments/>
+            },
+            {
+                path: '/hospitals',
+                element: <HospitalAffiliated/>
             },
             {
                 path: '/research',

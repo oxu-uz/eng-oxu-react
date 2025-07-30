@@ -65,6 +65,7 @@ export const navItems = [
             },
         ]
     },
+    { label: "Hospitals affiliated", link: "/hospitals" },
     { label: "Research and Publications", link: "/research" },
     { label: "FAQ", link: "/international/faq" },
 ];

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Menu, MenuHandler, MenuList, MenuItem } from "@material-tailwind/react";
-import { ChevronDown, ChevronRight } from "lucide-react";
-import { navItems } from "../../config/navigation";
-import { useLocation } from "react-router-dom";
+import React, {useState} from "react";
+import {Menu, MenuHandler, MenuList, MenuItem} from "@material-tailwind/react";
+import {ChevronDown, ChevronRight} from "lucide-react";
+import {navItems} from "../../config/navigation";
+import {useLocation} from "react-router-dom";
 
 const BotNav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,34 +26,43 @@ const BotNav = () => {
                             ) : item.dropdown ? (
                                 <Menu
                                     allowHover
-                                    animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
+                                    animate={{mount: {y: 0}, unmount: {y: 25}}}
                                     onOpen={() => setIsMenuOpen(true)}
                                     onClose={() => setIsMenuOpen(false)}
                                 >
                                     <MenuHandler>
-                                        <div className="text-white hover:text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg">
+                                        <div
+                                            className="text-white hover:text-white nav-link uppercase flex cursor-pointer gap-3 shadow-none outline-none items-center px-4 py-2 top-nav-sup-link focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300 text-lg">
                                             {item.label} <ChevronDown strokeWidth={1.2} size="20"/>
                                         </div>
                                     </MenuHandler>
-                                    <MenuList className="absolute left-0 mt-2 overflow-hidden min-w-80 rounded-md bg-white shadow-lg">
+                                    <MenuList
+                                        className="absolute left-0 mt-2 overflow-hidden min-w-80 rounded-md bg-white shadow-lg">
                                         {item.dropdown.map((dropdownItem, i) => (
-                                            <div key={i} className="relative group outline-none right-0 hover:outline-none">
+                                            <div key={i}
+                                                 className="relative group outline-none right-0 hover:outline-none">
                                                 {dropdownItem.submenu ? (
                                                     <Menu
-                                                        animate={{ mount: { y: 0 }, unmount: { y: 25 } }}
+                                                        animate={{mount: {y: 0}, unmount: {y: 25}}}
                                                         placement="right-start"
                                                         onOpen={() => setIsMenuOpen(true)}
                                                         onClose={() => setIsMenuOpen(false)}
                                                     >
                                                         <MenuHandler>
-                                                            <MenuItem className="text-[#012152] hover:bg-blue-50 group flex justify-between items-center transition-colors duration-300">
-                                                                {dropdownItem.label} <ChevronRight className="transition-transform group-hover:-translate-x-1/2" size="16"/>
+                                                            <MenuItem
+                                                                className="hover:bg-blue-50 group flex justify-between items-center transition-colors duration-300">
+                                                                {dropdownItem.label} <ChevronRight
+                                                                className="transition-transform group-hover:-translate-x-1/2"
+                                                                size="16"/>
                                                             </MenuItem>
                                                         </MenuHandler>
-                                                        <MenuList className="absolute left-full top-0 mt-[-8px] overflow-hidden min-w-80 rounded-md bg-white shadow-lg">
+                                                        <MenuList
+                                                            className="absolute left-full top-0 mt-[-8px] overflow-hidden min-w-80 rounded-md bg-white shadow-lg">
                                                             {dropdownItem.submenu.map((submenuItem, j) => (
-                                                                <a href={submenuItem.link} key={j} className="outline-none ring-0">
-                                                                    <MenuItem className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
+                                                                <a href={submenuItem.link} key={j}
+                                                                   className="outline-none ring-0">
+                                                                    <MenuItem
+                                                                        className="hover:bg-blue-50 link transition-colors duration-300">
                                                                         {submenuItem.label}
                                                                     </MenuItem>
                                                                 </a>
@@ -62,7 +71,8 @@ const BotNav = () => {
                                                     </Menu>
                                                 ) : (
                                                     <a className="outline-none ring-0" href={dropdownItem.link}>
-                                                        <MenuItem className="text-[#012152] hover:bg-blue-50 link transition-colors duration-300">
+                                                        <MenuItem
+                                                            className="text-white hover:bg-blue-50 link transition-colors duration-300">
                                                             {dropdownItem.label}
                                                         </MenuItem>
                                                     </a>
