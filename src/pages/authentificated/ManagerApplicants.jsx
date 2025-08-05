@@ -61,12 +61,22 @@ const ManagerApplicants = () => {
     const [letterForm] = Form.useForm();
     const [selectedSemester, setSelectedSemester] = useState(null);
     const [message1, contextHolder] = message.useMessage();
+    const [pagination, setPagination] = useState({
+        current: 1,
+        pageSize: 30,
+        total: 0,
+    });
 
-    const fetchApplicants = async () => {
+    const fetchApplicants = async (page = 1, pageSize = 30, params = {}) => {
         try {
             setLoading(true);
-            const response = await getApplicants();
+            const response = await getApplicants(page, pageSize);
             setApplicants(response?.data || []);
+            setPagination({
+                ...pagination,
+                current: response?.meta?.current_page,
+                total: response?.meta?.total,
+            });
         } catch (error) {
             console.error("Error fetching applicants:", error);
             message1.error("Failed to fetch applicants");
@@ -76,8 +86,17 @@ const ManagerApplicants = () => {
     };
 
     useEffect(() => {
-        fetchApplicants();
+        fetchApplicants(pagination.current);
     }, []);
+
+    const handleTableChange = ({current, pageSize}) => {
+        setPagination(prev => ({
+            ...prev,
+            current,
+            pageSize,
+        }));
+        fetchApplicants(current, pageSize); // har safar o'zgarganda ma'lumotlarni qayta yuklash
+    };
 
     const handleViewDetails = (applicant) => {
         setSelectedApplicant(applicant);
@@ -99,7 +118,7 @@ const ManagerApplicants = () => {
         try {
             await deleteApplicant(id);
             message1.success('Applicant deleted successfully');
-            fetchApplicants();
+            fetchApplicants(pagination.current, pagination.pageSize);
         } catch (error) {
             console.error("Error deleting applicant:", error);
             message1.error("Failed to delete applicant");
@@ -128,7 +147,7 @@ const ManagerApplicants = () => {
             message1.success('Applicant created successfully');
             applicantForm.resetFields();
             setCreateModalVisible(false);
-            fetchApplicants();
+            fetchApplicants(pagination.current, pagination.pageSize);
         } catch (error) {
             console.error("Error creating applicant:", error);
             message1.error("Failed to create applicant");
@@ -152,7 +171,7 @@ const ManagerApplicants = () => {
             message1.success('Applicant updated successfully');
             applicantForm.resetFields();
             setEditModalVisible(false);
-            fetchApplicants();
+            fetchApplicants(pagination.current, pagination.pageSize);
         } catch (error) {
             console.error("Error updating applicant:", error);
             message1.error("Failed to update applicant");
@@ -174,7 +193,7 @@ const ManagerApplicants = () => {
             message1.success('Letter generated successfully');
             letterForm.resetFields();
             setLetterModalVisible(false);
-            fetchApplicants();
+            fetchApplicants(pagination.current, pagination.pageSize);
         } catch (error) {
             console.error("Error generating letter:", error);
             message1.error("Failed to generate letter");
@@ -197,12 +216,19 @@ const ManagerApplicants = () => {
 
     const columns = [
         {
-            title: 'ID',
-            dataIndex: 'id',
-            key: 'id',
-            sorter: (a, b) => a.id - b.id,
-            width: 80,
+            title: '№',
+            key: 'index',
+            width: 60,
+            align: 'center',
+            render: (_, __, index) => (pagination.current - 1) * pagination.pageSize + index + 1,
         },
+        // {
+        //     title: 'ID',
+        //     dataIndex: 'id',
+        //     key: 'id',
+        //     sorter: (a, b) => a.id - b.id,
+        //     width: 80,
+        // },
         {
             title: 'Name',
             key: 'name',
@@ -474,8 +500,14 @@ const ManagerApplicants = () => {
                             columns={columns}
                             dataSource={applicants}
                             rowKey="id"
-                            pagination={false}
                             scroll={{x: true}}
+                            pagination={{
+                                showSizeChanger: false,
+                                current: pagination.current,
+                                pageSize: pagination.pageSize,
+                                total: pagination.total,
+                                onChange: (page, pageSize) => handleTableChange({current: page, pageSize}),
+                            }}
                         />
                     </div>
 

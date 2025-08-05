@@ -1,8 +1,13 @@
 import axiosInstance from "../../api/axiosInstance.jsx";
 
-export const getApplicants = async () => {
+export const getApplicants = async (page, pageSize = 30) => {
     try {
-        const response = await axiosInstance.get("/applicant");
+        const params = {};
+        if (page) params.page = page;
+        if (pageSize) params.pagination = pageSize;
+        const response = await axiosInstance.get("/applicant", {
+            params
+        });
         return response?.data;
     } catch (error) {
         console.error("Error getting all applicants for user:", error);
