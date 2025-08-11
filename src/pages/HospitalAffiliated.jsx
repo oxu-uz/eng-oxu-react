@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Row, Col, Card, Divider, Typography, List, Table, Space, Image, Skeleton} from 'antd';
 import {
     MedicineBoxOutlined,
@@ -40,32 +40,38 @@ const fadeIn = {
     visible: {opacity: 1, transition: {duration: 0.8}}
 };
 
-const slideInFromLeft = {
-    hidden: {x: -50, opacity: 0},
-    visible: {x: 0, opacity: 1, transition: {duration: 0.6}}
+const slideUp = {
+    hidden: {y: 50, opacity: 0},
+    visible: {y: 0, opacity: 1, transition: {duration: 0.6}}
 };
 
-const slideInFromRight = {
-    hidden: {x: 50, opacity: 0},
-    visible: {x: 0, opacity: 1, transition: {duration: 0.6}}
-};
-
-// Sample images with thumbnails
-const hospitalImages = [
-    {src: '/hospitals/IMG_3755.jpg', thumbnail: '/hospitals/thumbnails/IMG_3755.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3756.jpg', thumbnail: '/hospitals/thumbnails/IMG_3756.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3757.jpg', thumbnail: '/hospitals/thumbnails/IMG_3757.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3758.jpg', thumbnail: '/hospitals/thumbnails/IMG_3758.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3759.jpg', thumbnail: '/hospitals/thumbnails/IMG_3759.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3760.jpg', thumbnail: '/hospitals/thumbnails/IMG_3760.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3761.jpg', thumbnail: '/hospitals/thumbnails/IMG_3761.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3762.jpg', thumbnail: '/hospitals/thumbnails/IMG_3762.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3763.jpg', thumbnail: '/hospitals/thumbnails/IMG_3763.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3764.jpg', thumbnail: '/hospitals/thumbnails/IMG_3764.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3765.jpg', thumbnail: '/hospitals/thumbnails/IMG_3765.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3766.jpg', thumbnail: '/hospitals/thumbnails/IMG_3766.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3767.jpg', thumbnail: '/hospitals/thumbnails/IMG_3767.webp', alt: "hospital image"},
-    {src: '/hospitals/IMG_3768.jpg', thumbnail: '/hospitals/thumbnails/IMG_3768.webp', alt: "hospital image"},
+// Clinic data with single representative image for each
+const clinics = [
+    {
+        name: "AIU Main Teaching Hospital",
+        image: "/hospitals/main_hospital.jpeg",
+        thumbnail: "/hospitals/thumbnails/main_hospital.jpg",
+        description: "Our flagship hospital with state-of-the-art facilities",
+        featured: true
+    },
+    {
+        name: "Bukhara Pediatric Center",
+        image: "/hospitals/pediatric_center.jpg",
+        thumbnail: "/hospitals/thumbnails/pediatric_center.webp",
+        description: "Specialized care for children and adolescents"
+    },
+    {
+        name: "AIU Surgical Institute",
+        image: "/hospitals/carment.jpg",
+        thumbnail: "/hospitals/thumbnails/carmen.webp",
+        description: "Advanced surgical training and practice"
+    },
+    {
+        name: "Community Health Clinic",
+        image: "/hospitals/himchan.jpg",
+        thumbnail: "/hospitals/thumbnails/himchan.webp",
+        description: "Serving local communities with primary care"
+    }
 ];
 
 const internshipData = [
@@ -95,7 +101,7 @@ const rotationDepartments = [
     'ENT, Ophthalmology, Orthopedics, and more'
 ];
 
-const AnimatedImage = ({src, thumbnail, alt, style}) => {
+const AnimatedImage = ({src, thumbnail, alt, style, className}) => {
     const [loaded, setLoaded] = useState(false);
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -109,6 +115,7 @@ const AnimatedImage = ({src, thumbnail, alt, style}) => {
             animate={inView ? "visible" : "hidden"}
             variants={itemVariants}
             style={style}
+            className={className}
             whileHover={{scale: 1.03}}
             transition={{type: 'spring', stiffness: 300}}
         >
@@ -121,7 +128,7 @@ const AnimatedImage = ({src, thumbnail, alt, style}) => {
                         active
                         style={{
                             width: '100%',
-                            height: style?.height || '100%'
+                            height: '100%'
                         }}
                     />
                 }
@@ -133,6 +140,64 @@ const AnimatedImage = ({src, thumbnail, alt, style}) => {
                     borderRadius: '8px'
                 }}
             />
+        </motion.div>
+    );
+};
+
+const HospitalImageCard = ({clinic, isFeatured = false}) => {
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    return (
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={isFeatured ? fadeIn : slideUp}
+            whileHover={{scale: isFeatured ? 1.01 : 1.03}}
+            transition={{type: 'spring', stiffness: 300}}
+            style={{
+                height: '100%',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)'
+            }}
+        >
+            <div style={{
+                position: 'relative',
+                height: isFeatured && '800px',
+                width: '100%'
+            }}>
+                <Image
+                    src={clinic.image}
+                    alt={clinic.name}
+                    preview={false}
+                    style={{
+                        // height: '100%',
+                        width: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center'
+                    }}
+                />
+                <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                    padding: '24px',
+                    color: 'white'
+                }}>
+                    <Title level={3} style={{color: 'white', marginBottom: '8px'}}>
+                        {clinic.name}
+                    </Title>
+                    <Text style={{color: 'rgba(255,255,255,0.9)', fontSize: '16px'}}>
+                        {clinic.description}
+                    </Text>
+                </div>
+            </div>
         </motion.div>
     );
 };
@@ -166,94 +231,93 @@ const HospitalAffiliated = () => {
         <div style={{padding: '24px', backgroundColor: '#f5f7fa'}}>
             {/* Hero Section */}
             <motion.div
-                ref={heroRef}
                 initial="hidden"
-                animate={heroInView ? "visible" : "hidden"}
+                animate="visible"
                 variants={fadeIn}
                 style={{
                     background: 'linear-gradient(135deg, #012152, #012c6e)',
                     color: 'white',
                     padding: '60px 24px',
                     borderRadius: '12px',
-                    marginBottom: '32px',
+                    marginBottom: '48px',
                     textAlign: 'center',
                     boxShadow: '0 10px 20px rgba(1, 33, 82, 0.2)'
                 }}
             >
-                <motion.div
-                    initial={{scale: 0.8}}
-                    animate={{scale: 1}}
-                    transition={{delay: 0.3}}
-                >
-                    {/*<AppstoreOutlined style={{fontSize: '64px', marginBottom: '20px', color: '#4dabf7'}}/>*/}
-                </motion.div>
                 <Title level={2} style={{color: 'white', marginBottom: '16px'}}>
                     Clinical Practice and Hospital Training
-                </Title>
-                <Title level={4} style={{color: 'rgba(255,255,255,0.9)', fontWeight: 'normal'}}>
-                    At Asia International University
                 </Title>
                 <Paragraph style={{
                     fontSize: '18px',
                     maxWidth: '800px',
-                    margin: '20px auto',
+                    margin: '0 auto',
                     lineHeight: '1.7',
                     color: 'rgba(255,255,255,0.9)'
                 }}>
-                    We recognize that clinical experience is the cornerstone of medical education. Our programs are
-                    designed to ensure students develop practical skills, clinical confidence, and real-world competence
-                    from the very beginning of their journey.
+                    We recognize that clinical experience is the cornerstone of medical education.
                 </Paragraph>
             </motion.div>
 
-            {/* Affiliated Hospitals */}
-            <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{once: true, amount: 0.2}}
-                variants={containerVariants}
-            >
-                <Card
-                    style={{
-                        marginBottom: '32px',
-                        borderRadius: '12px',
-                        overflow: 'hidden',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.08)'
-                    }}
-                    bodyStyle={{padding: '24px'}}
-                >
-                    <Row gutter={[32, 32]} align="middle">
-                        <Col xs={24} md={12}>
-                            <Title level={3} style={{color: '#012152', marginBottom: '16px'}}>
-                                <TeamOutlined style={{marginRight: '12px', color: '#012c6e'}}/>
-                                Our Teaching Hospitals Network
-                            </Title>
-                            <Paragraph style={{fontSize: '16px', lineHeight: '1.7'}}>
-                                We are proud to have our own teaching hospitals and 46 affiliated hospitals.
-                            </Paragraph>
-                        </Col>
-                        <Col xs={24} md={12}>
-                            <div style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(2, 1fr)',
-                                gap: '12px',
-                                borderRadius: '8px',
-                                overflow: 'hidden'
-                            }}>
-                                {hospitalImages.slice(0, 2).map((img, index) => (
-                                    <AnimatedImage
-                                        key={index}
-                                        src={img.src}
-                                        thumbnail={img.thumbnail}
-                                        alt={img.alt}
-                                        style={{height: '220px'}}
-                                    />
-                                ))}
-                            </div>
-                        </Col>
-                    </Row>
-                </Card>
-            </motion.div>
+            {/* Main Hospital Showcase */}
+            <div style={{marginBottom: '48px'}}>
+                <HospitalImageCard clinic={clinics[0]} isFeatured={true}/>
+            </div>
+
+            {/* Our Clinics Section */}
+            <Divider orientation="left">
+                <Text strong style={{color: '#012152', fontSize: '20px'}}>Our Affiliated Clinics</Text>
+            </Divider>
+
+            <Row gutter={[24, 24]} style={{marginBottom: '48px'}}>
+                {clinics.slice(1).map((clinic, index) => (
+                    <Col xs={24} sm={12} md={8} key={index}>
+                        <HospitalImageCard clinic={clinic}/>
+                    </Col>
+                ))}
+            </Row>
+
+            {/*/!* Our Clinics Section *!/*/}
+            {/*<motion.div*/}
+            {/*    initial="hidden"*/}
+            {/*    whileInView="visible"*/}
+            {/*    viewport={{once: true}}*/}
+            {/*    variants={containerVariants}*/}
+            {/*>*/}
+            {/*    <Divider orientation="left">*/}
+            {/*        <Text strong style={{color: '#012152', fontSize: '20px'}}>Our Affiliated Clinics</Text>*/}
+            {/*    </Divider>*/}
+
+            {/*    <Row gutter={[24, 24]} style={{marginBottom: '32px'}}>*/}
+            {/*        {clinics.slice(1).map((clinic, index) => (*/}
+            {/*            <Col xs={24} sm={12} key={index}>*/}
+            {/*                <Card*/}
+            {/*                    hoverable*/}
+            {/*                    style={{*/}
+            {/*                        borderRadius: '12px',*/}
+            {/*                        overflow: 'hidden',*/}
+            {/*                        height: '100%'*/}
+            {/*                    }}*/}
+            {/*                    bodyStyle={{padding: '16px'}}*/}
+            {/*                    cover={*/}
+            {/*                        <AnimatedImage*/}
+            {/*                            src={clinic.image}*/}
+            {/*                            thumbnail={clinic.thumbnail}*/}
+            {/*                            alt={clinic.name}*/}
+            {/*                            style={{height: '220px'}}*/}
+            {/*                        />*/}
+            {/*                    }*/}
+            {/*                >*/}
+            {/*                    <Title level={4} style={{color: '#012152', marginBottom: '8px'}}>*/}
+            {/*                        {clinic.name}*/}
+            {/*                    </Title>*/}
+            {/*                    <Paragraph style={{fontSize: '15px'}}>*/}
+            {/*                        {clinic.description}*/}
+            {/*                    </Paragraph>*/}
+            {/*                </Card>*/}
+            {/*            </Col>*/}
+            {/*        ))}*/}
+            {/*    </Row>*/}
+            {/*</motion.div>*/}
 
             <Divider orientation="left">
                 <Text strong style={{color: '#012152', fontSize: '20px'}}>Our Clinical Training Approach</Text>
@@ -488,61 +552,49 @@ const HospitalAffiliated = () => {
                 whileInView="visible"
                 viewport={{once: true}}
                 variants={fadeIn}
+                style={{
+                    background: 'linear-gradient(135deg, #012152, #012c6e)',
+                    color: 'white',
+                    padding: '40px',
+                    borderRadius: '12px',
+                    textAlign: 'center',
+                    marginTop: '48px',
+                    boxShadow: '0 10px 20px rgba(1, 33, 82, 0.2)'
+                }}
             >
-                <AnimatedCard delay={0.5}>
-                    <div style={{
-                        background: 'linear-gradient(135deg, #012152, #012c6e)',
-                        color: 'white',
-                        padding: '40px 24px',
-                        borderRadius: '12px',
-                        textAlign: 'center',
-                        marginBottom: '32px',
-                        boxShadow: '0 10px 20px rgba(1, 33, 82, 0.2)'
-                    }}>
-                        <motion.div
-                            whileHover={{rotate: 10}}
-                            transition={{type: 'spring'}}
-                        >
-                            <AppstoreOutlined style={{fontSize: '48px', marginBottom: '20px', color: '#fff'}}/>
-                        </motion.div>
-                        <Title level={3} style={{color: 'white', marginBottom: '16px'}}>
-                            At AIU, we don't just teach medicine — we prepare doctors who are ready to serve from day
-                            one.
-                        </Title>
-                        <Text style={{fontSize: '16px', opacity: 0.9, color: 'rgba(255,255,255,0.9)'}}>
-                            Our graduates enter the medical field with confidence, competence, and compassion.
-                        </Text>
-                    </div>
-                </AnimatedCard>
+                <AppstoreOutlined style={{fontSize: '48px', marginBottom: '20px', color: '#fff'}}/>
+                <Title level={3} style={{color: 'white', marginBottom: '16px'}}>
+                    At AIU, we don't just teach medicine — we prepare doctors who are ready to serve from day one.
+                </Title>
             </motion.div>
 
             {/* Hospital Images Gallery */}
-            <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{once: true}}
-                variants={containerVariants}
-            >
-                <Divider orientation="left">
-                    <Text strong style={{color: '#012152', fontSize: '20px'}}>Our Affiliated Hospitals</Text>
-                </Divider>
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                    gap: '20px',
-                    marginBottom: '32px'
-                }}>
-                    {hospitalImages.map((img, index) => (
-                        <AnimatedImage
-                            key={index}
-                            src={img.src}
-                            thumbnail={img.thumbnail}
-                            alt={img.alt}
-                            style={{height: '240px'}}
-                        />
-                    ))}
-                </div>
-            </motion.div>
+            {/*<motion.div*/}
+            {/*    initial="hidden"*/}
+            {/*    whileInView="visible"*/}
+            {/*    viewport={{once: true}}*/}
+            {/*    variants={containerVariants}*/}
+            {/*>*/}
+            {/*    <Divider orientation="left">*/}
+            {/*        <Text strong style={{color: '#012152', fontSize: '20px'}}>Our Affiliated Hospitals</Text>*/}
+            {/*    </Divider>*/}
+            {/*    <div style={{*/}
+            {/*        display: 'grid',*/}
+            {/*        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',*/}
+            {/*        gap: '20px',*/}
+            {/*        marginBottom: '32px'*/}
+            {/*    }}>*/}
+            {/*        {hospitalImages.map((img, index) => (*/}
+            {/*            <AnimatedImage*/}
+            {/*                key={index}*/}
+            {/*                src={img.src}*/}
+            {/*                thumbnail={img.thumbnail}*/}
+            {/*                alt={img.alt}*/}
+            {/*                style={{height: '240px'}}*/}
+            {/*            />*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*</motion.div>*/}
         </div>
     );
 };
