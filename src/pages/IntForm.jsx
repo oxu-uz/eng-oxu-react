@@ -22,19 +22,17 @@ const IntForm = () => {
                 whatsapp: values.whatsapp ? values.whatsapp.replace(/\D/g, '') : null
             };
 
-            console.log(formData)
-
             // Call the API service
-            // const response = await applicationForm(formData);
+            const response = await applicationForm(formData);
 
             // Check if the request was successful
-            // if (response && response.success) {
-            //     message.success('Application submitted successfully!');
-            //     form.resetFields(); // Reset the form after successful submission
-            //     setAcceptTerms(false); // Reset the terms checkbox
-            // } else {
-            //     message.error(response.message || 'Failed to submit application. Please try again.');
-            // }
+            if (response && response.success) {
+                message.success('Application submitted successfully!');
+                form.resetFields(); // Reset the form after successful submission
+                setAcceptTerms(false); // Reset the terms checkbox
+            } else {
+                message.error(response.message || 'Failed to submit application. Please try again.');
+            }
         } catch (error) {
             console.error('Submission error:', error);
             // Handle different types of errors appropriately
