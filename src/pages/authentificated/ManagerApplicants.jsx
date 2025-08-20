@@ -999,6 +999,7 @@ const ManagerApplicants = () => {
                             <Option value="decree">Decree</Option>
                             <Option value="notification">Notification</Option>
                             <Option value="document">Document</Option>
+                            <Option value="bank">Bank</Option>
                         </Select>
                     </Form.Item>
 
