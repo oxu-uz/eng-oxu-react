@@ -955,6 +955,8 @@ const ManagerApplicants = () => {
                                     <Option value={6}>6th Semester</Option>
                                     <Option value={7}>7th Semester</Option>
                                     <Option value={8}>8th Semester</Option>
+                                    <Option value={9}>9th Semester</Option>
+                                    <Option value={10}>10th Semester</Option>
                                 </Select>
                             </Form.Item>
                         </Col>
