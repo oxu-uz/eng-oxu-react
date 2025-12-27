@@ -10,131 +10,46 @@ const StructureOfFaculty = () => {
     const [visible, setVisible] = useState(false);
     const [selectedMember, setSelectedMember] = useState(null);
 
+    const DEFAULT_AVATAR = "/structureFaculty/default.png";
+
     const leadershipTeam = [
-        {
-            id: 1,
-            name: "Dr. Bhandari Kishan",
-            image:"/structureFaculty/kishan.png",
-            position: "Dean",
-            // work_schedule: "Every day from 09.00 to 18.00",
-            // address: "Bukhara city, \"Yangiabad MFY\", Gijduvan street, house 74.",
-            // educational_info: [
-            //     "Bukhara Medical Institute (Medical) (2011-2017)",
-            //     "Bukhara State University (Chemistry) (2017-2020)",
-            //     "Bukhara State University (Master's) (2020-2022)",
-            // ],
-        },
-        {
-            id: 2,
-            name: "Bahronov Ashurbek Baxodirovich",
-            image:"/structureFaculty/ashurbek.png",
-            position: "Specialist of International relations and Admission",
-            // work_schedule: "Every day from 09.00 to 18.00",
-            // address: "Bukhara city, \"Yangiabad MFY\", Gijduvan street, house 74.",
-            // educational_info: [
-            //     "Student at Bukhara Engineering and Technology Institute (2011-2015)",
-            //     "Master's student at Tashkent State Pedagogical University (2015-2017)",
-            //     "Network administrator of the Information Technology Center of Bukhara State Medical Institute (September-December 2017)",
-            //     "PhD student at Bukhara Engineering and Technology Institute (2018-2020)",
-            //     "Assistant at the Department of \"Innovative and Information Technologies in Medicine, Biophysics\" of Bukhara State Medical Institute (2018-2022)",
-            //     "Associate Professor at the Department of \"Innovative and Information Technologies in Medicine, Biophysics\" of Bukhara State Medical Institute (2022-2024)",
-            //     "Associate Professor of the Department of \"General Technical Sciences\" of Asian International University, on a reciprocal basis (2022-2023)",
-            //     "Dean of the Faculty of \"Social Sciences and Technology\" of Asian International University (January-August 2024)",
-            //     "First Vice-Rector for Spiritual and Educational Affairs, Department of Youth Policy (August 2024 - present)",
-            // ],
-        },
-        {
-            id: 3,
-            name: "Dr. Askka S Jeril",
-            image:"/structureFaculty/jerry.png",
-            position: "International Student Administrator",
-            // work_schedule: "Every day from 09.00 to 18.00",
-            // address: "Bukhara city, \"Yangiabad MFY\", Gijduvan street, house 74.",
-            // educational_info: [
-            //     "Bukhara State University (Physical Education) (2002-2006)",
-            //     "Bukhara State University (Economics) (2006-2009)",
-            //     "Bukhara State University (Master's) (2010 - 2012)",
-            //     "Doctor of Philosophy (PhD) in Pedagogical Sciences, Associate Professor",
-            // ],
-        },
-        {
-            id: 4,
-            name: "Baxronova Maftuna Amriddin qizi",
-            image:"/structureFaculty/maftuna.png",
-            position: "Supervisor",
-            // work_schedule: "Every day from 09.00 to 18.00",
-            // address: "Bukhara city, \"Yangiabad MFY\", Gijduvan street, house 74.",
-            // educational_info: [
-            //     "Tashkent Institute of National Economy (1985)",
-            //     "Academy of State and Society Building under the President of the Republic of Uzbekistan (Physical Education) (Master's degree) (2003)",
-            // ],
-        },
-        {
-            id: 5,
-            name: "Dr. Badal Krishna Prasad",
-            image:"/structureFaculty/krishna.png",
-            position: "Head of the academics",
-            // work_schedule: "Tuesday, Thursday and Friday from 15:00 to 17:00",
-            // address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
-            // educational_info: [
-            //     "Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management",
-            // ],
-        },
-        {
-            id: 6,
-            name: "Dr. Khadka Ravi Roshan",
-            image:"/structureFaculty/Ravi.png",
-            position: "Head of the clinical skills",
-            // work_schedule: "Tuesday, Thursday and Friday from 15:00 to 17:00",
-            // address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
-            // educational_info: [
-            //     "Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management",
-            // ],
-        },
-        {
-            id: 7,
-            name: "Gyawali Meena",
-            image:"/structureFaculty/Meena.png",
-            position: "Head of the scientific research and co-curricular  activities",
-            // work_schedule: "Tuesday, Thursday and Friday from 15:00 to 17:00",
-            // address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
-            // educational_info: [
-            //     "Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management",
-            // ],
-        },
-        {
-            id: 8,
-            name: "Sharma Namrata",
-            image:"/structureFaculty/Namrata.png",
-            position: "Head of  extra-curricular activities ",
-            // work_schedule: "Tuesday, Thursday and Friday from 15:00 to 17:00",
-            // address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
-            // educational_info: [
-            //     "Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management",
-            // ],
-        },
-        {
-            id: 9,
-            name: "Mutti-Ur Rehman",
-            image:"/structureFaculty/Mutti(2).png",
-            position: "Associate Professor, Researcher",
-            // work_schedule: "Tuesday, Thursday and Friday from 15:00 to 17:00",
-            // address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
-            // educational_info: [
-            //     "Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management",
-            // ],
-        },{
-            id: 10,
-            name: "Fouzia Amir",
-            image:"/structureFaculty/Amir.png",
-            position: "Associate Professors, Researcher",
-            // work_schedule: "Tuesday, Thursday and Friday from 15:00 to 17:00",
-            // address: "Bukhara city, Yangiobod MFY, Gijduvan St, Apt 74",
-            // educational_info: [
-            //     "Management Development Institute of Singapore in Tashkent (2016-2020) Bachelors of Business Management",
-            // ],
-        },
-    ];
+        { id: 1, name: "Dr. Bhandari Kishan", image: "/structureFaculty/kishan.png", position: "Dean" },
+    
+        { id: 2, name: "Zarnigor Obidovna Djalilova", image: '/IMG_0167.PNG', position: "Vice dean for students Development and Research" },
+    
+        { id: 3, name: "Mirshod Murodillo o'g'li Abdulloev", image: '/34.jpg', position: "Vice dean for the academic affairs" },
+    
+        { id: 4, name: "Dr. Askka S Jeril", image: "/structureFaculty/jerry.png", position: "International Student Administrator" },
+    
+        { id: 5, name: "Bahronov Ashurbek Baxodirovich", image: "/structureFaculty/ashurbek.png", position: "Specialist of International relations and Admission" },
+    
+        { id: 6, name: "Rahimova Gulnoza Asrorovna", image: '/Rahimova Gulnoza Asrorovna.jpg', position: "Methodist" },
+    
+        { id: 7, name: "Dr. Badal Krishna Prasad", image: "/structureFaculty/krishna.png", position: "Head of the academics" },
+    
+        { id: 8, name: "Dr. Khadka Ravi Roshan", image: "/structureFaculty/Ravi.png", position: "Head of the clinical skills" },
+    
+        { id: 9, name: "Gyawali Meena", image: "/structureFaculty/Meena.png", position: "Head of the scientific research and co-curricular  activities" },
+    
+        { id: 10, name: "Sharma Namrata", image: "/structureFaculty/Namrata.png", position: "Head of  extra-curricular activities" },
+    
+        { id: 11, name: "Dr. Rashad Mahmud", image: '/Rashad Mahmud.png', position: "Professor" },
+    
+        { id: 12, name: "Mustafa Mohamed Saleh", image: '/Mustafa Mohamed Saleh.jpg', position: "Senior Teacher" },
+    
+        { id: 13, name: "Saidova Laziza", image: '/Saidova Laziza.jpg', position: "Supervisor, Student Academic & support" },
+    
+        { id: 14, name: "Bobur Nurullayev", image: '/Bobur Nurullayev.jpg', position: "Supervisor, Student Academic & support" },
+    
+        { id: 15, name: "Hossny Abd Elhamid esmaeil Mohammed Rezk", image: '/Hossny Abd Elhamid esmaeil Mohammed Rezk.jpg', position: "Supervisor, Student Academic & support" },
+    
+        { id: 16, name: "JOHN NIBIN JOHNSON", image: '/JOHN NIBIN JOHNSON.png', position: "Supervisor, Student Accommodation" },
+    
+        { id: 17, name: "AARTHI SOUNDARA RAJAN", image: '/AARTHI SOUNDARA RAJAN.jpeg', position: "Supervisor, Student Accommodation" },
+    
+        { id: 18, name: "SIVAPRAKASH SIVADHAS", image: '/SIVAPRAKASH SIVADHAS.jpg', position: "Supervisor, Student Accommodation / Senior Teacher" },
+        { id: 19, name: "Amit Kamboj", image: '/Amit Kamboj.jpg', position: "Communications & Marketing Officer" },
+      ];
 
     const showModal = (member) => {
         setSelectedMember(member);
@@ -180,7 +95,7 @@ const StructureOfFaculty = () => {
                         {leadershipTeam.map(member => (
                             <Col key={member.id} xs={24} sm={12} md={8}>
                                 <div className="flex flex-col items-center gap-5">
-                                    <img src={member.image} className="h-[150px] w-[150px]"/>
+                                    <img src={member.image} className="h-[150px] rounded-full object-cover w-[150px]"/>
                                     <div className="text-center">
                                         <h6 className="text-[#012152]">{member.name}</h6>
                                         <div className="line"></div>
