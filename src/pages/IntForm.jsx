@@ -114,8 +114,8 @@ const IntForm = () => {
                                     rules={[{required: true, message: 'Please select gender'}]}
                                 >
                                     <Select size={'large'} allowClear placeholder="Select gender">
-                                        <Option value="M">Male</Option>
-                                        <Option value="F">Female</Option>
+                                        <Option value="male">Male</Option>
+                                        <Option value="female">Female</Option>
                                     </Select>
                                 </Form.Item>
 
