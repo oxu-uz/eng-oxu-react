@@ -19,7 +19,7 @@ const StructureOfFaculty = () => {
     
         { id: 3, name: "Mirshod Murodillo o'g'li Abdulloev", image: '/34.jpg', position: "Vice dean for the academic affairs" },
     
-        { id: 4, name: "Dr. Askka S Jeril", image: "/structureFaculty/jerry.png", position: "International Student Administrator" },
+        { id: 4, name: "Dr. Askka S Jeril", image: "/aska.jpg", position: "International Student Administrator" },
     
         { id: 5, name: "Bahronov Ashurbek Baxodirovich", image: "/structureFaculty/ashurbek.png", position: "Specialist of International relations and Admission" },
     

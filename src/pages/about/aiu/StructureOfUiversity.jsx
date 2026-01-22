@@ -59,8 +59,8 @@ const StructureOfUniversity = () => {
         },
         {
             id: 4,
-            name: "Usmonov Farrux Farhodovich",
-            image:"/structureUni/00000003.jpg",
+            name: "Nosirov Sherzod Baxodirovich",
+            image:"/033.jpg",
             position: "Vice-rector for financial and economic affairs",
             work_schedule: "Every day from 09.00 to 18.00",
             address: "Bukhara city, \"Yangiabad MFY\", Gijduvan street, house 74.",
@@ -149,7 +149,7 @@ const StructureOfUniversity = () => {
                         {leadershipTeam.map(member => (
                             <Col key={member.id} xs={24} sm={12} md={8}>
                                 <div className="flex flex-col items-center gap-5">
-                                    <img src={member.image} className="h-[150px] w-[150px] object-cover rounded-full"/>
+                                    <img src={member.image} className="h-[150px] w-[150px] object-cover object-top rounded-full"/>
                                     <div className="text-center">
                                         <h6 className="text-[#012152]">{member.name}</h6>
                                         <div className="line"></div>
