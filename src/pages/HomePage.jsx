@@ -70,6 +70,12 @@ const HomePage = () => {
 
             <FadeInStagger>
                 <FadeIn>
+                    <NewsAndEvents/>
+                </FadeIn>
+            </FadeInStagger>
+
+            <FadeInStagger>
+                <FadeIn>
                     <ProgramHighlights/>
                 </FadeIn>
             </FadeInStagger>
@@ -91,12 +97,6 @@ const HomePage = () => {
             <FadeInStagger>
                 <FadeIn>
                     <EmbarkJourneySec/>
-                </FadeIn>
-            </FadeInStagger>
-
-            <FadeInStagger>
-                <FadeIn>
-                    <NewsAndEvents/>
                 </FadeIn>
             </FadeInStagger>
 

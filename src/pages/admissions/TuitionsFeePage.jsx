@@ -98,9 +98,9 @@ const TuitionFeesPage = () => {
                                         amount: "$7300"
                                     },
                                     {
-                                        year: "2nd to 5th Year",
-                                        description: "Hostel Fees: $600\nTuition Fees: $2600\nVisa Renewal: $250\nRegistration: $250",
-                                        amount: "$3700"
+                                        year: "2nd to 5th Year and internship",
+                                        description: "Hostel Fees: $600\nTuition Fees: $2600\nVisa: $280\nRegistration: $290",
+                                        amount: "$3770"
                                     }
                                 ].map((row, index) => (
                                     <tr key={index} className="border-t border-gray-200">
@@ -117,6 +117,9 @@ const TuitionFeesPage = () => {
                                 ))}
                                 </tbody>
                             </table>
+                            <p className="text-gray-600 text-sm sm:text-base mt-4 italic">
+                                Note: Visa and registration fees are subject to change in accordance with the regulations of the Ministry of Foreign Affairs.
+                            </p>
                         </div>
 
                         {/* BSIT/BSBA/MBA Program Fees */}
@@ -125,7 +128,7 @@ const TuitionFeesPage = () => {
                             <div className="bg-white p-4 sm:p-5 rounded-lg shadow-sm">
                                 <div className="flex justify-between items-center border-b pb-3 mb-3">
                                     <span className="text-gray-700 font-medium">Tuition fee</span>
-                                    <span className="text-gray-800 font-bold">2300$ yearly</span>
+                                    <span className="text-gray-800 font-bold">1800$ yearly</span>
                                 </div>
                                 <p className="text-gray-600 text-sm sm:text-base mt-2">
                                     For the double degree program, the fees of Washington University of Science will be paid according to their official fee structure and policies.

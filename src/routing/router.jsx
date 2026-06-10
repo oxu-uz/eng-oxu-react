@@ -62,6 +62,7 @@ import MBA from "../pages/admissions/programs/MBA.jsx";
 import CampusDetailPage from "../components/home/CampusDetailPage.jsx";
 import AllNewsPage from "../components/home/AllNewsPage.jsx";
 import ManagerApplicants from "../pages/authentificated/ManagerApplicants.jsx";
+import ManagerMouPage from "../pages/authentificated/ManagerMouPage.jsx";
 import HospitalAffiliated from "../pages/HospitalAffiliated.jsx";
 import SustainableGoals from "../pages/about/SustainableGoals.jsx";
 import Sdg1Page from "../pages/about/sdg/Sdg1Page.jsx";
@@ -413,6 +414,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute allowedRoles={["manager"]}>
             <ManagerApplicants />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "dashboard/mou",
+        element: (
+          <ProtectedRoute allowedRoles={["manager"]}>
+            <ManagerMouPage />
           </ProtectedRoute>
         ),
       },

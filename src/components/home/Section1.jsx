@@ -21,8 +21,8 @@ function Section1(props) {
   const slides = [
     {
       type: "image",
-      src: "/section1.jpg",
-      poster: "/section1.jpg",
+      src: "/pic4-01.jpg",
+      poster: "/pic4-01.jpg",
       title:
         "Welcome to AIU. Ready to start on an exciting journey with us? Explore our university and become part of the family.",
       description:
@@ -192,7 +192,7 @@ function Section1(props) {
     <div
       className="bg-opacity-50 z-10"
       style={{
-        backgroundImage: "url(/section1.jpg)",
+        backgroundImage: "url(/pic4-01.jpg)",
         height: "100vh",
         backgroundSize: "cover",
         backgroundPosition: "center",

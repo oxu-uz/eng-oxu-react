@@ -14,7 +14,7 @@ import {useAuth} from '../hooks/AuthContext';
 import ContactModal from "../components/ContactModal.jsx";
 import {Link} from "react-scroll";
 import MidNav from "../components/navigation/MidNav.jsx";
-import {FaUserCheck} from "react-icons/fa";
+import {FaUserCheck, FaHandshake} from "react-icons/fa";
 
 const {Header, Sider, Content} = Layout;
 
@@ -91,6 +91,13 @@ const ManagerLayout = () => {
                             onClick={() => navigate('/manager/dashboard/applicants')}
                         >
                             Applicants
+                        </Menu.Item>
+                        <Menu.Item
+                            key="mou"
+                            icon={<FaHandshake />}
+                            onClick={() => navigate('/manager/dashboard/mou')}
+                        >
+                            MoU
                         </Menu.Item>
                         <Menu.SubMenu key="news" icon={<FileTextOutlined/>} title="News">
                             <Menu.Item
