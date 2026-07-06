@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useState, useMemo} from 'react';
 import {useInView, motion} from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, {once: false});
+    const isInView = useInView(ref, { once: true, amount: 0.2 });
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const testimonials = [
@@ -59,8 +59,7 @@ const Testimonials = () => {
         visible: {opacity: 1, y: 0, transition: {duration: 1}},
     };
 
-    // Slider settings
-    const settings = {
+    const settings = useMemo(() => ({
         dots: false,
         arrows: false,
         infinite: true,
@@ -69,7 +68,8 @@ const Testimonials = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        beforeChange: (current, next) => setCurrentIndex(next),
+        pauseOnHover: true,
+        beforeChange: (_, next) => setCurrentIndex(next),
         responsive: [
             {
                 breakpoint: 1024,
@@ -84,7 +84,7 @@ const Testimonials = () => {
                 }
             }
         ]
-    };
+    }), []);
 
     return (
         <section
@@ -94,14 +94,17 @@ const Testimonials = () => {
         >
             {/*<div className="absolute inset-0 opacity-10 bg-[url('/header1.png')] bg-repeat" />*/}
             {/* Blurred Background Image */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 isolate">
                 <img
                     src="/P1087891.JPG"
-                    alt="University Campus"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-center"
                     style={{
                         filter: "blur(8px) brightness(0.7)",
-                        transform: "scale(1.02)"
+                        transform: "scale(1.02) translateZ(0)",
                     }}
                 />
             </div>
@@ -124,11 +127,8 @@ const Testimonials = () => {
                 <main className="w-full">
                     <Slider {...settings}>
                         {testimonials.map((testimonial) => (
-                            <motion.div
+                            <div
                                 key={testimonial.id}
-                                initial="hidden"
-                                animate={isInView ? "visible" : "hidden"}
-                                variants={animationVariants}
                                 className="px-3 h-[450px]"
                             >
                                 <div className="bg-white/70 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
@@ -158,7 +158,7 @@ const Testimonials = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </Slider>
                 </main>

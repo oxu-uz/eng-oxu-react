@@ -47,6 +47,7 @@ import ManagerPostsPage from "../pages/authentificated/ManagerPostsPage.jsx";
 import NewsInDetail from "../components/home/NewsInDetail.jsx";
 import InternationalRelationsContact from "../pages/InternationalRelationsContact.jsx";
 import IntForm from "../pages/IntForm.jsx";
+import ApplicationThankYou from "../pages/ApplicationThankYou.jsx";
 import FAQ from "../pages/FAQ.jsx";
 import ViceRectorAcademic from "../pages/about/aiu/ViceRectorAcademic.jsx";
 import ViceRectorForYouth from "../pages/about/aiu/ViceRectorForYouth.jsx";
@@ -266,6 +267,10 @@ const router = createBrowserRouter([
       {
         path: "/international-form",
         element: <IntForm />,
+      },
+      {
+        path: "/international-form/thank-you",
+        element: <ApplicationThankYou />,
       },
       {
         path: "/academics/study-plan",

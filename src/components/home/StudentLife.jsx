@@ -75,7 +75,7 @@ const StudentLife = () => {
                         animate={inView ? 'visible' : 'hidden'}
                         variants={itemVariants}
                     >
-                        Student Activities at AIU
+                        Students Life at AIU
                         <span
                             className="absolute left-1/2 bottom-0 translate-x-[-50%] w-36 h-[3px] bg-[#012152]"></span>
                     </motion.h2>
@@ -103,7 +103,7 @@ const StudentLife = () => {
                         variants={itemVariants}
                         whileHover={{scale: 1.03}}
                     >
-                        <div className="h-48 bg-[url('/academic-activities.jfif')] bg-cover bg-center relative">
+                        <div className="h-48 bg-[url('/student-activities/academics.jpg')] bg-cover bg-center relative">
                             <div className="absolute bottom-4 left-4 bg-[#012152] text-white px-4 py-1 font-semibold">
                                 Academic
                             </div>
@@ -126,7 +126,7 @@ const StudentLife = () => {
                         variants={itemVariants}
                         whileHover={{scale: 1.03}}
                     >
-                        <div className="h-48 bg-[url('/scientific-activities.jfif')] bg-cover bg-center relative">
+                        <div className="h-48 bg-[url('/student-activities/Scientific.jpg')] bg-cover bg-center relative">
                             <div className="absolute bottom-4 left-4 bg-[#012152] text-white px-4 py-1 font-semibold">
                                 Scientific
                             </div>
@@ -149,7 +149,7 @@ const StudentLife = () => {
                         variants={itemVariants}
                         whileHover={{scale: 1.03}}
                     >
-                        <div className="h-48 bg-[url('/sport-activities.jfif')] bg-cover bg-center relative">
+                        <div className="h-48 bg-[url('/student-activities/sports.jpg')] bg-cover bg-center relative">
                             <div className="absolute bottom-4 left-4 bg-[#012152] text-white px-4 py-1 font-semibold">
                                 Sports
                             </div>
@@ -172,7 +172,7 @@ const StudentLife = () => {
                         variants={itemVariants}
                         whileHover={{scale: 1.03}}
                     >
-                        <div className="h-48 bg-[url('/aboutuz/uzb-4.webp')] bg-cover bg-center relative">
+                        <div className="h-48 bg-[url('/student-activities/cultural.jpg')] bg-cover bg-center relative">
                             <div className="absolute bottom-4 left-4 bg-[#012152] text-white px-4 py-1 font-semibold">
                                 Cultural
                             </div>

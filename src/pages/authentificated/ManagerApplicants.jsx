@@ -214,6 +214,14 @@ const ManagerApplicants = () => {
         return phone.replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, '+$1 ($2) $3-$4-$5');
     };
 
+    const formatCityLabel = (city) => {
+        if (!city) return null;
+        const normalized = String(city).toLowerCase();
+        if (normalized === 'bukhara') return 'Bukhara';
+        if (normalized === 'xorazm') return 'Khorezm';
+        return city;
+    };
+
     const columns = [
         {
             title: '№',
@@ -278,17 +286,22 @@ const ManagerApplicants = () => {
                                                     Sem {letter?.semestr}
                                                 </Tag>
                                             </div>
-                                            <div className="flex items-center text-sm">
+                                            <div className="flex items-center flex-wrap gap-1 text-sm">
                                                 <Tag
                                                     color={
                                                         letter?.type === 'letter' ? 'green' :
                                                             letter?.type === 'decree' ? 'orange' :
                                                                 'cyan'
                                                     }
-                                                    className="mr-2 text-xs"
+                                                    className="text-xs"
                                                 >
                                                     {letter?.type}
                                                 </Tag>
+                                                {letter?.city && (
+                                                    <Tag color="purple" className="text-xs">
+                                                        {formatCityLabel(letter.city)}
+                                                    </Tag>
+                                                )}
                                                 <span className="text-gray-500 text-xs">
                                                 {new Date(letter?.created_at).toLocaleDateString()}
                                             </span>
@@ -907,6 +920,7 @@ const ManagerApplicants = () => {
                     onFinish={handleGenerateLetterSubmit}
                     initialValues={{
                         type: 'letter',
+                        city: 'bukhara',
                         kurs: selectedSemester ? Math.ceil(selectedSemester / 2) : 1
                     }}
                 >
@@ -1002,6 +1016,17 @@ const ManagerApplicants = () => {
                             <Option value="notification">Notification</Option>
                             <Option value="document">Document</Option>
                             <Option value="bank">Bank</Option>
+                        </Select>
+                    </Form.Item>
+
+                    <Form.Item
+                        name="city"
+                        label="City"
+                        rules={[{required: true, message: 'Please select city'}]}
+                    >
+                        <Select placeholder="Select city">
+                            <Option value="bukhara">Bukhara</Option>
+                            <Option value="xorazm">Khorezm</Option>
                         </Select>
                     </Form.Item>
 

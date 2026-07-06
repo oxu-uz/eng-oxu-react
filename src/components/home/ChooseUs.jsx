@@ -70,7 +70,7 @@ function ChooseUs(props) {
         "/for site/Emphasis on Lifelong Learning.jpg",
     ], []);
 
-    const sliderSettings = {
+    const sliderSettings = useMemo(() => ({
         dots: true,
         infinite: true,
         speed: 500,
@@ -112,7 +112,7 @@ function ChooseUs(props) {
                 </svg>
             </div>
         ),
-    };
+    }), []);
 
     return (
         <section

@@ -153,6 +153,51 @@ const FindPrograms = () => {
                     </ul>
                 </aside>
             </div>
+
+            {/* Prospectus Section */}
+            <section className="px-4 sm:px-6 lg:px-10 pb-10">
+                <div className="max-w-5xl mx-auto">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-[#00316b] mb-6">
+                        University Prospectus
+                    </h2>
+                    <div className="space-y-8">
+                        <iframe
+                            allowFullScreen
+                            allow="clipboard-write"
+                            scrolling="no"
+                            className="w-full h-[600px] min-h-[600px] rounded-lg block"
+                            src="https://heyzine.com/flip-book/7dc7cbe7a7.html"
+                            width="100%"
+                            height="600"
+                            style={{ border: "1px solid lightgray", height: "600px", minHeight: "600px" }}
+                            title="AIU Prospectus 1"
+                            loading="lazy"
+                        />
+                        <iframe
+                            allowFullScreen
+                            allow="clipboard-write"
+                            scrolling="no"
+                            className="w-full h-[600px] min-h-[600px] rounded-lg block"
+                            src="https://heyzine.com/flip-book/52d2b3825b.html"
+                            width="100%"
+                            height="600"
+                            style={{ border: "1px solid lightgray", height: "600px", minHeight: "600px" }}
+                            title="AIU Prospectus 2"
+                            loading="lazy"
+                        />
+                        <iframe
+                            src="https://heyzine.com/flip-book/f73bb358fd.html"
+                            className="w-full h-[600px] min-h-[600px] rounded-lg block"
+                            width="100%"
+                            height="600"
+                            style={{ border: "1px solid lightgray", height: "600px", minHeight: "600px" }}
+                            allowFullScreen
+                            loading="lazy"
+                            title="AIU Prospectus 2026/2027"
+                        />
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };

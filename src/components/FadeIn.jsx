@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 // Context to determine if an element is in a stagger group
 const FadeInStaggerContext = createContext(false);
 
-const viewport = { once: true, margin: "0px 0px -200px" };
+const viewport = { once: true, margin: "0px 0px -200px", amount: 0.15 };
 
 // FadeIn component for individual element animations
 const FadeIn = (props) => {

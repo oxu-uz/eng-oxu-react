@@ -37,7 +37,7 @@ const campusData = [
 
 function CampusSection() {
     const ref3 = useRef(null);
-    const isInView3 = useInView(ref3, {once: false});
+    const isInView3 = useInView(ref3, { once: true, amount: 0.2 });
 
     const cardVariants = {
         hidden: {opacity: 0, y: 20},

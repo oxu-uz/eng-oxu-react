@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect, useState, useMemo} from 'react';
 import NewsCard from './NewsCard';
 import {useInView, motion} from "framer-motion";
 import {getNews} from '../../services/manager/posts/ManagerPostsService';
@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 function NewsAndEvents() {
     const [news, setNews] = useState([]);
     const ref5 = useRef(null);
-    const isInView5 = useInView(ref5, {once: false});
+    const isInView5 = useInView(ref5, { once: true, amount: 0.2 });
     const navigate = useNavigate();
 
     const animationVariants = {
@@ -18,25 +18,16 @@ function NewsAndEvents() {
         visible: {opacity: 1, y: 0, transition: {duration: 1}},
     };
 
-    const textVariants = {
-        hidden: {opacity: 0, y: 20},
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {duration: 0.8, ease: "easeOut"},
-        },
-    };
-
-    // Slider settings
-    const settings = {
-        dots: false, // Pastdagi nuqtalarni olib tashlaymiz
-        arrows: false, // Oldingi/keyingi tugmalarni olib tashlaymiz
+    const settings = useMemo(() => ({
+        dots: false,
+        arrows: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 4, // Bir vaqtning o'zida ko'rsatiladigan slaydlar soni
-        slidesToScroll: 1, // Bir scrollda o'tadigan slaydlar soni
-        autoplay: true, // Avtomatik aylanish
-        autoplaySpeed: 2000, // 2 soniyada bir slayd almashinadi
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -57,7 +48,7 @@ function NewsAndEvents() {
                 }
             }
         ]
-    };
+    }), []);
 
     useEffect(() => {
         const fetchNews = async () => {
@@ -101,12 +92,9 @@ function NewsAndEvents() {
                     <div className="w-full">
                         <Slider {...settings}>
                             {news.map((newsItem) => (
-                                <motion.div
+                                <div
                                     key={newsItem?.id}
-                                    initial="hidden"
-                                    animate={isInView5 ? "visible" : "hidden"}
-                                    variants={animationVariants}
-                                    className='px-2' // Padding qo'shamiz, slaydlar orasidagi bo'shliq uchun
+                                    className="px-2"
                                 >
                                     <NewsCard
                                         id={newsItem?.id}
@@ -116,7 +104,7 @@ function NewsAndEvents() {
                                         category={newsItem?.category.title}
                                         className="bg-white"
                                     />
-                                </motion.div>
+                                </div>
                             ))}
                         </Slider>
                     </div>

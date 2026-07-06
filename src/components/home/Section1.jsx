@@ -171,12 +171,11 @@ function Section1(props) {
   // Updated navVariants in your existing code
   const navVariants = {
     transparent: {
-      backgroundColor: "rgba(0,0,0, 0.1)", // Subtle white overlay
-      backdropFilter: "blur(2px)",
+      backgroundColor: "rgba(0,0,0, 0.1)",
       transition: { duration: 0.3 },
     },
     hovered: {
-      backgroundColor: "#012152", // More opaque when hovered
+      backgroundColor: "#012152",
       backdropFilter: "blur(10px)",
       boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
       transition: { duration: 0.3 },
@@ -189,15 +188,15 @@ function Section1(props) {
   };
 
   return (
-    <div
-      className="bg-opacity-50 z-10"
-      style={{
-        backgroundImage: "url(/pic4-01.jpg)",
-        height: "100vh",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="relative z-10 h-[100vh] overflow-hidden">
+      <img
+        src="/pic4-01.jpg"
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover object-center -z-10"
+      />
       <div>
         <motion.nav
           className="lg:block hidden py-5"
