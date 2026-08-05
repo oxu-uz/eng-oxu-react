@@ -5,7 +5,7 @@ function CampusCard({ name, image, description, additionalClasses = '' }) {
         <article className={`flex group flex-col  max-md:ml-0 max-md:w-full ${additionalClasses}`}>
             <div className="flex flex-col grow max-md:mt-10">
                 <div className="flex overflow-hidden flex-col cursor-pointer bg-zinc-100">
-                    <img loading="lazy" src={image} alt={`${name} campus`} className=" h-[150px] will-change-transform object-cover object-top group-hover:scale-110 transition-transform duration-500 w-full aspect-[1.5]" />
+                    <img loading="lazy" src={image} alt={`${name} campus`} className="h-[240px] will-change-transform object-cover object-center group-hover:scale-110 transition-transform duration-500 w-full" />
                 </div>
                 <div className="p-4">
                     <h3 className="article-card__title title-text mt-2">{name}</h3>

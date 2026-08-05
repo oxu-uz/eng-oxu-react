@@ -410,7 +410,7 @@ const HospitalAffiliated = () => {
                 </Row>
             </motion.div>
 
-            {/* Internship Section */}
+            {/* Rotation Section */}
             <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -422,7 +422,7 @@ const HospitalAffiliated = () => {
                         title={
                             <Space>
                                 <ScheduleOutlined style={{color: '#012c6e', fontSize: '20px'}}/>
-                                <Text strong style={{fontSize: '18px'}}>One-Year Internship (Final Year – 6th
+                                <Text strong style={{fontSize: '18px'}}>One-Year Rotation (Final Year – 6th
                                     Year)</Text>
                             </Space>
                         }
@@ -433,8 +433,8 @@ const HospitalAffiliated = () => {
                         }}
                     >
                         <Paragraph style={{fontSize: '16px', lineHeight: '1.7'}}>
-                            AIU places a strong emphasis on internship-based learning. In the final year, students
-                            undergo a structured 52-week clinical internship in various specialties, allowing them to
+                            AIU places a strong emphasis on rotation-based learning. In the final year, students
+                            undergo a structured 52-week clinical rotation in various specialties, allowing them to
                             refine their knowledge and become hospital-ready:
                         </Paragraph>
 
@@ -472,7 +472,7 @@ const HospitalAffiliated = () => {
                         </motion.div>
 
                         <Paragraph style={{fontSize: '16px', lineHeight: '1.7'}}>
-                            This rigorous and diverse internship ensures that our graduates are clinically competent,
+                            This rigorous and diverse rotation ensures that our graduates are clinically competent,
                             globally competitive, and professionally prepared for any medical challenge.
                         </Paragraph>
                     </Card>

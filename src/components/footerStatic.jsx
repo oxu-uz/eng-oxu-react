@@ -53,8 +53,8 @@ const FooterStatic = () => {
                             </a>
                         </li>
                         <li className="main-footer__item">
-                            <a className="main-footer__link" href="tel:+998500305876">
-                                Tel: +998 50 030 58 76
+                            <a className="main-footer__link" href="tel:+998505057352">
+                                Tel: +998 50 505 73 52
                             </a>
                         </li>
                         <li className="main-footer__item">
@@ -101,7 +101,7 @@ const FooterStatic = () => {
                             </a>
                         </li>
                         <li className="main-footer__item">
-                            <a className="main-footer__link flex items-center gap-3" href="https://wa.me/998500305876">
+                            <a className="main-footer__link flex items-center gap-3" href="https://wa.me/998505057352">
                                 <FaWhatsapp size="25" />
                                 <span>Whatsapp</span>
                             </a>

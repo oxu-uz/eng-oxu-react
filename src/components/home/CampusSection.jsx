@@ -33,6 +33,12 @@ const campusData = [
         image: '/DSC_0307.JPG',
         description: '82 Samarkand Street, "Kukaldosh SMG", Bukhara city',
     },
+    {
+        id: 6,
+        name: 'AIU 6th Campus',
+        image: '/6campus.png',
+        description: '82 Samarkand Street, "Kukaldosh SMG", Bukhara city',
+    },
 ];
 
 function CampusSection() {
@@ -89,7 +95,7 @@ function CampusSection() {
 
                 {/* Campus Cards Grid */}
                 <div ref={ref3} className="w-full">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 px-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
                         {campusData.map((campus, index) => (
                             <motion.div
                                 key={campus.id}

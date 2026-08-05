@@ -51,10 +51,10 @@ const ApplicationThankYou = () => {
                             </a>{" "}
                             or call{" "}
                             <a
-                                href="tel:+998500305876"
+                                href="tel:+998505057352"
                                 className="text-[#012152] font-medium hover:underline"
                             >
-                                +998 50 030 58 76
+                                +998 50 505 73 52
                             </a>
                         </p>
 

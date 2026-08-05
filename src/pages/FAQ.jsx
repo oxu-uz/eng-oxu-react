@@ -410,8 +410,8 @@
 //                         <Text strong>|</Text>
 //                         <Text>
 //                             <Text className="text-[#01408e]" strong>Call:</Text>
-//                             <a className="main-footer__link" href="tel:+998500305876">
-//                                 +998 50 030 58 76
+//                             <a className="main-footer__link" href="tel:+998505057352">
+//                                 +998 50 505 73 52
 //                             </a>
 //                         </Text>
 //                     </Space>
@@ -956,11 +956,11 @@ const FAQSection = () => {
                                 <Text className="text-[#01408e]" strong>Call:</Text>
                                 <motion.a
                                     className="main-footer__link"
-                                    href="tel:+998500305876"
+                                    href="tel:+998505057352"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    +998 50 030 58 76
+                                    +998 50 505 73 52
                                 </motion.a>
                             </Text>
                         </Space>

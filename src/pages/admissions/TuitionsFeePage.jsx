@@ -98,7 +98,7 @@ const TuitionFeesPage = () => {
                                         amount: "$7300"
                                     },
                                     {
-                                        year: "2nd to 5th Year and internship",
+                                        year: "2nd to 5th Year and rotation",
                                         description: "Hostel Fees: $600\nTuition Fees: $2600\nVisa: $280\nRegistration: $290",
                                         amount: "$3770"
                                     }

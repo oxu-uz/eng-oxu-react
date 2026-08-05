@@ -128,7 +128,7 @@ function ContactUs() {
                                 </motion.div>
                                 <motion.div variants={itemVariants}>
                                     <p className="opacity-80">From outside Uzbekistan</p>
-                                    <p className="text-lg">+998 50 030 58 76</p>
+                                    <p className="text-lg">+998 50 505 73 52</p>
                                 </motion.div>
                             </motion.div>
                         </div>
@@ -159,7 +159,7 @@ function ContactUs() {
                             >
                                 Admissions Office
                             </motion.h3>
-                            <motion.p variants={itemVariants}>+998 50 030 58 76</motion.p>
+                            <motion.p variants={itemVariants}>+998 50 505 73 52</motion.p>
                             <motion.p variants={itemVariants}>admission@oxu.uz</motion.p>
                         </div>
                     </motion.div>
@@ -177,7 +177,7 @@ function ContactUs() {
                             >
                                 Student Support
                             </motion.h3>
-                            <motion.p variants={itemVariants}>+998 50 030 58 76</motion.p>
+                            <motion.p variants={itemVariants}>+998 50 505 73 52</motion.p>
                             <motion.p variants={itemVariants}>aiudean@oxu.uz</motion.p>
                         </div>
                     </motion.div>
@@ -195,7 +195,7 @@ function ContactUs() {
                             >
                                 General Inquiries
                             </motion.h3>
-                            <motion.p variants={itemVariants}>+998 50 030 58 76</motion.p>
+                            <motion.p variants={itemVariants}>+998 50 505 73 52</motion.p>
                             <motion.p variants={itemVariants}>info@oxu.uz</motion.p>
                         </div>
                     </motion.div>

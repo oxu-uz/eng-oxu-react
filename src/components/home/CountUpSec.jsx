@@ -3,7 +3,7 @@ import {motion, useInView} from "framer-motion";
 import CountUp from "react-countup";
 
 const stats = [
-    { end: 5, label: "Campuses" },
+    { end: 6, label: "Campuses" },
     { end: 25000, label: "Students", separator: "," },
     { end: 88, label: "Faculty" },
     { end: 470, label: "Professors" },

@@ -42,8 +42,8 @@ function TopNav(props) {
 
                     {/* Блок 2 */}
                     <div className="flex flex-col items-center text-center">
-                        <a href="tel:+998500305876" className="text-[14px] hover:text-white leading-tight">
-                            +998 50 030 58 76
+                        <a href="tel:+998505057352" className="text-[14px] hover:text-white leading-tight">
+                            +998 50 505 73 52
                         </a>
                         <span className="text-xs opacity-80">Hotline for applicants</span>
                     </div>
@@ -163,7 +163,7 @@ function TopNav(props) {
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                href="https://wa.me/998500305876" // telefon raqamingizni shu formatda yozing
+                                href="https://wa.me/998505057352" // telefon raqamingizni shu formatda yozing
                                 className="pl-1"
                             >
                                 <svg fill="#ffffff" width="24" height="24" viewBox="0 0 256 256" id="Flat"
