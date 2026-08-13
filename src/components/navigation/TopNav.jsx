@@ -107,6 +107,28 @@ function TopNav(props) {
                     {/* Разделитель */}
                     <div className="block h-6 border-l border-white/20"></div>
 
+                    {/* Arabic version for Egyptian / Arabic students */}
+                    <div className="flex flex-col items-center text-center">
+                        <a
+                            href="https://oxu.uz/ar"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Arabic / العربية"
+                            className="flex items-center gap-2 text-[14px] leading-tight hover:text-white transition-colors"
+                        >
+                            <img
+                                src="https://flagcdn.com/w40/eg.png"
+                                alt="Egypt"
+                                className="h-5 w-7 object-cover rounded-sm shadow-sm ring-1 ring-white/30"
+                            />
+                            <span>العربية</span>
+                        </a>
+                        <span className="text-xs opacity-80 mt-0.5">Arabic version</span>
+                    </div>
+
+                    {/* Разделитель */}
+                    <div className="block h-6 border-l border-white/20"></div>
+
                     {/* Блок соц сетей */}
                     <div className="flex flex-col items-center text-center">
                         <div className="flex items-center  divide-x divide-[hsla(0,0%,100%,.15)] ">

@@ -41,11 +41,11 @@ const FindPrograms = () => {
                         <div className="order-2 lg:order-1">
                             <div className="divider mb-3 h-[5px] w-[100px] bg-[#012152]"/>
                             <h1 className="text-white uppercase font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl">
-                                In Partnership with Western University of Science and Technology (WUST), USA
+                                In Partnership with Washington University of Science and Technology (WUST), USA
                             </h1>
                             <p className="text-base sm:text-lg mt-4 text-white max-w-3xl">
                                 Asia International University (AIU) offers internationally recognized degree programs in
-                                collaboration with Western University of Science and Technology (WUST) in the United
+                                collaboration with Washington University of Science and Technology (WUST) in the United
                                 States of America. These programs are designed to give students not only a solid
                                 academic foundation but also global exposure and the opportunity to complete part of
                                 their education in the USA.

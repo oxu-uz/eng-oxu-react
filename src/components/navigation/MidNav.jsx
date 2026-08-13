@@ -319,6 +319,20 @@ const MidNav = () => {
           >
             Apply Now
           </a>
+          <a
+            href="https://oxu.uz/ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Arabic / العربية"
+            className="lg:text-sm text-xs p-2 lg:px-3 px-2 cursor-pointer transition-colors top-nav-sup-link flex items-center gap-1.5 hover:opacity-90"
+          >
+            <img
+              src="https://flagcdn.com/w40/eg.png"
+              alt="Egypt"
+              className="h-5 w-7 object-cover rounded-sm shadow-sm ring-1 ring-white/30"
+            />
+            <span className="hidden sm:inline">العربية</span>
+          </a>
         </div>
 
         <div className="flex gap-5 items-center">
@@ -424,6 +438,27 @@ const MidNav = () => {
                 <span className="text-xs hidden opacity-80">
                   Address and telephone
                 </span>
+              </div>
+
+              {/* Разделитель */}
+              <div className="block h-6 border-l border-white/20"></div>
+
+              {/* Arabic / Egypt */}
+              <div className="flex flex-col items-center text-center">
+                <a
+                  href="https://oxu.uz/ar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Arabic / العربية"
+                  className="flex items-center gap-1.5 text-sm font-semibold leading-tight"
+                >
+                  <img
+                    src="https://flagcdn.com/w40/eg.png"
+                    alt="Egypt"
+                    className="h-4 w-6 object-cover rounded-sm"
+                  />
+                  <span>العربية</span>
+                </a>
               </div>
 
               {/* Разделитель */}
