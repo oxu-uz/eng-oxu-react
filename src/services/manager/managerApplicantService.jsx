@@ -1,10 +1,17 @@
 import axiosInstance from "../../api/axiosInstance.jsx";
 
-export const getApplicants = async (page, pageSize = 30) => {
+export const getApplicants = async (page = 1, pageSize = 30, filters = {}) => {
     try {
-        const params = {};
-        if (page) params.page = page;
-        if (pageSize) params.pagination = pageSize;
+        const params = {
+            page,
+            per_page: pageSize,
+        };
+
+        if (filters.search) params.search = filters.search;
+        if (filters.gender) params.gender = filters.gender;
+        if (filters.nationality) params.nationality = filters.nationality;
+        if (filters.study_status) params.study_status = filters.study_status;
+
         const response = await axiosInstance.get("/applicant", {
             params
         });

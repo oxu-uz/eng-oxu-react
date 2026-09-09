@@ -38,7 +38,9 @@ import {
     HomeOutlined,
     ClockCircleOutlined,
     PlusOutlined,
-    FilePdfOutlined
+    FilePdfOutlined,
+    SearchOutlined,
+    ClearOutlined
 } from '@ant-design/icons';
 import moment from 'moment';
 import Button from '../../components/Button';
@@ -66,16 +68,23 @@ const ManagerApplicants = () => {
         pageSize: 30,
         total: 0,
     });
+    const [filters, setFilters] = useState({
+        search: '',
+        gender: undefined,
+        nationality: '',
+        study_status: '',
+    });
 
-    const fetchApplicants = async (page = 1, pageSize = 30, params = {}) => {
+    const fetchApplicants = async (page = 1, pageSize = 30, filterOverrides = null) => {
         try {
             setLoading(true);
-            const response = await getApplicants(page, pageSize);
+            const activeFilters = filterOverrides ?? filters;
+            const response = await getApplicants(page, pageSize, activeFilters);
             setApplicants(response?.data || []);
             setPagination({
-                ...pagination,
-                current: response?.meta?.current_page,
-                total: response?.meta?.total,
+                current: response?.meta?.current_page || page,
+                pageSize,
+                total: response?.meta?.total || 0,
             });
         } catch (error) {
             console.error("Error fetching applicants:", error);
@@ -95,7 +104,24 @@ const ManagerApplicants = () => {
             current,
             pageSize,
         }));
-        fetchApplicants(current, pageSize); // har safar o'zgarganda ma'lumotlarni qayta yuklash
+        fetchApplicants(current, pageSize);
+    };
+
+    const handleSearch = () => {
+        setPagination(prev => ({...prev, current: 1}));
+        fetchApplicants(1, pagination.pageSize);
+    };
+
+    const handleResetFilters = () => {
+        const emptyFilters = {
+            search: '',
+            gender: undefined,
+            nationality: '',
+            study_status: '',
+        };
+        setFilters(emptyFilters);
+        setPagination(prev => ({...prev, current: 1}));
+        fetchApplicants(1, pagination.pageSize, emptyFilters);
     };
 
     const handleViewDetails = (applicant) => {
@@ -502,6 +528,61 @@ const ManagerApplicants = () => {
                     Create Applicant
                 </AntButton>
             </div>
+
+            <Card className="mb-4" size="small">
+                <Row gutter={[12, 12]} align="middle">
+                    <Col xs={24} sm={12} md={6}>
+                        <Input
+                            allowClear
+                            placeholder="Search by name..."
+                            prefix={<SearchOutlined className="text-gray-400"/>}
+                            value={filters.search}
+                            onChange={(e) => setFilters(prev => ({...prev, search: e.target.value}))}
+                            onPressEnter={handleSearch}
+                        />
+                    </Col>
+                    <Col xs={24} sm={12} md={4}>
+                        <Select
+                            allowClear
+                            placeholder="Gender"
+                            style={{width: '100%'}}
+                            value={filters.gender}
+                            onChange={(value) => setFilters(prev => ({...prev, gender: value}))}
+                        >
+                            <Option value="male">Male</Option>
+                            <Option value="female">Female</Option>
+                        </Select>
+                    </Col>
+                    <Col xs={24} sm={12} md={5}>
+                        <Input
+                            allowClear
+                            placeholder="Nationality"
+                            value={filters.nationality}
+                            onChange={(e) => setFilters(prev => ({...prev, nationality: e.target.value}))}
+                            onPressEnter={handleSearch}
+                        />
+                    </Col>
+                    <Col xs={24} sm={12} md={5}>
+                        <Input
+                            allowClear
+                            placeholder="Study status"
+                            value={filters.study_status}
+                            onChange={(e) => setFilters(prev => ({...prev, study_status: e.target.value}))}
+                            onPressEnter={handleSearch}
+                        />
+                    </Col>
+                    <Col xs={24} sm={24} md={4}>
+                        <Space wrap>
+                            <AntButton type="primary" icon={<SearchOutlined/>} onClick={handleSearch}>
+                                Search
+                            </AntButton>
+                            <AntButton icon={<ClearOutlined/>} onClick={handleResetFilters}>
+                                Reset
+                            </AntButton>
+                        </Space>
+                    </Col>
+                </Row>
+            </Card>
 
             {loading ? (
                 <Skeleton active paragraph={{rows: 6}}/>

@@ -98,7 +98,7 @@ const TuitionFeesPage = () => {
                                         amount: "$7300"
                                     },
                                     {
-                                        year: "2nd to 5th Year and rotation",
+                                        year: "2nd to 5th Year and Internship",
                                         description: "Hostel Fees: $600\nTuition Fees: $2600\nVisa: $280\nRegistration: $290",
                                         amount: "$3770"
                                     }
@@ -141,7 +141,6 @@ const TuitionFeesPage = () => {
                             <h3 className="text-xl sm:text-2xl font-bold text-[#00316b] mb-4">Additional Notes</h3>
                             <ul className="space-y-3">
                                 {[
-                                    "6th-year fee of Internship for MBBS program is not included (depends on NMC rule).",
                                     "Medical insurance, if applicable, will be paid extra and not included in the above charge.",
                                     "Annual charges include university fee and visa safety.",
                                     "Annual Mess charge from 2nd year: $1200 yearly (3 meals/day).",
