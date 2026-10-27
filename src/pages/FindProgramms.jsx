@@ -195,6 +195,30 @@ const FindPrograms = () => {
                             loading="lazy"
                             title="AIU Prospectus 2026/2027"
                         />
+                        <iframe
+                            allowFullScreen
+                            allow="autoplay; fullscreen; clipboard-write"
+                            scrolling="no"
+                            className="w-full h-[600px] min-h-[600px] rounded-lg block"
+                            src="https://heyzine.com/flip-book/d72a59d2b7.html"
+                            width="100%"
+                            height="600"
+                            style={{ border: "1px solid lightgray", height: "600px", minHeight: "600px" }}
+                            title="AIU Prospectus 4"
+                            loading="lazy"
+                        />
+                        <iframe
+                            allowFullScreen
+                            allow="autoplay; fullscreen; clipboard-write"
+                            scrolling="no"
+                            className="w-full h-[600px] min-h-[600px] rounded-lg block"
+                            src="https://heyzine.com/flip-book/5b88fd0c38.html"
+                            width="100%"
+                            height="600"
+                            style={{ border: "1px solid lightgray", height: "600px", minHeight: "600px" }}
+                            title="AIU Prospectus 5"
+                            loading="lazy"
+                        />
                     </div>
                 </div>
             </section>
